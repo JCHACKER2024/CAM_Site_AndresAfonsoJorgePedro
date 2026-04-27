@@ -3,183 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAM Porto | Comunicação Audiovisual e Multimédia</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>CAM Porto | Início</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
-        <nav class="sidebar">
-        <div class="lang-switcher">
-            <a href="en.html" class="btn-lang">EN / English</a>
+    <header id="header">
+        <nav>
+            <a href="index.html" class="active">Início</a>
+            <a href="curso.html">O Curso</a>
+            <a href="portfolio.html">Portfólio</a>
+            <a href="contactos.html">Contactos</a>
+        </nav>
+    </header>
+
+    <main id="mainmob">
+        <section id="initialVideo">
+            <h1 id="videoTitle">CAM PORTO</h1>
+            <div id="indexvideo">
+                <video autoplay muted loop id="myVideo">
+                    <source src="video/intro.mp4" type="video/mp4">
+                    <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #23d400;">
+                        [VÍDEO DE APRESENTAÇÃO CAM]
+                    </div>
+                </video>
+            </div>
+        </section>
+
+        <div id="introsymbols">
+            <img src="IMGS/circle.png" id="circle0" class="floating">
+            <img src="IMGS/x.png" id="x0" class="floating1">
+            <img src="IMGS/triangle.png" id="triangle0" class="floating2">
         </div>
-        <div class="logo-area">
-            <h1>CAM<span>.</span></h1>
-            <p>Lusófona Porto</p>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#apresentacao">Apresentação</a></li>
-            <li><a href="#aprendizagem">Aprendizagem</a></li>
-            <li><a href="#requisitos">Requisitos</a></li>
-            <li><a href="#competencias">Competências</a></li>
-            <li><a href="#plano">Plano Curricular</a></li>
-            <li><a href="#saidas">Saídas Profissionais</a></li>
-            <li><a href="#equipamento">Infraestruturas</a></li>
-        </ul>
-    </nav>
 
-    <main class="main-content">
-        
-        <section id="apresentacao" class="hero-section">
-            <div class="overlay">
-                <h2>Licenciatura em Comunicação Audiovisual e Multimédia</h2>
-                <p>Cinema e Artes dos Media | Porto</p>
-                <div class="info-badges">
-                    <span><strong>Formato:</strong> Presencial</span>
-                    <span><strong>Grau:</strong> Licenciatura</span>
-                    <span><strong>Semestres:</strong> 6</span>
-                    <span><strong>Créditos:</strong> 180 ECTS</span>
-                </div>
-            </div>
+        <section id="sobretxt">
+            <h2>Bem-vindo ao Audiovisual e Multimédia</h2>
+            <p>
+                Explora a convergência entre a arte e a tecnologia no Centro Universitário do Porto da Universidade Lusófona. 
+                Preparamos-te para dominar a imagem, o som e a interatividade digital.
+            </p>
         </section>
 
-        <section id="aprendizagem" class="content-block">
-            <h3>O que vou aprender neste curso?</h3>
-            <p>A Licenciatura em Comunicação Audiovisual e Multimédia tem dado provas de grande dinamismo académico, com imediata adesão por parte de um elevado número de estudantes inscritos (portugueses, mas também estudantes de origem brasileira, angolana e cabo-verdiana). Oferece um percurso académico que alia uma componente de aprendizagem teórico-prática estimulante assente no Cinema e no Vídeo, com uma formação interdisciplinar na área da criação audiovisual e multimédia e das tecnologias associadas aos novos media. Em constante atualização, tal como a área o exige, explora-se o trabalho individual e em equipa em projetos práticos nas áreas da fotografia, do vídeo e da curta metragem, da criação web, sonoplastia, guionismo e direção de atores, das instalações multimédia e vídeo mapping. O curso é responsável pelo Multiplex, Ciclo Anual de Imagens em Movimento</p>
-        </section>
-
-        <section id="requisitos" class="content-block bg-alt">
-            <h3>Requisitos de acesso e candidatura</h3>
-            <p>Podem candidatar-se a este ciclo de estudos os que apresentem candidatura através do concurso institucional de acesso e tenham aprovação em uma das provas ou em um dos pares:</p>
-            
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Opção</th>
-                            <th>Provas de Ingresso</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>1</td><td>03 Desenho</td></tr>
-                        <tr><td>2</td><td>18 Português</td></tr>
-                        <tr><td>3</td><td>03 Desenho e 18 Português</td></tr>
-                        <tr><td>4</td><td>10 Geometria Descritiva e 18 Português</td></tr>
-                        <tr><td>5</td><td>11 História e 18 Português</td></tr>
-                        <tr><td>6</td><td>17 Matemática Aplicada às Ciências Sociais e 18 Português</td></tr>
-                        <tr><td>7</td><td>03 Desenho 10 e Geometria Descritiva</td></tr>
-                        <tr><td>8</td><td>09 Geografia e 18 Português</td></tr>
-                    </tbody>
-                </table>
+        <section id="sectionLabel">
+            <div class="content-box">
+                <img src="IMGS/playIcon.png" id="playIcon">
+                <h3>Cria</h3>
+                <p>Desenvolve narrativas visuais e cinematográficas com equipamento profissional.</p>
             </div>
 
-            <p style="margin-top: 25px;">Os candidatos podem ainda ingressar através dos regimes de mudança de par instituição/curso ou através de um Concurso Especial, de acordo com as normas legais em vigor (titulares de curso superior, titulares de Curso de Especialização Tecnológica, titulares de Curso Técnico Superior Profissional ou Maiores de 23 anos). Podem ainda ingressar os candidatos que reúnam as condições previstas no Estatuto do Estudante Internacional.</p>
-            <p style="margin-top: 10px;"><strong>A quem se destina este curso:</strong> Todos os interessados na vasta área da criação audiovisual e multimédia e na multiplicidade de experiências e saídas profissionais futuras dentro desta área.</p>
-        </section>
-
-        <section id="competencias" class="content-block">
-            <h3>Competências a adquirir</h3>
-            <p>O Multimédia marca o habitat humano, sendo tão conspícuo que o mundo, sem audiovisual e multimédia seria irreconhecível e, na nossa realidade existencial, inabitável. Deste modo, a Licenciatura de Comunicação Audiovisual e Multimédia aposta numa formação abrangente, dotando o estudante de capacidade de resposta às múltiplas áreas em que a comunicação audiovisual e o multimédia atualmente operam. Nestas áreas incluem-se o desenvolvimento, escrita e produção de projetos fílmicos, televisivos e videográficos de ficção; documentário, institucional e publicidade; produção, produção executiva e assistência de produção de projetos fílmicos, televisivos e videográficos de ficção; documentário, institucional e publicidade; direcção de fotografia, iluminação e assistência de imagem; operações de câmara em tecnologia fílmica e videográfica; controle de imagem e operações de vt; pós-produção áudio, captação de som e sonoplastia; pós-produção e composição visual em projetos fílmicos, televisivos e videográficos de ficção, documentário, institucional e publicidade; fotografia analógica e digital; promoção e distribuição de produtos audiovisuais e multimédia; gestão e conceção de projetos multimédia; desenvolvimento e escrita de projetos; consultoria em projetos multimédia e de sistemas de informação; design de aplicativos, interfaces e informação para plataformas multimédia (web, off-line, móvel); produção e realização de projetos de animação; modelação e animação 2D e 3D; programação em ambientes multimédia; análise de sistemas e projetos multimédia; design gráfico, produção gráfica e produção de infografismos. Todas essas áreas são contempladas no curso, em espaços de aprendizagem teórica e prática laboratorial, investindo simultaneamente em contextos personalizados de aprendizagem e em modelos de trabalho em equipa.</p>
-        </section>
-
-        <section id="plano" class="content-block bg-alt">
-            <h3>Plano curricular e unidades curriculares</h3>
-            <p class="despacho">Despacho n.º 25312/2009, de 18 de novembro, alterado pelo Registo R/A-Ef 3052/2011/AL04, de 22 de julho de 2025</p>
-            
-            <div class="plano-container">
-                <div class="ano-header">1º Ano / Percurso Geral</div>
-                <div class="semestre-box">
-                    <div class="semestre-col">
-                        <h4>[1º Semestre]</h4>
-                        <ul>
-                            <li>Aplicações Web <span>6 ects</span></li>
-                            <li>História dos Meios de Comunicação <span>5 ects</span></li>
-                            <li>Imagem Digital <span>7 ects</span></li>
-                            <li>Práticas Fotográficas <span>7 ects</span></li>
-                            <li>Teoria da Fotografia <span>5 ects</span></li>
-                        </ul>
-                    </div>
-                    <div class="semestre-col">
-                        <h4>[2º Semestre]</h4>
-                        <ul>
-                            <li>Introdução ao Design <span>7 ects</span></li>
-                            <li>Introdução às Tecnologias Multimédia <span>6 ects</span></li>
-                            <li>Operações de Vídeo e Áudio <span>7 ects</span></li>
-                            <li>Teoria do Cinema <span>5 ects</span></li>
-                            <li>Teorias e Modelos da Comunicação <span>5 ects</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="ano-header">2º Ano / Percurso Geral</div>
-                <div class="semestre-box">
-                    <div class="semestre-col">
-                        <h4>[1º Semestre]</h4>
-                        <ul>
-                            <li>Cultura Visual <span>4 ects</span></li>
-                            <li>Direção de Fotografia I <span>6 ects</span></li>
-                            <li>Edição e Pós-Produção <span>7 ects</span></li>
-                            <li>Escrita de Argumento <span>7 ects</span></li>
-                            <li>Sonoplastia <span>6 ects</span></li>
-                        </ul>
-                    </div>
-                    <div class="semestre-col">
-                        <h4>[2º Semestre]</h4>
-                        <ul>
-                            <li>Design de Produtos Multimédia <span>6 ects</span></li>
-                            <li>Direção de Atores <span>6 ects</span></li>
-                            <li>Direção de Fotografia II <span>6 ects</span></li>
-                            <li>Economia da Cultura dos Media <span>5 ects</span></li>
-                            <li>Tecnologias Multimédia <span>7 ects</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="ano-header">3º Ano / Percurso Geral</div>
-                <div class="semestre-box">
-                    <div class="semestre-col">
-                        <h4>[1º Semestre]</h4>
-                        <ul>
-                            <li>Animação 2D <span>7 ects</span></li>
-                            <li>Artes Contemporâneas <span>5 ects</span></li>
-                            <li>Guionismo <span>6 ects</span></li>
-                            <li>Modelação e Animação 3D <span>6 ects</span></li>
-                            <li>Opção</li>
-                        </ul>
-                    </div>
-                    <div class="semestre-col">
-                        <h4>[2º Semestre]</h4>
-                        <ul>
-                            <li>Projeto de Criação Audiovisual <span>10 ects</span></li>
-                            <li>Projeto de Criação Multimédia <span>10 ects</span></li>
-                            <li>Seminário de Projeto e Integração Profissional <span>10 ects</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="ano-header">Opções</div>
-                <div class="semestre-box">
-                    <div class="semestre-col full-width">
-                        <ul>
-                            <li>Marketing Estratégico (Opção) <span>6 ects</span></li>
-                            <li>Tipografia (Opção) <span>6 ects</span></li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="content-box">
+                <img src="IMGS/controllerIcon.png" id="controllerIcon">
+                <h3>Interage</h3>
+                <p>Cria experiências digitais imersivas e mundos virtuais interativos.</p>
             </div>
-        </section>
-
-        <section id="saidas" class="content-block">
-            <h3>Saídas profissionais e mercado de trabalho</h3>
-            <p>Agências de Publicidade; Empresas de Elaboração de Páginas Web e de Gestão de Conteúdos na Web; Editoras de publicações multimédia; Produtoras de vídeo; Operadores de comunicações; Empresas de Consultoria em Design e em Comunicação e Imagem; Instituições de docência e de investigação em Design Multimédia e em Ciências da Comunicação e Informação.</p>
-            <p style="margin-top: 20px;"><strong>Progressão académica:</strong> O curso de primeiro ciclo em Comunicação Audiovisual e Multimédia abre caminho para a formação de segundo ciclo nos programas de mestrado ou pós-graduação em Comunicação Audiovisual e Multimédia, Design, Artes e Estudos Cinematográficos. A Universidade Lusófona - Centro Universidade Lusófona - CUP dispõe de uma pós-graduação e Mestrado em Comunicação Audiovisual e Multimédia como progressão natural do ciclo de estudos.</p>
-        </section>
-
-        <section id="equipamento" class="content-block bg-alt">
-            <h3>Infra-estruturas e Equipamentos</h3>
-            <p>A Universidade Lusófona - Centro Universitário do Porto possui os equipamentos necessários à conveniente lecionação dos conteúdos programáticos do Ciclo de Estudos assim como um estúdio, laboratórios de fotografia, edição de vídeo e captação e edição de áudio, dispõe ainda de um armazém audiovisual. Todos os espaços e equipamentos podem ser requisitados e utilizados pelos estudantes desde o primeiro ano da licenciatura.</p>
         </section>
 
     </main>
+
+    <footer id="footer2">
+        <div id="footerunderliner"></div>
+        <p id="footertxt">© 2024 Comunicação Audiovisual e Multimédia - Lusófona Porto</p>
+    </footer>
+
 </body>
 </html>
