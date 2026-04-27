@@ -16,33 +16,31 @@ body { background-color: #333742; color: white; font-family: Arial, sans-serif; 
 nav a { color: white; text-decoration: none; margin-left: 18px; font-size: 13px; text-transform: uppercase; font-weight: 500; transition: 0.3s; }
 nav a.active, nav a:hover { color: #23d400; }
 
-/* --- 3. Hero / Título Dinâmico (Fix para Linha Vermelha/Azul) --- */
+/* --- 3. Título Estático (Sem a animação de subida do Index) --- */
 .titulo-seccao { 
-    height: 40vh; /* Espaço para a animação */
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    position: relative;
-    overflow: visible; /* Permite que suba livremente */
+    text-align: center; 
+    padding: 80px 0 40px; 
+    overflow: hidden; 
 }
 
 .shadow-text {
     font-size: clamp(40px, 8vw, 100px);
     font-weight: 900;
     color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    display: inline-block;
     letter-spacing: 8px;
     text-transform: uppercase;
-    /* Animação: Entra e depois sobe para o topo (40px) */
-    animation: moveLogoUpPortfolio 1.2s cubic-bezier(0.85, 0, 0.15, 1) 1.5s forwards;
+    /* Mantemos as colisões laterais que são fixes, mas sem o movimento vertical */
+    animation: slideRight 1s ease-out forwards;
 }
 
-.shadow-text .highlight { color: #23d400; }
+.shadow-text .highlight { 
+    color: #23d400; 
+    display: inline-block;
+    animation: slideLeft 1s ease-out forwards;
+}
 
-/* Sombra Aura */
 .shadow-text::after {
     content: "PORTFÓLIO";
     position: absolute;
@@ -52,7 +50,13 @@ nav a.active, nav a:hover { color: #23d400; }
 }
 
 /* --- 4. Content Wrapper & Grid --- */
-.content-wrapper { max-width: 1300px; margin: 0 auto; padding: 0 40px 100px; opacity: 0; animation: fadeInContent 1s forwards 2.5s; }
+.content-wrapper { 
+    max-width: 1300px; 
+    margin: 0 auto; 
+    padding: 0 40px 100px; 
+    opacity: 0; 
+    animation: fadeInContent 1s forwards 0.5s; /* Aparece mais rápido agora */
+}
 
 .texto-corrido-destaque { border-left: 5px solid #23d400; padding-left: 30px; margin-bottom: 80px; font-size: 20px; line-height: 1.8; color: #d1d3d8; }
 
@@ -69,7 +73,7 @@ nav a.active, nav a:hover { color: #23d400; }
 .tags-projeto li { margin-bottom: 15px; font-weight: bold; }
 .tags-projeto span { color: #23d400; margin-right: 15px; }
 
-/* --- 5. Footer Robusto (Corrigido e Integrado) --- */
+/* --- 5. Footer Robusto (Consistente com o resto do site) --- */
 #main-footer { background-color: #1a1c23; border-top: 5px solid #23d400; padding: 60px 20px 30px; margin-top: 50px; }
 .footer-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
 
@@ -87,14 +91,8 @@ nav a.active, nav a:hover { color: #23d400; }
 .footer-bottom { margin-top: 50px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; color: #555; font-size: 11px; }
 
 /* --- 6. Keyframes --- */
-@keyframes moveLogoUpPortfolio {
-    0% { top: 50%; transform: translate(-50%, -50%) scale(1); }
-    100% { 
-        top: 40px; /* Posiciona na linha vermelha/azul da tua imagem */
-        transform: translate(-50%, 0) scale(0.35); 
-    }
-}
-
+@keyframes slideRight { 0% { transform: translateX(-100px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
+@keyframes slideLeft { 0% { transform: translateX(100px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
 @keyframes fadeInShadow { 0% { opacity: 0; } 100% { opacity: 0.2; } }
 @keyframes fadeInContent { to { opacity: 1; } }
 
@@ -103,7 +101,4 @@ nav a.active, nav a:hover { color: #23d400; }
 @media (max-width: 768px) {
     .extenso { display: none; }
     .shadow-text { font-size: 40px; }
-    @keyframes moveLogoUpPortfolio {
-        to { top: 20px; transform: translate(-50%, 0) scale(0.5); }
-    }
 }
