@@ -1,98 +1,127 @@
 /* --- Base --- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { 
-    background-color: #333742; 
-    color: white; 
-    font-family: Arial, sans-serif; 
-    padding-top: 100px;
-    overflow-x: hidden;
-}
+body { background-color: #333742; color: white; font-family: Arial, sans-serif; padding-top: 80px; overflow-x: hidden; }
 
 /* --- Header --- */
 #header { position: fixed; top: 0; width: 100%; z-index: 100; background: #333742; padding: 15px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-.header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
-.sigla { color: #23d400; font-size: 24px; font-weight: bold; }
+.header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; }
+.sigla { color: #23d400; font-size: 26px; font-weight: bold; }
 .extenso { color: #23d400; font-size: 11px; margin-left: 10px; letter-spacing: 1px; }
-nav a { color: white; text-decoration: none; margin-left: 15px; font-size: 12px; text-transform: uppercase; }
+nav a { color: white; text-decoration: none; margin-left: 18px; font-size: 13px; text-transform: uppercase; font-weight: 500; transition: 0.3s; }
 nav a.active { color: #23d400; }
+nav a:hover { color: #23d400; }
 
-/* --- Títulos e Blocos --- */
-.intro-curso { text-align: center; padding: 40px 5%; }
-.titulo-pagina { font-size: 40px; letter-spacing: 4px; margin-bottom: 20px; }
-.neon { color: #23d400; text-shadow: 0 0 10px rgba(35, 212, 0, 0.5); }
+/* --- Título com Animação de Colisão --- */
+.titulo-seccao { text-align: center; padding: 80px 0; overflow: hidden; }
 
-.sobre-texto-bloco {
-    background: #4b4e57;
-    padding: 30px;
-    border-radius: 20px;
-    max-width: 700px;
-    margin: 0 auto;
-    border-right: 4px solid #23d400;
-    line-height: 1.6;
-}
-
-/* --- Cards de Áreas (Substituindo imagens por símbolos) --- */
-#sectionLabel {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    padding: 60px 20px;
-    background-color: #22242c;
-    margin-top: 40px;
-}
-
-.content-box {
-    background: #333742;
-    padding: 40px 20px;
-    border-radius: 20px;
-    width: 280px;
-    text-align: center;
-    transition: 0.4s;
-    border: 1px solid rgba(255,255,255,0.05);
-}
-
-.content-box:hover {
-    transform: translateY(-10px);
-    border-color: #23d400;
-}
-
-/* O "Símbolo" que substitui a imagem */
-.simbolo-area {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    color: #23d400;
-    border: 2px solid #23d400;
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(35, 212, 0, 0.3);
-}
-
-.content-box h3 {
-    color: #23d400;
-    margin-bottom: 15px;
+.shadow-text {
+    font-size: clamp(40px, 8vw, 100px);
+    font-weight: 900;
+    color: white;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 8px;
     text-transform: uppercase;
-    font-size: 18px;
-    letter-spacing: 1px;
+    animation: slideRight 1s ease-out forwards; /* Base vem da esquerda */
 }
 
-.content-box p {
-    font-size: 14px;
-    color: #b0b0b0;
-    line-height: 1.5;
+.shadow-text .highlight { 
+    color: #23d400; 
+    display: inline-block;
+    animation: slideLeft 1s ease-out forwards; /* Verde vem da direita */
 }
 
-/* --- Rodapé --- */
-footer { width: 100%; padding: 40px; background: #1a1c23; text-align: center; border-top: 1px solid #23d400; }
-#footerunderliner { width: 40px; height: 2px; background: #23d400; margin: 0 auto 15px; }
-#footertxt { font-size: 11px; color: #777; letter-spacing: 1px; }
+/* Sombra ajustada para cima */
+.shadow-text::after {
+    content: "CURSO CAM";
+    position: absolute;
+    left: 0;
+    top: 5px; /* Sombra mais para cima como pediste */
+    color: #23d400;
+    opacity: 0;
+    z-index: -1;
+    filter: blur(3px);
+    width: 100%;
+    animation: fadeInShadow 1.5s ease-out 0.8s forwards;
+}
 
-/* --- Mobile --- */
+/* --- Keyframes --- */
+@keyframes slideRight {
+    0% { transform: translateX(-150px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideLeft {
+    0% { transform: translateX(150px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+@keyframes fadeInShadow {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 0.2; transform: translateY(0); }
+}
+
+/* --- Content Wrapper --- */
+.content-wrapper { 
+    max-width: 1300px; 
+    margin: 0 auto; 
+    padding: 0 40px 100px; 
+}
+.curso-segmento { margin-bottom: 70px; opacity: 0; animation: fadeIn 1s ease-out 1.2s forwards; }
+
+@keyframes fadeIn { to { opacity: 1; } }
+
+/* --- Barras Verdes Inclinadas --- */
+.barra-verde {
+    background: #23d400;
+    color: white;
+    display: inline-block;
+    padding: 14px 60px;
+    font-size: 24px;
+    font-weight: bold;
+    clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+    margin-bottom: 30px;
+}
+
+/* --- Texto Corrido --- */
+.texto-corrido {
+    padding-left: 30px;
+    border-left: 4px solid #23d400;
+    font-size: 19px;
+    line-height: 1.9;
+    color: #d1d3d8;
+    text-align: justify;
+}
+
+.lista-destaque {
+    list-style: none;
+    color: #23d400;
+    font-weight: bold;
+    margin: 15px 0;
+    padding-left: 20px;
+}
+.lista-destaque li::before { content: "• "; margin-right: 10px; }
+
+/* --- Footer Robusto (Consistente com Index) --- */
+#main-footer { background-color: #1a1c23; border-top: 5px solid #23d400; padding: 60px 20px 30px; margin-top: 50px; }
+.footer-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
+
+.footer-brand .footer-logo { color: #23d400; font-size: 35px; font-weight: bold; margin-bottom: 10px; }
+.footer-brand p { font-size: 13px; color: #666; max-width: 250px; }
+
+#main-footer h4 { font-size: 14px; letter-spacing: 2px; margin-bottom: 25px; color: #fff; text-transform: uppercase; }
+.info-item { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; font-size: 14px; color: #b0b0b0; }
+.info-item img, .footer-socials img { width: 22px; height: 22px; object-fit: contain; filter: brightness(0) invert(1); }
+
+.footer-socials { display: flex; gap: 25px; align-items: center; }
+.footer-socials a:hover { transform: translateY(-5px); transition: 0.3s; }
+
+.footer-bottom { margin-top: 50px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; color: #555; font-size: 11px; }
+
+/* --- Responsividade --- */
 @media (max-width: 768px) {
     .extenso { display: none; }
-    .titulo-pagina { font-size: 30px; }
+    .shadow-text { letter-spacing: 3px; font-size: 45px; }
+    .barra-verde { width: 100%; clip-path: none; text-align: center; }
+    .texto-corrido { border-left: none; padding-left: 0; }
+    .footer-container { flex-direction: column; text-align: center; }
+    .info-item, .footer-socials { justify-content: center; }
 }

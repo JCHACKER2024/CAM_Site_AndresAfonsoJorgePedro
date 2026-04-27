@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio | CAM</title>
+    <title>Portfólio | CAM Porto</title>
     <link rel="stylesheet" href="CSS/portfolio.css">
+    <link rel="stylesheet" href="CSS/scrollbar.css">
 </head>
 <body>
 
@@ -24,49 +25,85 @@
     </header>
 
     <main id="mainmob">
-        <section class="intro-portfolio">
-            <h2 class="titulo-pagina">PORT<span class="neon">FÓLIO</span></h2>
-            <div class="sobre-texto-bloco">
-                <p>Explora os projetos desenvolvidos pelos alunos de CAM. Da experimentação visual à produção técnica avançada.</p>
-            </div>
+        <section class="titulo-seccao">
+            <h2 class="shadow-text">PORT<span class="highlight">FÓLIO</span></h2>
         </section>
 
-        <section id="sectionLabel">
-            
-            <div class="content-box">
-                <div class="simbolo-area neon-border">✕</div>
-                <h3>Projeto 01</h3>
-                <p>Produção de Curta-metragem focada em narrativa experimental.</p>
-                <button class="btn-ver">Explorar</button>
-            </div>
-            
-            <div class="content-box">
-                <div class="simbolo-area neon-border">△</div>
-                <h3>Projeto 02</h3>
-                <p>Protótipo de jogo interativo desenvolvido em Unity.</p>
-                <button class="btn-ver">Explorar</button>
-            </div>
-            
-            <div class="content-box">
-                <div class="simbolo-area neon-border">◯</div>
-                <h3>Projeto 03</h3>
-                <p>Instalação sonora e pós-produção áudio multicanal.</p>
-                <button class="btn-ver">Explorar</button>
-            </div>
+        <div class="content-wrapper">
+            <section class="portfolio-intro">
+                <div class="texto-corrido-destaque">
+                    <p>Explora e experimenta os vários projetos desenvolvidos pelos nossos alunos durante o seu progresso na licenciatura.</p>
+                    <p>Clica nos títulos para acederes a mais informações sobre o processo criativo e técnico de cada obra.</p>
+                </div>
+            </section>
 
-            <div class="content-box">
-                <div class="simbolo-area neon-border">☐</div>
-                <h3>Projeto 04</h3>
-                <p>Design de interface e experiência de utilizador (UX/UI).</p>
-                <button class="btn-ver">Explorar</button>
-            </div>
+            <section class="projeto-segmento">
+                <h3 class="barra-verde">"NOME DO PROJETO"</h3>
+                <div class="projeto-grid">
+                    <div class="projeto-placeholder">
+                        <span class="simbolo-grande">✕</span>
+                        <p>[ Espaço reservado para trailer/imagem ]</p>
+                    </div>
+                    <div class="projeto-info">
+                        <p class="descricao-curta">Breve descrição sobre a missão única e divertida deste projeto, imortalizando as narrativas criadas pelos estudantes.</p>
+                        <ul class="tags-projeto">
+                            <li><span>V</span> Categoria / Género / Tecnologia / Software</li>
+                            <li><span>V</span> Nome dos Alunos / Grupo de Trabalho</li>
+                        </ul>
+                        <button class="btn-placeholder">Em breve</button>
+                    </div>
+                </div>
+            </section>
 
-        </section>
+            <section class="projeto-segmento">
+                <h3 class="barra-verde">"EXPERIMENTAL CAM"</h3>
+                <div class="projeto-grid">
+                    <div class="projeto-placeholder">
+                        <span class="simbolo-grande">◯</span>
+                        <p>[ Espaço reservado para trailer/imagem ]</p>
+                    </div>
+                    <div class="projeto-info">
+                        <p class="descricao-curta">Exploração de novas linguagens audiovisuais e técnicas de montagem desenvolvidas em ambiente laboratorial.</p>
+                        <ul class="tags-projeto">
+                            <li><span>V</span> Vídeo / Curta-Metragem / Experimental</li>
+                            <li><span>V</span> Equipa em Desenvolvimento</li>
+                        </ul>
+                        <button class="btn-placeholder">Em breve</button>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
-    <footer id="footer2">
-        <div id="footerunderliner"></div>
-        <p id="footertxt">© 2024 CAM - LUSÓFONA PORTO</p>
+    <footer id="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2 class="footer-logo">CAM</h2>
+                <p>Comunicação Audiovisual e Multimédia</p>
+            </div>
+            <div class="footer-info">
+                <h4>CONTACTOS</h4>
+                <div class="info-item">
+                    <img src="IMGS/tel.png" alt="Telefone">
+                    <span>222 073 230</span>
+                </div>
+                <div class="info-item">
+                    <img src="IMGS/mail.png" alt="Email">
+                    <span>cam.porto@ulusofona.pt</span>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>VEM CONHECER O CURSO</h4>
+                <div class="footer-socials">
+                    <a href="#"><img src="IMGS/fb.png" alt="Facebook"></a>
+                    <a href="#"><img src="IMGS/ig.png" alt="Instagram"></a>
+                    <a href="#"><img src="IMGS/yt.png" alt="YouTube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Centro Universitário do Porto | Universidade Lusófona</p>
+        </div>
     </footer>
 
 </body>

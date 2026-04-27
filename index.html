@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CAM Porto | Início</title>
     <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/scrollbar.css">
 </head>
 <body>
 
@@ -24,34 +25,68 @@
     </header>
 
     <main id="mainmob">
-        <section id="initialVideo">
-            <div class="logo-animation">
-                <span class="letra">C</span>
-                <span class="letra">A</span>
-                <span class="letra">M</span>
-            </div>
-            <div id="indexvideo">
-                <video autoplay muted loop id="myVideo">
-                    <source src="video/intro.mp4" type="video/mp4">
-                </video>
-            </div>
-        </section>
+    <section id="hero-wrap">
+        <div class="logo-animation">
+            <span class="letra">C</span>
+            <span class="letra">A</span>
+            <span class="letra">M</span>
+        </div>
+        
+        <div id="indexvideo">
+            <video autoplay muted loop id="myVideo">
+                <source src="video/intro.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+    </section>
 
-        <section class="sobre-container">
-            <div class="sobre-content">
-                <h2 class="titulo-sobre">SOBRE <span class="neon">NÓS</span></h2>
-                <div class="sobre-texto-bloco">
-                    <p>A Licenciatura de CAM está organizada por 3 níveis correspondentes aos 3 anos do curso.</p>
-                    <br>
-                    <p>Fomos premiados com o Prémio Fazer + Melhor Prática Pedagógica Inovadora em reconhecimento da metodologia de Project Based Learning.</p>
+    <section class="titulo-seccao">
+        <h2 class="shadow-text">SOBRE <span class="highlight">NÓS</span></h2>
+    </section>
+
+        <div class="content-wrapper">
+            <section class="curso-segmento">
+                <h3 class="barra-verde">A Licenciatura CAM</h3>
+                <div class="texto-corrido">
+                    <p>A Licenciatura de CAM está organizada por 3 níveis correspondentes aos 3 anos do curso. Fomos premiados com o <strong>Prémio Fazer + Melhor Prática Pedagógica Inovadora</strong>, em reconhecimento da nossa metodologia de <em>Project Based Learning</em>.</p>
+                    
+                    <p>Isto significa que aqui aprendes no terreno: crias os teus filmes, geras experiências interativas e desenhas paisagens sonoras enquanto constróis o teu portfólio profissional.</p>
+                    
+                    <p>Filmamos, desenhamos e damos som aos mundos e histórias que juntos iremos comunicar.</p>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
 
-    <footer id="footer2">
-        <div id="footerunderliner"></div>
-        <p id="footertxt">© 2024 CAM - Lusófona Porto</p>
+    <footer id="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2 class="footer-logo">CAM</h2>
+                <p>Comunicação Audiovisual e Multimédia</p>
+            </div>
+            <div class="footer-info">
+                <h4>CONTACTOS</h4>
+                <div class="info-item">
+                    <img src="IMGS/tel.png" alt="Telefone">
+                    <span>222 073 230</span>
+                </div>
+                <div class="info-item">
+                    <img src="IMGS/mail.png" alt="Email">
+                    <span>cam.porto@ulusofona.pt</span>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>VEM CONHECER O CURSO</h4>
+                <div class="footer-socials">
+                    <a href="#"><img src="IMGS/fb.png" alt="Facebook"></a>
+                    <a href="#"><img src="IMGS/ig.png" alt="Instagram"></a>
+                    <a href="#"><img src="IMGS/yt.png" alt="YouTube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Centro Universitário do Porto | Universidade Lusófona</p>
+        </div>
     </footer>
 
 </body>
