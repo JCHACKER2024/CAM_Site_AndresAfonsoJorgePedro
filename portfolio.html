@@ -4,37 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio | CAM</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="CSS/portfolio.css">
 </head>
 <body>
+
     <header id="header">
-        <nav>
-            <a href="index.html">Início</a>
-            <a href="curso.html">O Curso</a>
-            <a href="portfolio.html" class="active">Portfólio</a>
-            <a href="contactos.html">Contactos</a>
-        </nav>
+        <div class="header-container">
+            <div class="curso-nome">
+                <span class="sigla">CAM</span> 
+                <span class="extenso">COMUNICAÇÃO AUDIOVISUAL E MULTIMÉDIA</span>
+            </div>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="curso.html">O Curso</a>
+                <a href="portfolio.html" class="active">Portfólio</a>
+                <a href="contactos.html">Contactos</a>
+            </nav>
+        </div>
     </header>
 
     <main id="mainmob">
-        <section id="sobretxt">
-            <h2>Projetos e Trabalhos</h2>
-            <p>Uma montra do talento desenvolvido em laboratório, desde curtas-metragens a protótipos de videojogos.</p>
-        </section>
-
-        <div id="introsymbols">
-            <img src="IMGS/x.png" class="floating" style="width:20px; left:10%;">
-            <img src="IMGS/square.png" class="floating1" style="width:20px; right:10%;">
-        </div>
-
-        <section id="sectionLabel">
-            <div class="content-box">
-                <div style="background: #111; width: 100%; height: 180px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #23d400;">[Preview Projeto 1]</div>
-                <h3>Título do Projeto</h3>
-                <p>Breve descrição do trabalho realizado (ex: Curta-metragem de ficção).</p>
-                <button>Saber Mais</button>
+        <section class="intro-portfolio">
+            <h2 class="titulo-pagina">PORT<span class="neon">FÓLIO</span></h2>
+            <div class="sobre-texto-bloco">
+                <p>Explora os projetos desenvolvidos pelos alunos de CAM. Da experimentação visual à produção técnica avançada.</p>
             </div>
         </section>
+
+        <section id="sectionLabel">
+            
+            <div class="content-box">
+                <div class="simbolo-area neon-border">✕</div>
+                <h3>Projeto 01</h3>
+                <p>Produção de Curta-metragem focada em narrativa experimental.</p>
+                <button class="btn-ver">Explorar</button>
+            </div>
+            
+            <div class="content-box">
+                <div class="simbolo-area neon-border">△</div>
+                <h3>Projeto 02</h3>
+                <p>Protótipo de jogo interativo desenvolvido em Unity.</p>
+                <button class="btn-ver">Explorar</button>
+            </div>
+            
+            <div class="content-box">
+                <div class="simbolo-area neon-border">◯</div>
+                <h3>Projeto 03</h3>
+                <p>Instalação sonora e pós-produção áudio multicanal.</p>
+                <button class="btn-ver">Explorar</button>
+            </div>
+
+            <div class="content-box">
+                <div class="simbolo-area neon-border">☐</div>
+                <h3>Projeto 04</h3>
+                <p>Design de interface e experiência de utilizador (UX/UI).</p>
+                <button class="btn-ver">Explorar</button>
+            </div>
+
+        </section>
     </main>
+
+    <footer id="footer2">
+        <div id="footerunderliner"></div>
+        <p id="footertxt">© 2024 CAM - LUSÓFONA PORTO</p>
+    </footer>
+
 </body>
 </html>

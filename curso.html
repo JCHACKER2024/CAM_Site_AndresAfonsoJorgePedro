@@ -4,41 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O Curso | CAM</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="CSS/curso.css">
 </head>
 <body>
+
     <header id="header">
-        <nav>
-            <a href="index.html">Início</a>
-            <a href="curso.html" class="active">O Curso</a>
-            <a href="portfolio.html">Portfólio</a>
-            <a href="contactos.html">Contactos</a>
-        </nav>
+        <div class="header-container">
+            <div class="curso-nome">
+                <span class="sigla">CAM</span> 
+                <span class="extenso">COMUNICAÇÃO AUDIOVISUAL E MULTIMÉDIA</span>
+            </div>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="curso.html" class="active">O Curso</a>
+                <a href="portfolio.html">Portfólio</a>
+                <a href="contactos.html">Contactos</a>
+            </nav>
+        </div>
     </header>
 
     <main id="mainmob">
-        <section id="sobretxt">
-            <h2 id="videoTitle">Sobre o CAM</h2>
-            <p>A Licenciatura em Comunicação Audiovisual e Multimédia no Porto foca-se na convergência tecnológica, preparando profissionais para as indústrias criativas.</p>
+        <section class="intro-curso">
+            <h2 class="titulo-pagina">O <span class="neon">CURSO</span></h2>
+            <div class="sobre-texto-bloco">
+                <p>Uma formação focada na convergência tecnológica, preparando profissionais para as indústrias criativas através de uma forte componente prática em laboratórios de última geração.</p>
+            </div>
         </section>
 
         <section id="sectionLabel">
+            
             <div class="content-box">
-                <img src="IMGS/playIcon.png" alt="Audiovisual">
+                <div class="simbolo-area neon-border">▶</div>
                 <h3>Audiovisual</h3>
-                <p>Cinema, Televisão e Vídeo. Do argumento à pós-produção de imagem.</p>
+                <p>Cinema, Televisão e Vídeo. Do argumento à pós-produção de imagem em ambientes profissionais.</p>
             </div>
+            
             <div class="content-box">
-                <img src="IMGS/controllerIcon.png" alt="Multimédia">
+                <div class="simbolo-area neon-border">⬚</div>
                 <h3>Multimédia</h3>
-                <p>Design Digital, Web e Videojogos. Foco na interatividade e experiência do utilizador.</p>
+                <p>Design Digital, Web e Videojogos. Foco total na interatividade e experiência do utilizador final.</p>
             </div>
+            
             <div class="content-box">
-                <img src="IMGS/triangle.png" alt="Som" style="filter: brightness(0) invert(1);">
+                <div class="simbolo-area neon-border">~</div>
                 <h3>Som</h3>
-                <p>Produção Áudio, Sonoplastia e rádio. A arte de contar histórias através do som.</p>
+                <p>Produção Áudio, Sonoplastia e rádio. A arte de contar histórias imersivas através do som.</p>
             </div>
+
         </section>
     </main>
+
+    <footer id="footer2">
+        <div id="footerunderliner"></div>
+        <p id="footertxt">© 2024 CAM - LUSÓFONA PORTO</p>
+    </footer>
+
 </body>
 </html>

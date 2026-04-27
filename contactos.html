@@ -4,41 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contactos | CAM</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="CSS/contactos.css">
 </head>
 <body>
+
     <header id="header">
-        <nav>
-            <a href="index.html">Início</a>
-            <a href="curso.html">O Curso</a>
-            <a href="portfolio.html">Portfólio</a>
-            <a href="contactos.html" class="active">Contactos</a>
-        </nav>
+        <div class="header-container">
+            <div class="curso-nome">
+                <span class="sigla">CAM</span> 
+                <span class="extenso">COMUNICAÇÃO AUDIOVISUAL E MULTIMÉDIA</span>
+            </div>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="curso.html">O Curso</a>
+                <a href="portfolio.html">Portfólio</a>
+                <a href="contactos.html" class="active">Contactos</a>
+            </nav>
+        </div>
     </header>
 
     <main id="mainmob">
-        <section id="sobretxt">
-            <h2>Contactos</h2>
-            <p>Centro Universitário do Porto - Universidade Lusófona.</p>
+        <section class="intro-contactos">
+            <h2 class="titulo-pagina">CON<span class="neon">TACTOS</span></h2>
+            <div class="sobre-texto-bloco">
+                <p>Tens alguma dúvida sobre o curso ou queres colaborar connosco? Estamos à tua espera no Centro Universitário do Porto.</p>
+            </div>
         </section>
 
         <section id="sectionLabel">
-            <div class="content-box">
-                <img src="IMGS/mail.png" alt="Email" style="filter: invert(1);">
-                <h3>Email</h3>
-                <p>secretaria.porto@ulusofona.pt</p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <img src="IMGS/mail.png" alt="Email" class="contact-icon">
+                    <h3>Email</h3>
+                    <p>cam.porto@ulusofona.pt</p>
+                </div>
+
+                <div class="contact-card">
+                    <img src="IMGS/tel.png" alt="Telefone" class="contact-icon">
+                    <h3>Telefone</h3>
+                    <p>+351 222 073 230</p>
+                </div>
             </div>
-            <div class="content-box">
-                <img src="IMGS/tel.png" alt="Telefone" style="filter: invert(1);">
-                <h3>Telefone</h3>
-                <p>+351 222 073 230</p>
+
+            <div class="social-wrapper">
+                <h3>Siga-nos</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="IMGS/fb.png" alt="Facebook"></a>
+                    <a href="#"><img src="IMGS/ig.png" alt="Instagram"></a>
+                    <a href="#"><img src="IMGS/yt.png" alt="YouTube"></a>
+                </div>
             </div>
         </section>
-
-        <footer>
-            <div id="footerunderliner"></div>
-            <p id="footertxt">Rua de Augusto Rosa, 24, 4000-098 Porto</p>
-        </footer>
     </main>
+
+    <footer id="footer2">
+        <div id="footerunderliner"></div>
+        <p id="footertxt">Rua de Augusto Rosa, 24, 4000-098 Porto</p>
+    </footer>
+
 </body>
 </html>

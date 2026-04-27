@@ -1,0 +1,111 @@
+/* --- Base e Header (Mantendo Coesão) --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { 
+    background-color: #333742; 
+    color: white; 
+    font-family: Arial, sans-serif; 
+    padding-top: 100px;
+    overflow-x: hidden;
+}
+
+#header { position: fixed; top: 0; width: 100%; z-index: 100; background: #333742; padding: 15px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+.sigla { color: #23d400; font-size: 24px; font-weight: bold; }
+.extenso { color: #23d400; font-size: 11px; margin-left: 10px; letter-spacing: 1px; }
+nav a { color: white; text-decoration: none; margin-left: 15px; font-size: 12px; text-transform: uppercase; transition: 0.3s; }
+nav a.active { color: #23d400; }
+
+/* --- Título Neon --- */
+.intro-portfolio { text-align: center; padding: 40px 5%; }
+.titulo-pagina { font-size: 40px; letter-spacing: 4px; margin-bottom: 20px; }
+.neon { color: #23d400; text-shadow: 0 0 10px rgba(35, 212, 0, 0.5); }
+
+.sobre-texto-bloco {
+    background: #4b4e57;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    border-right: 4px solid #23d400;
+    line-height: 1.6;
+}
+
+/* --- Grelha de Projetos --- */
+#sectionLabel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 60px 20px;
+    background-color: #22242c;
+    margin-top: 40px;
+}
+
+.content-box {
+    background: #333742;
+    padding: 40px 25px;
+    border-radius: 20px;
+    width: 260px;
+    text-align: center;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.content-box:hover {
+    transform: scale(1.05);
+    border-color: #23d400;
+}
+
+/* Símbolos Geométricos */
+.simbolo-area {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    color: #23d400;
+    border: 2px dashed #23d400; /* Estilo tracejado para portfólio em construção */
+    border-radius: 15px;
+}
+
+.content-box h3 {
+    color: #23d400;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    font-size: 17px;
+}
+
+.content-box p {
+    font-size: 13px;
+    color: #b0b0b0;
+    margin-bottom: 20px;
+}
+
+/* Botão de Ação */
+.btn-ver {
+    background: transparent;
+    color: #23d400;
+    border: 1px solid #23d400;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-ver:hover {
+    background: #23d400;
+    color: #1a1c23;
+}
+
+/* --- Footer --- */
+footer { width: 100%; padding: 40px; background: #1a1c23; text-align: center; border-top: 1px solid #23d400; }
+#footerunderliner { width: 40px; height: 2px; background: #23d400; margin: 0 auto 15px; }
+#footertxt { font-size: 11px; color: #777; }
+
+@media (max-width: 768px) {
+    .extenso { display: none; }
+}
