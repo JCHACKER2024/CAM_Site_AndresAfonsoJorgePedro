@@ -2,54 +2,61 @@
 ::-webkit-scrollbar { width: 12px; background-color: #1a1c23; }
 ::-webkit-scrollbar-track { background-color: #1a1c23; }
 ::-webkit-scrollbar-thumb { background-color: #4b4e57; border-radius: 20px; border: 3px solid #1a1c23; }
-::-webkit-scrollbar-thumb:hover { background-color: #23d400; }
+::-webkit-scrollbar-thumb:hover { background-color: #ffee00; }
 * { scrollbar-width: thin; scrollbar-color: #4b4e57 #1a1c23; }
 
 /* --- 2. Base e Header --- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { background-color: #333742; color: white; font-family: Arial, sans-serif; overflow-x: hidden; padding-top: 80px; }
 
-#header { position: fixed; top: 0; width: 100%; z-index: 100; background: #333742; padding: 15px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+#header { 
+    position: fixed; top: 0; width: 100%; z-index: 100; 
+    background: #333742; padding: 15px 20px; 
+    border-bottom: 2px solid #ffee00; 
+}
 .header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; }
-.sigla { color: #23d400; font-size: 26px; font-weight: bold; }
-.extenso { color: #23d400; font-size: 11px; margin-left: 10px; letter-spacing: 1px; }
+.sigla { color: #ffee00; font-size: 26px; font-weight: bold; }
+.extenso { color: #ffee00; font-size: 11px; margin-left: 10px; letter-spacing: 1px; }
 nav a { color: white; text-decoration: none; margin-left: 18px; font-size: 13px; text-transform: uppercase; font-weight: 500; transition: 0.3s; }
-nav a.active, nav a:hover { color: #23d400; }
+nav a.active, nav a:hover { color: #ffee00; }
 
-/* --- 3. Hero Section (Animação do CAM e Vídeo) --- */
+/* --- 3. Hero Section (Animação de Imagens e Vídeo) --- */
 #hero-wrap {
     position: relative;
     height: 90vh; 
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: visible;
 }
 
-.logo-animation {
+.logo-animation-container {
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: -20px; /* Como a imagem é 1600x1600, um gap negativo ajuda a aproximar o conteúdo real */
     z-index: 50;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: moveLogoUp 1.2s cubic-bezier(0.85, 0, 0.15, 1) 2s forwards;
+    animation: moveLogoUp 1.2s cubic-bezier(0.85, 0, 0.15, 1) 2.5s forwards;
 }
 
-.letra {
-    font-size: 18vw;
-    color: #23d400;
-    font-weight: 900;
+.logo-img-icon {
+    height: 500px; /* Aumentado drasticamente para compensar o vazio da imagem 1600x1600 */
+    width: auto;
     opacity: 0;
-    transform: translateY(30px);
-    animation: revealLetras 0.8s ease-out forwards;
+    transform: scale(0.5);
+    animation: revealIcon 0.8s ease-out 0.5s forwards;
 }
 
-.letra:nth-child(1) { animation-delay: 0.2s; }
-.letra:nth-child(2) { animation-delay: 0.4s; }
-.letra:nth-child(3) { animation-delay: 0.6s; }
+.logo-img-text {
+    height: 400px; /* Aumentado para garantir que o texto seja legível */
+    width: auto;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: revealText 0.8s ease-out 1.2s forwards;
+}
 
 #indexvideo {
     margin-top: 50px;
@@ -60,9 +67,10 @@ nav a.active, nav a:hover { color: #23d400; }
     overflow: hidden;
     opacity: 0;
     transform: scale(0.92);
-    animation: revealVideo 1.5s ease-out 2.5s forwards;
+    animation: revealVideo 1.5s ease-out 3s forwards;
     position: relative;
     box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    z-index: 10;
 }
 
 .video-overlay {
@@ -74,54 +82,69 @@ nav a.active, nav a:hover { color: #23d400; }
 #myVideo { width: 100%; height: 100%; object-fit: cover; }
 
 /* --- 4. Título e Conteúdo --- */
-.titulo-seccao { text-align: center; padding: 120px 0 60px; opacity: 0; animation: fadeInGeneral 1s forwards 3.8s; }
-.shadow-text { font-size: clamp(50px, 9vw, 110px); font-weight: 900; letter-spacing: 8px; position: relative; display: inline-block; text-transform: uppercase; }
-.shadow-text .highlight { color: #23d400; }
+.titulo-seccao { 
+    text-align: center; 
+    padding: 120px 0 60px; 
+    opacity: 0; 
+    animation: fadeInGeneral 1s forwards 4s; 
+}
+.shadow-text { font-size: clamp(40px, 7vw, 90px); font-weight: 900; letter-spacing: 8px; text-transform: uppercase; }
+.shadow-text .highlight { color: #ffee00; }
 
-.content-wrapper { max-width: 1100px; margin: 0 auto; padding-bottom: 80px; opacity: 0; animation: fadeInGeneral 1s forwards 4.1s; }
-.barra-verde { background: #23d400; color: white; display: inline-block; padding: 12px 60px; font-size: 24px; font-weight: bold; clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%); margin-bottom: 30px; }
-.texto-corrido { padding-left: 30px; border-left: 5px solid #23d400; font-size: 20px; line-height: 1.8; color: #ccc; }
+.content-wrapper { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding-bottom: 80px; 
+    opacity: 0; 
+    animation: fadeInGeneral 1s forwards 4.3s; 
+}
+.texto-corrido { padding-left: 30px; border-left: 5px solid #ffee00; font-size: 20px; line-height: 1.8; color: #ccc; }
 
-/* --- 5. Footer Robusto (Teu código integrado) --- */
-#main-footer { background-color: #1a1c23; border-top: 5px solid #23d400; padding: 60px 20px 30px; margin-top: 50px; }
+.btn-candidata {
+    display: inline-block;
+    background: #ffee00;
+    color: #000;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    margin-top: 40px;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+.btn-candidata:hover { transform: scale(1.1); background: white; }
+
+/* --- 5. Footer --- */
+#main-footer { background-color: #1a1c23; border-top: 5px solid #ffee00; padding: 60px 20px 30px; margin-top: 50px; }
 .footer-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
-
-.footer-brand .footer-logo { color: #23d400; font-size: 35px; font-weight: bold; margin-bottom: 10px; }
-.footer-brand p { font-size: 13px; color: #666; max-width: 250px; }
-
-#main-footer h4 { font-size: 14px; letter-spacing: 2px; margin-bottom: 25px; color: #fff; text-transform: uppercase; }
+.footer-brand .footer-logo { color: #ffee00; font-size: 35px; font-weight: bold; margin-bottom: 10px; }
+.lusofona-logo { width: 180px; margin-top: 20px; filter: brightness(0) invert(1); transition: 0.3s; }
 .info-item { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; font-size: 14px; color: #b0b0b0; }
-.info-item img, .footer-socials img { width: 22px; height: 22px; object-fit: contain; filter: brightness(0) invert(1); }
-
-.footer-socials { display: flex; gap: 25px; align-items: center; }
-.footer-socials a { transition: 0.3s; display: inline-block; }
-.footer-socials a:hover { transform: translateY(-5px); }
-
+.footer-socials { display: flex; gap: 25px; }
+.footer-socials a { color: #b0b0b0; text-decoration: none; font-size: 14px; transition: 0.3s; }
+.footer-socials a:hover { color: #ffee00; transform: translateY(-3px); }
 .footer-bottom { margin-top: 50px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; color: #555; font-size: 11px; }
 
 /* --- 6. Keyframes --- */
-@keyframes revealLetras { to { opacity: 1; transform: translateY(0); } }
+@keyframes revealIcon { to { opacity: 1; transform: scale(1); } }
+@keyframes revealText { to { opacity: 1; transform: translateX(0); } }
 
 @keyframes moveLogoUp {
-    0% { 
-        top: 50%; 
-        transform: translate(-50%, -50%) scale(1); 
-    }
+    0% { top: 50%; transform: translate(-50%, -50%) scale(1); }
     100% { 
-        top: -60px; 
-        transform: translate(-50%, 0) scale(0.25); 
+        top: -110px; /* Ajustado para compensar o tamanho maior da imagem */
+        transform: translate(-50%, 0) scale(0.15); /* Escala reduzida porque a imagem base é enorme */
     }
 }
-
 @keyframes revealVideo { to { opacity: 1; transform: scale(1); } }
 @keyframes fadeInGeneral { to { opacity: 1; } }
 
 /* --- 7. Mobile --- */
 @media (max-width: 768px) {
-    .letra { font-size: 28vw; }
+    .logo-img-icon { height: 250px; }
+    .logo-img-text { height: 180px; }
     @keyframes moveLogoUp {
-        to { top: 5%; transform: translate(-50%, 0) scale(0.4); }
+        to { top: -80px; transform: translate(-50%, 0) scale(0.2); }
     }
     .footer-container { flex-direction: column; text-align: center; align-items: center; }
-    .info-item { justify-content: center; }
 }

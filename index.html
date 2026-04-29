@@ -3,89 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAM Porto | Início</title>
+    <title>CAM - Comunicação Audiovisual e Multimédia</title>
     <link rel="stylesheet" href="CSS/index.css">
-    <link rel="stylesheet" href="CSS/scrollbar.css">
 </head>
 <body>
 
+    <!-- Header -->
     <header id="header">
         <div class="header-container">
             <div class="curso-nome">
-                <span class="sigla">CAM</span> 
+                <span class="sigla">CAM</span>
                 <span class="extenso">COMUNICAÇÃO AUDIOVISUAL E MULTIMÉDIA</span>
             </div>
             <nav>
-                <a href="index.html" class="active">Início</a>
-                <a href="curso.html">O Curso</a>
-                <a href="portfolio.html">Portfólio</a>
-                <a href="contactos.html">Contactos</a>
+                <a href="index.html" class="active">Home</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="plano.html">Plano</a>
+                <a href="hof.html">Hall of Fame</a>
             </nav>
         </div>
     </header>
 
-    <main id="mainmob">
-    <section id="hero-wrap">
-        <div class="logo-animation">
-            <span class="letra">C</span>
-            <span class="letra">A</span>
-            <span class="letra">M</span>
-        </div>
-        
-        <div id="indexvideo">
-            <video autoplay muted loop id="myVideo">
-                <source src="video/intro.mp4" type="video/mp4">
-            </video>
-            <div class="video-overlay"></div>
-        </div>
-    </section>
+    <main>
+        <!-- Secção de Impacto: Animação CAM + Vídeo -->
+        <section id="hero-wrap">
+            <div class="logo-animation-container">
+                <img src="IMGS/logo_icon.png" alt="Ícone CAM" class="logo-img-icon">
+                <img src="IMGS/logo_texto.png" alt="Texto CAM" class="logo-img-text">
+            </div>
 
-    <section class="titulo-seccao">
-        <h2 class="shadow-text">SOBRE <span class="highlight">NÓS</span></h2>
-    </section>
+            <div id="indexvideo">
+                <div class="video-overlay"></div>
+                <video autoplay muted loop playsinline id="myVideo">
+                    <source src="https://drive.google.com/uc?export=download&id=1KSmv5oEKIh0VBgNy4yzliRgcArHeo_Fb" type="video/mp4">
+                </video>
+            </div>
+        </section>
 
-        <div class="content-wrapper">
-            <section class="curso-segmento">
-                <h3 class="barra-verde">A Licenciatura CAM</h3>
-                <div class="texto-corrido">
-                    <p>A Licenciatura de CAM está organizada por 3 níveis correspondentes aos 3 anos do curso. Fomos premiados com o <strong>Prémio Fazer + Melhor Prática Pedagógica Inovadora</strong>, em reconhecimento da nossa metodologia de <em>Project Based Learning</em>.</p>
-                    
-                    <p>Isto significa que aqui aprendes no terreno: crias os teus filmes, geras experiências interativas e desenhas paisagens sonoras enquanto constróis o teu portfólio profissional.</p>
-                    
-                    <p>Filmamos, desenhamos e damos som aos mundos e histórias que juntos iremos comunicar.</p>
-                </div>
-            </section>
-        </div>
+        <!-- Título e Conteúdo Oficial -->
+        <section class="titulo-seccao">
+            <h1 class="shadow-text">A IMAGEM DO <span class="highlight">FUTURO!</span></h1>
+        </section>
+
+        <section class="content-wrapper">
+            <div class="texto-corrido">
+                <p>
+                    A Licenciatura em Comunicação Audiovisual e Multimédia tem dado provas de grande dinamismo, 
+                    oferecendo um percurso académico que alia uma componente de aprendizagem teórico-prática 
+                    estimulante assente no Cinema e no Vídeo, com uma formação interdisciplinar na área da 
+                    criação audiovisual e multimédia e das tecnologias associadas aos novos media.
+                </p>
+                <br>
+                <p>
+                    Em constante atualização, tal como a área o exige, explora-se o trabalho individual e em 
+                    equipa em projetos práticos nas áreas da fotografia, do vídeo e da curta metragem, da 
+                    criação web, sonoplastia, guionismo e direção de atores, das instalações multimédia e vídeo mapping.
+                </p>
+                <br>
+                <p>
+                    O curso é responsável pelo evento <strong>MULTIPLEX</strong>, Ciclo Anual de Imagens em Movimento, 
+                    realizado em parceria com o BATALHA Centro de Cinema.
+                </p>
+                
+                <a href="https://www.ulusofona.pt/porto/licenciaturas/comunicacao-audiovisual-e-multimedia" class="btn-candidata" target="_blank">
+                    Candidata-te!
+                </a>
+            </div>
+        </section>
     </main>
 
+    <!-- Rodapé -->
     <footer id="main-footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <h2 class="footer-logo">CAM</h2>
-                <p>Comunicação Audiovisual e Multimédia</p>
+                <div class="footer-logo">CAM</div>
+                <p>Universidade Lusófona - Porto</p>
+                <a href="https://www.ulusofona.pt/" target="_blank">
+                    <img src="IMGS/logo_lusofona.png" alt="Lusófona" class="lusofona-logo">
+                </a>
             </div>
+
             <div class="footer-info">
-                <h4>CONTACTOS</h4>
-                <div class="info-item">
-                    <img src="IMGS/tel.png" alt="Telefone">
-                    <span>222 073 230</span>
-                </div>
-                <div class="info-item">
-                    <img src="IMGS/mail.png" alt="Email">
-                    <span>cam.porto@ulusofona.pt</span>
-                </div>
+                <h4>Contactos</h4>
+                <div class="info-item">Email: info.cup@ulusofona.pt</div>
+                <div class="info-item">Email Pessoal: joao.alves.de.sousa@ulusofona.pt</div>
+                <div class="info-item">📞 222 073 230</div>
+                <div class="info-item">📍 Rua Augusto Rosa, nº 24, Porto</div>
             </div>
-            <div class="footer-links">
-                <h4>VEM CONHECER O CURSO</h4>
-                <div class="footer-socials">
-                    <a href="#"><img src="IMGS/fb.png" alt="Facebook"></a>
-                    <a href="#"><img src="IMGS/ig.png" alt="Instagram"></a>
-                    <a href="#"><img src="IMGS/yt.png" alt="YouTube"></a>
-                </div>
+
+            <div class="footer-socials">
+                <h4>Segue-nos</h4>
+                <a href="https://www.facebook.com/VAMULP" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com/vam_ulp/" target="_blank">Instagram</a>
+                <a href="https://www.youtube.com/channel/UC6kld1O_PUSw5Hv9Ft1knUQ" target="_blank">YouTube</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 Centro Universitário do Porto | Universidade Lusófona</p>
+            &copy; 2024 CAM - ULusófona Porto
         </div>
     </footer>
 
