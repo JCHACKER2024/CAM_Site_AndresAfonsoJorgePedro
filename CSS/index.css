@@ -1,11 +1,4 @@
-/* --- 1. Barra de Scroll --- */
-::-webkit-scrollbar { width: 12px; background-color: #1a1c23; }
-::-webkit-scrollbar-track { background-color: #1a1c23; }
-::-webkit-scrollbar-thumb { background-color: #4b4e57; border-radius: 20px; border: 3px solid #1a1c23; }
-::-webkit-scrollbar-thumb:hover { background-color: #ffee00; }
-* { scrollbar-width: thin; scrollbar-color: #4b4e57 #1a1c23; }
-
-/* --- 2. Base e Header --- */
+/* BASE E HEADER */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { background-color: #333742; color: white; font-family: Arial, sans-serif; overflow-x: hidden; padding-top: 80px; }
 
@@ -20,7 +13,7 @@ body { background-color: #333742; color: white; font-family: Arial, sans-serif; 
 nav a { color: white; text-decoration: none; margin-left: 18px; font-size: 13px; text-transform: uppercase; font-weight: 500; transition: 0.3s; }
 nav a.active, nav a:hover { color: #ffee00; }
 
-/* --- 3. Hero Section (Animação de Imagens e Vídeo) --- */
+/* HERO SECTION */
 #hero-wrap {
     position: relative;
     height: 90vh; 
@@ -33,7 +26,7 @@ nav a.active, nav a:hover { color: #ffee00; }
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: -20px; /* Como a imagem é 1600x1600, um gap negativo ajuda a aproximar o conteúdo real */
+    gap: -20px; 
     z-index: 50;
     position: absolute;
     top: 50%;
@@ -43,7 +36,7 @@ nav a.active, nav a:hover { color: #ffee00; }
 }
 
 .logo-img-icon {
-    height: 500px; /* Aumentado drasticamente para compensar o vazio da imagem 1600x1600 */
+    height: 500px; 
     width: auto;
     opacity: 0;
     transform: scale(0.5);
@@ -51,7 +44,7 @@ nav a.active, nav a:hover { color: #ffee00; }
 }
 
 .logo-img-text {
-    height: 400px; /* Aumentado para garantir que o texto seja legível */
+    height: 400px; 
     width: auto;
     opacity: 0;
     transform: translateX(-50px);
@@ -81,7 +74,7 @@ nav a.active, nav a:hover { color: #ffee00; }
 
 #myVideo { width: 100%; height: 100%; object-fit: cover; }
 
-/* --- 4. Título e Conteúdo --- */
+/* CONTEUDO PRINCIPAL */
 .titulo-seccao { 
     text-align: center; 
     padding: 120px 0 60px; 
@@ -114,32 +107,101 @@ nav a.active, nav a:hover { color: #ffee00; }
 }
 .btn-candidata:hover { transform: scale(1.1); background: white; }
 
-/* --- 5. Footer --- */
-#main-footer { background-color: #1a1c23; border-top: 5px solid #ffee00; padding: 60px 20px 30px; margin-top: 50px; }
-.footer-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
-.footer-brand .footer-logo { color: #ffee00; font-size: 35px; font-weight: bold; margin-bottom: 10px; }
-.lusofona-logo { width: 180px; margin-top: 20px; filter: brightness(0) invert(1); transition: 0.3s; }
-.info-item { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; font-size: 14px; color: #b0b0b0; }
-.footer-socials { display: flex; gap: 25px; }
-.footer-socials a { color: #b0b0b0; text-decoration: none; font-size: 14px; transition: 0.3s; }
-.footer-socials a:hover { color: #ffee00; transform: translateY(-3px); }
-.footer-bottom { margin-top: 50px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; color: #555; font-size: 11px; }
+/* FOOTER */
+#main-footer { 
+    background-color: #1a1c23; 
+    border-top: 5px solid #ffee00; 
+    padding: 80px 20px 40px; /* Aumentei o padding superior */
+    margin-top: 50px; 
+}
 
-/* --- 6. Keyframes --- */
+.footer-container { 
+    max-width: 1300px; 
+    margin: 0 auto; 
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    gap: 60px; /* Mais espaço entre as colunas */
+}
+
+.footer-brand .footer-logo { 
+    color: #ffee00; 
+    font-size: 35px; 
+    font-weight: bold; 
+    margin-bottom: 10px; 
+}
+
+.lusofona-logo { 
+    width: 180px; 
+    margin-top: 25px; 
+    filter: brightness(0) invert(1); 
+    transition: 0.3s; 
+}
+
+.footer-info h4, .footer-socials h4 {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px; /* Mais espaço abaixo do título "Contactos" */
+}
+
+.info-item { 
+    margin-bottom: 20px; /* Mais espaçamento entre cada linha de contacto */
+    font-size: 15px; 
+    color: #ffffff; /* Conteúdo em branco */
+    line-height: 1.6;
+}
+
+.info-item strong { 
+    color: #ffee00; /* Etiquetas em amarelo */
+    margin-right: 8px;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.footer-socials { 
+    display: flex; 
+    flex-direction: column; /* Redes sociais em lista vertical fica mais organizado */
+    gap: 15px; 
+}
+
+.footer-socials a { 
+    color: #b0b0b0; 
+    text-decoration: none; 
+    font-size: 14px; 
+    transition: 0.3s; 
+}
+
+.footer-socials a:hover { 
+    color: #ffee00; 
+    transform: translateX(5px); /* Move para o lado em vez de para cima */
+}
+
+.footer-bottom { 
+    margin-top: 60px; 
+    padding-top: 25px; 
+    border-top: 1px solid rgba(255,255,255,0.05); 
+    text-align: center; 
+    color: #555; 
+    font-size: 11px; 
+}
+
+/* KEYFRAMES */
 @keyframes revealIcon { to { opacity: 1; transform: scale(1); } }
 @keyframes revealText { to { opacity: 1; transform: translateX(0); } }
 
 @keyframes moveLogoUp {
     0% { top: 50%; transform: translate(-50%, -50%) scale(1); }
     100% { 
-        top: -110px; /* Ajustado para compensar o tamanho maior da imagem */
-        transform: translate(-50%, 0) scale(0.15); /* Escala reduzida porque a imagem base é enorme */
+        top: -110px; 
+        transform: translate(-50%, 0) scale(0.15); 
     }
 }
 @keyframes revealVideo { to { opacity: 1; transform: scale(1); } }
 @keyframes fadeInGeneral { to { opacity: 1; } }
 
-/* --- 7. Mobile --- */
+/* MOBILE */
 @media (max-width: 768px) {
     .logo-img-icon { height: 250px; }
     .logo-img-text { height: 180px; }

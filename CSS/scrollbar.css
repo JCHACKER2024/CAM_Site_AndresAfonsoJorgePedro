@@ -1,32 +1,20 @@
-/* --- Scrollbar Customizada --- */
-
 /* Firefox */
 * {
     scrollbar-width: thin;
-    scrollbar-color: #23d400 #1a1c23; /* Polegar Verde, Calha Escura */
+    scrollbar-color: #4b4e57 #1a1c23; 
 }
 
 /* Chrome, Edge, Safari e Opera */
-::-webkit-scrollbar {
-    width: 12px; /* Largura total da barra */
-}
-
-::-webkit-scrollbar-track {
-    background: #1a1c23; /* Cor do fundo da barra */
-}
-
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: #1a1c23; }
 ::-webkit-scrollbar-thumb {
-    background-color: #4b4e57; /* Cor do polegar quando parado */
-    border-radius: 20px;       /* Deixa a barra redondinha */
-    border: 3px solid #1a1c23; /* Cria um espaçamento para o polegar parecer mais fino */
+    background-color: #4b4e57;
+    border-radius: 20px;
+    border: 3px solid #1a1c23;
 }
 
-/* Onde a "mágica" acontece: fica verde ao passar o rato */
-::-webkit-scrollbar-thumb:hover {
-    background-color: #23d400; 
-}
-
-/* Se quiseres que ela esteja SEMPRE verde enquanto o utilizador faz scroll */
+/* Hover e Active em AMARELO */
+::-webkit-scrollbar-thumb:hover, 
 ::-webkit-scrollbar-thumb:active {
-    background-color: #23d400;
+    background-color: #ffee00; 
 }

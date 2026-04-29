@@ -1,0 +1,177 @@
+/* ESTRUTURA GERAL */
+.sobre-hero {
+    padding: 150px 20px 40px;
+    text-align: center;
+}
+
+.titulo-grande {
+    font-size: 60px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.highlight {
+    color: #ffee00;
+}
+
+.subtitulo {
+    color: #b0b0b0;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+/* GRID DE DESTAQUES (2x2) */
+.destaques-grid {
+    display: grid;
+    /* Força 2 colunas de tamanho igual */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px;
+    max-width: 1000px; /* Reduzi um pouco a largura para o 2x2 ficar mais elegante */
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background: #1a1c23;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #ffee00;
+    box-shadow: 0 10px 30px rgba(255, 238, 0, 0.1);
+}
+
+.card img {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 20px;
+    filter: grayscale(1) brightness(1.5);
+}
+
+.card:hover img {
+    filter: grayscale(0) brightness(1);
+}
+
+.card h3 {
+    color: #ffee00;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.card p {
+    color: #ccc;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ELEMENTOS FLUTUANTES */
+.floating-shape {
+    position: fixed;
+    z-index: -1;
+    background: #ffee00;
+    border-radius: 50%;
+    opacity: 0.05;
+    filter: blur(40px);
+    animation: float 10s infinite alternate ease-in-out;
+}
+
+.shape1 { width: 300px; height: 300px; top: 10%; left: -5%; }
+.shape2 { width: 400px; height: 400px; bottom: 5%; right: -10%; animation-delay: -5s; }
+
+/* FOOTER */
+#main-footer { 
+    background-color: #1a1c23; 
+    border-top: 5px solid #ffee00; 
+    padding: 80px 20px 40px; /* Aumentei o padding superior */
+    margin-top: 50px; 
+}
+
+.footer-container { 
+    max-width: 1300px; 
+    margin: 0 auto; 
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    gap: 60px; /* Mais espaço entre as colunas */
+}
+
+.footer-brand .footer-logo { 
+    color: #ffee00; 
+    font-size: 35px; 
+    font-weight: bold; 
+    margin-bottom: 10px; 
+}
+
+.lusofona-logo { 
+    width: 180px; 
+    margin-top: 25px; 
+    filter: brightness(0) invert(1); 
+    transition: 0.3s; 
+}
+
+.footer-info h4, .footer-socials h4 {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px; /* Mais espaço abaixo do título "Contactos" */
+}
+
+.info-item { 
+    margin-bottom: 20px; /* Mais espaçamento entre cada linha de contacto */
+    font-size: 15px; 
+    color: #ffffff; /* Conteúdo em branco */
+    line-height: 1.6;
+}
+
+.info-item strong { 
+    color: #ffee00; /* Etiquetas em amarelo */
+    margin-right: 8px;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.footer-socials { 
+    display: flex; 
+    flex-direction: column; /* Redes sociais em lista vertical fica mais organizado */
+    gap: 15px; 
+}
+
+.footer-socials a { 
+    color: #b0b0b0; 
+    text-decoration: none; 
+    font-size: 14px; 
+    transition: 0.3s; 
+}
+
+.footer-socials a:hover { 
+    color: #ffee00; 
+    transform: translateX(5px); /* Move para o lado em vez de para cima */
+}
+
+.footer-bottom { 
+    margin-top: 60px; 
+    padding-top: 25px; 
+    border-top: 1px solid rgba(255,255,255,0.05); 
+    text-align: center; 
+    color: #555; 
+    font-size: 11px; 
+}
+
+@keyframes float {
+    from { transform: translate(0, 0); }
+    to { transform: translate(40px, 60px); }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .titulo-grande { font-size: 35px; }
+    /* No telemóvel volta a ser 1 coluna para não ficar apertado */
+    .destaques-grid { grid-template-columns: 1fr; } 
+}
