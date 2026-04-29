@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre - CAM</title>
+    <title>CAM - Comunicação Audiovisual e Multimédia</title>
     <link rel="stylesheet" href="CSS/index.css">
-    <link rel="stylesheet" href="CSS/sobre.css">
 </head>
 <body>
 
@@ -25,44 +24,36 @@
     </header>
 
     <main>
-        <section class="sobre-hero">
-            <h1 class="titulo-grande">A NOSSA <span class="highlight">COMUNIDADE</span></h1>
-            <p class="subtitulo">Conhece os eventos e espaços que definem o curso.</p>
+        <!-- Secção da Animação Inicial -->
+        <section id="hero-wrap">
+            <div class="logo-animation-container">
+                <img src="IMGS/logo_icon.png" alt="Ícone CAM" class="logo-img-icon">
+                <img src="IMGS/logo_texto.png" alt="Texto CAM" class="logo-img-text">
+            </div>
+
+            <div id="indexvideo">
+                <div class="video-overlay"></div>
+                <video autoplay muted loop id="myVideo">
+                    <source src="VIDS/background_video.mp4" type="video/mp4">
+                    O teu navegador não suporta vídeo.
+                </video>
+            </div>
         </section>
 
-        <section class="destaques-grid">
-            
-            <div class="card">
-                <img src="IMGS/pitch.png" alt="Pitch CAM">
-                <h3>PITCH CAM</h3>
-                <p>Apresentação dos projetos finais perante um júri de profissionais da indústria.</p>
-            </div>
-
-            <div class="card">
-                <img src="IMGS/discord.png" alt="Discord CAM">
-                <h3>DISCORD CAM</h3>
-                <p>O nosso ponto de encontro digital para partilha de recursos, feedback e convívio.</p>
-            </div>
-
-            <div class="card">
-                <img src="IMGS/gamejam.png" alt="Game Jam">
-                <h3>CAM GAME JAM</h3>
-                <p>48 horas de criação intensa de videojogos, com muita pizza e criatividade à mistura.</p>
-            </div>
-
-            <div class="card">
-                <img src="IMGS/mostra.png" alt="Mostra CAM">
-                <h3>MOSTRA CAM</h3>
-                <p>Exposição anual onde os alunos mostram as suas curtas, jogos e instalações à comunidade.</p>
-            </div>
-
+        <!-- Conteúdo de Texto abaixo do vídeo -->
+        <section class="titulo-seccao">
+            <h1 class="shadow-text">O TEU <span class="highlight">FUTURO</span> COMEÇA AQUI</h1>
         </section>
 
-        <div class="floating-shape shape1"></div>
-        <div class="floating-shape shape2"></div>
+        <section class="content-wrapper">
+            <p class="texto-corrido">
+                O curso de Comunicação Audiovisual e Multimédia foca-se na criação de conteúdos inovadores, 
+                desde o cinema tradicional até às novas plataformas digitais. Aqui, a criatividade encontra a tecnologia.
+            </p>
+            <a href="https://www.ulusofona.pt" target="_blank" class="btn-candidata">Candidata-te Agora</a>
+        </section>
     </main>
 
-    <!-- Rodapé -->
     <footer id="main-footer">
         <div class="footer-container">
             <div class="footer-brand">
