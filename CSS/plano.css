@@ -1,0 +1,141 @@
+/* ESTRUTURA GERAL */
+.plano-hero {
+    padding: 150px 20px 40px;
+    text-align: center;
+}
+
+.titulo-grande {
+    font-size: 60px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.titulo-medio {
+    font-size: 35px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.highlight {
+    color: #ffee00;
+}
+
+.subtitulo {
+    color: #b0b0b0;
+    font-size: 18px;
+    margin-top: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* CARDS DOS ANOS */
+.anos-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.ano-card {
+    background: #1a1c23;
+    flex: 1;
+    min-width: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.ano-card:hover {
+    border-color: #ffee00;
+    transform: translateY(-5px);
+}
+
+.ano-header {
+    background: #ffee00;
+    color: #000;
+    padding: 20px;
+    font-weight: 900;
+    font-size: 20px;
+    text-align: center;
+}
+
+.lista-cadeiras {
+    list-style: none;
+    padding: 30px;
+}
+
+.lista-cadeiras li {
+    color: #ccc;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.lista-cadeiras li::before {
+    content: "•";
+    color: #ffee00;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.lista-cadeiras li:last-child {
+    border-bottom: none;
+}
+
+/* SAÍDAS PROFISSIONAIS */
+.saidas-section {
+    padding: 100px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.saidas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px;
+}
+
+.saida-item {
+    background: rgba(255, 255, 255, 0.03);
+    min-height: 150px; 
+    padding: 40px;
+    border-radius: 15px;
+    border: 2px dashed #4b4e57;
+    color: #ffee00;
+    font-weight: 700;
+    font-size: 22px; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    transition: 0.3s ease;
+}
+
+.saida-item:hover {
+    background: rgba(255, 238, 0, 0.05);
+    border-color: #ffee00;
+    transform: scale(1.02);
+}
+
+/* MOBILE - Ajuste para as caixas não ficarem apertadas */
+@media (max-width: 768px) {
+    .saidas-grid {
+        grid-template-columns: 1fr;
+    }
+    .saida-item {
+        min-height: 120px;
+        font-size: 18px;
+    }
+}
