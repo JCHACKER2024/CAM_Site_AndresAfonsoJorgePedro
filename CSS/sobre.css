@@ -84,6 +84,184 @@
 .shape1 { width: 300px; height: 300px; top: 10%; left: -5%; }
 .shape2 { width: 400px; height: 400px; bottom: 5%; right: -10%; animation-delay: -5s; }
 
+/* SECÇÃO DOCENTES */
+.docentes-section {
+    padding: 120px 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.titulo-docentes {
+    font-size: 50px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 80px; /* Muito espaço para o conteúdo respirar */
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+/* CONTAINER DIREÇÃO */
+.direcao-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+    margin-bottom: 100px;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 60px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.diretor-block {
+    flex: 1;
+}
+
+.label-cargo {
+    color: #ffee00;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.diretor-block h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.bio {
+    color: #bbb;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.conquistas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.conquista-item {
+    font-size: 14px;
+    color: #eee;
+    padding-left: 15px;
+    border-left: 2px solid #ffee00;
+}
+
+.divisor-vertical {
+    width: 1px;
+    height: 300px;
+    background: linear-gradient(transparent, #ffee00, transparent);
+    opacity: 0.3;
+}
+
+/* TABELA DE DOCENTES */
+.tabela-docentes-container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.titulo-tabela {
+    color: #ffee00;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+.tabela-grid {
+    display: grid;
+    /* Cria duas colunas iguais */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px; /* Linha divisória fina */
+    background: rgba(255, 255, 255, 0.05); /* Cor das "linhas" da tabela */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tabela-item {
+    background: #0f1015; /* Cor de fundo das células */
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.tabela-item:hover {
+    background: #1a1c23;
+}
+
+.tabela-item strong {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tabela-item span {
+    color: #888;
+    font-size: 14px;
+}
+
+.tabela-item:last-child:nth-child(odd) {
+    grid-column: span 2;
+}
+
+/* SECÇÃO PARCEIROS */
+.parceiros-section {
+    padding: 100px 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+}
+
+.subtitulo-parceiros {
+    color: #888;
+    margin-bottom: 50px;
+}
+
+.parceiros-grid {
+    display: grid;
+    /* Cria uma grelha automática que se ajusta ao tamanho dos logos */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.parceiro-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: 0.4s ease;
+}
+
+.parceiro-link img {
+    max-width: 140px; /* Tamanho máximo de cada logo */
+    height: auto;
+    filter: grayscale(1) brightness(0.8); /* Ficam cinzentos para não distrair */
+    opacity: 0.6;
+    transition: 0.4s ease;
+}
+
+.parceiro-link:hover {
+    transform: translateY(-5px);
+}
+
+.parceiro-link:hover img {
+    filter: grayscale(0) brightness(1.2); /* Ganham cor e brilho ao passar o rato */
+    opacity: 1;
+}
+
 @keyframes float {
     from { transform: translate(0, 0); }
     to { transform: translate(40px, 60px); }
