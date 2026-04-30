@@ -1,16 +1,43 @@
 /* BASE E HEADER */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { background-color: #333742; color: white; font-family: Arial, sans-serif; overflow-x: hidden; padding-top: 80px; }
+body { 
+    background-color: #333742; 
+    color: white; 
+    font-family: Arial, sans-serif; 
+    overflow-x: hidden; 
+    padding-top: 80px; 
+}
 
 #header { 
-    position: fixed; top: 0; width: 100%; z-index: 100; 
-    background: #333742; padding: 15px 20px; 
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    z-index: 100; 
+    background: #333742; 
+    padding: 15px 20px; 
     border-bottom: 2px solid #ffee00; 
 }
-.header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; }
+
+.header-container { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 1400px; 
+    margin: 0 auto; 
+}
+
 .sigla { color: #ffee00; font-size: 26px; font-weight: bold; }
 .extenso { color: #ffee00; font-size: 11px; margin-left: 10px; letter-spacing: 1px; }
-nav a { color: white; text-decoration: none; margin-left: 18px; font-size: 13px; text-transform: uppercase; font-weight: 500; transition: 0.3s; }
+
+nav a { 
+    color: white; 
+    text-decoration: none; 
+    margin-left: 18px; 
+    font-size: 13px; 
+    text-transform: uppercase; 
+    font-weight: 500; 
+    transition: 0.3s; 
+}
 nav a.active, nav a:hover { color: #ffee00; }
 
 /* HERO SECTION */
@@ -77,11 +104,18 @@ nav a.active, nav a:hover { color: #ffee00; }
 /* CONTEUDO PRINCIPAL */
 .titulo-seccao { 
     text-align: center; 
-    padding: 120px 0 60px; 
+    padding: 100px 0 50px; 
     opacity: 0; 
     animation: fadeInGeneral 1s forwards 4s; 
 }
-.shadow-text { font-size: clamp(40px, 7vw, 90px); font-weight: 900; letter-spacing: 8px; text-transform: uppercase; }
+
+.shadow-text { 
+    font-size: clamp(32px, 5vw, 70px); 
+    font-weight: 900; 
+    letter-spacing: 4px; 
+    text-transform: uppercase; 
+    line-height: 1.1;
+}
 .shadow-text .highlight { color: #ffee00; }
 
 .content-wrapper { 
@@ -91,7 +125,14 @@ nav a.active, nav a:hover { color: #ffee00; }
     opacity: 0; 
     animation: fadeInGeneral 1s forwards 4.3s; 
 }
-.texto-corrido { padding-left: 30px; border-left: 5px solid #ffee00; font-size: 20px; line-height: 1.8; color: #ccc; }
+
+.texto-corrido { 
+    padding-left: 30px; 
+    border-left: 5px solid #ffee00; 
+    font-size: 20px; 
+    line-height: 1.8; 
+    color: #ccc; 
+}
 
 .btn-candidata {
     display: inline-block;
@@ -111,7 +152,7 @@ nav a.active, nav a:hover { color: #ffee00; }
 #main-footer { 
     background-color: #1a1c23; 
     border-top: 5px solid #ffee00; 
-    padding: 80px 20px 40px; /* Aumentei o padding superior */
+    padding: 80px 20px 40px; 
     margin-top: 50px; 
 }
 
@@ -121,7 +162,7 @@ nav a.active, nav a:hover { color: #ffee00; }
     display: flex; 
     justify-content: space-between; 
     flex-wrap: wrap; 
-    gap: 60px; /* Mais espaço entre as colunas */
+    gap: 60px; 
 }
 
 .footer-brand .footer-logo { 
@@ -142,18 +183,18 @@ nav a.active, nav a:hover { color: #ffee00; }
     color: white;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 25px; /* Mais espaço abaixo do título "Contactos" */
+    margin-bottom: 25px; 
 }
 
 .info-item { 
-    margin-bottom: 20px; /* Mais espaçamento entre cada linha de contacto */
+    margin-bottom: 20px; 
     font-size: 15px; 
-    color: #ffffff; /* Conteúdo em branco */
+    color: #ffffff; 
     line-height: 1.6;
 }
 
 .info-item strong { 
-    color: #ffee00; /* Etiquetas em amarelo */
+    color: #ffee00; 
     margin-right: 8px;
     text-transform: uppercase;
     font-size: 13px;
@@ -162,7 +203,7 @@ nav a.active, nav a:hover { color: #ffee00; }
 
 .footer-socials { 
     display: flex; 
-    flex-direction: column; /* Redes sociais em lista vertical fica mais organizado */
+    flex-direction: column; 
     gap: 15px; 
 }
 
@@ -175,7 +216,7 @@ nav a.active, nav a:hover { color: #ffee00; }
 
 .footer-socials a:hover { 
     color: #ffee00; 
-    transform: translateX(5px); /* Move para o lado em vez de para cima */
+    transform: translateX(5px); 
 }
 
 .footer-bottom { 
@@ -194,8 +235,8 @@ nav a.active, nav a:hover { color: #ffee00; }
 @keyframes moveLogoUp {
     0% { top: 50%; transform: translate(-50%, -50%) scale(1); }
     100% { 
-        top: -110px; 
-        transform: translate(-50%, 0) scale(0.15); 
+        top: -80px; /* Ajustado de -120px para -80px para mover para baixo */
+        transform: translate(-50%, 0) scale(0.28); 
     }
 }
 @keyframes revealVideo { to { opacity: 1; transform: scale(1); } }
@@ -203,10 +244,16 @@ nav a.active, nav a:hover { color: #ffee00; }
 
 /* MOBILE */
 @media (max-width: 768px) {
-    .logo-img-icon { height: 250px; }
-    .logo-img-text { height: 180px; }
+    .logo-img-icon { height: 280px; }
+    .logo-img-text { height: 200px; }
+    
     @keyframes moveLogoUp {
-        to { top: -80px; transform: translate(-50%, 0) scale(0.2); }
+        to { 
+            top: -50px; /* Ajustado também no mobile para manter coerência */
+            transform: translate(-50%, 0) scale(0.35); 
+        }
     }
+    
+    .shadow-text { font-size: 32px; }
     .footer-container { flex-direction: column; text-align: center; align-items: center; }
 }
