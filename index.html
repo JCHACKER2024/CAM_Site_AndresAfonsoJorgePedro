@@ -25,23 +25,25 @@
     </header>
 
     <main>
-        <!-- Secção da Animação Inicial -->
         <section id="hero-wrap">
             <div class="logo-animation-container">
                 <img src="IMGS/logo_icon.png" alt="Ícone CAM" class="logo-img-icon">
                 <img src="IMGS/logo_texto.png" alt="Texto CAM" class="logo-img-text">
             </div>
 
-            <div id="indexvideo">
+                <div id="indexvideo">
                 <div class="video-overlay"></div>
-                <video autoplay muted loop id="myVideo">
-                    <source src="VIDS/background_video.mp4" type="video/mp4">
+                <video autoplay muted loop playsinline id="myVideo">
                     O teu navegador não suporta vídeo.
                 </video>
+                
+                <!-- Botão de Som -->
+                <button id="muteBtn" class="mute-toggle">
+                    SOUND: <span id="statusSom">OFF</span>
+                </button>
             </div>
         </section>
 
-        <!-- Conteúdo de Texto abaixo do vídeo -->
         <section class="titulo-seccao">
             <h1 class="shadow-text">O TEU <span class="highlight">FUTURO</span> COMEÇA AQUI</h1>
         </section>
@@ -85,5 +87,6 @@
         </div>
     </footer>
 
+    <script src="JS/video-random.js"></script>
 </body>
 </html>
