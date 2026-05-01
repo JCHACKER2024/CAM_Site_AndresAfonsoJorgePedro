@@ -11,6 +11,15 @@
     letter-spacing: 5px;
 }
 
+.titulo-medio {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
 .highlight {
     color: #ffee00;
 }
@@ -24,7 +33,7 @@
 /* GRELHA DE PROJETOS */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2x2 como pediste na página Sobre */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 40px;
     max-width: 1200px;
     margin: 50px auto;
@@ -87,6 +96,79 @@
     line-height: 1.5;
 }
 
+/* SECÇÃO DE DEPOIMENTOS (ALUMNI) */
+.testimonials-section {
+    max-width: 1200px;
+    margin: 0 auto 100px;
+    padding: 0 20px;
+}
+
+.testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.testimonial-card {
+    background: #1a1c23;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial-card:hover {
+    border-color: #ffee00;
+    transform: translateY(-5px);
+}
+
+.alumni-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.alumni-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #ffee00;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.alumni-info h3 {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.alumni-info .ano {
+    color: #888;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.depoimento {
+    color: #ccc;
+    font-style: italic;
+    line-height: 1.8;
+    text-align: center;
+    font-size: 15px;
+}
+
 /* MOBILE */
 @media (max-width: 900px) {
     .projects-grid {
@@ -94,5 +176,8 @@
     }
     .titulo-grande {
         font-size: 40px;
+    }
+    .testimonials-container {
+        grid-template-columns: 1fr;
     }
 }
