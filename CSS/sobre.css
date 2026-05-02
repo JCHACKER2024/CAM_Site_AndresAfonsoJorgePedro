@@ -24,10 +24,9 @@
 /* GRID DE DESTAQUES (2x2) */
 .destaques-grid {
     display: grid;
-    /* Força 2 colunas de tamanho igual */
     grid-template-columns: repeat(2, 1fr); 
     gap: 30px;
-    max-width: 1000px; /* Reduzi um pouco a largura para o 2x2 ficar mais elegante */
+    max-width: 1000px;
     margin: 40px auto;
     padding: 0 20px;
 }
@@ -95,7 +94,7 @@
     font-size: 50px;
     font-weight: 900;
     text-align: center;
-    margin-bottom: 80px; /* Muito espaço para o conteúdo respirar */
+    margin-bottom: 80px;
     text-transform: uppercase;
     letter-spacing: 4px;
 }
@@ -177,7 +176,6 @@
 
 .tabela-grid {
     display: grid;
-    /* Cria duas colunas iguais */
     grid-template-columns: repeat(2, 1fr);
     gap: 2px; /* Linha divisória fina */
     background: rgba(255, 255, 255, 0.05); /* Cor das "linhas" da tabela */
@@ -185,7 +183,7 @@
 }
 
 .tabela-item {
-    background: #0f1015; /* Cor de fundo das células */
+    background: #0f1015; 
     padding: 25px;
     display: flex;
     flex-direction: column;
@@ -217,48 +215,49 @@
 /* SECÇÃO PARCEIROS */
 .parceiros-section {
     padding: 100px 20px;
-    text-align: center;
     background: rgba(0, 0, 0, 0.2);
-    margin-top: 50px;
+    text-align: center;
 }
 
 .subtitulo-parceiros {
     color: #888;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .parceiros-grid {
-    display: grid;
-    /* Cria uma grelha automática que se ajusta ao tamanho dos logos */
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 40px;
-    max-width: 1100px;
-    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
+    gap: 40px; 
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .parceiro-link {
+    flex: 1 1 150px; 
+    max-width: 180px; 
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    transition: 0.4s ease;
+    transition: all 0.4s ease;
+    filter: grayscale(1) brightness(0.8); 
 }
 
 .parceiro-link img {
-    max-width: 140px; /* Tamanho máximo de cada logo */
+    width: 100%;
     height: auto;
-    filter: grayscale(1) brightness(0.8); /* Ficam cinzentos para não distrair */
-    opacity: 0.6;
-    transition: 0.4s ease;
+    max-height: 80px; 
+    object-fit: contain; 
 }
 
 .parceiro-link:hover {
-    transform: translateY(-5px);
+    filter: grayscale(0) brightness(1); 
+    transform: scale(1.1);
 }
 
 .parceiro-link:hover img {
-    filter: grayscale(0) brightness(1.2); /* Ganham cor e brilho ao passar o rato */
+    filter: grayscale(0) brightness(1.2); 
     opacity: 1;
 }
 
