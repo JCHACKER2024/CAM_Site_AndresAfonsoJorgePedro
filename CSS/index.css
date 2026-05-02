@@ -1,3 +1,22 @@
+/* --- CUSTOM SCROLLBAR --- */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #333742; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4a4e5a; 
+    border-radius: 10px;
+    border: 2px solid #333742; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffee00;
+}
+
 /* BASE E HEADER */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { 
@@ -5,7 +24,9 @@ body {
     color: white; 
     font-family: Arial, sans-serif; 
     overflow-x: hidden; 
-    padding-top: 80px; 
+    padding-top: 80px;
+    scrollbar-width: thin;
+    scrollbar-color: #4a4e5a #333742; 
 }
 
 #header { 

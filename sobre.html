@@ -6,7 +6,7 @@
     <title>Sobre - CAM</title>
     <link rel="stylesheet" href="CSS/index.css">
     <link rel="stylesheet" href="CSS/sobre.css">
-    <link rel="stylesheet" href="CSS/sidescroll.css">
+    <link rel="stylesheet" href="CSS/scroll-reveal.css">
 </head>
 <body>
 
@@ -31,9 +31,8 @@
             <p class="subtitulo">Conhece os eventos e espaços que definem o curso.</p>
         </section>
 
-        <!-- Secção A DESTACAR -->
-        <section class="destaques-grid">
-            
+        <!-- Secção A DESTACAR - Adicionada classe reveal -->
+        <section class="destaques-grid reveal">
             <div class="card">
                 <img src="IMGS/pitch.png" alt="Pitch CAM">
                 <h3>PITCH CAM</h3>
@@ -57,48 +56,30 @@
                 <h3>MOSTRA CAM</h3>
                 <p>Exposição anual onde os alunos mostram as suas curtas, jogos e instalações à comunidade.</p>
             </div>
-
         </section>
 
-                <!-- SECÇÃO DOCENTES -->
-        <section class="docentes-section">
+        <!-- SECÇÃO DOCENTES - Adicionada classe reveal -->
+        <section class="docentes-section reveal">
             <h1 class="titulo-docentes">CORPO <span class="highlight">DOCENTE</span></h1>
 
             <!-- DESTAQUE: DIREÇÃO -->
             <div class="direcao-container">
-                <!-- Diretor -->
                 <div class="diretor-block">
                     <span class="label-cargo">Diretor do Curso</span>
                     <h2>João Alves de Sousa</h2>
                     <p class="bio">Especialista em Game Design e Animação. Mentor e docente focado no desenvolvimento de projetos autorais e inovadores.</p>
                     
                     <div class="conquistas">
-                        <!-- Livros e Publicações -->
-                        <div class="conquista-item">
-                            <strong>Publicação:</strong> Autor do livro "Play Design Document - Agenda Gamificada" (2023)
-                        </div>
-                        
-                        <!-- Jogos e Projetos -->
-                        <div class="conquista-item">
-                            <strong>Videojogos:</strong> "Lots of Guts" (Vencedor Jogo mais Inovador - Prémios Playstation 2015)
-                        </div>
-                        <div class="conquista-item">
-                            <strong>Indie Pitch:</strong> "Free that Fish" (Finalista Very Big Indie Pitch - London 2015)
-                        </div>
-                        
-                        <!-- Animação -->
-                        <div class="conquista-item">
-                            <strong>Animação:</strong> "Sendo um Feto" (Melhor filme de estudantes - Monstra 2006)
-                        </div>
-                        <div class="conquista-item">
-                            <strong>Animação:</strong> "Porquê" (Prémio Jovem Cineasta - Cinanima 2006)
-                        </div>
+                        <div class="conquista-item"><strong>Publicação:</strong> Autor do livro "Play Design Document - Agenda Gamificada" (2023)</div>
+                        <div class="conquista-item"><strong>Videojogos:</strong> "Lots of Guts" (Vencedor Jogo mais Inovador - Prémios Playstation 2015)</div>
+                        <div class="conquista-item"><strong>Indie Pitch:</strong> "Free that Fish" (Finalista Very Big Indie Pitch - London 2015)</div>
+                        <div class="conquista-item"><strong>Animação:</strong> "Sendo um Feto" (Melhor filme de estudantes - Monstra 2006)</div>
+                        <div class="conquista-item"><strong>Animação:</strong> "Porquê" (Prémio Jovem Cineasta - Cinanima 2006)</div>
                     </div>
                 </div>
 
                 <div class="divisor-vertical"></div>
 
-                <!-- Subdiretor -->
                 <div class="diretor-block">
                     <span class="label-cargo">Subdiretor do Curso</span>
                     <h2>André Carita</h2>
@@ -114,110 +95,42 @@
             <div class="tabela-docentes-container">
                 <h2 class="titulo-tabela">Equipa de Especialistas</h2>
                 <div class="tabela-grid">
-                    <!-- Item 1 -->
-                    <div class="tabela-item">
-                        <strong>Andreia Pinto de Sousa</strong>
-                        <span>Usabilidade e Design de Interação</span>
-                    </div>
-                    <!-- Item 2 -->
-                    <div class="tabela-item">
-                        <strong>Eduardo Magalhães</strong>
-                        <span>Sonoplastia e Tecnologias Multimédia</span>
-                    </div>
-                    <!-- Item 3 -->
-                    <div class="tabela-item">
-                        <strong>José Raimundo</strong>
-                        <span>3D e Ilustração</span>
-                    </div>
-                    <!-- Item 4 -->
-                    <div class="tabela-item">
-                        <strong>Vanessa Rodrigues</strong>
-                        <span>Audiovisual e Realização</span>
-                    </div>
-                    <!-- Item 5 -->
-                    <div class="tabela-item">
-                        <strong>Filipe Coelho</strong>
-                        <span>Programação</span>
-                    </div>
-                    <!-- Item 6 -->
-                    <div class="tabela-item">
-                        <strong>Henrique Basto</strong>
-                        <span>Programação</span>
-                    </div>
-                    <!-- Item 7 -->
-                    <div class="tabela-item">
-                        <strong>Rui Barros / Hugo Barbosa</strong>
-                        <span>Tecnologias Web</span>
-                    </div>
-                    <!-- Item 8 -->
-                    <div class="tabela-item">
-                        <strong>Ricardo Mota</strong>
-                        <span>Industria Krafton</span>
-                    </div>
-                    <!-- Item 9 -->
-                    <div class="tabela-item">
-                        <strong>Rodrigo Carvalho</strong>
-                        <span>Artes Digitais</span>
-                    </div>
+                    <div class="tabela-item"><strong>Andreia Pinto de Sousa</strong><span>Usabilidade e Design de Interação</span></div>
+                    <div class="tabela-item"><strong>Eduardo Magalhães</strong><span>Sonoplastia e Tecnologias Multimédia</span></div>
+                    <div class="tabela-item"><strong>José Raimundo</strong><span>3D e Ilustração</span></div>
+                    <div class="tabela-item"><strong>Vanessa Rodrigues</strong><span>Audiovisual e Realização</span></div>
+                    <div class="tabela-item"><strong>Filipe Coelho</strong><span>Programação</span></div>
+                    <div class="tabela-item"><strong>Henrique Basto</strong><span>Programação</span></div>
+                    <div class="tabela-item"><strong>Rui Barros / Hugo Barbosa</strong><span>Tecnologias Web</span></div>
+                    <div class="tabela-item"><strong>Ricardo Mota</strong><span>Industria Krafton</span></div>
+                    <div class="tabela-item"><strong>Rodrigo Carvalho</strong><span>Artes Digitais</span></div>
                 </div>
             </div>
         </section>
-        <!-- SECÇÃO PARCEIROS -->
-        <section class="parceiros-section">
+
+        <!-- SECÇÃO PARCEIROS - Adicionada classe reveal -->
+        <section class="parceiros-section reveal">
             <h2 class="titulo-medio">OS NOSSOS <span class="highlight">PARCEIROS</span></h2>
             <p class="subtitulo-parceiros">Trabalhamos com os líderes da indústria para estágios e projetos.</p>
             
             <div class="parceiros-grid">
-
-                <a href="https://adeninteractive.com/" target="_blank" class="parceiro-link">
-                    <img src="IMGS/parceiros/aden.png" alt="Aden Interactive">
-                </a>
-
-                <a href="https://astralshiftpro.com/" target="_blank" class="parceiro-link">
-                    <img src="IMGS/parceiros/astral.png" alt="Astral Shift">
-                </a>
-
-                <a href="https://camel101.com/" target="_blank" class="parceiro-link">
-                    <img src="IMGS/parceiros/camel101.png" alt="Camel 101">
-                </a>
-
-                <a href="https://exaud.com/" target="_blank" class="parceiro-link">
-                    <img src="IMGS/parceiros/exaud.png" alt="Exaud">
-                </a>
-
-                <a href="https://mindera.com/" target="_blank" class="parceiro-link">
-                    <img src="IMGS/parceiros/mindera.png" alt="Mindera">
-                </a>
-
-                <a href="https://gcontrolgames.com/" target="_blank" class="parceiro-link">
-                    <img src="IMGS/parceiros/groundcontrol.png" alt="Ground Control Studios">
-                </a>
-
-                <a href="https://indigentstudio.com/" target="_blank" class="parceiro-link">
-                    <img src="IMGS/parceiros/indigent.png" alt="Indigent Studio">
-                </a>
-
-                <a href="https://optimizer.pt/" target="_blank" class="parceiro-link">
-                    <img src="IMGS/parceiros/optimizer.png" alt="Optimizer/LITEC">
-                </a>
-
-                <a href="https://side.inc/" target="_blank" class="parceiro-link">
-                    <img src="IMGS/parceiros/side.png" alt="Side">
-                </a>
-
-                <a href="https://gamecreatorodyssey.com/" target="_blank" class="parceiro-link">
-                    <img src="IMGS/parceiros/gco.png" alt="Game Creators Odyssey">
-                </a>
-
+                <a href="https://adeninteractive.com/" target="_blank" class="parceiro-link"><img src="IMGS/parceiros/aden.png" alt="Aden Interactive"></a>
+                <a href="https://astralshiftpro.com/" target="_blank" class="parceiro-link"><img src="IMGS/parceiros/astral.png" alt="Astral Shift"></a>
+                <a href="https://camel101.com/" target="_blank" class="parceiro-link"><img src="IMGS/parceiros/camel101.png" alt="Camel 101"></a>
+                <a href="https://exaud.com/" target="_blank" class="parceiro-link"><img src="IMGS/parceiros/exaud.png" alt="Exaud"></a>
+                <a href="https://mindera.com/" target="_blank" class="parceiro-link"><img src="IMGS/parceiros/mindera.png" alt="Mindera"></a>
+                <a href="https://gcontrolgames.com/" target="_blank" class="parceiro-link"><img src="IMGS/parceiros/groundcontrol.png" alt="Ground Control Studios"></a>
+                <a href="https://indigentstudio.com/" target="_blank" class="parceiro-link"><img src="IMGS/parceiros/indigent.png" alt="Indigent Studio"></a>
+                <a href="https://optimizer.pt/" target="_blank" class="parceiro-link"><img src="IMGS/parceiros/optimizer.png" alt="Optimizer/LITEC"></a>
+                <a href="https://side.inc/" target="_blank" class="parceiro-link"><img src="IMGS/parceiros/side.png" alt="Side"></a>
+                <a href="https://gamecreatorodyssey.com/" target="_blank" class="parceiro-link"><img src="IMGS/parceiros/gco.png" alt="Game Creators Odyssey"></a>
             </div>
         </section>
 
-        <!-- Elementos decorativos flutuantes sugeridos pelo Stor -->
         <div class="floating-shape shape1"></div>
         <div class="floating-shape shape2"></div>
     </main>
 
-   <!-- Rodapé -->
     <footer id="main-footer">
         <div class="footer-container">
             <div class="footer-brand">
@@ -247,6 +160,8 @@
             &copy; 2024 CAM - ULusófona Porto
         </div>
     </footer>
+
+    <script src="JS/scroll-reveal.js"></script>
     
 </body>
 </html>

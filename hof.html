@@ -6,7 +6,7 @@
     <title>Hall of Fame - CAM</title>
     <link rel="stylesheet" href="CSS/index.css">
     <link rel="stylesheet" href="CSS/hof.css">
-    <link rel="stylesheet" href="CSS/sidescroll.css">
+    <link rel="stylesheet" href="CSS/scroll-reveal.css">
 </head>
 <body>
 
@@ -35,8 +35,9 @@
         <section class="hof-section">
             <h2 class="titulo-medio">PROJETOS EM <span class="highlight">DESTAQUE</span></h2>
             <div class="projects-grid">
-                <!-- Projeto 1 (Exemplo de Filme) -->
-                <div class="project-card">
+                
+                <!-- Projeto 1 (Exemplo com Reveal) -->
+                <div class="project-card reveal">
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/VIDEO_ID_AQUI" frameborder="0" allowfullscreen></iframe>
                     </div>
@@ -47,7 +48,8 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <!-- Projeto 2 (Exemplo com Reveal) -->
+                <div class="project-card reveal">
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/VIDEO_ID_AQUI" frameborder="0" allowfullscreen></iframe>
                     </div>
@@ -57,6 +59,7 @@
                         <p>Link para filmes e outros projetos realizados pelos nossos alunos.</p>
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -66,7 +69,7 @@
             <div class="testimonials-container">
                 
                 <!-- Filipa Kinomoto -->
-                <div class="testimonial-card">
+                <div class="testimonial-card reveal">
                     <div class="alumni-info">
                         <div class="alumni-photo placeholder-photo">FK</div>
                         <h3>Filipa Kinomoto</h3>
@@ -76,7 +79,7 @@
                 </div>
 
                 <!-- Rafael Sousa -->
-                <div class="testimonial-card">
+                <div class="testimonial-card reveal">
                     <div class="alumni-info">
                         <div class="alumni-photo placeholder-photo">RS</div>
                         <h3>Rafael Sousa</h3>
@@ -89,7 +92,6 @@
         </section>
     </main>
 
-    <!-- Rodapé -->
     <footer id="main-footer">
         <div class="footer-container">
             <div class="footer-brand">
@@ -119,6 +121,8 @@
             &copy; 2024 CAM - ULusófona Porto
         </div>
     </footer>
+
+    <script src="JS/scroll-reveal.js"></script>
     
 </body>
 </html>
