@@ -9,6 +9,11 @@
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 5px;
+    /* Ajuste para alinhar os spans */
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .highlight {
@@ -101,6 +106,11 @@
     margin-bottom: 80px;
     text-transform: uppercase;
     letter-spacing: 4px;
+    /* Ajuste para alinhar os spans */
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 /* CONTAINER DIREÇÃO */
@@ -224,6 +234,14 @@
     padding: 120px 20px;
     background: #0f1014;
     text-align: center;
+    overflow: hidden;
+}
+
+.titulo-medio {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .subtitulo-parceiros {
@@ -264,7 +282,40 @@
     transform: scale(1.1);
 }
 
-/* ANIMAÇÕES */
+/* SISTEMA DE SCROLL REVEAL */
+
+.reveal, .reveal-right {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform, opacity;
+}
+
+h1 span.reveal-right, h2 span.reveal-right {
+    display: inline-block;
+}
+
+.reveal {
+    transform: translateY(30px);
+}
+
+.reveal-right {
+    transform: translateX(50px);
+}
+
+.reveal.active, .reveal-right.active {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.highlight.reveal-right {
+    transition-delay: 0.3s;
+}
+
+.destaques-grid.active .card:nth-child(2) { transition-delay: 0.1s; }
+.destaques-grid.active .card:nth-child(3) { transition-delay: 0.2s; }
+.destaques-grid.active .card:nth-child(4) { transition-delay: 0.3s; }
+
+/* ANIMAÇÕES GERAIS */
 @keyframes float {
     from { transform: translate(0, 0); }
     to { transform: translate(40px, 60px); }
@@ -274,6 +325,7 @@
 @media (max-width: 992px) {
     .direcao-container { flex-direction: column; padding: 40px; }
     .divisor-vertical { width: 100%; height: 1px; margin: 20px 0; }
+    .titulo-grande, .titulo-docentes { gap: 10px; }
 }
 
 @media (max-width: 768px) {

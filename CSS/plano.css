@@ -9,6 +9,10 @@
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .titulo-medio {
@@ -18,6 +22,10 @@
     margin-bottom: 40px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    display: flex; 
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .highlight {
@@ -59,6 +67,7 @@
     letter-spacing: 2px;
     margin-bottom: 8px;
     text-transform: uppercase;
+    color: white;
 }
 
 .ato-header p {
@@ -89,10 +98,6 @@
     text-transform: uppercase;
     letter-spacing: 1.5px;
     font-size: 16px;
-}
-
-.semestre-box > summary::-webkit-details-marker {
-    display: none; 
 }
 
 .semestre-box > summary::after {
@@ -190,18 +195,6 @@
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.saida-item::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 5px;
-    height: 100%;
-    background: #ffee00;
-    opacity: 0;
-    transition: 0.3s;
-}
-
 .saida-item:hover {
     background: #252830;
     border-color: rgba(255, 238, 0, 0.4);
@@ -209,14 +202,40 @@
     color: #ffee00;
 }
 
-.saida-item:hover::before {
+/* SISTEMA DE SCROLL REVEAL */
+
+.reveal, .reveal-right {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform, opacity;
+}
+
+h1 span.reveal-right, h2 span.reveal-right {
+    display: inline-block;
+}
+
+.reveal {
+    transform: translateY(30px);
+}
+
+.reveal-right {
+    transform: translateX(50px);
+}
+
+.reveal.active, .reveal-right.active {
     opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* Efeito 1º Branco, 2º Amarelo */
+.highlight.reveal-right {
+    transition-delay: 0.3s;
 }
 
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
-    .titulo-grande { font-size: 38px; }
-    .titulo-medio { font-size: 28px; }
+    .titulo-grande { font-size: 38px; gap: 8px; }
+    .titulo-medio { font-size: 28px; gap: 8px; }
     .ato-header h2 { font-size: 26px; }
     .saidas-grid { grid-template-columns: 1fr; }
     .saida-item { font-size: 18px; }
