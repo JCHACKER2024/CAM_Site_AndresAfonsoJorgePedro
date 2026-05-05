@@ -1,4 +1,4 @@
-/* --- ESTILO GERAL E HERO --- */
+/* ESTILO GERAL E HERO */
 main {
     background-color: #0f1014;
     min-height: 100vh;
@@ -11,7 +11,7 @@ main {
     background: #0f1014;
 }
 
-.titulo-grande {
+.plano-hero .titulo-grande {
     font-size: clamp(40px, 8vw, 80px);
     font-weight: 900;
     text-transform: uppercase;
@@ -21,6 +21,11 @@ main {
     gap: 15px;
     flex-wrap: wrap;
     color: #fff;
+    margin-bottom: 20px;
+}
+
+.plano-hero .highlight {
+    color: #ffee00;
 }
 
 .subtitulo {
@@ -33,7 +38,7 @@ main {
     line-height: 1.6;
 }
 
-/* --- CONTENTOR DOS ATOS --- */
+/* CONTENTOR DOS ATOS */
 .plano-container {
     max-width: 1000px;
     margin: 60px auto 120px;
@@ -64,7 +69,7 @@ main {
     margin-top: 5px;
 }
 
-/* --- TABELA DE SEMESTRES (ACORDEÃO) --- */
+/* TABELA DE SEMESTRES (ACORDEÃO) */
 .semestre-box {
     background: #15161c;
     margin-bottom: 15px;
@@ -106,7 +111,7 @@ main {
     transform: rotate(90deg);
 }
 
-/* --- LISTA DE UCs --- */
+/* LISTA DE UCs */
 .uc-list {
     padding: 20px 30px;
 }
@@ -136,11 +141,29 @@ main {
     text-align: justify;
 }
 
-/* --- CORPO DOCENTE (ESTILO ALTERNADO) --- */
+/* CORPO DOCENTE */
 .docentes-section {
     padding: 120px 20px;
     background: #0a0b0e;
     text-align: center;
+}
+
+.docentes-section .titulo-medio {
+    text-align: center;
+    font-size: clamp(30px, 5vw, 45px);
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    letter-spacing: 3px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    color: #fff;
+}
+
+.docentes-section .highlight {
+    color: #ffee00;
 }
 
 .docentes-intro {
@@ -206,12 +229,14 @@ main {
 .docente-info h3 {
     font-size: 28px;
     margin-bottom: 8px;
+    color: #fff;
 }
 
 .docente-bio {
     margin-bottom: 25px; 
     font-size: 16px;
     line-height: 1.6;
+    color: #ccc;
 }
 
 .premios-container {
@@ -258,24 +283,37 @@ main {
     font-weight: 600;
 }
 
-/* --- REVEAL ANIMATIONS --- */
-.reveal, .reveal-right {
+/* ANIMAÇÕES */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.reveal {
     opacity: 0;
-    transition: all 0.8s ease-out;
-    will-change: transform, opacity;
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.reveal { transform: translateY(30px); }
-.reveal-right { transform: translateX(30px); }
-
-.reveal.active, .reveal-right.active {
-    opacity: 1 !important;
-    transform: translate(0, 0) !important;
+.reveal-right {
+    opacity: 0;
+    animation: fadeInRight 0.8s ease-out forwards;
 }
 
-/* --- RESPONSIVIDADE --- */
+.ato-wrapper:nth-child(1) { animation-delay: 0.1s; }
+.ato-wrapper:nth-child(2) { animation-delay: 0.3s; }
+.ato-wrapper:nth-child(3) { animation-delay: 0.5s; }
+
+.docente-row:nth-child(1) { animation-delay: 0.2s; }
+.docente-row:nth-child(2) { animation-delay: 0.4s; }
+
+/* RESPONSIVIDADE */
 @media (max-width: 850px) {
-    .titulo-grande { font-size: 35px; }
+    .plano-hero .titulo-grande { font-size: 35px; }
     
     .docente-row, .docente-row.reverse {
         flex-direction: column;

@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAM - Comunicação Audiovisual e Multimédia</title>
+    <title>Multiplex - CAM</title>
     <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/multiplex.css">
 </head>
 <body>
 
@@ -15,51 +16,30 @@
                 <span class="extenso">COMUNICAÇÃO AUDIOVISUAL E MULTIMÉDIA</span>
             </div>
             <nav>
-                <a href="index.html" class="active">HOME</a>
+                <a href="index.html">HOME</a>
                 <a href="sobre.html">SOBRE</a>
                 <a href="plano.html">PLANO</a>
                 <a href="hof.html">HALL OF FAME</a>
-                <a href="multiplex.html">MULTIPLEX</a>
+                <a href="multiplex.html" class="active">MULTIPLEX</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <!-- SECÇÃO HERO COM LOGO E VÍDEO -->
-        <section id="hero-wrap">
-            <div class="logo-animation-container">
-                <img src="IMGS/logo_icon.png" alt="Ícone CAM" class="logo-img-icon">
-                <img src="IMGS/logo_texto.png" alt="Texto CAM" class="logo-img-text">
-            </div>
-
-            <div id="indexvideo">
-                <div class="video-overlay"></div>
-                <video autoplay muted loop playsinline id="myVideo">
-                    <source src="VIDS/hero_cam.mp4" type="video/mp4">
-                    O teu navegador não suporta vídeo.
-                </video>
-                
-                <button id="muteBtn" class="mute-toggle">
-                    SOUND: <span id="statusSom">OFF</span>
-                </button>
-            </div>
+        <section class="multiplex-hero">
+            <h1 class="titulo-grande">
+                <span class="reveal-right">MULTI</span> 
+                <span class="highlight reveal-right">PLEX</span>
+            </h1>
+            <p class="subtitulo reveal">Espaço em branco para o conteúdo do evento Multiplex.</p>
         </section>
 
-        <!-- TÍTULO DE IMPACTO -->
-        <section class="titulo-seccao">
-            <h1 class="shadow-text">A IMAGEM DO <span class="highlight">FUTURO!</span></h1>
-        </section>
-
-        <!-- CONTEÚDO PRINCIPAL -->
-        <section class="content-wrapper">
-            <p class="texto-corrido">
-                A Licenciatura em Comunicação Audiovisual e Multimédia tem dado provas de grande dinamismo, oferecendo um percurso académico que alia uma componente de aprendizagem teórico-prática estimulante assente no Cinema e no Vídeo, com uma formação interdisciplinar na área da criação audiovisual e multimédia e das tecnologias associadas aos novos media. Em constante atualização, tal como a área o exige, explora-se o trabalho individual e em equipa em projetos práticos nas áreas da fotografia, do vídeo e da curta metragem, da criação web, sonoplastia, guionismo e direção de atores, das instalações multimédia e vídeo mapping. O curso é responsável pelo evento MULTIPLEX, Ciclo Anual de Imagens em Movimento, realizado em parceria com o BATALHA Centro de Cinema.
-            </p>
-            <a href="https://www.ulusofona.pt/porto/licenciaturas/comunicacao-audiovisual-e-multimedia" target="_blank" class="btn-candidata">Candidata-te!</a>
+        <!-- O conteúdo principal será inserido aqui posteriormente -->
+        <section class="content-placeholder">
+            <!-- Podes adicionar aqui as tuas futuras secções -->
         </section>
     </main>
 
-    <!-- FOOTER -->
     <footer id="main-footer">
         <div class="footer-container">
             <div class="footer-brand">
@@ -92,6 +72,6 @@
         </div>
     </footer>
 
-    <script src="JS/video-random.js"></script>
+    <script src="JS/open-titles.js"></script>
 </body>
 </html>

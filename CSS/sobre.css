@@ -1,4 +1,4 @@
-/* --- VÍDEO HERO (ECRÃ TOTAL) --- */
+/* HERO VIDEO */
 .hero-video-container {
     position: relative;
     width: 100%;
@@ -46,22 +46,25 @@
     margin-bottom: 20px;
 }
 
-/* --- TÍTULOS DE SECÇÃO --- */
+/* TITULOS E TEXTO */
 .titulo-seccao, .titulo-medio {
-    font-size: clamp(30px, 4vw, 42px);
+    font-size: clamp(32px, 5vw, 48px);
     font-weight: 900;
     text-transform: uppercase;
     color: white;
     text-align: center;
     margin-bottom: 60px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .highlight {
     color: #ffee00;
 }
 
-/* --- INTRODUÇÃO --- */
 .intro-text {
     padding: 140px 20px 60px;
     text-align: center;
@@ -74,9 +77,14 @@
     font-size: 19px;
     line-height: 1.8;
     color: #b0b0b0;
+    opacity: 0;
 }
 
-/* --- GRID DE EVENTOS --- */
+.container-pequeno.reveal-init {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* GRELHA DE DESTAQUES */
 .destaques-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
@@ -94,6 +102,11 @@
     text-align: center;
     cursor: pointer;
     transition: all 0.4s ease;
+    opacity: 0;
+}
+
+.card.reveal-init {
+    animation: fadeInUp 0.5s ease-out forwards;
 }
 
 .card:hover {
@@ -109,6 +122,11 @@
     width: 55px;
     margin-bottom: 25px;
     filter: grayscale(1) brightness(1.8);
+    transition: 0.3s;
+}
+
+.card.active img {
+    filter: grayscale(0) brightness(1);
 }
 
 .card h3 {
@@ -122,7 +140,6 @@
     color: #ffee00;
 }
 
-/* --- CONTEÚDO EXPANSÍVEL --- */
 .card-content {
     max-height: 0;
     opacity: 0;
@@ -132,7 +149,7 @@
 }
 
 .card.active .card-content {
-    max-height: 500px;
+    max-height: 800px; 
     opacity: 1;
     margin-top: 45px; 
     padding-bottom: 20px;
@@ -145,7 +162,7 @@
     margin: 0;
 }
 
-/* --- SAÍDAS PROFISSIONAIS --- */
+/* TABELA DE SAÍDAS */
 .saidas-section {
     padding: 120px 20px;
     background: #0a0b0e;
@@ -161,6 +178,11 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     cursor: pointer;
     transition: 0.3s;
+    opacity: 0;
+}
+
+.saida-row.reveal-init {
+    animation: fadeInUp 0.5s ease-out forwards;
 }
 
 .saida-row:hover {
@@ -196,12 +218,12 @@
 }
 
 .saida-row.active .saida-info {
-    max-height: 200px;
+    max-height: 300px;
     opacity: 1;
     padding-bottom: 40px; 
 }
 
-/* --- PARCEIROS --- */
+/* PARCEIROS */
 .parceiros-section {
     padding: 100px 20px;
     text-align: center;
@@ -222,6 +244,12 @@
     display: block;
     flex: 0 1 250px; 
     text-decoration: none;
+    transition: 0.4s;
+    opacity: 0;
+}
+
+.parceiro-link.reveal-init {
+    animation: fadeInUp 0.5s ease-out forwards;
 }
 
 .parceiro-link img {
@@ -240,7 +268,7 @@
     transform: scale(1.05); 
 }
 
-/* --- CTA (BOTÕES FINAIS) --- */
+/* BOTÕES CTA */
 .cta-section {
     padding: 40px 20px 150px; 
     display: flex;
@@ -274,21 +302,19 @@
     border-color: white;
 }
 
-/* --- RESPONSIVIDADE --- */
+/* ANIMAÇÕES E RESPONSIVIDADE */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 @media (max-width: 1024px) {
-    .parceiros-grid {
-        flex-wrap: wrap; 
-        gap: 40px;
-    }
-    
-    .parceiro-link img {
-        height: 80px; 
-        max-width: 180px;
-    }
+    .parceiros-grid { flex-wrap: wrap; gap: 40px; }
+    .parceiro-link img { height: 80px; max-width: 180px; }
+    .destaques-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
-    .parceiro-link img {
-        height: 60px; 
-    }
+    .cta-section { flex-direction: column; align-items: center; }
+    .btn-cta { width: 100%; text-align: center; }
 }
