@@ -9,135 +9,168 @@
 </head>
 <body>
 
+    <!-- HEADER IGUAL AO INDEX -->
     <header id="header">
         <div class="header-container">
-            <div class="curso-nome">
-                <span class="sigla">CAM</span>
+            <div class="logo-header">
+                <img src="IMGS/logo_icon.png" alt="CAM Logo" class="header-logo-img">
                 <span class="extenso">COMUNICAÇÃO AUDIOVISUAL E MULTIMÉDIA</span>
             </div>
             <nav>
-                <a href="index.html">Home</a>
-                <a href="sobre.html" class="active">Sobre</a> 
-                <a href="plano.html">Plano</a>
-                <a href="hof.html">Hall of Fame</a>
+                <a href="index.html">HOME</a>
+                <a href="sobre.html" class="active">SOBRE</a>
+                <a href="plano.html">PLANO</a>
+                <a href="hof.html">HALL OF FAME</a>
+                <a href="multiplex.html">MULTIPLEX</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="sobre-hero">
-            <h1 class="titulo-grande">
-                <span class="reveal-right">A NOSSA</span> 
-                <span class="highlight reveal-right">COMUNIDADE</span>
-            </h1>
-            <p class="subtitulo reveal">Conhece os eventos e espaços que definem o curso.</p>
+        <!-- 1. SECÇÃO HERO (VÍDEO) -->
+        <section class="hero-video-container">
+            <video autoplay muted loop playsinline id="hero-video">
+                <source src="https://drive.google.com/uc?export=download&id=1KSmv5oEKIh0VBgNy4yzliRgcArHeo_Fb" type="video/mp4">
+            </video>
+            <div class="video-overlay">
+                <h1 class="reveal-right">VIVER NA <span class="highlight">CRIATIVIDADE</span></h1>
+                <p class="reveal">CAM é uma licenciatura que te permite ter uma multiplicidade de experiências que vão para além das próprias portas da Universidade.</p>
+            </div>
         </section>
 
+        <!-- 2. SECÇÃO INTRODUÇÃO -->
+        <section class="intro-text reveal">
+            <div class="container-pequeno">
+                <p>Queremos alargar horizontes e estar na vanguarda da imagem do futuro. Conhece os espaços e eventos que definem o nosso curso.</p>
+            </div>
+        </section>
+
+        <!-- 3. SECÇÃO EVENTOS E ESPAÇOS -->
         <section class="destaques-grid reveal">
-            <div class="card">
-                <img src="IMGS/pitch.png" alt="Pitch CAM">
-                <h3>PITCH CAM</h3>
-                <p>Apresentação dos projetos finais perante um júri de profissionais da indústria.</p>
-            </div>
-
-            <div class="card">
-                <img src="IMGS/discord.png" alt="Discord CAM">
-                <h3>DISCORD CAM</h3>
-                <p>O nosso ponto de encontro digital para partilha de recursos, feedback e convívio.</p>
-            </div>
-
-            <div class="card">
-                <img src="IMGS/gamejam.png" alt="Game Jam">
-                <h3>VAM GAME JAM</h3>
-                <p>48 horas de criação intensa de videojogos, com muita pizza e criatividade à mistura.</p>
-            </div>
-
-            <div class="card">
-                <img src="IMGS/mostra.png" alt="Mostra CAM">
-                <h3>MOSTRA CAM</h3>
-                <p>Exposição anual onde os alunos mostram as suas curtas, jogos e instalações à comunidade.</p>
-            </div>
-        </section>
-
-        <!-- Secção Docentes -->
-        <section class="docentes-section">
-            <h1 class="titulo-docentes">
-                <span class="reveal-right">CORPO</span> 
-                <span class="highlight reveal-right">DOCENTE</span>
-            </h1>
-
-            <!-- Direção -->
-            <div class="direcao-container reveal">
-                <div class="diretor-block">
-                    <span class="label-cargo">Diretor do Curso</span>
-                    <h2>João Alves de Sousa</h2>
-                    <p class="bio">Especialista em Game Design e Animação. Mentor e docente focado no desenvolvimento de projetos autorais e inovadores.</p>
-                    
-                    <div class="conquistas">
-                        <div class="conquista-item"><strong>Publicação:</strong> Autor do livro "Play Design Document - Agenda Gamificada" (2023)</div>
-                        <div class="conquista-item"><strong>Videojogos:</strong> "Lots of Guts" (Vencedor Jogo mais Inovador - Prémios Playstation 2015)</div>
-                        <div class="conquista-item"><strong>Indie Pitch:</strong> "Free that Fish" (Finalista Very Big Indie Pitch - London 2015)</div>
-                        <div class="conquista-item"><strong>Animação:</strong> "Sendo um Feto" (Melhor filme de estudantes - Monstra 2006)</div>
-                        <div class="conquista-item"><strong>Animação:</strong> "Porquê" (Prémio Jovem Cineasta - Cinanima 2006)</div>
-                    </div>
+            <div class="card clickable-card">
+                <div class="card-header">
+                    <img src="IMGS/multiplex.png" alt="Multiplex">
+                    <h3>MULTIPLEX</h3>
                 </div>
-
-                <div class="divisor-vertical"></div>
-
-                <div class="diretor-block">
-                    <span class="label-cargo">Subdiretor do Curso</span>
-                    <h2>André Carita</h2>
-                    <p class="bio">Especialista em Game Design e Teoria. Focado na interseção entre a fotografia e os ambientes virtuais.</p>
-                    <div class="conquistas">
-                        <div class="conquista-item"><strong>Livro:</strong> A Fotografia nos Videojogos (2023)</div>
-                        <div class="conquista-item"><strong>Especialidade:</strong> Teoria dos Videojogos</div>
-                    </div>
+                <div class="card-content">
+                    <p>O Multiplex é um evento criado pelo curso de CAM e que oferece aos estudantes e à cidade do Porto a oportunidade de usufruir de Ciclos de Cinema temáticos e Masterclasses com importantes cineastas e artistas mundiais como Ildikó Enyedi, Nan Goldin, Sara Driver e ORLAN e Manoel de Oliveira.</p>
                 </div>
             </div>
 
-            <!-- Tabela Docentes -->
-            <div class="tabela-docentes-container reveal">
-                <h2 class="titulo-tabela">Equipa de Especialistas</h2>
-                <div class="tabela-grid">
-                    <div class="tabela-item"><strong>Andreia Pinto de Sousa</strong><span>Usabilidade e Design de Interação</span></div>
-                    <div class="tabela-item"><strong>Eduardo Magalhães</strong><span>Sonoplastia e Tecnologias Multimédia</span></div>
-                    <div class="tabela-item"><strong>José Raimundo</strong><span>3D e Ilustração</span></div>
-                    <div class="tabela-item"><strong>Vanessa Rodrigues</strong><span>Audiovisual e Realização</span></div>
-                    <div class="tabela-item"><strong>Filipe Coelho</strong><span>Programação</span></div>
-                    <div class="tabela-item"><strong>Henrique Basto</strong><span>Programação</span></div>
-                    <div class="tabela-item"><strong>Rui Barros / Hugo Barbosa</strong><span>Tecnologias Web</span></div>
-                    <div class="tabela-item"><strong>Ricardo Mota</strong><span>Industria Krafton</span></div>
-                    <div class="tabela-item"><strong>Rodrigo Carvalho</strong><span>Artes Digitais</span></div>
+            <div class="card clickable-card">
+                <div class="card-header">
+                    <img src="IMGS/batalha.png" alt="Batalha Centro de Cinema">
+                    <h3>BATALHA CENTRO DE CINEMA</h3>
+                </div>
+                <div class="card-content">
+                    <p>Temos o enorme privilégio de estar localizados junto ao Batalha e de poder oferecer a oportunidade de ter aulas numa verdadeira sala de cinema. Contamos com Masterclasses semanais “Great Artists on Campus” com artistas como Vhils e Mila Turajlić.[cite: 1]</p>
+                </div>
+            </div>
+
+            <div class="card clickable-card">
+                <div class="card-header">
+                    <img src="IMGS/mira.png" alt="Espaço Mira">
+                    <h3>ESPAÇO MIRA</h3>
+                </div>
+                <div class="card-content">
+                    <p>Os nossos estudantes usufruem de uma oportunidade única, expondo as suas instalações multimédia no Espaço Mira. Não o fazem apenas como estudantes, mas como artistas da cidade.[cite: 1]</p>
+                </div>
+            </div>
+
+            <div class="card clickable-card">
+                <div class="card-header">
+                    <img src="IMGS/estudios.png" alt="Espaços e equipamentos">
+                    <h3>ESPAÇOS E EQUIPAMENTOS</h3>
+                </div>
+                <div class="card-content">
+                    <p>A Universidade Lusófona Porto encontra-se em plena expansão, contando num futuro próximo com uma área de estúdios totalmente dedicados à criação audiovisual e multimédia.[cite: 1]</p>
                 </div>
             </div>
         </section>
 
-        <!-- Secção Parceiros -->
-        <section class="parceiros-section">
-            <h2 class="titulo-medio">
-                <span class="reveal-right">OS NOSSOS</span> 
-                <span class="highlight reveal-right">PARCEIROS</span>
-            </h2>
-            <p class="subtitulo-parceiros reveal">Trabalhamos com os líderes da indústria para estágios e projetos.</p>
+        <!-- 4. SECÇÃO SAÍDAS PROFISSIONAIS -->
+        <section class="saidas-section reveal">
+            <h2 class="titulo-seccao">SAÍDAS <span class="highlight">PROFISSIONAIS</span></h2>
             
-            <div class="parceiros-grid reveal">
-                <a href="https://adeninteractive.com/" target="_blank" class="parceiro-link"><img src="IMGS/parceiros/aden.png" alt="Aden Interactive"></a>
-                <a href="https://astralshiftpro.com/" target="_blank" class="parceiro-link"><img src="IMGS/parceiros/astral.png" alt="Astral Shift"></a>
-                <a href="https://camel101.com/" target="_blank" class="parceiro-link"><img src="IMGS/parceiros/camel101.png" alt="Camel 101"></a>
-                <a href="https://exaud.com/" target="_blank" class="parceiro-link"><img src="IMGS/parceiros/exaud.png" alt="Exaud"></a>
-                <a href="https://mindera.com/" target="_blank" class="parceiro-link"><img src="IMGS/parceiros/mindera.png" alt="Mindera"></a>
-                <a href="https://gcontrolgames.com/" target="_blank" class="parceiro-link"><img src="IMGS/parceiros/groundcontrol.png" alt="Ground Control Studios"></a>
-                <a href="https://indigentstudio.com/" target="_blank" class="parceiro-link"><img src="IMGS/parceiros/indigent.png" alt="Indigent Studio"></a>
-                <a href="https://optimizer.pt/" target="_blank" class="parceiro-link"><img src="IMGS/parceiros/optimizer.png" alt="Optimizer/LITEC"></a>
-                <a href="https://side.inc/" target="_blank" class="parceiro-link"><img src="IMGS/parceiros/side.png" alt="Side"></a>
-                <a href="https://gamecreatorodyssey.com/" target="_blank" class="parceiro-link"><img src="IMGS/parceiros/gco.png" alt="Game Creators Odyssey"></a>
+            <div class="saidas-tabela">
+                
+                <!-- LINHA 1 -->
+                <div class="saida-row clickable-card">
+                    <div class="saida-header">
+                        <h4>Produtoras de Fotografia e Vídeo</h4>
+                    </div>
+                    <div class="saida-info">
+                        <p>Usa a fotografia e vídeo em diversas vertentes, das mais artísticas e cinematográficas a publicitárias, comerciais ou institucionais.</p>
+                    </div>
+                </div>
+
+                <!-- LINHA 2 -->
+                <div class="saida-row clickable-card">
+                    <div class="saida-header">
+                        <h4>Agências de Publicidade</h4>
+                    </div>
+                    <div class="saida-info">
+                        <p>Aplica todos os teus conhecimentos na implementação de estratégias de Marketing e conteúdos publicitários.</p>
+                    </div>
+                </div>
+
+                <!-- LINHA 3 -->
+                <div class="saida-row clickable-card">
+                    <div class="saida-header">
+                        <h4>Estúdios de Animação Digital</h4>
+                    </div>
+                    <div class="saida-info">
+                        <p>Usa os teus conhecimentos de animação para comunicar de forma criativa e impactante.</p>
+                    </div>
+                </div>
+
+                <!-- LINHA 4 -->
+                <div class="saida-row clickable-card">
+                    <div class="saida-header">
+                        <h4>Criação e Gestão de Conteúdos Web e Multimédia</h4>
+                    </div>
+                    <div class="saida-info">
+                        <p>Cria páginas web, gere a produção de conteúdos para redes sociais e aplicações multimédia.</p>
+                    </div>
+                </div>
+
+                <!-- LINHA 5 -->
+                <div class="saida-row clickable-card">
+                    <div class="saida-header">
+                        <h4>Arte Audiovisual e Multimédia e IA</h4>
+                    </div>
+                    <div class="saida-info">
+                        <p>Explora o teu próprio caminho e cria novas oportunidades e os empregos do futuro.</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <div class="floating-shape shape1"></div>
-        <div class="floating-shape shape2"></div>
+        <!-- 5. SECÇÃO PARCEIROS E CTA -->
+        <section class="parceiros-section reveal">
+            <h2 class="titulo-medio">OS NOSSOS <span class="highlight">PARCEIROS</span></h2>
+            <div class="parceiros-grid">
+                <a href="https://miragalerias.net/" target="_blank" class="parceiro-link">
+                    <img src="IMGS/parceiros/mira.png" alt="Espaço Mira">
+                </a>
+                <a href="https://www.batalhacentrodecinema.pt/" target="_blank" class="parceiro-link">
+                    <img src="IMGS/parceiros/batalha.png" alt="Batalha Centro de Cinema">
+                </a>
+                <a href="https://www.overall.pt/" target="_blank" class="parceiro-link">
+                    <img src="IMGS/parceiros/overall.png" alt="Overall Studio">
+                </a>
+            </div>
+            
+            <div class="cta-section"> <!-- Alterado para cta-section para bater com o CSS -->
+                <a href="plano.html" class="btn-cta">Plano de Curso</a>
+                <a href="https://www.ulusofona.pt/porto/licenciaturas/comunicacao-audiovisual-e-multimedia" target="_blank" class="btn-cta highlight-btn">Candidaturas</a>
+            </div>
+        </section>
+
     </main>
 
+    <!-- FOOTER IGUAL AO INDEX -->
     <footer id="main-footer">
         <div class="footer-container">
             <div class="footer-brand">
@@ -146,21 +179,23 @@
                 <a href="https://www.ulusofona.pt/" target="_blank">
                     <img src="IMGS/logo_lusofona.png" alt="Lusófona" class="lusofona-logo">
                 </a>
+                <p class="footer-address">Rua Augusto Rosa, nº 24<br>4000-098 Porto - Portugal</p>
             </div>
 
             <div class="footer-info">
                 <h4>Contactos</h4>
+                <div class="info-item"><strong>Tel:</strong> 222 073 230</div>
                 <div class="info-item"><strong>Email:</strong> info.cup@ulusofona.pt</div>
-                <div class="info-item"><strong>Email Direção:</strong> joao.alves.de.sousa@ulusofona.pt</div>
-                <div class="info-item"><strong>Telefone:</strong> 222 073 230</div>
-                <div class="info-item"><strong>Morada:</strong> Rua Augusto Rosa, nº 24, Porto</div>
+                <div class="info-item"><strong>Direção:</strong> joao.alves.de.sousa@ulusofona.pt</div>
+                <a href="https://www.ulusofona.pt/porto/licenciaturas/comunicacao-audiovisual-e-multimedia" target="_blank" class="footer-link-externo">PÁGINA DO CURSO</a>
             </div>
 
             <div class="footer-socials">
                 <h4>Segue-nos</h4>
-                <a href="https://www.facebook.com/VAMULP" target="_blank">Facebook</a>
-                <a href="https://www.instagram.com/vam_ulp/" target="_blank">Instagram</a>
-                <a href="https://www.youtube.com/channel/UC6kld1O_PUSw5Hv9Ft1knUQ" target="_blank">YouTube</a>
+                <a href="https://www.facebook.com/camlusofona" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com/cam_lusofona/" target="_blank">Instagram</a>
+                <a href="https://www.youtube.com/@CAMLusofona" target="_blank">YouTube</a>
+                <a href="https://vimeo.com/camlusofona" target="_blank">Vimeo</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -168,7 +203,7 @@
         </div>
     </footer>
 
-    <script src="JS/scroll-reveal.js"></script>
-    
+    <script src="JS/open-titles.js"></script>
+
 </body>
 </html>
