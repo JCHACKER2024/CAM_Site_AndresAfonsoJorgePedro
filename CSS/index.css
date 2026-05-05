@@ -47,8 +47,36 @@ body {
     margin: 0 auto; 
 }
 
-.sigla { color: #ffee00; font-size: 26px; font-weight: bold; }
-.extenso { color: #ffee00; font-size: 11px; margin-left: 10px; letter-spacing: 1px; }
+/* Ajuste conforme pedido: Logo Amarelo + Texto Extenso[cite: 1] */
+.logo-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-logo-img {
+    height: 40px;
+    width: auto;
+    /* Filtro para transformar branco em #ffee00 (Amarelo) */
+    filter: invert(88%) sepia(61%) saturate(2200%) hue-rotate(355%) brightness(102%) contrast(105%);
+    transition: transform 0.3s ease;
+}
+
+.header-logo-img:hover {
+    transform: scale(1.1);
+}
+
+.extenso { 
+    color: #ffee00; 
+    font-size: 11px; 
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav {
+    display: flex;
+}
 
 nav a { 
     color: white; 
@@ -169,7 +197,7 @@ nav a.active, nav a:hover { color: #ffee00; }
 }
 .btn-candidata:hover { transform: scale(1.1); background: white; }
 
-/* FOOTER */
+/* FOOTER ATUALIZADO[cite: 1, 2] */
 #main-footer { 
     background-color: #1a1c23; 
     border-top: 5px solid #ffee00; 
@@ -191,6 +219,13 @@ nav a.active, nav a:hover { color: #ffee00; }
     font-size: 35px; 
     font-weight: bold; 
     margin-bottom: 10px; 
+}
+
+.footer-address {
+    font-size: 13px;
+    color: #b0b0b0;
+    margin-top: 15px;
+    line-height: 1.5;
 }
 
 .lusofona-logo { 
@@ -220,6 +255,15 @@ nav a.active, nav a:hover { color: #ffee00; }
     text-transform: uppercase;
     font-size: 13px;
     letter-spacing: 1px;
+}
+
+.footer-link-externo {
+    display: inline-block;
+    margin-top: 10px;
+    color: #ffee00;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
 }
 
 .footer-socials { 
@@ -283,26 +327,23 @@ nav a.active, nav a:hover { color: #ffee00; }
 
 @media (max-width: 768px) {
     
-    /* 1. AJUSTE DO HEADER */
-    .extenso {
-        display: none; 
+    .header-logo-img {
+        height: 30px;
     }
 
-    .sigla {
-        font-size: 22px;
-        letter-spacing: 2px;
+    .extenso {
+        display: none;
     }
 
     nav a {
         margin-left: 10px;
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .header-container {
         padding: 0 10px;
     }
 
-    /* 2. AJUSTE DO LOGO */
     .logo-img-icon { 
         height: 200px; 
     }
@@ -322,7 +363,6 @@ nav a.active, nav a:hover { color: #ffee00; }
         }
     }
 
-    /* 3. AJUSTE DO TEXTO E VÍDEO */
     .shadow-text { 
         font-size: 32px; 
     }
@@ -333,7 +373,6 @@ nav a.active, nav a:hover { color: #ffee00; }
         margin-top: 20px;
     }
 
-    /* 4. AJUSTE DO FOOTER */
     .footer-container { 
         flex-direction: column; 
         text-align: center; 
