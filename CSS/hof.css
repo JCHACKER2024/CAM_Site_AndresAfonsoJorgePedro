@@ -63,25 +63,100 @@
     border-radius: 24px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
 }
 
+/* CONTENTORES DE MÉDIA (VÍDEO E CARROSSEL) */
 .video-container {
     position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 1 / 1; 
     background: #000;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px 24px 0 0; 
 }
 
-.video-container iframe {
+.video-player {
+    width: 100%;
+    height: 100%;
+}
+
+/* FOTOS */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border: none;
+    object-fit: cover; 
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
+.carousel-img.active {
+    opacity: 1;
+}
+
+/* NOVA ESTÉTICA DOS BOTÕES */
+.prev, .next {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4); 
+    backdrop-filter: blur(8px);
+    color: #fff; /* Cor base branca para não chocar logo de início */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 50px;
+    height: 80px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+
+.prev { 
+    left: 0; 
+    border-radius: 0 15px 15px 0;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.3);
+}
+
+.next { 
+    right: 0; 
+    border-radius: 15px 0 0 15px;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+}
+
+.prev:hover, .next:hover {
+    background: #ffee00; 
+    color: #000; 
+    width: 65px;
+}
+
+.prev::before, .next::before {
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+}
+
+.project-card:hover .prev, 
+.project-card:hover .next {
+    opacity: 1;
+}
+
+/* INFO DO PROJETO */
 .project-info {
     padding: 30px;
 }
@@ -171,10 +246,6 @@
     font-size: 15px;
     position: relative;
     width: 100%;
-}
-
-.depoimento::before {
-    display: none;
 }
 
 /* VISIBILIDADE ESTÁTICA */

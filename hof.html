@@ -41,25 +41,48 @@
             </h2>
             <div class="projects-grid">
                 
+                <!-- Projeto 1 -->
                 <div class="project-card reveal">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_AQUI" frameborder="0" allowfullscreen></iframe>
+                        <video controls autoplay muted loop class="video-player">
+                            <source src="VIDS/projeto1.mp4" type="video/mp4">
+                            O teu navegador não suporta a reprodução de vídeo.
+                        </video>
                     </div>
                     <div class="project-info">
-                        <span class="category">Filme / Curta-Metragem</span>
-                        <h3>Título do Projeto</h3>
-                        <p>Exploração narrativa e técnica desenvolvida em ambiente académico, focada na estética cinematográfica.</p>
+                        <span class="category">Audiovisual / Reel</span>
+                        <h3>Workshop de Som</h3>
+                        <p>Captação e edição sonora em ambiente de estúdio.</p>
                     </div>
                 </div>
 
+                <!-- Projeto 2 -->
                 <div class="project-card reveal">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_AQUI" frameborder="0" allowfullscreen></iframe>
+                        <div class="carousel">
+                            <div class="carousel-container" id="carousel-images">
+                                <!-- As 11 fotos -->
+                                <img src="IMGS/projeto2/foto1.jpg" alt="Foto 1" class="carousel-img active">
+                                <img src="IMGS/projeto2/foto2.jpg" alt="Foto 2" class="carousel-img">
+                                <img src="IMGS/projeto2/foto3.jpg" alt="Foto 3" class="carousel-img">
+                                <img src="IMGS/projeto2/foto4.jpg" alt="Foto 4" class="carousel-img">
+                                <img src="IMGS/projeto2/foto5.jpg" alt="Foto 5" class="carousel-img">
+                                <img src="IMGS/projeto2/foto6.jpg" alt="Foto 6" class="carousel-img">
+                                <img src="IMGS/projeto2/foto7.jpg" alt="Foto 7" class="carousel-img">
+                                <img src="IMGS/projeto2/foto8.jpg" alt="Foto 8" class="carousel-img">
+                                <img src="IMGS/projeto2/foto9.jpg" alt="Foto 9" class="carousel-img">
+                                <img src="IMGS/projeto2/foto10.jpg" alt="Foto 10" class="carousel-img">
+                                <img src="IMGS/projeto2/foto11.jpg" alt="Foto 11" class="carousel-img">
+                            </div>
+                            <!-- Controlos do Carrossel -->
+                            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+                        </div>
                     </div>
                     <div class="project-info">
-                        <span class="category">Documentário / Experimental</span>
-                        <h3>Título do Projeto</h3>
-                        <p>Um olhar sobre a realidade através da lente dos nossos alunos, combinando som e imagem de forma única.</p>
+                        <span class="category">Fotografia / Coletivo</span>
+                        <h3>Exposição Multimédia</h3>
+                        <p>Seleção de trabalhos práticos do semestre.</p>
                     </div>
                 </div>
 
@@ -72,8 +95,6 @@
                 <span class="highlight reveal-right">GRADUADOS</span>
             </h2>
             <div class="testimonials-container">
-                
-                <!-- Eliabe Campos -->
                 <div class="testimonial-card reveal">
                     <div class="alumni-info">
                         <div class="alumni-photo">
@@ -82,10 +103,9 @@
                         <h3>Eliabe Campos</h3>
                         <span class="ano">CEO Overall Studio / Fotógrafo e Videógrafo</span>
                     </div>
-                    <p class="depoimento">“O curso de CAM não me preparou apenas para entrar no mercado de trabalho “tradicional”, com horário fixo e a rotina de esperar pelo fim do mês para receber o salário. Pelo contrário, deu-me ferramentas e uma forma de pensar que me ajudaram a seguir um caminho próprio. Quando olho para trás, percebo que o CAM não foi só uma formação — foi o ponto de partida para tudo o que construí até agora.”</p>
+                    <p class="depoimento">“O curso de CAM não me preparou apenas para entrar no mercado de trabalho “tradicional”... foi o ponto de partida para tudo o que construí até agora.”</p>
                 </div>
 
-                <!-- Monique Moreira -->
                 <div class="testimonial-card reveal">
                     <div class="alumni-info">
                         <div class="alumni-photo">
@@ -94,9 +114,8 @@
                         <h3>Monique Moreira</h3>
                         <span class="ano">UI Designer</span>
                     </div>
-                    <p class="depoimento">“A formação em CAM deu-me uma base importante de cultura visual, comunicação e pensamento crítico sobre a imagem. Apesar de o meu percurso profissional se ter direcionado para UI Design, essas referências continuam a influenciar a forma como observo, analiso e crio soluções digitais no meu trabalho.“</p>
+                    <p class="depoimento">“A formação em CAM deu-me uma base importante de cultura visual... essas referências continuam a influenciar a forma como observo e crio soluções digitais.”</p>
                 </div>
-
             </div>
         </section>
     </main>
@@ -109,14 +128,12 @@
                 <a href="https://www.ulusofona.pt/" target="_blank">
                     <img src="IMGS/logo_lusofona.png" alt="Lusófona" class="lusofona-logo">
                 </a>
-                <p class="footer-address">Rua Augusto Rosa, nº 24<br>4000-098 Porto - Portugal</p>
             </div>
 
             <div class="footer-info">
                 <h4>Contactos</h4>
                 <div class="info-item"><strong>Tel:</strong> 222 073 230</div>
                 <div class="info-item"><strong>Email:</strong> info.cup@ulusofona.pt</div>
-                <div class="info-item"><strong>Direção:</strong> joao.alves.de.sousa@ulusofona.pt</div>
                 <a href="https://www.ulusofona.pt/porto/licenciaturas/comunicacao-audiovisual-e-multimedia" target="_blank" class="footer-link-externo">PÁGINA DO CURSO</a>
             </div>
 
@@ -124,8 +141,6 @@
                 <h4>Segue-nos</h4>
                 <a href="https://www.facebook.com/camlusofona" target="_blank">Facebook</a>
                 <a href="https://www.instagram.com/cam_lusofona/" target="_blank">Instagram</a>
-                <a href="https://www.youtube.com/@CAMLusofona" target="_blank">YouTube</a>
-                <a href="https://vimeo.com/camlusofona" target="_blank">Vimeo</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -134,5 +149,14 @@
     </footer>
 
     <script src="JS/open-titles.js"></script>
+    <script>
+        let currentSlide = 0;
+        function moveSlide(step) {
+            const slides = document.querySelectorAll('.carousel-img');
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + step + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+    </script>
 </body>
 </html>
