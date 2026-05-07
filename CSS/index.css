@@ -1,4 +1,4 @@
-/* SCROLLBAR */
+/* --- SCROLLBAR --- */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -17,7 +17,7 @@
     background: #ffee00;
 }
 
-/* BASE E HEADER */
+/* --- BASE E HEADER --- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body { 
@@ -48,6 +48,11 @@ body {
     margin: 0 auto; 
 }
 
+.logo-link {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
 .logo-header {
     display: flex;
     align-items: center;
@@ -61,7 +66,7 @@ body {
     transition: transform 0.3s ease;
 }
 
-.header-logo-img:hover {
+.logo-link:hover .header-logo-img {
     transform: scale(1.1);
 }
 
@@ -73,9 +78,7 @@ body {
     text-transform: uppercase;
 }
 
-nav {
-    display: flex;
-}
+nav { display: flex; }
 
 nav a { 
     color: white; 
@@ -89,7 +92,7 @@ nav a {
 
 nav a.active, nav a:hover { color: #ffee00; }
 
-/* HERO SECTION */
+/* --- HERO SECTION --- */
 #hero-wrap {
     position: relative;
     height: 90vh; 
@@ -102,7 +105,6 @@ nav a.active, nav a:hover { color: #ffee00; }
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: -20px; 
     z-index: 50;
     position: absolute;
     top: 50%;
@@ -150,7 +152,7 @@ nav a.active, nav a:hover { color: #ffee00; }
 
 #myVideo { width: 100%; height: 100%; object-fit: cover; }
 
-/* CONTEÚDO PRINCIPAL */
+/* --- CONTEÚDO PRINCIPAL --- */
 .titulo-seccao { 
     text-align: center; 
     padding: 100px 0 50px; 
@@ -184,6 +186,13 @@ nav a.active, nav a:hover { color: #ffee00; }
     color: #ccc; 
 }
 
+.cta-home-wrapper {
+    display: flex;
+    justify-content: center; 
+    width: 100%;
+    margin-top: 40px; 
+}
+
 .btn-candidata {
     display: inline-block;
     background: #ffee00;
@@ -192,14 +201,13 @@ nav a.active, nav a:hover { color: #ffee00; }
     text-decoration: none;
     font-weight: bold;
     border-radius: 50px;
-    margin-top: 40px;
     transition: 0.3s;
     text-transform: uppercase;
 }
 
 .btn-candidata:hover { transform: scale(1.1); background: white; }
 
-/* FOOTER */
+/* --- FOOTER FINAL --- */
 #main-footer { 
     background-color: #1a1c23; 
     border-top: 5px solid #ffee00; 
@@ -212,79 +220,121 @@ nav a.active, nav a:hover { color: #ffee00; }
     margin: 0 auto; 
     display: flex; 
     justify-content: space-between; 
+    align-items: flex-start; 
     flex-wrap: wrap; 
-    gap: 60px; 
+    gap: 40px; 
 }
 
-.footer-brand .footer-logo { 
-    color: #ffee00; 
-    font-size: 35px; 
-    font-weight: bold; 
-    margin-bottom: 10px; 
+/* COLUNA 1: LUSÓFONA */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    min-width: 250px;
+}
+
+.footer-university {
+    color: white;
+    font-weight: 900;
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.lusofona-logo { 
+    width: 200px; 
+    margin: 15px 0; 
+    filter: brightness(0) invert(1); 
 }
 
 .footer-address {
     font-size: 13px;
     color: #b0b0b0;
-    margin-top: 15px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-.lusofona-logo { 
-    width: 180px; 
-    margin-top: 25px; 
-    filter: brightness(0) invert(1); 
-    transition: 0.3s; 
+/* COLUNA 2: CENTRAL (Contactos, Título e CAM) */
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    flex: 1;
+    min-width: 300px;
 }
 
-.footer-info h4, .footer-socials h4 {
+.footer-info h4 {
     color: white;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 25px; 
+    margin-bottom: 25px;
+    font-weight: 900;
+    text-align: center; 
+}
+
+.info-items-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .info-item { 
-    margin-bottom: 20px; 
+    margin-bottom: 12px; 
     font-size: 15px; 
     color: #ffffff; 
-    line-height: 1.6;
 }
 
 .info-item strong { 
     color: #ffee00; 
     margin-right: 8px;
     text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 1px;
+    font-size: 12px;
 }
 
-.footer-link-externo {
+/* Link CAM Grande e Centrado */
+.footer-link-cam {
     display: inline-block;
-    margin-top: 10px;
-    color: #ffee00;
+    margin-top: 25px;
+    color: white; 
     text-decoration: none;
-    font-size: 13px;
-    font-weight: bold;
+    font-size: 45px; 
+    font-weight: 900;
+    letter-spacing: 5px;
+    transition: 0.3s ease;
+    text-align: center;
 }
 
+.footer-link-cam:hover {
+    color: #ffee00;
+    transform: scale(1.05);
+}
+
+/* COLUNA 3: REDES SOCIAIS (Direita) */
 .footer-socials { 
     display: flex; 
     flex-direction: column; 
-    gap: 15px; 
+    align-items: flex-start; 
+    min-width: 150px;
+}
+
+.footer-socials h4 {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    font-weight: 900;
 }
 
 .footer-socials a { 
     color: #b0b0b0; 
     text-decoration: none; 
     font-size: 14px; 
+    margin-bottom: 12px;
     transition: 0.3s; 
 }
 
-.footer-socials a:hover { 
-    color: #ffee00; 
-    transform: translateX(5px); 
-}
+.footer-socials a:hover { color: #ffee00; }
 
 .footer-bottom { 
     margin-top: 60px; 
@@ -295,7 +345,7 @@ nav a.active, nav a:hover { color: #ffee00; }
     font-size: 11px; 
 }
 
-/* BOTÃO DE SOM */
+/* --- BOTÃO DE SOM --- */
 .mute-toggle {
     position: absolute;
     bottom: 30px;
@@ -317,7 +367,7 @@ nav a.active, nav a:hover { color: #ffee00; }
 
 .mute-toggle:hover { transform: scale(1.05); background: #fff; }
 
-/* KEYFRAMES */
+/* --- KEYFRAMES --- */
 @keyframes revealIcon { to { opacity: 1; transform: scale(1); } }
 @keyframes revealText { to { opacity: 1; transform: translateX(0); } }
 @keyframes moveLogoUp {
@@ -327,7 +377,7 @@ nav a.active, nav a:hover { color: #ffee00; }
 @keyframes revealVideo { to { opacity: 1; transform: scale(1); } }
 @keyframes fadeInGeneral { to { opacity: 1; } }
 
-/* RESPONSIVIDADE */
+/* --- RESPONSIVIDADE --- */
 @media (max-width: 768px) {
     .header-logo-img { height: 30px; }
     .extenso { display: none; }
@@ -344,6 +394,8 @@ nav a.active, nav a:hover { color: #ffee00; }
     .shadow-text { font-size: 32px; }
     #indexvideo { width: 95%; height: 60%; margin-top: 20px; }
     .footer-container { flex-direction: column; text-align: center; align-items: center; gap: 40px; }
+    .footer-brand { align-items: center; } /* Centra a sanduíche no mobile */
     .footer-socials { align-items: center; }
     .lusofona-logo { margin: 20px auto; }
+    .footer-link-cam { font-size: 30px; }
 }
