@@ -29,12 +29,34 @@
     </header>
 
     <main>
-        <section class="hof-hero">
-            <h1 class="titulo-grande">
-                <span class="reveal-right">HALL OF</span> 
-                <span class="highlight reveal-right">FAME</span>
-            </h1>
-            <p class="subtitulo reveal">Ao longo de mais de 15 anos, os nossos estudantes criaram dezenas de filmes, fotografias, aplicações web e multimédia e exposições. Destacamos apenas alguns dos muitos projetos interessantes criados em CAM ao longo da nossa história.</p>
+        <section id="hero-wrap">
+            <div class="logo-animation-container">
+                <img src="IMGS/logo_icon.png" alt="Ícone CAM" class="logo-img-icon">
+                <img src="IMGS/logo_texto.png" alt="Texto CAM" class="logo-img-text">
+            </div>
+
+            <div id="indexvideo">
+                <div class="video-overlay">
+                    <h1 class="shadow-text reveal-video-text">
+                        <span class="reveal-right">HALL OF</span> 
+                        <span class="highlight reveal-right">FAME</span>
+                    </h1>
+                </div>
+                <video autoplay muted loop playsinline id="myVideo">
+                    <source src="VIDS/hero_cam.mp4" type="video/mp4">
+                    O teu navegador não suporta vídeo.
+                </video>
+                
+                <button id="muteBtn" class="mute-toggle">
+                    SOUND: <span id="statusSom">OFF</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="content-wrapper">
+            <p class="texto-corrido">
+                Ao longo de mais de 15 anos, os nossos estudantes criaram dezenas de filmes, fotografias, aplicações web e multimédia e exposições. Destacamos apenas alguns dos muitos projetos interessantes criados em CAM ao longo da nossa história.
+            </p>
         </section>
 
         <section class="hof-section">
@@ -44,7 +66,6 @@
             </h2>
             <div class="projects-grid">
                 
-                <!-- Projeto 1 -->
                 <div class="project-card reveal">
                     <div class="video-container">
                         <video controls autoplay muted loop class="video-player">
@@ -59,12 +80,10 @@
                     </div>
                 </div>
 
-                <!-- Projeto 2 -->
                 <div class="project-card reveal">
                     <div class="video-container">
                         <div class="carousel">
                             <div class="carousel-container" id="carousel-images">
-                                <!-- As 11 fotos -->
                                 <img src="IMGS/projeto2/foto1.jpg" alt="Foto 1" class="carousel-img active">
                                 <img src="IMGS/projeto2/foto2.jpg" alt="Foto 2" class="carousel-img">
                                 <img src="IMGS/projeto2/foto3.jpg" alt="Foto 3" class="carousel-img">
@@ -77,7 +96,6 @@
                                 <img src="IMGS/projeto2/foto10.jpg" alt="Foto 10" class="carousel-img">
                                 <img src="IMGS/projeto2/foto11.jpg" alt="Foto 11" class="carousel-img">
                             </div>
-                            <!-- Controlos do Carrossel -->
                             <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
                             <button class="next" onclick="moveSlide(1)">&#10095;</button>
                         </div>
@@ -98,15 +116,27 @@
                 <span class="highlight reveal-right">GRADUADOS</span>
             </h2>
             <div class="testimonials-container">
+                
                 <div class="testimonial-card reveal">
                     <div class="alumni-info">
                         <div class="alumni-photo">
                             <img src="IMGS/graduados/CAM_alumni_eliabe_campos.png" alt="Eliabe Campos">
                         </div>
                         <h3>Eliabe Campos</h3>
-                        <span class="ano">CEO Overall Studio / Fotógrafo e Videógrafo</span>
+                        <span class="cargo">CEO Overall Studio / Fotógrafo e Videógrafo</span>
                     </div>
                     <p class="depoimento">“O curso de CAM não me preparou apenas para entrar no mercado de trabalho “tradicional”... foi o ponto de partida para tudo o que construí até agora.”</p>
+                </div>
+
+                <div class="testimonial-card reveal">
+                    <div class="alumni-info">
+                        <div class="alumni-photo">
+                            <img src="IMGS/graduados/francisco_miranda.png" alt="Francisco Miranda">
+                        </div>
+                        <h3>Francisco Miranda</h3>
+                        <span class="cargo">Produtor/Realizador na Yank Creative Media</span>
+                    </div>
+                    <p class="depoimento">“No curso de CAM descobri a minha paixão pelo som e imagem, adquirindo as bases essenciais para crescer e afirmar-me na área do audiovisual, criando a minha própria produtora de fotografia e vídeo focada em trabalho publicitário.”</p>
                 </div>
 
                 <div class="testimonial-card reveal">
@@ -115,10 +145,11 @@
                             <img src="IMGS/graduados/CAM_alumni_monique_moreira.png" alt="Monique Moreira">
                         </div>
                         <h3>Monique Moreira</h3>
-                        <span class="ano">UI Designer</span>
+                        <span class="cargo">UI Designer</span>
                     </div>
                     <p class="depoimento">“A formação em CAM deu-me uma base importante de cultura visual... essas referências continuam a influenciar a forma como observo e crio soluções digitais.”</p>
                 </div>
+
             </div>
         </section>
     </main>
@@ -159,11 +190,13 @@
         </div>
     </footer>
 
+    <script src="JS/video-random.js"></script>
     <script src="JS/open-titles.js"></script>
     <script>
         let currentSlide = 0;
         function moveSlide(step) {
             const slides = document.querySelectorAll('.carousel-img');
+            if(slides.length === 0) return;
             slides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + step + slides.length) % slides.length;
             slides[currentSlide].classList.add('active');
