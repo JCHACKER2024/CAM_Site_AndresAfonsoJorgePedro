@@ -315,21 +315,16 @@ nav a.active, nav a:hover { color: #ffee00; }
     font-size: 12px;
 }
 
-.footer-link-cam {
-    display: inline-block;
-    margin-top: 25px;
+.footer-link-simple {
     color: white; 
     text-decoration: none;
-    font-size: 45px; 
-    font-weight: 900;
-    letter-spacing: 5px;
+    font-weight: bold;
     transition: 0.3s ease;
-    text-align: center;
 }
 
-.footer-link-cam:hover {
-    color: #ffee00;
-    transform: scale(1.05);
+.footer-link-simple:hover {
+    color: #ffee00; 
+    text-decoration: underline;
 }
 
 .footer-socials { 

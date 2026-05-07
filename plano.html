@@ -29,16 +29,34 @@
     </header>
 
     <main>
-        <section class="plano-hero">
-            <h1 class="titulo-grande">
-                <span class="reveal-right">PLANO DE</span> 
-                <span class="highlight reveal-right">ESTUDOS</span>
-            </h1>
-            <p class="subtitulo reveal">A Licenciatura em Comunicação Audiovisual e Multimédia aposta numa formação abrangente. Conhece um pouco mais da jornada em três atos do filme da tua licenciatura.</p>
+        <section id="hero-wrap">
+            <div class="logo-animation-container">
+                <img src="IMGS/logo_icon.png" alt="Ícone CAM" class="logo-img-icon">
+                <img src="IMGS/logo_texto.png" alt="Texto CAM" class="logo-img-text">
+            </div>
+
+            <div id="indexvideo">
+                <div class="video-overlay">
+                    <h1 class="shadow-text reveal-video-text">PLANO DE <span class="highlight">ESTUDOS</span></h1>
+                </div>
+                <video autoplay muted loop playsinline id="myVideo">
+                    <source src="VIDS/hero_cam.mp4" type="video/mp4">
+                    O teu navegador não suporta vídeo.
+                </video>
+                
+                <button id="muteBtn" class="mute-toggle">
+                    SOUND: <span id="statusSom">OFF</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="content-wrapper">
+            <p class="texto-corrido">
+                A Licenciatura em Comunicação Audiovisual e Multimédia aposta numa formação abrangente, dotando o estudante de capacidade de resposta às múltiplas áreas da produção criativa. Conhece um pouco mais da jornada em três atos do filme da tua licenciatura.
+            </p>
         </section>
 
         <section class="plano-container">
-            
             <div class="ato-wrapper reveal">
                 <div class="ato-header">
                     <h2>1º ATO: <span class="highlight">CONFIGURAÇÃO</span></h2>
@@ -80,11 +98,11 @@
                         </details>
                         <details class="uc-item">
                             <summary>Design de Interação</summary>
-                            <p>Para que alguém compreenda as tuas criações, tens que aprender as noções de interação e usabilidade.</p>
+                            <p>Aprende as noções de interação e usabilidade.</p>
                         </details>
                         <details class="uc-item">
                             <summary>Introdução às Tecnologias Multimédia</summary>
-                            <p>Descobre a enorme variedade e potencial das aplicações multimédia.</p>
+                            <p>Descobre o potencial das aplicações multimédia.</p>
                         </details>
                         <details class="uc-item">
                             <summary>Teoria do Cinema</summary>
@@ -92,7 +110,7 @@
                         </details>
                         <details class="uc-item">
                             <summary>Operações de Vídeo e Áudio</summary>
-                            <p>Aprende a captar profissionalmente som e imagem para os teus vídeos.</p>
+                            <p>Aprende a captar profissionalmente som e imagem.</p>
                         </details>
                     </div>
                 </details>
@@ -121,7 +139,7 @@
                         </details>
                         <details class="uc-item">
                             <summary>Escrita de Argumento</summary>
-                            <p>Pratica as bases narrativas para escrever ótimos argumentos.</p>
+                            <p>Pratica as bases narrativas para escrever argumentos.</p>
                         </details>
                         <details class="uc-item">
                             <summary>Sonoplastia</summary>
@@ -135,7 +153,7 @@
                     <div class="uc-list">
                         <details class="uc-item">
                             <summary>Design de Produtos Multimédia</summary>
-                            <p>Desenha experiências multimédia eficazes e envolventes.</p>
+                            <p>Desenha experiências multimédia eficazes.</p>
                         </details>
                         <details class="uc-item">
                             <summary>Direção de Atores</summary>
@@ -143,15 +161,15 @@
                         </details>
                         <details class="uc-item">
                             <summary>Direção de Fotografia II</summary>
-                            <p>Explora a fundo a cinematografia na criação de curtas metragens.</p>
+                            <p>Explora a fundo a cinematografia em curtas metragens.</p>
                         </details>
                         <details class="uc-item">
                             <summary>Economia da Cultura dos Media</summary>
-                            <p>Análise dos mercados, economia e gestão cultural.</p>
+                            <p>Gestão e economia aplicadas aos novos media.</p>
                         </details>
                         <details class="uc-item">
                             <summary>Tecnologias Multimédia</summary>
-                            <p>Explora diferentes tecnologias, de VR a AR, vídeo 360 e Scanning 3D.</p>
+                            <p>VR, AR, vídeo 360 e Scanning 3D.</p>
                         </details>
                     </div>
                 </details>
@@ -160,7 +178,7 @@
             <div class="ato-wrapper reveal">
                 <div class="ato-header">
                     <h2>3º ATO: <span class="highlight">RESOLUÇÃO</span></h2>
-                    <p>O Fim - Desenvolveste as tuas skills, está na hora de assistir ao climax do filme.</p>
+                    <p>O Fim - Está na hora de assistir ao clímax do filme.</p>
                 </div>
 
                 <details class="semestre-box">
@@ -172,11 +190,11 @@
                         </details>
                         <details class="uc-item">
                             <summary>Modelação e Animação 3D</summary>
-                            <p>Aprende a criar objetos e mundos tridimensionais e dá-lhes vida.</p>
+                            <p>Cria objetos e mundos tridimensionais.</p>
                         </details>
                         <details class="uc-item">
                             <summary>Artes Contemporâneas</summary>
-                            <p>Conhece o panorama da Arte Contemporânea para que também possas participar nele.</p>
+                            <p>Conhece o panorama atual da Arte Contemporânea.</p>
                         </details>
                         <details class="uc-item">
                             <summary>Guionismo</summary>
@@ -194,11 +212,11 @@
                         </details>
                         <details class="uc-item">
                             <summary>Projeto de Criação Multimédia</summary>
-                            <p>Cria o teu projeto de arte multimédia para expor numa galeria de Arte Contemporânea.</p>
+                            <p>Cria o teu projeto para expor numa galeria de Arte Contemporânea.</p>
                         </details>
                         <details class="uc-item">
                             <summary>Seminário de Projeto e Integração Profissional</summary>
-                            <p>Estás pronto para enfrentar a vida profissional, mostra o que vales no teu projeto ou estágio!</p>
+                            <p>Prepara-te para a vida profissional com projeto ou estágio.</p>
                         </details>
                     </div>
                 </details>
@@ -207,104 +225,130 @@
 
         <section class="docentes-section reveal">
             <h2 class="titulo-medio">CORPO <span class="highlight">DOCENTE</span></h2>
-            <div class="docentes-intro">
-                <p>A nossa equipa de trabalho apresenta docentes com perfis diversificados que serão os teus mentores e te ensinarão ao longo do curso:</p>
-            </div>
-
+            
             <div class="docentes-lista-v2">
                 <div class="docente-row">
-                    <div class="docente-img">
-                        <img src="IMGS/docentes/joao_sousa_cardoso.png" alt="João Sousa Cardoso">
-                    </div>
+                    <div class="docente-img"><img src="IMGS/docentes/joao_sousa_cardoso.png" alt="João Sousa Cardoso"></div>
                     <div class="docente-info">
                         <h3>João Sousa Cardoso</h3>
-                        <span class="cargo">Diretor do Curso</span>
-                        <p>Doutor em Artes Visuais e realizador, com vasta experiência em curadoria e arte contemporânea.</p>
+                        <span class="cargo">Diretor do Curso - Especialista em Cinema, Artes e Cultura Visual</span>
+                        <div class="premios-container">
+                            <h4 class="premios-titulo">Criações em Destaque:</h4>
+                            <ul class="premios-lista">
+                                <li>Encenador do Teatro de "A Ronda da Noite" (Gulbenkian 2022) e "Sequências Narrativas Completas" (Teatro Nacional D. Maria II 2019).</li>
+                                <li>Realizador de "Na Selva das Cidades" (São Paulo 2017) e "A Santa Joana dos Matadouros" (Cinemateca Portuguesa 2024).</li>
+                                <li>Autor dos livros "TEATRO EXPANDIDO!" (2016) e "A Espanha das Espanhas" (2020).</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
                 <div class="docente-row reverse">
-                    <div class="docente-img">
-                        <img src="IMGS/docentes/joao_alves_de_sousa.png" alt="João Alves de Sousa">
-                    </div>
+                    <div class="docente-img"><img src="IMGS/docentes/joao_alves_de_sousa.png" alt="João Alves de Sousa"></div>
                     <div class="docente-info">
                         <h3>João Alves de Sousa</h3>
-                        <span class="cargo">SubDiretor do Curso</span>
-                        <p class="docente-bio">Especialista em Game Design e Animação.</p>
+                        <span class="cargo">SubDiretor do Curso - Especialista em Game Design e Animação</span>
                         <div class="premios-container">
                             <h4 class="premios-titulo">Criações em Destaque:</h4>
                             <ul class="premios-lista">
-                                <li><strong>Lots of Guts</strong> — Vencedor de Jogo mais Inovador Prémios Playstation Portugal 2015</li>
-                                <li><strong>Sendo um Feto</strong> — Melhor filme de estudantes, Monstra 2006</li>
-                                <li><strong>Porquê</strong> — Vencedora do Prémio de Jovem Cineasta, Cinanima 2006</li>
+                                <li>Lots of Guts (Vencedor de Jogo mais Inovador Prémios Playstation Portugal 2015).</li>
+                                <li>Sendo um Feto (Animação Vencedora do Prémio Melhor filme de estudantes – Monstra 2006).</li>
+                                <li>Porquê (Animação Vencedora do Prémio de Jovem Cineasta – Cinanima 2006).</li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <div class="docente-row">
-                    <div class="docente-img">
-                        <img src="IMGS/docentes/andreia_pinto-de_sousa.png" alt="Andreia Pinto de Sousa">
+                    <div class="docente-img"><img src="IMGS/docentes/nuno_bernardo.png" alt="Nuno Bernardo"></div>
+                    <div class="docente-info">
+                        <h3>Nuno Bernardo</h3>
+                        <span class="cargo">Argumentista, Realizador e Produtor</span>
+                        <div class="premios-container">
+                            <h4 class="premios-titulo">Criações em Destaque:</h4>
+                            <ul class="premios-lista">
+                                <li>Gabriel (Longa-metragem estreada no Festival de Cinema de Locarno 2018).</li>
+                                <li>Pianista (Longa-metragem apresentada no Motelx 2025).</li>
+                                <li>Sofia’s Diary (Série exibida em mais de 30 países, Sony Pictures Television).</li>
+                            </ul>
+                        </div>
                     </div>
+                </div>
+
+                <div class="docente-row reverse">
+                    <div class="docente-img"><img src="IMGS/docentes/marco_ferreira.png" alt="Marco Ferreira"></div>
+                    <div class="docente-info">
+                        <h3>Marco Ferreira</h3>
+                        <span class="cargo">Resp. Dept. Audiovisual ULP - Especialista em Direção de Fotografia e Realização</span>
+                        <div class="premios-container">
+                            <h4 class="premios-titulo">Criações em Destaque:</h4>
+                            <ul class="premios-lista">
+                                <li>A Esperança está onde menos se espera (Assistente de Realização, Longa-metragem de Joaquim Leitão).</li>
+                                <li>Sweet Valentine - (Assistente de Realização, Longa-metragem de Emma Luchini).</li>
+                                <li>Renault, Peugeot, Nestlé (Assistente realização em Spots publicitários, Filmes Tejo).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docente-row">
+                    <div class="docente-img"><img src="IMGS/docentes/jose_raimundo.png" alt="José Raimundo"></div>
+                    <div class="docente-info">
+                        <h3>José Raimundo</h3>
+                        <span class="cargo">Doutorado em Medias Digitais - Especialista em 3D e Ilustração</span>
+                        <div class="premios-container">
+                            <h4 class="premios-titulo">Em destaque:</h4>
+                            <ul class="premios-lista">
+                                <li>Coordenador do projecto internacional Virtual Production Studio Networks.</li>
+                                <li>The case of See, Hear, Touch no Evil e Bully Who? (DIGICOM 2018 e 2019).</li>
+                                <li>Segundo lugar na 4º Competição Internacional de Ilustração, Treviso, Itália (2016).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="docente-row reverse">
+                    <div class="docente-img"><img src="IMGS/docentes/andreia_pinto_de_sousa.png" alt="Andreia Pinto de Sousa"></div>
                     <div class="docente-info">
                         <h3>Andreia Pinto de Sousa</h3>
                         <span class="cargo">Especialista em Usabilidade e Design de Interação</span>
-                        <p>Focada na otimização da experiência do utilizador e interfaces digitais.</p>
+                        <p>Trabalho focado na experiência do utilizador e arquitetura de informação em sistemas digitais.</p>
                     </div>
                 </div>
 
-                <div class="docente-row reverse">
-                    <div class="docente-img">
-                        <img src="IMGS/docentes/eduardo_magalhaes.png" alt="Eduardo Magalhães">
-                    </div>
+                <div class="docente-row">
+                    <div class="docente-img"><img src="IMGS/docentes/eduardo_magalhaes.png" alt="Eduardo Magalhães"></div>
                     <div class="docente-info">
                         <h3>Eduardo Magalhães</h3>
                         <span class="cargo">Especialista em Sonoplastia e Tecnologias Multimédia</span>
-                        <p>Desenvolve trabalho na área do desenho de som e implementação tecnológica multimédia.</p>
-                    </div>
-                </div>
-
-                <div class="docente-row">
-                    <div class="docente-img">
-                        <img src="IMGS/docentes/jose_raimundo.png" alt="José Raimundo">
-                    </div>
-                    <div class="docente-info">
-                        <h3>José Raimundo</h3>
-                        <span class="cargo">Especialista em 3D e Ilustração</span>
-                        <p>Dedicado à criação de mundos tridimensionais, modelação e artes visuais.</p>
+                        <p>Desenvolve soluções criativas em ambientes sonoros e tecnologias audiovisuais interativas.</p>
                     </div>
                 </div>
 
                 <div class="docente-row reverse">
-                    <div class="docente-img">
-                        <img src="IMGS/docentes/rodrigo_carvalho.png" alt="Rodrigo Carvalho">
-                    </div>
+                    <div class="docente-img"><img src="IMGS/docentes/rodrigo_carvalho.png" alt="Rodrigo Carvalho"></div>
                     <div class="docente-info">
                         <h3>Rodrigo Carvalho</h3>
                         <span class="cargo">Especialista em Tecnologias Criativas</span>
-                        <p>Explora a interseção entre código, arte visual e performance interactiva.</p>
+                        <p>Exploração artística através de novos media e tecnologias emergentes.</p>
                     </div>
                 </div>
 
                 <div class="docente-row">
-                    <div class="docente-img">
-                        <img src="IMGS/docentes/hugo_barbosa.png" alt="Hugo Barbosa">
-                    </div>
+                    <div class="docente-img"><img src="IMGS/docentes/hugo_barbosa.png" alt="Hugo Barbosa"></div>
                     <div class="docente-info">
                         <h3>Hugo Barbosa</h3>
                         <span class="cargo">Especialista em Tecnologias Web</span>
-                        <p>Focado no desenvolvimento de plataformas web robustas e inovadoras.</p>
+                        <p>Desenvolvedor de soluções avançadas para comunicação e interação em plataformas digitais.</p>
                     </div>
                 </div>
 
                 <div class="docente-row reverse">
-                    <div class="docente-img">
-                        <img src="IMGS/docentes/vanessa_rodrigues.png" alt="Vanessa Rodrigues">
-                    </div>
+                    <div class="docente-img"><img src="IMGS/docentes/vanessa_rodrigues.png" alt="Vanessa Rodrigues"></div>
                     <div class="docente-info">
                         <h3>Vanessa Rodrigues</h3>
                         <span class="cargo">Especialista em Audiovisual, Realizadora</span>
-                        <p>Jornalista e realizadora com foco em documentário e narrativas audiovisuais.</p>
+                        <p>Realização focada no documentário e nas novas linguagens da narrativa audiovisual contemporânea.</p>
                     </div>
                 </div>
             </div>
@@ -327,8 +371,11 @@
                     <div class="info-item"><strong>Tel:</strong> 222 073 230</div>
                     <div class="info-item"><strong>Email:</strong> info.cup@ulusofona.pt</div>
                     <div class="info-item"><strong>Direção:</strong> joao.alves.de.sousa@ulusofona.pt</div>
+                    <div class="info-item">
+                        <strong>Página Institucional:</strong> 
+                        <a href="https://www.ulusofona.pt/porto/licenciaturas/comunicacao-audiovisual-e-multimedia" target="_blank" class="footer-link-simple">CAM</a>
+                    </div>
                 </div>
-                <a href="https://www.ulusofona.pt/porto/licenciaturas/comunicacao-audiovisual-e-multimedia" target="_blank" class="footer-link-cam">CAM</a>
             </div>
 
             <div class="footer-socials">
@@ -344,6 +391,7 @@
         </div>
     </footer>
 
+    <script src="JS/video-random.js"></script>
     <script src="JS/open-titles.js"></script>
 </body>
 </html>
