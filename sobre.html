@@ -29,20 +29,31 @@
     </header>
 
     <main>
-        <section class="hero-video-container">
-            <video autoplay muted loop playsinline id="hero-video">
-                <source src="https://drive.google.com/uc?export=download&id=1KSmv5oEKIh0VBgNy4yzliRgcArHeo_Fb" type="video/mp4">
-            </video>
-            <div class="video-overlay">
-                <h1 class="reveal-right">VIVER NA <span class="highlight">CRIATIVIDADE</span></h1>
-                <p class="reveal">CAM é uma licenciatura que te permite ter uma multiplicidade de experiências que vão para além das próprias portas da Universidade.</p>
+        <section id="hero-wrap">
+            <div class="logo-animation-container">
+                <img src="IMGS/logo_icon.png" alt="Ícone CAM" class="logo-img-icon">
+                <img src="IMGS/logo_texto.png" alt="Texto CAM" class="logo-img-text">
+            </div>
+
+            <div id="indexvideo">
+                <div class="video-overlay">
+                    <h1 class="shadow-text reveal-video-text">VIVER NA <span class="highlight">CRIATIVIDADE</span></h1>
+                </div>
+                <video autoplay muted loop playsinline id="myVideo">
+                    <source src="VIDS/hero_cam.mp4" type="video/mp4">
+                    O teu navegador não suporta vídeo.
+                </video>
+                
+                <button id="muteBtn" class="mute-toggle">
+                    SOUND: <span id="statusSom">OFF</span>
+                </button>
             </div>
         </section>
 
-        <section class="intro-text reveal">
-            <div class="container-pequeno">
-                <p>Queremos alargar horizontes e estar na vanguarda da imagem do futuro. Conhece os espaços e eventos que definem o nosso curso.</p>
-            </div>
+        <section class="content-wrapper">
+            <p class="texto-corrido">
+                CAM é uma licenciatura que te permite ter uma multiplicidade de experiências que vão para além das próprias portas da Universidade, sendo um curso aberto à cidade e ao mundo. Queremos alargar horizontes e estar na vanguarda da imagem do futuro. Conhece os espaços e eventos que definem o nosso curso.
+            </p>
         </section>
 
         <section class="destaques-grid reveal">
@@ -192,6 +203,7 @@
         </div>
     </footer>
 
+    <script src="JS/video-random.js"></script>
     <script src="JS/open-titles.js"></script>
 </body>
 </html>
