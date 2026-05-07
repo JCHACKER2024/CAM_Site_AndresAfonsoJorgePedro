@@ -29,17 +29,161 @@
     </header>
 
     <main>
-        <section class="multiplex-hero">
-            <h1 class="titulo-grande">
-                <span class="reveal-right">MULTI</span> 
-                <span class="highlight reveal-right">PLEX</span>
-            </h1>
-            <p class="subtitulo reveal">Espaço em branco para o conteúdo do evento Multiplex.</p>
+        <section id="hero-wrap">
+            <div id="indexvideo">
+                <div class="video-overlay">
+                    <h1 class="shadow-text reveal-video-text">MULTI<span class="highlight">PLEX</span></h1>
+                </div>
+                <video autoplay muted loop playsinline id="myVideo">
+                    <source src="VIDS/hero_cam.mp4" type="video/mp4">
+                    O teu navegador não suporta vídeo.
+                </video>
+                
+                <button id="muteBtn" class="mute-toggle">
+                    SOUND: <span id="statusSom">OFF</span>
+                </button>
+            </div>
         </section>
 
-        <!-- O conteúdo principal será inserido aqui posteriormente -->
-        <section class="content-placeholder">
-            <!-- Podes adicionar aqui as tuas futuras secções -->
+        <section class="content-wrapper reveal">
+            <p class="texto-corrido">
+                O Multiplex - Ciclo de Imagens em Movimento é um evento anual de enorme importância para o curso de CAM[cite: 150]. Já teve diversos formatos, contando com Workshops, Masterclasses e Exposições em parceria com instituições como o Cinema Passos Manuel, Maus Hábitos, Teatro Municipal do Porto Rivoli, Espaço Mira e o Batalha Centro de Cinema[cite: 151]. Orgulhamo-nos de ter trazido cineastas e artistas de relevo internacional como Ildikó Enyedi, Nan Goldin, Sara Driver, ORLAN e Manoel de Oliveira[cite: 152].
+            </p>
+        </section>
+
+        <section class="edicoes-section reveal">
+            <h2 class="titulo-medio">
+                <span class="reveal-right">EDIÇÕES DO</span> 
+                <span class="highlight reveal-right">MULTIPLEX</span>
+            </h2>
+            
+            <div class="edicoes-grid">
+                <div class="edicao-card future">
+                    <span class="ano-tag">2026</span>
+                    <h3>Meg Stuart</h3>
+                    <p>Coming Soon [cite: 195]</p>
+                </div>
+
+                <div class="edicao-card">
+                    <span class="ano-tag">2025</span>
+                    <h3>Ildikó Enyedi</h3>
+                    <div class="links-edicao">
+                        <a href="https://www.instagram.com/p/DJAS7KXoSz3/?img_index=1" target="_blank">Mais Info</a>
+                    </div>
+                </div>
+
+                <div class="edicao-card">
+                    <span class="ano-tag">2024</span>
+                    <h3>ORLAN</h3>
+                    <div class="links-edicao">
+                        <a href="https://www.instagram.com/p/C6yHvpGoejP/" target="_blank">Mais Info</a>
+                    </div>
+                </div>
+
+                <div class="edicao-card">
+                    <span class="ano-tag">2023</span>
+                    <h3>Sara Driver</h3>
+                    <div class="links-edicao">
+                        <a href="https://www.instagram.com/p/Cs9R_ZDoOtT/" target="_blank">Mais Info</a>
+                    </div>
+                </div>
+
+                <div class="edicao-card">
+                    <span class="ano-tag">2022</span>
+                    <h3>Nan Goldin</h3>
+                    <div class="links-edicao">
+                        <a href="https://www.instagram.com/p/Cdop2I2okbY/" target="_blank">Mais Info</a>
+                    </div>
+                </div>
+
+                <div class="edicao-card">
+                    <span class="ano-tag">2021</span>
+                    <h3>Júlio Bressane</h3>
+                    <div class="links-edicao">
+                        <a href="https://www.instagram.com/p/CO8Xz5rrCyW/" target="_blank">Mais Info</a>
+                    </div>
+                </div>
+
+                <div class="edicao-card">
+                    <span class="ano-tag">2020</span>
+                    <h3>Edição Online</h3>
+                    <div class="links-edicao">
+                        <a href="https://www.instagram.com/p/CBNwioYJAz4/" target="_blank">Mais Info</a>
+                    </div>
+                </div>
+
+                <div class="edicao-card">
+                    <span class="ano-tag">2019</span>
+                    <h3>Bette Gordon</h3>
+                    <div class="links-edicao">
+                        <a href="https://www.teatromunicipaldoporto.pt/en/programa/multiplex-2019-bette-gordon-parceria-com-universidade-lusofona-do-porto/" target="_blank">Mais Info</a>
+                    </div>
+                </div>
+
+                <div class="edicao-card">
+                    <span class="ano-tag">2018</span>
+                    <h3>Renato Berta</h3>
+                    <div class="links-edicao">
+                        <a href="https://www.youtube.com/watch?v=e0cpapz7G1I" target="_blank">Mais Info</a>
+                    </div>
+                </div>
+
+                <div class="edicao-card">
+                    <span class="ano-tag">2017</span>
+                    <h3>Víctor Erice</h3>
+                    <div class="links-edicao">
+                        <a href="https://www.cinema7arte.com/multiplex-2017-contara-presenca-victor-erice/" target="_blank">Mais Info</a>
+                    </div>
+                </div>
+
+                <div class="edicao-card">
+                    <span class="ano-tag">2016</span>
+                    <h3>Agnés Varda</h3>
+                    <div class="links-edicao">
+                        <a href="https://arquivos.rtp.pt/conteudos/distincoes-a-agnes-varda/" target="_blank">Mais Info</a>
+                    </div>
+                </div>
+
+                <div class="edicao-card">
+                    <span class="ano-tag">2015</span>
+                    <h3>Pedro Costa</h3>
+                    <div class="links-edicao">
+                        <a href="https://www.jpn.up.pt/2015/05/26/multiplex-2015-estudantes-voltam-promover-exibicao-curtas-metragens/" target="_blank">Mais Info</a>
+                    </div>
+                </div>
+
+                <div class="edicao-card">
+                    <span class="ano-tag">2014</span>
+                    <h3>Edgar Pêra</h3>
+                    <div class="links-edicao">
+                        <a href="https://multiplex2014ulp.wixsite.com/mltpxulp/edgar-pra" target="_blank">Mais Info</a>
+                    </div>
+                </div>
+
+                <div class="edicao-card">
+                    <span class="ano-tag">2013</span>
+                    <h3>José Luís Guerin</h3>
+                    <div class="links-edicao">
+                        <a href="https://docs.llull.cat/IMAGES_2/programa-multiplex.pdf" target="_blank">Mais Info</a>
+                    </div>
+                </div>
+
+                <div class="edicao-card">
+                    <span class="ano-tag">2012</span>
+                    <h3>Manoel de Oliveira</h3>
+                    <div class="links-edicao">
+                        <a href="https://www.youtube.com/watch?v=MvOlw9ToK6k" target="_blank">Mais Info</a>
+                    </div>
+                </div>
+
+                <div class="edicao-card">
+                    <span class="ano-tag">2011</span>
+                    <h3>Boris Lehman</h3>
+                    <div class="links-edicao">
+                        <a href="https://tvi.iol.pt/noticias/cinebox/universidade-lusofona/multiplex-2011-traz-boris-lehman-ao-porto" target="_blank">Mais Info</a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -79,6 +223,7 @@
         </div>
     </footer>
 
+    <script src="JS/video-random.js"></script>
     <script src="JS/open-titles.js"></script>
 </body>
 </html>
