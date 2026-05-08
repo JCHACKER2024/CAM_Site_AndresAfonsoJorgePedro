@@ -16,8 +16,6 @@
     left: 50%;
     min-width: 100%;
     min-height: 100%;
-    width: auto;
-    height: auto;
     transform: translate(-50%, -50%);
     object-fit: cover;
     z-index: -1;
@@ -44,7 +42,6 @@
     display: flex;
     justify-content: center;
     gap: 15px;
-    flex-wrap: wrap;
 }
 
 .highlight {
@@ -57,7 +54,7 @@
     margin: 0 auto;
 }
 
-/* --- GRELHA DE DESTAQUES (NOVA ESTÉTICA) --- */
+/* --- GRELHA DE DESTAQUES (ESTÉTICA HOF) --- */
 .destaques-section {
     padding: 60px 20px 100px;
     max-width: 1200px;
@@ -102,21 +99,17 @@
     object-fit: cover;
 }
 
-.multiplex-video-fix .card-video {
-    object-fit: contain;
-}
-
+/* FIX PARA VÍDEOS NÃO CORTAREM (MULTIPLEX E REEL) */
+.multiplex-video-fix .card-video,
 .equipamento-video-fix .card-video {
-    object-fit: contain; 
-    background: #000; 
+    object-fit: contain;
+    background: #000;
 }
 
 /* INFO DO CARD */
 .card-info {
     padding: 30px;
     flex-grow: 1;
-    display: flex;
-    flex-direction: column;
 }
 
 .tag-amarela {
@@ -140,31 +133,10 @@
     color: #a0a0a0;
     font-size: 15px;
     line-height: 1.6;
-    margin-bottom: 25px;
     text-align: justify;
 }
 
-.btn-card-sobre {
-    margin-top: auto;
-    display: block;
-    text-align: center;
-    border: 2px solid #ffee00;
-    color: #ffee00;
-    text-decoration: none;
-    padding: 12px;
-    font-weight: 900;
-    font-size: 11px;
-    text-transform: uppercase;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.btn-card-sobre:hover {
-    background: #ffee00;
-    color: #000;
-}
-
-/* --- BOTÕES CARROSSEL (ESTÉTICA HOF) --- */
+/* --- BOTÕES CARROSSEL --- */
 .c-prev, .c-next {
     position: absolute;
     top: 50%;
@@ -178,7 +150,7 @@
     cursor: pointer;
     font-size: 24px;
     z-index: 10;
-    transition: all 0.3s ease;
+    transition: 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -211,7 +183,7 @@
     opacity: 1;
 }
 
-/* --- TABELA DE SAÍDAS (SISTEMA DE CLIQUE) --- */
+/* --- TABELA DE SAÍDAS (ACORDEÃO) --- */
 .saidas-section {
     padding: 120px 20px;
     background: #0a0b0e;
@@ -229,9 +201,7 @@
     transition: 0.3s;
 }
 
-.saida-row:hover {
-    background: rgba(255, 255, 255, 0.02);
-}
+.saida-row:hover { background: rgba(255, 255, 255, 0.02); }
 
 .saida-header {
     padding: 30px 20px;
@@ -248,9 +218,7 @@
     letter-spacing: 1px;
 }
 
-.saida-row.active h4 {
-    color: #ffee00;
-}
+.saida-row.active h4 { color: #ffee00; }
 
 .saida-info {
     max-height: 0;
@@ -270,7 +238,6 @@
     color: #aaa;
     font-size: 15px;
     line-height: 1.7;
-    margin: 0;
     text-align: justify;
 }
 
@@ -296,7 +263,7 @@
     object-fit: contain; 
     opacity: 0.5;
     filter: grayscale(1) brightness(1.2);
-    transition: all 0.4s ease;
+    transition: 0.4s;
 }
 
 .parceiro-link:hover img {
@@ -312,7 +279,6 @@
     gap: 25px;
     justify-content: center;
     background: #0f1014;
-    width: 100%;
 }
 
 .btn-cta {
@@ -339,7 +305,7 @@
     border-color: white;
 }
 
-/* --- ANIMAÇÕES E RESPONSIVIDADE --- */
+/* --- ANIMAÇÕES --- */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -349,6 +315,7 @@
     animation: fadeInUp 0.6s ease-out forwards;
 }
 
+/* --- RESPONSIVIDADE --- */
 @media (max-width: 1024px) {
     .parceiros-grid { flex-wrap: wrap; gap: 40px; }
     .parceiro-link img { height: 80px; max-width: 180px; }
