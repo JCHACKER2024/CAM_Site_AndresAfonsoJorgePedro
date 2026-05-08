@@ -1,4 +1,4 @@
-/* --- HERO VIDEO --- */
+/* --- HERO SECTION --- */
 .hero-video-container {
     position: relative;
     width: 100%;
@@ -54,7 +54,7 @@
     margin: 0 auto;
 }
 
-/* --- GRELHA DE DESTAQUES (ESTÉTICA HOF) --- */
+/* --- GRELHA DE DESTAQUES --- */
 .destaques-section {
     padding: 60px 20px 100px;
     max-width: 1200px;
@@ -99,14 +99,12 @@
     object-fit: cover;
 }
 
-/* FIX PARA VÍDEOS NÃO CORTAREM (MULTIPLEX E REEL) */
 .multiplex-video-fix .card-video,
 .equipamento-video-fix .card-video {
     object-fit: contain;
     background: #000;
 }
 
-/* INFO DO CARD */
 .card-info {
     padding: 30px;
     flex-grow: 1;
@@ -136,7 +134,7 @@
     text-align: justify;
 }
 
-/* --- BOTÕES CARROSSEL --- */
+/* --- CARROSSEL --- */
 .c-prev, .c-next {
     position: absolute;
     top: 50%;
@@ -183,7 +181,7 @@
     opacity: 1;
 }
 
-/* --- TABELA DE SAÍDAS (ACORDEÃO) --- */
+/* --- SAIDAS --- */
 .saidas-section {
     padding: 120px 20px;
     background: #0a0b0e;
@@ -229,7 +227,7 @@
 }
 
 .saida-row.active .saida-info {
-    max-height: 400px;
+    max-height: 500px;
     opacity: 1;
     padding-bottom: 40px; 
 }
@@ -272,7 +270,7 @@
     transform: scale(1.05); 
 }
 
-/* --- BOTÕES CTA --- */
+/* --- CTA --- */
 .cta-section {
     padding: 40px 20px 150px; 
     display: flex;
@@ -305,7 +303,7 @@
     border-color: white;
 }
 
-/* --- ANIMAÇÕES --- */
+/* --- ANIMACAO --- */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -317,12 +315,94 @@
 
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 1024px) {
-    .parceiros-grid { flex-wrap: wrap; gap: 40px; }
-    .parceiro-link img { height: 80px; max-width: 180px; }
-    .destaques-grid { grid-template-columns: 1fr; }
+    .destaques-grid { 
+        grid-template-columns: 1fr; 
+        gap: 30px;
+    }
+    
+    .parceiros-grid { 
+        flex-wrap: wrap; 
+        gap: 40px; 
+    }
+    
+    .parceiro-link img { 
+        height: 80px; 
+        max-width: 180px; 
+    }
+    
+    .card { 
+        height: auto; 
+    }
+    
+    .card-info { 
+        padding: 25px; 
+    }
+    
+    .c-prev, .c-next { 
+        opacity: 1; 
+        width: 40px; 
+        height: 60px; 
+        font-size: 20px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .titulo-seccao, .titulo-medio {
+        font-size: clamp(24px, 8vw, 36px);
+        margin-bottom: 40px;
+        padding: 0 15px;
+        line-height: 1.2;
+        letter-spacing: 1px;
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        gap: 5px;
+    }
+
+    .parceiros-grid {
+        flex-direction: column;
+        gap: 50px;
+        margin: 30px auto 60px;
+    }
+
+    .parceiro-link img {
+        height: auto;
+        max-width: 200px;
+    }
+
+    .saida-header h4 {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .saida-header {
+        padding: 20px 15px;
+    }
+
+    .content-wrapper {
+        padding: 60px 20px;
+    }
 }
 
 @media (max-width: 480px) {
-    .cta-section { flex-direction: column; align-items: center; }
-    .btn-cta { width: 100%; text-align: center; }
+    .cta-section { 
+        flex-direction: column; 
+        align-items: center; 
+        gap: 15px;
+        padding: 40px 20px 100px;
+    }
+    
+    .btn-cta { 
+        width: 100%; 
+        text-align: center; 
+        padding: 15px 20px;
+    }
+
+    .saida-header h4 {
+        font-size: 14px;
+    }
+
+    .header-logo-img {
+        height: 25px;
+    }
 }

@@ -1,21 +1,8 @@
 /* --- SCROLLBAR --- */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #333742; 
-}
-
-::-webkit-scrollbar-thumb {
-    background: #4a4e5a; 
-    border-radius: 10px;
-    border: 2px solid #333742; 
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #ffee00;
-}
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #333742; }
+::-webkit-scrollbar-thumb { background: #4a4e5a; border-radius: 10px; border: 2px solid #333742; }
+::-webkit-scrollbar-thumb:hover { background: #ffee00; }
 
 /* --- BASE E HEADER --- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -48,16 +35,8 @@ body {
     margin: 0 auto; 
 }
 
-.logo-link {
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.logo-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+.logo-link { text-decoration: none; transition: 0.3s; }
+.logo-header { display: flex; align-items: center; gap: 10px; }
 
 .header-logo-img {
     height: 40px;
@@ -66,9 +45,7 @@ body {
     transition: transform 0.3s ease;
 }
 
-.logo-link:hover .header-logo-img {
-    transform: scale(1.1);
-}
+.logo-link:hover .header-logo-img { transform: scale(1.1); }
 
 .extenso { 
     color: #ffee00; 
@@ -79,7 +56,6 @@ body {
 }
 
 nav { display: flex; }
-
 nav a { 
     color: white; 
     text-decoration: none; 
@@ -96,6 +72,7 @@ nav a.active, nav a:hover { color: #ffee00; }
 #hero-wrap {
     position: relative;
     height: 90vh; 
+    min-height: 500px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -113,9 +90,7 @@ nav a.active, nav a:hover { color: #ffee00; }
     animation: moveLogoUp 1.2s cubic-bezier(0.85, 0, 0.15, 1) 2.5s forwards;
 }
 
-.is-home .logo-animation-container {
-    display: flex; 
-}
+.is-home .logo-animation-container { display: flex; }
 
 .logo-img-icon {
     height: 500px; 
@@ -155,11 +130,6 @@ nav a.active, nav a:hover { color: #ffee00; }
     width: 100%; 
     height: 100%;
     background: rgba(0, 0, 0, 0.4);
-    display: block;
-    flex-direction: column;
-    justify-content: flex-start; 
-    align-items: center;          
-    padding-top: 0vh;           
     z-index: 55;
     pointer-events: none;
 }
@@ -175,12 +145,16 @@ nav a.active, nav a:hover { color: #ffee00; }
     white-space: nowrap; 
 }
 
-#myVideo { width: 100%; height: 100%; object-fit: cover; }
+#myVideo { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
 
 /* --- CONTEÚDO PRINCIPAL --- */
 .titulo-seccao { 
     text-align: center; 
-    padding: 100px 0 50px; 
+    padding: 100px 20px 50px; 
     opacity: 0; 
     animation: fadeInGeneral 1s forwards 1.2s; 
 }
@@ -198,7 +172,7 @@ nav a.active, nav a:hover { color: #ffee00; }
 .content-wrapper { 
     max-width: 1100px; 
     margin: 0 auto; 
-    padding-bottom: 80px; 
+    padding: 0 20px 80px; 
     opacity: 0; 
     animation: fadeInGeneral 1s forwards 1.4s; 
 }
@@ -206,9 +180,10 @@ nav a.active, nav a:hover { color: #ffee00; }
 .texto-corrido { 
     padding-left: 30px; 
     border-left: 5px solid #ffee00; 
-    font-size: 20px; 
+    font-size: clamp(16px, 2vw, 20px); 
     line-height: 1.8; 
     color: #ccc; 
+    text-align: justify;
 }
 
 .cta-home-wrapper {
@@ -250,116 +225,27 @@ nav a.active, nav a:hover { color: #ffee00; }
     gap: 40px; 
 }
 
-.footer-brand {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    text-align: center;
-    min-width: 250px;
-}
+.footer-brand { display: flex; flex-direction: column; align-items: center; text-align: center; min-width: 250px; }
+.footer-university { color: white; font-weight: 900; font-size: 17px; text-transform: uppercase; letter-spacing: 1px; }
+.lusofona-logo { width: 200px; margin: 15px 0; filter: brightness(0) invert(1); }
+.footer-address { font-size: 13px; color: #b0b0b0; line-height: 1.6; }
 
-.footer-university {
-    color: white;
-    font-weight: 900;
-    font-size: 17px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+.footer-info { display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 300px; }
+.footer-info h4 { color: white; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; font-weight: 900; }
 
-.lusofona-logo { 
-    width: 200px; 
-    margin: 15px 0; 
-    filter: brightness(0) invert(1); 
-}
+.info-items-group { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+.info-item { margin-bottom: 12px; font-size: 15px; color: #ffffff; }
+.info-item strong { color: #ffee00; margin-right: 8px; text-transform: uppercase; font-size: 12px; }
 
-.footer-address {
-    font-size: 13px;
-    color: #b0b0b0;
-    line-height: 1.6;
-}
+.footer-link-simple { color: white; text-decoration: none; font-weight: bold; transition: 0.3s ease; }
+.footer-link-simple:hover { color: #ffee00; text-decoration: underline; }
 
-.footer-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    flex: 1;
-    min-width: 300px;
-}
-
-.footer-info h4 {
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 25px;
-    font-weight: 900;
-    text-align: center; 
-}
-
-.info-items-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-}
-
-.info-item { 
-    margin-bottom: 12px; 
-    font-size: 15px; 
-    color: #ffffff; 
-}
-
-.info-item strong { 
-    color: #ffee00; 
-    margin-right: 8px;
-    text-transform: uppercase;
-    font-size: 12px;
-}
-
-.footer-link-simple {
-    color: white; 
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s ease;
-}
-
-.footer-link-simple:hover {
-    color: #ffee00; 
-    text-decoration: underline;
-}
-
-.footer-socials { 
-    display: flex; 
-    flex-direction: column; 
-    align-items: flex-start; 
-    min-width: 150px;
-}
-
-.footer-socials h4 {
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 25px;
-    font-weight: 900;
-}
-
-.footer-socials a { 
-    color: #b0b0b0; 
-    text-decoration: none; 
-    font-size: 14px; 
-    margin-bottom: 12px;
-    transition: 0.3s; 
-}
-
+.footer-socials { display: flex; flex-direction: column; align-items: flex-start; min-width: 150px; }
+.footer-socials h4 { color: white; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; font-weight: 900; }
+.footer-socials a { color: #b0b0b0; text-decoration: none; font-size: 14px; margin-bottom: 12px; transition: 0.3s; }
 .footer-socials a:hover { color: #ffee00; }
 
-.footer-bottom { 
-    margin-top: 60px; 
-    padding-top: 25px; 
-    border-top: 1px solid rgba(255,255,255,0.05); 
-    text-align: center; 
-    color: #555; 
-    font-size: 11px; 
-}
+.footer-bottom { margin-top: 60px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; color: #555; font-size: 11px; }
 
 /* --- BOTÃO DE SOM --- */
 .mute-toggle {
@@ -379,7 +265,6 @@ nav a.active, nav a:hover { color: #ffee00; }
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    pointer-events: auto; /* Garante o clique */
 }
 
 .mute-toggle:hover { transform: scale(1.05); background: #fff; }
@@ -392,43 +277,60 @@ nav a.active, nav a:hover { color: #ffee00; }
     100% { top: -80px; transform: translate(-50%, 0) scale(0.28); }
 }
 @keyframes moveTitleUp {
-    0% { 
-        top: 50%; 
-        transform: translate(-50%, -50%) scale(1.5); 
-        opacity: 0;
-    }
-    20% {
-        opacity: 1;
-    }
-    100% { 
-        top: 0%;
-        transform: translate(-50%, 0) scale(1); 
-        opacity: 1;
-    }
+    0% { top: 50%; transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+    20% { opacity: 1; }
+    100% { top: 0%; transform: translate(-50%, 0) scale(1); opacity: 1; }
 }
 @keyframes revealVideo { to { opacity: 1; transform: scale(1); } }
 @keyframes fadeInGeneral { to { opacity: 1; } }
 
-/* --- RESPONSIVIDADE --- */
+/* --- RESPONSIVIDADE REVISTA --- */
 @media (max-width: 768px) {
+    body { padding-top: 70px; }
+    #header { padding: 10px; }
     .header-logo-img { height: 30px; }
     .extenso { display: none; }
-    nav a { margin-left: 10px; font-size: 10px; }
-    .header-container { padding: 0 10px; }
-    .logo-img-icon { height: 200px; }
-    .logo-img-text { height: 200px; }
+    nav a { margin-left: 10px; font-size: 11px; }
     
+    #hero-wrap { height: 70vh; }
+    
+    .logo-img-icon, .logo-img-text { height: clamp(150px, 30vw, 250px); }
+
     @keyframes moveLogoUp {
         0% { top: 50%; transform: translate(-50%, -50%) scale(1); }
-        100% { top: 30px; transform: translate(-50%, 0) scale(0.35); }
+        100% { top: -20px; transform: translate(-50%, 0) scale(0.35); }
     }
 
-    .shadow-text { font-size: 32px; }
-    .shadow-text.reveal-video-text { margin-top: -60px; }
-    #indexvideo { width: 95%; height: 60%; margin-top: 20px; }
-    .footer-container { flex-direction: column; text-align: center; align-items: center; gap: 40px; }
-    .footer-brand { align-items: center; } 
-    .footer-socials { align-items: center; }
-    .lusofona-logo { margin: 20px auto; }
-    .footer-link-cam { font-size: 30px; }
+    .shadow-text { font-size: clamp(28px, 8vw, 40px); }
+    .shadow-text.reveal-video-text { margin-top: -40px; }
+    
+    #indexvideo { 
+        width: 95%; 
+        height: 65%; 
+        margin-top: 20px; 
+        border-radius: 20px; 
+    }
+    
+    #myVideo {
+        object-fit: cover; 
+    }
+
+    .mute-toggle {
+        bottom: 20px;
+        right: 20px;
+        padding: 8px 15px;
+        font-size: 10px;
+    }
+
+    .texto-corrido { padding-left: 15px; text-align: left; }
+
+    .footer-container { flex-direction: column; text-align: center; align-items: center; gap: 30px; }
+    .footer-info, .footer-socials { align-items: center; text-align: center; }
+    .info-items-group { align-items: center; text-align: center; }
+}
+
+@media (max-width: 480px) {
+    nav { width: 100%; justify-content: center; margin-top: 5px; }
+    nav a { margin: 0 8px; }
+    #hero-wrap { height: 60vh; }
 }

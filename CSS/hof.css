@@ -1,36 +1,4 @@
-/* HERO HALL OF FAME */
-.hof-hero {
-    padding: 160px 20px 60px;
-    text-align: center;
-    background: none; 
-}
-
-.titulo-grande {
-    font-size: clamp(40px, 8vw, 70px);
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-    color: #fff;
-}
-
-.subtitulo {
-    color: #b0b0b0;
-    font-size: 18px;
-    line-height: 1.7;
-    max-width: 850px;
-    margin: 0 auto;
-}
-
-.highlight {
-    color: #ffee00;
-}
-
-/* SECÇÕES DE CONTEÚDO */
+/* --- HALL OF FAME SECTION --- */
 .hof-section, .testimonials-section {
     max-width: 1200px;
     margin: 80px auto;
@@ -39,7 +7,7 @@
 
 .titulo-medio {
     text-align: center;
-    font-size: 32px;
+    font-size: clamp(28px, 5vw, 40px);
     font-weight: 800;
     text-transform: uppercase;
     margin-bottom: 60px;
@@ -48,9 +16,14 @@
     justify-content: center;
     gap: 12px;
     flex-wrap: wrap;
+    color: #fff;
 }
 
-/* GRELHA DE PROJETOS */
+.highlight {
+    color: #ffee00;
+}
+
+/* --- GRELHA DE PROJETOS --- */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
@@ -65,9 +38,15 @@
     border: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
     flex-direction: column;
+    transition: transform 0.4s ease, border-color 0.4s ease;
 }
 
-/* CONTENTORES DE MÉDIA (VÍDEO E CARROSSEL) */
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: #ffee00;
+}
+
+/* --- MEDIA CONTAINERS --- */
 .video-container {
     position: relative;
     width: 100%;
@@ -77,22 +56,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 24px 24px 0 0; 
 }
 
 .video-player {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
-/* FOTOS */
 .carousel {
     position: relative;
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .carousel-img {
@@ -110,45 +85,25 @@
     opacity: 1;
 }
 
-/* NOVA ESTÉTICA DOS BOTÕES */
+/* --- BOTÕES CARROSSEL --- */
 .prev, .next {
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.4); 
     backdrop-filter: blur(8px);
-    color: #fff; /* Cor base branca para não chocar logo de início */
+    color: #fff;
     border: 1px solid rgba(255, 255, 255, 0.1);
     width: 50px;
     height: 80px;
     cursor: pointer;
     font-size: 24px;
     z-index: 10;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-}
-
-.prev { 
-    left: 0; 
-    border-radius: 0 15px 15px 0;
-    box-shadow: 5px 0 15px rgba(0,0,0,0.3);
-}
-
-.next { 
-    right: 0; 
-    border-radius: 15px 0 0 15px;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
-}
-
-.prev:hover, .next:hover {
-    background: #ffee00; 
-    color: #000; 
-    width: 65px;
-}
-
-.prev::before, .next::before {
-    text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
 }
 
 .project-card:hover .prev, 
@@ -156,7 +111,15 @@
     opacity: 1;
 }
 
-/* INFO DO PROJETO */
+.prev { left: 0; border-radius: 0 15px 15px 0; }
+.next { right: 0; border-radius: 15px 0 0 15px; }
+
+.prev:hover, .next:hover {
+    background: #ffee00; 
+    color: #000;
+}
+
+/* --- INFO PROJETOS --- */
 .project-info {
     padding: 30px;
 }
@@ -172,9 +135,10 @@
 }
 
 .project-info h3 {
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: 12px;
     color: #fff;
+    text-transform: uppercase;
 }
 
 .project-info p {
@@ -183,35 +147,40 @@
     line-height: 1.6;
 }
 
-/* TESTEMUNHOS */
+/* --- TESTEMUNHOS --- */
 .testimonials-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
 .testimonial-card {
     background: #1a1c23;
-    padding: 50px 40px 40px;
+    padding: 40px;
     border-radius: 28px;
     border: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: 0.4s ease;
+}
+
+.testimonial-card:hover {
+    border-color: #ffee00;
 }
 
 .alumni-info {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     text-align: center;
 }
 
 .alumni-photo {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 15px; 
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px; 
     border-radius: 50%; 
     overflow: hidden; 
     border: 3px solid #ffee00;
@@ -220,22 +189,21 @@
 .alumni-photo img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    display: block;
+    object-fit: cover;
 }
 
 .alumni-info h3 {
-    font-size: 22px;
+    font-size: 20px;
     color: #fff;
     margin-bottom: 5px;
 }
 
-.alumni-info .ano {
+.cargo {
     color: #ffee00;
-    font-size: 12px;
+    font-size: 11px;
     text-transform: uppercase;
+    font-weight: 700;
     letter-spacing: 1px;
-    font-weight: 600;
 }
 
 .depoimento {
@@ -243,28 +211,39 @@
     font-style: italic;
     line-height: 1.8;
     text-align: justify;
-    font-size: 15px;
-    position: relative;
-    width: 100%;
+    font-size: 14px;
 }
 
-/* VISIBILIDADE ESTÁTICA */
-.reveal, .reveal-right {
-    opacity: 1 !important;
-    transform: none !important;
-}
-
-/* RESPONSIVIDADE */
+/* --- RESPONSIVIDADE --- */
 @media (max-width: 900px) {
     .projects-grid {
         grid-template-columns: 1fr;
     }
 
-    .titulo-grande {
-        font-size: 36px;
+    .titulo-medio {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .prev, .next {
+        opacity: 1; 
+        width: 40px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-info {
+        padding: 20px;
     }
 
     .testimonial-card {
-        padding: 40px 25px;
+        padding: 30px 20px;
+    }
+
+    .alumni-photo {
+        width: 100px;
+        height: 100px;
     }
 }

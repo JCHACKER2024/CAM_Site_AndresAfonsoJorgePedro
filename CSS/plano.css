@@ -1,50 +1,17 @@
-/* ESTILO GERAL E HERO */
+/* --- ESTRUTURA --- */
 main {
     background-color: #0f1014;
     min-height: 100vh;
     overflow-x: hidden;
 }
 
-.plano-hero {
-    padding: 180px 20px 60px;
-    text-align: center;
-    background: #0f1014;
-}
-
-.plano-hero .titulo-grande {
-    font-size: clamp(40px, 8vw, 80px);
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    color: #fff;
-    margin-bottom: 20px;
-}
-
-.plano-hero .highlight {
-    color: #ffee00;
-}
-
-.subtitulo {
-    color: #888;
-    font-size: 18px;
-    margin-top: 20px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-}
-
-/* CONTENTOR DOS ATOS */
 .plano-container {
     max-width: 1000px;
     margin: 60px auto 120px;
     padding: 0 20px;
 }
 
+/* --- ATOS --- */
 .ato-wrapper {
     margin-bottom: 80px;
 }
@@ -64,12 +31,12 @@ main {
 }
 
 .ato-header p {
-    color: #666;
+    color: #888;
     font-size: 16px;
     margin-top: 5px;
 }
 
-/* TABELA DE SEMESTRES (ACORDEÃO) */
+/* --- SEMESTRES --- */
 .semestre-box {
     background: #15161c;
     margin-bottom: 15px;
@@ -111,7 +78,7 @@ main {
     transform: rotate(90deg);
 }
 
-/* LISTA DE UCs */
+/* --- DISCIPLINAS --- */
 .uc-list {
     padding: 20px 30px;
 }
@@ -127,8 +94,8 @@ main {
     font-size: 15px;
     font-weight: 600;
     color: #ccc;
-    text-transform: none;
-    letter-spacing: 0;
+    cursor: pointer;
+    list-style: none;
 }
 
 .uc-item summary:hover { color: #fff; }
@@ -141,11 +108,20 @@ main {
     text-align: justify;
 }
 
-/* CORPO DOCENTE */
+/* --- DOCENTES --- */
 .docentes-section {
     padding: 120px 20px;
     background: #0a0b0e;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
 }
 
 .docentes-section .titulo-medio {
@@ -153,29 +129,23 @@ main {
     font-size: clamp(30px, 5vw, 45px);
     font-weight: 900;
     text-transform: uppercase;
-    margin-bottom: 50px;
     letter-spacing: 3px;
     display: flex;
     justify-content: center;
     gap: 12px;
     flex-wrap: wrap;
     color: #fff;
+    margin: 0 auto;
 }
 
-.docentes-section .highlight {
+.highlight {
     color: #ffee00;
 }
 
-.docentes-intro {
-    max-width: 700px;
-    margin: 0 auto 60px;
-    color: #aaa;
-    font-size: 17px;
-}
-
 .docentes-lista-v2 {
+    width: 100%;
     max-width: 1100px;
-    margin: 50px auto;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -185,15 +155,15 @@ main {
     display: flex;
     align-items: center;
     background: #15161c;
-    border-radius: 15px;
+    border-radius: 24px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 .docente-row:hover {
-    border-color: rgba(255, 238, 0, 0.4);
-    transform: scale(1.01);
+    border-color: #ffee00;
+    transform: translateY(-5px);
 }
 
 .docente-row.reverse {
@@ -203,8 +173,7 @@ main {
 .docente-img {
     flex: 1;
     max-width: 400px;
-    height: 350px;
-    overflow: hidden;
+    height: 450px;
 }
 
 .docente-img img {
@@ -217,28 +186,37 @@ main {
 
 .docente-row:hover .docente-img img {
     filter: grayscale(0%);
-    transform: scale(1.05);
 }
 
 .docente-info {
     flex: 2;
     padding: 40px;
-    text-align: left;
 }
 
 .docente-info h3 {
-    font-size: 28px;
-    margin-bottom: 8px;
+    font-size: clamp(22px, 3vw, 28px);
+    margin-bottom: 5px;
     color: #fff;
+    text-transform: uppercase;
 }
 
-.docente-bio {
-    margin-bottom: 25px; 
-    font-size: 16px;
+.cargo {
+    display: block;
+    color: #ffee00;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.docente-info p {
+    color: #aaa;
+    font-size: 15px;
     line-height: 1.6;
-    color: #ccc;
 }
 
+/* --- PRÉMIOS --- */
 .premios-container {
     margin-top: 20px;
     padding-top: 20px;
@@ -246,91 +224,75 @@ main {
 }
 
 .premios-titulo {
-    font-size: 14px;
+    font-size: 12px;
     text-transform: uppercase;
-    color: #ffee00;
+    color: #fff;
     letter-spacing: 1px;
     margin-bottom: 15px;
+    font-weight: 800;
 }
 
 .premios-lista {
     list-style: none; 
-    padding: 0;
 }
 
 .premios-lista li {
     font-size: 14px;
-    color: #bbb;
-    line-height: 1.8; 
-    margin-bottom: 12px; 
+    color: #999;
+    line-height: 1.6; 
+    margin-bottom: 10px; 
     position: relative;
-    padding-left: 15px;
+    padding-left: 20px;
 }
 
 .premios-lista li::before {
-    content: "";
+    content: "•";
     position: absolute;
     left: 0;
-    top: 10px;
-    width: 4px;
-    height: 4px;
-    background: #ffee00;
-    border-radius: 50%;
+    color: #ffee00;
+    font-weight: bold;
 }
 
-.premios-lista li strong {
-    color: #fff;
-    font-weight: 600;
-}
-
-/* ANIMAÇÕES */
+/* --- ANIMAÇÕES --- */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fadeInRight {
-    from { opacity: 0; transform: translateX(30px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
-.reveal {
-    opacity: 0;
+.reveal.active {
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.reveal-right {
-    opacity: 0;
-    animation: fadeInRight 0.8s ease-out forwards;
-}
-
-.ato-wrapper:nth-child(1) { animation-delay: 0.1s; }
-.ato-wrapper:nth-child(2) { animation-delay: 0.3s; }
-.ato-wrapper:nth-child(3) { animation-delay: 0.5s; }
-
-.docente-row:nth-child(1) { animation-delay: 0.2s; }
-.docente-row:nth-child(2) { animation-delay: 0.4s; }
-
-/* RESPONSIVIDADE */
-@media (max-width: 850px) {
-    .plano-hero .titulo-grande { font-size: 35px; }
-    
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 1024px) {
     .docente-row, .docente-row.reverse {
         flex-direction: column;
-        max-width: 500px;
-        margin: 0 auto;
     }
 
     .docente-img {
         max-width: 100%;
         width: 100%;
-        height: 300px;
+        height: 350px;
     }
 
     .docente-info {
-        text-align: center;
         padding: 30px;
+        text-align: center;
     }
 
+    .premios-lista li {
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
     .ato-header h2 { font-size: 24px; }
+    .semestre-box summary { padding: 20px; font-size: 14px; }
+    .uc-list { padding: 10px 20px; }
+    
+    .docentes-section .titulo-medio {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
 }
