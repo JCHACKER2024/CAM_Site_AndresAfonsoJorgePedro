@@ -43,7 +43,6 @@
                     <source src="VIDS/hero_cam.mp4" type="video/mp4">
                     O teu navegador não suporta vídeo.
                 </video>
-                
                 <button id="muteBtn" class="mute-toggle">
                     SOUND: <span id="statusSom">OFF</span>
                 </button>
@@ -56,44 +55,88 @@
             </p>
         </section>
 
-        <section class="destaques-grid reveal">
-            <div class="card clickable-card">
-                <div class="card-header">
-                    <img src="IMGS/multiplex.png" alt="Multiplex">
-                    <h3>MULTIPLEX</h3>
+        <section class="destaques-section reveal">
+            <div class="destaques-grid">
+                
+                <div class="card">
+                    <div class="media-container multiplex-video-fix">
+                        <video controls class="card-video">
+                            <source src="VIDS/multiplex.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag-amarela">Evento Anual</span>
+                        <h3>MULTIPLEX</h3>
+                        <p>O Multiplex é um evento criado pelo curso de CAM que oferece Ciclos de Cinema temáticos e Masterclasses com importantes cineastas.</p>
+                        <a href="multiplex.html" class="btn-card-sobre">Mais Info</a>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <p>O Multiplex é um evento criado pelo curso de CAM e que oferece aos estudantes e à cidade do Porto a oportunidade de usufruir de Ciclos de Cinema temáticos e Masterclasses com importantes cineastas e artistas mundiais como Ildikó Enyedi, Nan Goldin, Sara Driver e ORLAN e Manoel de Oliveira.</p>
-                </div>
-            </div>
 
-            <div class="card clickable-card">
-                <div class="card-header">
-                    <img src="IMGS/batalha.png" alt="Batalha Centro de Cinema">
-                    <h3>BATALHA CENTRO DE CINEMA</h3>
+                <div class="card">
+                    <div class="media-container">
+                        <div class="carousel-sobre" id="carousel-bcc">
+                            <div class="carousel-track">
+                                <img src="IMGS/batalha centro de cinema/bcc1.jpg" alt="Batalha 1" class="c-img active">
+                                <img src="IMGS/batalha centro de cinema/bcc2.jpg" alt="Batalha 2" class="c-img">
+                                <img src="IMGS/batalha centro de cinema/bcc3.jpg" alt="Batalha 3" class="c-img">
+                                <img src="IMGS/batalha centro de cinema/bcc4.jpg" alt="Batalha 4" class="c-img">
+                                <img src="IMGS/batalha centro de cinema/bcc5.jpg" alt="Batalha 5" class="c-img">
+                                <img src="IMGS/batalha centro de cinema/bcc6.jpg" alt="Batalha 6" class="c-img">
+                                <img src="IMGS/batalha centro de cinema/bcc7.jpg" alt="Batalha 7" class="c-img">
+                                <img src="IMGS/batalha centro de cinema/bcc8.jpg" alt="Batalha 8" class="c-img">
+                            </div>
+                            <button class="c-prev" onclick="moveSobreSlide('carousel-bcc', -1)">&#10094;</button>
+                            <button class="c-next" onclick="moveSobreSlide('carousel-bcc', 1)">&#10095;</button>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag-amarela">Parceria</span>
+                        <h3>BATALHA CENTRO DE CINEMA</h3>
+                        <p>Privilégio de poder oferecer a oportunidade de ter aulas numa verdadeira sala de cinema com artistas de renome.</p>
+                        <a href="https://www.batalhacentrodecinema.pt/" target="_blank" class="btn-card-sobre">Mais Info</a>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <p>Temos o enorme privilégio de estar localizados junto ao Batalha e de poder oferecer a oportunidade de ter aulas numa verdadeira sala de cinema. Contamos com Masterclasses semanais “Great Artists on Campus” com artistas como Vhils e Mila Turajlić.</p>
-                </div>
-            </div>
 
-            <div class="card clickable-card">
-                <div class="card-header">
-                    <img src="IMGS/mira.png" alt="Espaço Mira">
-                    <h3>ESPAÇO MIRA</h3>
+                <div class="card">
+                    <div class="media-container">
+                        <div class="carousel-sobre" id="carousel-mira">
+                            <div class="carousel-track">
+                                <img src="IMGS/projeto2/foto1.jpg" alt="Mira 1" class="c-img active">
+                                <img src="IMGS/projeto2/foto2.jpg" alt="Mira 2" class="c-img">
+                                <img src="IMGS/projeto2/foto3.jpg" alt="Mira 3" class="c-img">
+                                <img src="IMGS/projeto2/foto4.jpg" alt="Mira 4" class="c-img">
+                                <img src="IMGS/projeto2/foto5.jpg" alt="Mira 5" class="c-img">
+                                <img src="IMGS/projeto2/foto6.jpg" alt="Mira 6" class="c-img">
+                                <img src="IMGS/projeto2/foto7.jpg" alt="Mira 7" class="c-img">
+                                <img src="IMGS/projeto2/foto8.jpg" alt="Mira 8" class="c-img">
+                                <img src="IMGS/projeto2/foto9.jpg" alt="Mira 9" class="c-img">
+                                <img src="IMGS/projeto2/foto10.jpg" alt="Mira 10" class="c-img">
+                                <img src="IMGS/projeto2/foto11.jpg" alt="Mira 11" class="c-img">
+                            </div>
+                            <button class="c-prev" onclick="moveSobreSlide('carousel-mira', -1)">&#10094;</button>
+                            <button class="c-next" onclick="moveSobreSlide('carousel-mira', 1)">&#10095;</button>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag-amarela">Galeria</span>
+                        <h3>ESPAÇO MIRA</h3>
+                        <p>Estudantes expõem as suas instalações multimédia no Espaço Mira como verdadeiros artistas da cidade.</p>
+                        <a href="https://miragalerias.net/" target="_blank" class="btn-card-sobre">Mais Info</a>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <p>Os nossos estudantes usufruem de uma oportunidade única, expondo as suas instalações multimédia no Espaço Mira. Não o fazem apenas como estudantes, mas como artistas da cidade.</p>
-                </div>
-            </div>
 
-            <div class="card clickable-card">
-                <div class="card-header">
-                    <img src="IMGS/estudios.png" alt="Espaços e equipamentos">
-                    <h3>ESPAÇOS E EQUIPAMENTOS</h3>
-                </div>
-                <div class="card-content">
-                    <p>A Universidade Lusófona Porto encontra-se em plena expansão, contando num futuro próximo com uma área de estúdios totalmente dedicados à criação audiovisual e multimédia.</p>
+                <div class="card">
+                    <div class="media-container equipamento-video-fix">
+                        <video controls class="card-video">
+                            <source src="VIDS/espaços e equipamentos.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag-amarela">Infraestrutura</span>
+                        <h3>ESPAÇOS E EQUIPAMENTOS</h3>
+                        <p>Área de estúdios e equipamentos dedicados à criação audiovisual e multimédia em plena expansão.</p>
+                        <a href="https://www.instagram.com/p/CfJTZ5uorG0/" target="_blank" class="btn-card-sobre">Mais Info</a>
+                    </div>
                 </div>
             </div>
         </section>

@@ -1,4 +1,4 @@
-/* HERO VIDEO */
+/* --- HERO VIDEO --- */
 .hero-video-container {
     position: relative;
     width: 100%;
@@ -32,7 +32,7 @@
     margin-bottom: 20px;
 }
 
-/* TITULOS E TEXTO */
+/* --- TITULOS E TEXTO --- */
 .titulo-seccao, .titulo-medio {
     font-size: clamp(32px, 5vw, 48px);
     font-weight: 900;
@@ -51,104 +51,167 @@
     color: #ffee00;
 }
 
-.intro-text {
-    padding: 140px 20px 60px;
-    text-align: center;
-    background: #0f1014;
-}
-
-.container-pequeno {
-    max-width: 800px;
+.content-wrapper {
+    padding: 100px 20px 60px;
+    max-width: 1000px;
     margin: 0 auto;
-    font-size: 19px;
-    line-height: 1.8;
-    color: #b0b0b0;
-    opacity: 0;
 }
 
-.container-pequeno.reveal-init {
-    animation: fadeInUp 0.6s ease-out forwards;
+/* --- GRELHA DE DESTAQUES (NOVA ESTÉTICA) --- */
+.destaques-section {
+    padding: 60px 20px 100px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* GRELHA DE DESTAQUES */
 .destaques-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
-    gap: 35px;
-    max-width: 1200px;
-    margin: 100px auto 120px;
-    padding: 0 20px;
+    gap: 40px;
 }
 
 .card {
-    background: #15161c;
+    background: #1a1c23;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    padding: 50px 40px;
-    text-align: center;
-    cursor: pointer;
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
     transition: all 0.4s ease;
-    opacity: 0;
-}
-
-.card.reveal-init {
-    animation: fadeInUp 0.5s ease-out forwards;
 }
 
 .card:hover {
-    border-color: rgba(255, 238, 0, 0.4);
-}
-
-.card.active {
-    background: #1e2029;
     border-color: #ffee00;
+    transform: translateY(-10px);
 }
 
-.card img {
-    width: 55px;
-    margin-bottom: 25px;
-    filter: grayscale(1) brightness(1.8);
-    transition: 0.3s;
-}
-
-.card.active img {
-    filter: grayscale(0) brightness(1);
-}
-
-.card h3 {
-    color: #fff;
-    font-size: 20px;
-    text-transform: uppercase;
-    transition: 0.3s;
-}
-
-.card.active h3 {
-    color: #ffee00;
-}
-
-.card-content {
-    max-height: 0;
-    opacity: 0;
+.media-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #000;
     overflow: hidden;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    text-align: justify; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.card.active .card-content {
-    max-height: 800px; 
-    opacity: 1;
-    margin-top: 45px; 
-    padding-bottom: 20px;
+.card-video, .c-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.card-content p {
-    color: #aaa;
+.multiplex-video-fix .card-video {
+    object-fit: contain;
+}
+
+.equipamento-video-fix .card-video {
+    object-fit: contain; 
+    background: #000; 
+}
+
+/* INFO DO CARD */
+.card-info {
+    padding: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tag-amarela {
+    color: #ffee00;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.card-info h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.card-info p {
+    color: #a0a0a0;
     font-size: 15px;
-    line-height: 1.7;
-    margin: 0;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-align: justify;
 }
 
-/* TABELA DE SAÍDAS */
+.btn-card-sobre {
+    margin-top: auto;
+    display: block;
+    text-align: center;
+    border: 2px solid #ffee00;
+    color: #ffee00;
+    text-decoration: none;
+    padding: 12px;
+    font-weight: 900;
+    font-size: 11px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn-card-sobre:hover {
+    background: #ffee00;
+    color: #000;
+}
+
+/* --- BOTÕES CARROSSEL (ESTÉTICA HOF) --- */
+.c-prev, .c-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4); 
+    backdrop-filter: blur(8px);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 50px;
+    height: 80px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+
+.card:hover .c-prev, .card:hover .c-next {
+    opacity: 1;
+}
+
+.c-prev { left: 0; border-radius: 0 15px 15px 0; }
+.c-next { right: 0; border-radius: 15px 0 0 15px; }
+.c-prev:hover, .c-next:hover { background: #ffee00; color: #000; }
+
+.carousel-sobre {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.c-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.c-img.active {
+    opacity: 1;
+}
+
+/* --- TABELA DE SAÍDAS (SISTEMA DE CLIQUE) --- */
 .saidas-section {
     padding: 120px 20px;
     background: #0a0b0e;
@@ -164,11 +227,6 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     cursor: pointer;
     transition: 0.3s;
-    opacity: 0;
-}
-
-.saida-row.reveal-init {
-    animation: fadeInUp 0.5s ease-out forwards;
 }
 
 .saida-row:hover {
@@ -200,16 +258,23 @@
     overflow: hidden;
     transition: all 0.5s ease;
     padding: 0 20px;
-    text-align: justify; 
 }
 
 .saida-row.active .saida-info {
-    max-height: 300px;
+    max-height: 400px;
     opacity: 1;
     padding-bottom: 40px; 
 }
 
-/* PARCEIROS */
+.saida-info p {
+    color: #aaa;
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0;
+    text-align: justify;
+}
+
+/* --- PARCEIROS --- */
 .parceiros-section {
     padding: 100px 20px;
     text-align: center;
@@ -223,23 +288,9 @@
     gap: 60px; 
     max-width: 1200px;
     margin: 50px auto 80px;
-    flex-wrap: nowrap; 
-}
-
-.parceiro-link {
-    display: block;
-    flex: 0 1 250px; 
-    text-decoration: none;
-    transition: 0.4s;
-    opacity: 0;
-}
-
-.parceiro-link.reveal-init {
-    animation: fadeInUp 0.5s ease-out forwards;
 }
 
 .parceiro-link img {
-    width: auto;
     max-width: 240px; 
     height: 120px;    
     object-fit: contain; 
@@ -254,7 +305,7 @@
     transform: scale(1.05); 
 }
 
-/* BOTÕES CTA */
+/* --- BOTÕES CTA --- */
 .cta-section {
     padding: 40px 20px 150px; 
     display: flex;
@@ -288,10 +339,14 @@
     border-color: white;
 }
 
-/* ANIMAÇÕES E RESPONSIVIDADE */
+/* --- ANIMAÇÕES E RESPONSIVIDADE --- */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal.active {
+    animation: fadeInUp 0.6s ease-out forwards;
 }
 
 @media (max-width: 1024px) {
