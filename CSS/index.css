@@ -68,6 +68,35 @@ nav a {
 
 nav a.active, nav a:hover { color: #ffee00; }
 
+/* --- LANGUAGE SELECTOR --- */
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 20px;
+}
+
+.lang-btn {
+    text-decoration: none;
+    color: #888;
+    font-size: 13px;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.lang-btn.active {
+    color: #ffee00;
+}
+
+.lang-btn:hover {
+    color: #fff;
+}
+
+.divider {
+    color: #444;
+    font-size: 12px;
+}
+
 /* --- HERO SECTION --- */
 #hero-wrap {
     position: relative;
