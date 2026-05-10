@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT - CAM</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/sobre.css">
+    <link rel="icon" type="image/png" href="IMGS/logo_icon.png">
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <header id="header">
+        <div class="header-container">
+            <a href="index_en.html" class="logo-link">
+                <div class="logo-header">
+                    <img src="IMGS/logo_icon.png" alt="CAM Logo" class="header-logo-img">
+                    <span class="extenso">AUDIOVISUAL COMMUNICATION AND MULTIMEDIA</span>
+                </div>
+            </a>
+            <nav>
+                <a href="index_en.html">HOME</a>
+                <a href="sobre_en.html" class="active">ABOUT</a>
+                <a href="plano_en.html">STUDY PLAN</a>
+                <a href="hof_en.html">HALL OF FAME</a>
+                <a href="multiplex_en.html">MULTIPLEX</a>
+            </nav>
+
+            <div class="language-selector">
+                <a href="sobre.html" class="lang-btn">PT</a>
+                <span class="divider">|</span>
+                <a href="sobre_en.html" class="lang-btn active">EN</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero-wrap">
+            <div class="logo-animation-container">
+                <img src="IMGS/logo_icon.png" alt="CAM Icon" class="logo-img-icon">
+                <img src="IMGS/logo_texto.png" alt="CAM Text" class="logo-img-text">
+            </div>
+
+            <div id="indexvideo">
+                <div class="video-overlay">
+                    <h1 class="shadow-text reveal-video-text">LIVING IN <span class="highlight">CREATIVITY</span></h1>
+                </div>
+                <video autoplay muted loop playsinline id="myVideo">
+                    <source src="VIDS/video2.mp4" type="video/mp4">
+                    Your browser does not support video.
+                </video>
+                <button id="muteBtn" class="mute-toggle">
+                    SOUND: <span id="statusSom">OFF</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="content-wrapper">
+            <p class="texto-corrido">
+                CAM is a Bachelor's degree that allows you to have a multiplicity of experiences that go beyond the university walls, being a course open to the city and the world. We want to broaden horizons and be at the forefront of the image of the future. Discover the spaces and events that define our course.
+            </p>
+        </section>
+
+        <section class="destaques-section reveal">
+            <div class="destaques-grid">
+                
+                <div class="card">
+                    <div class="media-container multiplex-video-fix">
+                        <video controls class="card-video">
+                            <source src="VIDS/multiplex.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag-amarela">Annual Event</span>
+                        <h3>MULTIPLEX</h3>
+                        <p>Multiplex is an event created by the CAM course that offers students and the city of Porto the opportunity to enjoy thematic Film Cycles and Masterclasses with major world filmmakers and artists such as Ildikó Enyedi, Nan Goldin, Sara Driver, ORLAN, and Manoel de Oliveira. <a href="multiplex_en.html" style="color: #ffee00; text-decoration: underline;">Discover all Multiplex editions here</a>.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="media-container">
+                        <div class="carousel-sobre" id="carousel-bcc">
+                            <div class="carousel-track">
+                                <img src="IMGS/batalha centro de cinema/bcc1.jpg" alt="Batalha 1" class="c-img active">
+                                <img src="IMGS/batalha centro de cinema/bcc2.jpg" alt="Batalha 2" class="c-img">
+                                <img src="IMGS/batalha centro de cinema/bcc3.jpg" alt="Batalha 3" class="c-img">
+                                <img src="IMGS/batalha centro de cinema/bcc4.jpg" alt="Batalha 4" class="c-img">
+                                <img src="IMGS/batalha centro de cinema/bcc5.jpg" alt="Batalha 5" class="c-img">
+                                <img src="IMGS/batalha centro de cinema/bcc6.jpg" alt="Batalha 6" class="c-img">
+                                <img src="IMGS/batalha centro de cinema/bcc7.jpg" alt="Batalha 7" class="c-img">
+                                <img src="IMGS/batalha centro de cinema/bcc8.jpg" alt="Batalha 8" class="c-img">
+                            </div>
+                            <button class="c-prev" onclick="moveSobreSlide('carousel-bcc', -1)">&#10094;</button>
+                            <button class="c-next" onclick="moveSobreSlide('carousel-bcc', 1)">&#10095;</button>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag-amarela">Partnership</span>
+                        <h3>BATALHA FILM CENTER</h3>
+                        <p>We have the great privilege of being located next to one of the city's most iconic film centers, Batalha, offering the excellent opportunity to view, analyze, study, and attend cinema classes in a real movie theater. We also feature weekly "Great Artists on Campus" Masterclasses with guest artists such as Vhils, Mikhail Karikis, Mila Turajlić, and Diana Policarpo.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="media-container">
+                        <div class="carousel-sobre" id="carousel-mira">
+                            <div class="carousel-track">
+                                <img src="IMGS/projeto2/foto1.jpg" alt="Mira 1" class="c-img active">
+                                <img src="IMGS/projeto2/foto2.jpg" alt="Mira 2" class="c-img">
+                                <img src="IMGS/projeto2/foto3.jpg" alt="Mira 3" class="c-img">
+                                <img src="IMGS/projeto2/foto4.jpg" alt="Mira 4" class="c-img">
+                                <img src="IMGS/projeto2/foto5.jpg" alt="Mira 5" class="c-img">
+                                <img src="IMGS/projeto2/foto6.jpg" alt="Mira 6" class="c-img">
+                                <img src="IMGS/projeto2/foto7.jpg" alt="Mira 7" class="c-img">
+                                <img src="IMGS/projeto2/foto8.jpg" alt="Mira 8" class="c-img">
+                                <img src="IMGS/projeto2/foto9.jpg" alt="Mira 9" class="c-img">
+                                <img src="IMGS/projeto2/foto10.jpg" alt="Mira 10" class="c-img">
+                                <img src="IMGS/projeto2/foto11.jpg" alt="Mira 11" class="c-img">
+                            </div>
+                            <button class="c-prev" onclick="moveSobreSlide('carousel-mira', -1)">&#10094;</button>
+                            <button class="c-next" onclick="moveSobreSlide('carousel-mira', 1)">&#10095;</button>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag-amarela">Gallery</span>
+                        <h3>ESPAÇO MIRA</h3>
+                        <p>Our students enjoy another unique opportunity, witnessing and exhibiting their multimedia installations at Espaço Mira, one of the most emblematic contemporary art galleries in the city. They do this not just as students, but as artists of the city.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="media-container equipamento-video-fix">
+                        <video controls class="card-video">
+                            <source src="VIDS/espaços e equipamentos.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="card-info">
+                        <span class="tag-amarela">Infrastructure</span>
+                        <h3>SPACES AND EQUIPMENT</h3>
+                        <p>Lusófona University - Porto Regional Centre is in full expansion and modernization, soon featuring a studio area entirely dedicated to audiovisual and multimedia creation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="saidas-section reveal">
+            <h2 class="titulo-seccao">CAREER <span class="highlight">OPPORTUNITIES</span></h2>
+            <div class="saidas-tabela">
+                <div class="saida-row">
+                    <div class="saida-header">
+                        <h4>Photography and Video Production</h4>
+                    </div>
+                    <div class="saida-info">
+                        <p>Work with photography and video in various fields, from artistic and cinematographic to advertising, commercial, or institutional.</p>
+                    </div>
+                </div>
+                <div class="saida-row">
+                    <div class="saida-header">
+                        <h4>Advertising Agencies</h4>
+                    </div>
+                    <div class="saida-info">
+                        <p>Apply all your knowledge in the implementation of marketing strategies and advertising content.</p>
+                    </div>
+                </div>
+                <div class="saida-row">
+                    <div class="saida-header">
+                        <h4>Digital Animation Studios</h4>
+                    </div>
+                    <div class="saida-info">
+                        <p>Use your animation skills to communicate creatively and impactfully.</p>
+                    </div>
+                </div>
+                <div class="saida-row">
+                    <div class="saida-header">
+                        <h4>Web and Multimedia Content Creation</h4>
+                    </div>
+                    <div class="saida-info">
+                        <p>Create websites, manage social media content production, and multimedia applications.</p>
+                    </div>
+                </div>
+                <div class="saida-row">
+                    <div class="saida-header">
+                        <h4>Audiovisual Art, Multimedia and AI</h4>
+                    </div>
+                    <div class="saida-info">
+                        <p>Explore your own path and create new opportunities and the jobs of the future.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="parceiros-section reveal">
+            <h2 class="titulo-medio">OUR <span class="highlight">PARTNERS</span></h2>
+            
+            <div class="parceiros-intro">
+                <p>Over the years, we have had the opportunity to work with various companies in the audiovisual and multimedia content development field, mainly as internship partners and event collaborators. We are also proud to highlight some companies created by our graduates:</p>
+            </div>
+
+            <div class="parceiros-grid">
+                <a href="https://miragalerias.net/" target="_blank" class="parceiro-link">
+                    <img src="IMGS/parceiros/mira.png" alt="Espaço Mira">
+                </a>
+                <a href="https://www.batalhacentrodecinema.pt/" target="_blank" class="parceiro-link">
+                    <img src="IMGS/parceiros/batalha.png" alt="Batalha Film Center">
+                </a>
+                <a href="https://www.overall.pt/" target="_blank" class="parceiro-link">
+                    <img src="IMGS/parceiros/overall.png" alt="Overall Studio">
+                </a>
+                <a href="https://seagmedia.com/" target="_blank" class="parceiro-link">
+                    <img src="IMGS/parceiros/seagmedia.PNG" alt="Seagmedia">
+                </a>
+                <a href="https://ghdirector.com/" target="_blank" class="parceiro-link">
+                    <img src="IMGS/parceiros/gh.png" alt="GH">
+                </a>
+            </div>
+            
+            <div class="cta-section">
+                <a href="plano_en.html" class="btn-cta">Course Plan</a>
+                <a href="https://www.ulusofona.pt/porto/licenciaturas/comunicacao-audiovisual-e-multimedia" target="_blank" class="btn-cta highlight-btn">Apply Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <p class="footer-university">Lusófona University - Porto</p>
+                <a href="https://www.ulusofona.pt/" target="_blank">
+                    <img src="IMGS/logo_lusofona.png" alt="Lusófona" class="lusofona-logo">
+                </a>
+                <p class="footer-address">Rua Augusto Rosa, nº 24<br>4000-098 Porto - Portugal</p>
+            </div>
+
+            <div class="footer-info">
+                <h4>Contacts</h4>
+                <div class="info-content">
+                    <div class="info-item"><strong>Tel:</strong> 222 073 230</div>
+                    <div class="info-item"><strong>Email:</strong> info.cup@ulusofona.pt</div>
+                    <div class="info-item"><strong>Direction:</strong> joao.alves.de.sousa@ulusofona.pt</div>
+                    <div class="info-item">
+                        <strong>Institutional Page:</strong> 
+                        <a href="https://www.ulusofona.pt/porto/licenciaturas/comunicacao-audiovisual-e-multimedia" target="_blank" class="footer-link-simple">CAM</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-socials">
+                <h4>Follow us</h4>
+                <a href="https://www.facebook.com/camlusofona" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com/cam_lusofona/" target="_blank">Instagram</a>
+                <a href="https://www.youtube.com/@CAMLusofona" target="_blank">YouTube</a>
+                <a href="https://vimeo.com/camlusofona" target="_blank">Vimeo</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 CAM - ULusófona Porto
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="JS/soundvideo.js"></script>
+    <script src="JS/effects.js"></script>
+    <script src="JS/open-titles.js"></script>
+</body>
+</html>
