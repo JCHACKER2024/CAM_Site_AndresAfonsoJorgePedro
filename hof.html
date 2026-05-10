@@ -10,6 +10,8 @@
 </head>
 <body>
 
+    <div id="particles-js"></div>
+
     <header id="header">
         <div class="header-container">
             <a href="index.html" class="logo-link">
@@ -25,6 +27,12 @@
                 <a href="hof.html" class="active">HALL OF FAME</a>
                 <a href="multiplex.html">MULTIPLEX</a>
             </nav>
+
+            <div class="language-selector">
+                <a href="hof.html" class="lang-btn active">PT</a>
+                <span class="divider">|</span>
+                <a href="hof_en.html" class="lang-btn">EN</a>
+            </div>
         </div>
     </header>
 
@@ -38,8 +46,8 @@
             <div id="indexvideo">
                 <div class="video-overlay">
                     <h1 class="shadow-text reveal-video-text">
-                        <span class="reveal-right">HALL OF</span> 
-                        <span class="highlight reveal-right">FAME</span>
+                        <span>HALL OF</span> 
+                        <span class="highlight">FAME</span>
                     </h1>
                 </div>
                 <video autoplay muted loop playsinline id="myVideo">
@@ -60,8 +68,8 @@
 
         <section class="hof-section">
             <h2 class="titulo-medio">
-                <span class="reveal-right">PROJETOS EM</span> 
-                <span class="highlight reveal-right">DESTAQUE</span>
+                <span>PROJETOS EM</span> 
+                <span class="highlight">DESTAQUE</span>
             </h2>
             <div class="projects-grid">
                 
@@ -94,8 +102,8 @@
                                 <img src="IMGS/projeto2/foto10.jpg" alt="Foto 10" class="carousel-img">
                                 <img src="IMGS/projeto2/foto11.jpg" alt="Foto 11" class="carousel-img">
                             </div>
-                            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-                            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+                            <button class="prev" onclick="moveSlide('carousel-images', -1)">&#10094;</button>
+                            <button class="next" onclick="moveSlide('carousel-images', 1)">&#10095;</button>
                         </div>
                     </div>
                     <div class="project-info">
@@ -110,8 +118,8 @@
 
         <section class="testimonials-section">
             <h2 class="titulo-medio">
-                <span class="reveal-right">OS NOSSOS</span> 
-                <span class="highlight reveal-right">GRADUADOS</span>
+                <span>OS NOSSOS</span> 
+                <span class="highlight">GRADUADOS</span>
             </h2>
             <div class="testimonials-container">
                 
@@ -183,22 +191,12 @@
                 <a href="https://vimeo.com/camlusofona" target="_blank">Vimeo</a>
             </div>
         </div>
-        <div class="footer-bottom">
-            &copy; 2024 CAM - ULusófona Porto
-        </div>
+        <div class="footer-bottom">&copy; 2024 CAM - ULusófona Porto</div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="JS/soundvideo.js"></script>
+    <script src="JS/effects.js"></script>
     <script src="JS/open-titles.js"></script>
-    <script>
-        let currentSlide = 0;
-        function moveSlide(step) {
-            const slides = document.querySelectorAll('.carousel-img');
-            if(slides.length === 0) return;
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + step + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-    </script>
 </body>
 </html>
