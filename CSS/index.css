@@ -355,53 +355,101 @@ nav a.active, nav a:hover { color: #ffee00; }
 @keyframes revealVideo { to { opacity: 1; transform: scale(1); } }
 @keyframes fadeInGeneral { to { opacity: 1; } }
 
-/* --- RESPONSIVIDADE REVISTA --- */
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 1024px) {
+    .extenso { font-size: 10px; }
+    nav a { font-size: 11px; margin-left: 12px; }
+}
+
 @media (max-width: 768px) {
-    body { padding-top: 70px; }
-    #header { padding: 10px; }
-    .header-logo-img { height: 30px; }
-    .extenso { display: none; }
-    nav a { margin-left: 10px; font-size: 11px; }
+    body { padding-top: 80px; } 
     
-    #hero-wrap { height: 70vh; }
-    
-    .logo-img-icon, .logo-img-text { height: clamp(150px, 30vw, 250px); }
-
-    @keyframes moveLogoUp {
-        0% { top: 50%; transform: translate(-50%, -50%) scale(1); }
-        100% { top: -20px; transform: translate(-50%, 0) scale(0.35); }
+    #header { 
+        padding: 10px 15px; 
     }
 
-    .shadow-text { font-size: clamp(28px, 8vw, 40px); }
-    .shadow-text.reveal-video-text { margin-top: -40px; }
-    
-    #indexvideo { 
-        width: 95%; 
-        height: 65%; 
-        margin-top: 20px; 
-        border-radius: 20px; 
-    }
-    
-    #myVideo {
-        object-fit: cover; 
+    .header-container {
+        flex-wrap: wrap; 
+        justify-content: space-between;
     }
 
-    .mute-toggle {
-        bottom: 20px;
-        right: 20px;
-        padding: 8px 15px;
+    .header-logo-img { height: 28px; }
+    
+    .extenso { display: none; } 
+
+    nav { 
+        order: 3; 
+        width: 100%; 
+        justify-content: center; 
+        margin-top: 10px; 
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 8px;
+    }
+
+    nav a { 
+        margin: 0 8px; 
+        font-size: 10px; 
+    }
+
+    .language-selector {
         font-size: 10px;
     }
 
-    .texto-corrido { padding-left: 15px; text-align: left; }
+    #hero-wrap { height: 65vh; }
+    
+    .logo-img-icon, .logo-img-text { height: clamp(120px, 25vw, 200px); }
 
-    .footer-container { flex-direction: column; text-align: center; align-items: center; gap: 30px; }
+    @keyframes moveLogoUp {
+        0% { top: 50%; transform: translate(-50%, -50%) scale(1); }
+        100% { top: -15px; transform: translate(-50%, 0) scale(0.3); }
+    }
+
+    .shadow-text { font-size: clamp(22px, 6vw, 30px); } 
+    .shadow-text.reveal-video-text { margin-top: -30px; }
+    
+    #indexvideo { 
+        width: 92%; 
+        height: 60%; 
+        margin-top: 15px; 
+    }
+
+    .mute-toggle {
+        bottom: 15px;
+        right: 15px;
+        padding: 6px 12px;
+        font-size: 9px;
+    }
+
+    .texto-corrido { 
+        font-size: 15px; 
+        padding: 0 20px; 
+        text-align: justify; 
+    }
+
+    .footer-container { 
+        flex-direction: column; 
+        text-align: center; 
+        align-items: center; 
+        gap: 25px; 
+    }
     .footer-info, .footer-socials { align-items: center; text-align: center; }
-    .info-items-group { align-items: center; text-align: center; }
 }
 
 @media (max-width: 480px) {
-    nav { width: 100%; justify-content: center; margin-top: 5px; }
-    nav a { margin: 0 8px; }
+    #header { padding: 8px 10px; }
+    
+    nav a { 
+        margin: 0 5px; 
+        font-size: 9px; 
+        letter-spacing: 0px;
+    }
+
     #hero-wrap { height: 60vh; }
+    
+    .logo-img-icon, .logo-img-text { height: 200px; }
+
+    .shadow-text { font-size: 18px; } 
+
+    .footer-university { font-size: 14px; }
+    .footer-address { font-size: 11px; }
 }
