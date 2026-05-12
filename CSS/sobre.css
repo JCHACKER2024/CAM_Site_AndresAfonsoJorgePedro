@@ -263,17 +263,26 @@
 }
 
 .parceiros-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 60px; 
+    max-width: 1100px; 
+    margin: 50px auto 80px;
+    align-items: center;
+    justify-items: center; 
+}
+
+.parceiro-link {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 60px; 
-    max-width: 1200px;
-    margin: 50px auto 80px;
+    width: 100%;
 }
 
 .parceiro-link img {
-    max-width: 240px; 
-    height: 120px;    
+    width: 100%;
+    max-width: 220px;
+    height: 100px;    
     object-fit: contain; 
     opacity: 0.5;
     filter: grayscale(1) brightness(1.2);

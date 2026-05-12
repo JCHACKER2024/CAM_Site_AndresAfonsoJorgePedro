@@ -116,6 +116,7 @@
             </div>
         </section>
 
+        <!-- SECÇÃO DE GRADUADOS COM SISTEMA DE MODAL -->
         <section class="testimonials-section">
             <h2 class="titulo-medio">
                 <span>OS NOSSOS</span> 
@@ -123,29 +124,36 @@
             </h2>
             <div class="testimonials-container">
                 
-                <div class="testimonial-card reveal">
+                <!-- Eliabe Campos -->
+                <div class="testimonial-card reveal" onclick="openAlumniModal('eliabe')">
                     <div class="alumni-info">
                         <div class="alumni-photo">
                             <img src="IMGS/graduados/CAM_alumni_eliabe_campos.png" alt="Eliabe Campos">
                         </div>
                         <h3>Eliabe Campos</h3>
-                        <span class="cargo">CEO Overall Studio / Fotógrafo e Videógrafo</span>
+                        <span class="cargo">CEO Overall Studio</span>
                     </div>
-                    <p class="depoimento">“O curso de CAM não me preparou apenas para entrar no mercado de trabalho “tradicional”, com horário fixo e a rotina de esperar pelo fim do mês para receber o salário. Pelo contrário, deu-me ferramentas e uma forma de pensar que me ajudaram a seguir um caminho próprio. Quando olho para trás, percebo que o CAM não foi só uma formação mas sim o ponto de partida para tudo o que construí até agora.”</p>
+                    <p class="depoimento-preview">“O curso de CAM não me preparou apenas para entrar no mercado de trabalho...”</p>
+                    <span class="ler-mais">VER DEPOIMENTO</span>
+                    <div id="text-eliabe" class="hidden-text">“O curso de CAM não me preparou apenas para entrar no mercado de trabalho “tradicional”, com horário fixo e a rotina de esperar pelo fim do mês para receber o salário. Pelo contrário, deu-me ferramentas e uma forma de pensar que me ajudaram a seguir um caminho próprio. Quando olho para trás, percebo que o CAM não foi só uma formação mas sim o ponto de partida para tudo o que construí até agora.”</div>
                 </div>
 
-                <div class="testimonial-card reveal">
+                <!-- Francisco Miranda -->
+                <div class="testimonial-card reveal" onclick="openAlumniModal('francisco')">
                     <div class="alumni-info">
                         <div class="alumni-photo">
                             <img src="IMGS/graduados/CAM_alumni_eliabe_francisco_miranda.png" alt="Francisco Miranda">
                         </div>
                         <h3>Francisco Miranda</h3>
-                        <span class="cargo">CEO Yank CREATIVE MEDIA / PRODUTOR E REALIZADOR</span>
+                        <span class="cargo">CEO Yank CREATIVE MEDIA</span>
                     </div>
-                    <p class="depoimento">“No curso de CAM descobri a minha paixão pelo som e imagem, adquirindo as bases essenciais para crescer e afirmar-me na área do audiovisual, criando posteriormente a minha própria produtora de fotografia e vídeo focada em trabalho publicitário.”</p>
+                    <p class="depoimento-preview">“No curso de CAM descobri a minha paixão pelo som e imagem...”</p>
+                    <span class="ler-mais">VER DEPOIMENTO</span>
+                    <div id="text-francisco" class="hidden-text">“No curso de CAM descobri a minha paixão pelo som e imagem, adquirindo as bases essenciais para crescer e afirmar-me na área do audiovisual, criando posteriormente a minha própria produtora de fotografia e vídeo focada em trabalho publicitário.”</div>
                 </div>
 
-                <div class="testimonial-card reveal">
+                <!-- Monique Moreira -->
+                <div class="testimonial-card reveal" onclick="openAlumniModal('monique')">
                     <div class="alumni-info">
                         <div class="alumni-photo">
                             <img src="IMGS/graduados/CAM_alumni_monique_moreira.png" alt="Monique Moreira">
@@ -153,12 +161,35 @@
                         <h3>Monique Moreira</h3>
                         <span class="cargo">UI Designer</span>
                     </div>
-                    <p class="depoimento">“A formação em CAM deu-me uma base importante de cultura visual, comunicação e pensamento crítico sobre a imagem. Apesar de o meu percurso profissional se ter direcionado para UI Design, essas referências continuam a influenciar a forma como observo, analiso e crio soluções digitais no meu trabalho.”</p>
+                    <p class="depoimento-preview">“A formação em CAM deu-me uma base importante de cultura visual...”</p>
+                    <span class="ler-mais">VER DEPOIMENTO</span>
+                    <div id="text-monique" class="hidden-text">“A formação em CAM deu-me uma base importante de cultura visual, comunicação e pensamento crítico sobre a imagem. Apesar de o meu percurso profissional se ter direcionado para UI Design, essas referências continuam a influenciar a forma como observo, analiso e crio soluções digitais no meu trabalho.”</div>
+                </div>
+
+                <!-- João Rodrigues -->
+                <div class="testimonial-card reveal" onclick="openAlumniModal('joao')">
+                    <div class="alumni-info">
+                        <div class="alumni-photo">
+                            <img src="IMGS/graduados/CAM_alumni_joao_rodrigues.png" alt="João Rodrigues">
+                        </div>
+                        <h3>João Rodrigues</h3>
+                        <span class="cargo">CEO Seagmedia</span>
+                    </div>
+                    <p class="depoimento-preview">“Há cerca de 14 anos, eu era apenas um freelancer com vontade de crescer...”</p>
+                    <span class="ler-mais">VER DEPOIMENTO</span>
+                    <div id="text-joao" class="hidden-text">“Há cerca de 14 anos, eu era apenas um freelancer com vontade de crescer, aprender e fazer acontecer. Não imaginava, de todo, aquilo que viria a construir anos mais tarde com a SEAGMEDIA. Mas se hoje lidero uma produtora audiovisual que trabalha com grandes marcas e projetos de dimensão nacional e internacional, sei que esse percurso não foi construído sozinho. A Universidade Lusófona do Porto fez parte dessa caminhada. Não apenas pelo conhecimento técnico, mas também pela forma como ajudou a consolidar uma visão mais completa sobre a indústria criativa e sobre aquilo que significa transformar criatividade em projetos com impacto real. Olhar para trás e reconhecer isso é, acima de tudo, um sinal de gratidão.”</div>
                 </div>
 
             </div>
         </section>
     </main>
+
+    <div id="alumniModal" class="modal-v2">
+        <div class="modal-content-v2">
+            <span class="close-modal" onclick="closeAlumniModal()">&times;</span>
+            <div id="modal-body-v2"></div>
+        </div>
+    </div>
 
     <footer id="main-footer">
         <div class="footer-container">

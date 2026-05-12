@@ -62,7 +62,7 @@
 
         <section class="content-wrapper">
             <p class="texto-corrido">
-                Over more than 15 years, our students have created dozens of films, photographs, web and multimedia applications, and exhibitions. We highlight just a few of the many interesting projects created at CAM throughout our history.
+                Over more than 15 years, our students have created dozens of films, photographs, web and multimedia applications, and exhibitions. Here we highlight just a few of the many interesting projects created in CAM throughout our history.
             </p>
         </section>
 
@@ -73,6 +73,7 @@
             </h2>
             <div class="projects-grid">
                 
+                <!-- Project 1 -->
                 <div class="project-card reveal">
                     <div class="video-container">
                         <video controls autoplay muted loop class="video-player">
@@ -86,6 +87,7 @@
                     </div>
                 </div>
 
+                <!-- Project 2 (Carousel) -->
                 <div class="project-card reveal">
                     <div class="video-container">
                         <div class="carousel">
@@ -116,6 +118,7 @@
             </div>
         </section>
 
+        <!-- ALUMNI SECTION -->
         <section class="testimonials-section">
             <h2 class="titulo-medio">
                 <span>OUR</span> 
@@ -123,29 +126,36 @@
             </h2>
             <div class="testimonials-container">
                 
-                <div class="testimonial-card reveal">
+                <!-- Eliabe Campos -->
+                <div class="testimonial-card reveal" onclick="openAlumniModal('eliabe')">
                     <div class="alumni-info">
                         <div class="alumni-photo">
                             <img src="IMGS/graduados/CAM_alumni_eliabe_campos.png" alt="Eliabe Campos">
                         </div>
                         <h3>Eliabe Campos</h3>
-                        <span class="cargo">CEO Overall Studio / Photographer and Videographer</span>
+                        <span class="cargo">CEO Overall Studio</span>
                     </div>
-                    <p class="depoimento">“The CAM course didn't just prepare me to enter the 'traditional' job market, with fixed hours and the routine of waiting for the end of the month to get paid. On the contrary, it gave me tools and a mindset that helped me follow my own path. When I look back, I realize that CAM was not just training, but the starting point for everything I have built so far.”</p>
+                    <p class="depoimento-preview">“The CAM course didn't just prepare me to enter the labor market...”</p>
+                    <span class="ler-mais">READ TESTIMONIAL</span>
+                    <div id="text-eliabe" class="hidden-text">“The CAM course didn't just prepare me to enter the 'traditional' labor market, with fixed hours and the routine of waiting for the end of the month to receive a salary. On the contrary, it gave me tools and a way of thinking that helped me follow my own path. When I look back, I realize that CAM was not just training but the starting point for everything I have built until now.”</div>
                 </div>
 
-                <div class="testimonial-card reveal">
+                <!-- Francisco Miranda -->
+                <div class="testimonial-card reveal" onclick="openAlumniModal('francisco')">
                     <div class="alumni-info">
                         <div class="alumni-photo">
                             <img src="IMGS/graduados/CAM_alumni_eliabe_francisco_miranda.png" alt="Francisco Miranda">
                         </div>
                         <h3>Francisco Miranda</h3>
-                        <span class="cargo">CEO Yank CREATIVE MEDIA / PRODUCER AND DIRECTOR</span>
+                        <span class="cargo">CEO Yank CREATIVE MEDIA</span>
                     </div>
-                    <p class="depoimento">“In the CAM course, I discovered my passion for sound and image, acquiring the essential foundations to grow and establish myself in the audiovisual field, later creating my own photography and video production company focused on advertising work.”</p>
+                    <p class="depoimento-preview">“In the CAM course, I discovered my passion for sound and image...”</p>
+                    <span class="ler-mais">READ TESTIMONIAL</span>
+                    <div id="text-francisco" class="hidden-text">“In the CAM course, I discovered my passion for sound and image, acquiring the essential foundations to grow and establish myself in the audiovisual field, later creating my own photography and video production company focused on advertising work.”</div>
                 </div>
 
-                <div class="testimonial-card reveal">
+                <!-- Monique Moreira -->
+                <div class="testimonial-card reveal" onclick="openAlumniModal('monique')">
                     <div class="alumni-info">
                         <div class="alumni-photo">
                             <img src="IMGS/graduados/CAM_alumni_monique_moreira.png" alt="Monique Moreira">
@@ -153,12 +163,36 @@
                         <h3>Monique Moreira</h3>
                         <span class="cargo">UI Designer</span>
                     </div>
-                    <p class="depoimento">“The training in CAM gave me an important foundation in visual culture, communication, and critical thinking about images. Although my professional path led towards UI Design, these references continue to influence how I observe, analyze, and create digital solutions in my work.”</p>
+                    <p class="depoimento-preview">“CAM provided me with an important foundation in visual culture...”</p>
+                    <span class="ler-mais">READ TESTIMONIAL</span>
+                    <div id="text-monique" class="hidden-text">“Training in CAM gave me an important foundation in visual culture, communication, and critical thinking about images. Although my professional path has moved towards UI Design, these references continue to influence how I observe, analyze, and create digital solutions in my work.”</div>
+                </div>
+
+                <!-- João Rodrigues -->
+                <div class="testimonial-card reveal" onclick="openAlumniModal('joao')">
+                    <div class="alumni-info">
+                        <div class="alumni-photo">
+                            <img src="IMGS/graduados/CAM_alumni_joao_rodrigues.png" alt="João Rodrigues">
+                        </div>
+                        <h3>João Rodrigues</h3>
+                        <span class="cargo">CEO Seagmedia</span>
+                    </div>
+                    <p class="depoimento-preview">“About 14 years ago, I was just a freelancer with a desire to grow...”</p>
+                    <span class="ler-mais">READ TESTIMONIAL</span>
+                    <div id="text-joao" class="hidden-text">“About 14 years ago, I was just a freelancer with a desire to grow, learn, and make things happen. I didn't imagine at all what I would build years later with SEAGMEDIA. But if today I lead an audiovisual production company that works with major brands and national and international projects, I know that this path was not built alone. Lusófona University of Porto was part of that journey. Not just for the technical knowledge, but also for how it helped consolidate a more complete vision of the creative industry and what it means to transform creativity into projects with real impact. Looking back and recognizing this is, above all, a sign of gratitude.”</div>
                 </div>
 
             </div>
         </section>
     </main>
+
+    <!-- MODAL -->
+    <div id="alumniModal" class="modal-v2">
+        <div class="modal-content-v2">
+            <span class="close-modal" onclick="closeAlumniModal()">&times;</span>
+            <div id="modal-body-v2"></div>
+        </div>
+    </div>
 
     <footer id="main-footer">
         <div class="footer-container">
@@ -175,11 +209,7 @@
                 <div class="info-content">
                     <div class="info-item"><strong>Tel:</strong> 222 073 230</div>
                     <div class="info-item"><strong>Email:</strong> info.cup@ulusofona.pt</div>
-                    <div class="info-item"><strong>Direction:</strong> joao.alves.de.sousa@ulusofona.pt</div>
-                    <div class="info-item">
-                        <strong>Institutional Page:</strong> 
-                        <a href="https://www.ulusofona.pt/porto/licenciaturas/comunicacao-audiovisual-e-multimedia" target="_blank" class="footer-link-simple">CAM</a>
-                    </div>
+                    <div class="info-item"><strong>Director:</strong> joao.alves.de.sousa@ulusofona.pt</div>
                 </div>
             </div>
 
@@ -188,7 +218,6 @@
                 <a href="https://www.facebook.com/camlusofona" target="_blank">Facebook</a>
                 <a href="https://www.instagram.com/cam_lusofona/" target="_blank">Instagram</a>
                 <a href="https://www.youtube.com/@CAMLusofona" target="_blank">YouTube</a>
-                <a href="https://vimeo.com/camlusofona" target="_blank">Vimeo</a>
             </div>
         </div>
         <div class="footer-bottom">&copy; 2024 CAM - ULusófona Porto</div>

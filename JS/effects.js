@@ -1,3 +1,4 @@
+/* --- RATO PERSONALIZADO --- */
 if (!document.getElementById('custom-cursor')) {
     const cursor = document.createElement('div');
     cursor.id = 'custom-cursor';
@@ -6,7 +7,6 @@ if (!document.getElementById('custom-cursor')) {
 
 const cursor = document.getElementById('custom-cursor');
 
-/* --- RATO PERSONALIZADO --- */
 window.addEventListener('mousemove', e => {
     cursor.style.left = e.clientX + 'px';
     cursor.style.top = e.clientY + 'px';
@@ -44,7 +44,10 @@ particlesJS("particles-js", {
       "opacity": 0.2,
       "width": 1
     },
-    "move": { "enable": true, "speed": 2 }
+    "move": { 
+      "enable": true, 
+      "speed": 0.8 
+    }
   },
   "interactivity": {
     "detect_on": "window",
