@@ -100,25 +100,33 @@
 /* --- LINKS E BOTÕES --- */
 .links-edicao {
     margin-top: auto;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px;      
 }
 
 .links-edicao a {
-    display: block;
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+    flex: 1;             
+    min-width: 80px;     
     text-align: center;
     color: #ffee00;
     text-decoration: none;
     border: 2px solid #ffee00;
-    padding: 12px;
-    font-size: 11px;
+    padding: 10px 5px;   
+    font-size: 10px;     
     font-weight: 900;
     text-transform: uppercase;
     border-radius: 8px;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .links-edicao a:hover {
     background: #ffee00;
     color: #000;
+    transform: translateY(-3px); 
 }
 
 /* --- ESTADOS ESPECIAIS --- */
