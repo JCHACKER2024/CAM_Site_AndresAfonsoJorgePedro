@@ -14,13 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    const elementsToReveal = document.querySelectorAll('.card, .saida-row, .parceiro-link, .titulo-seccao, .titulo-medio, .project-card, .testimonial-card, .ato-wrapper');
+    const elementsToReveal = document.querySelectorAll('.card, .saida-row, .parceiro-link, .titulo-seccao, .titulo-medio, .project-card, .testimonial-card, .ato-wrapper, .video-slide');
     
     elementsToReveal.forEach(el => {
         observer.observe(el);
     });
 
-    /* --- ACORDEÃO (SAÍDAS E SYLLABUS) --- */
     const saidaRows = document.querySelectorAll('.saida-row');
     saidaRows.forEach(row => {
         row.addEventListener('click', () => {
@@ -31,13 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* --- PLAY DO VÍDEO HERO --- */
     const heroVideo = document.getElementById('hero-video');
     if (heroVideo) {
         heroVideo.play().catch(() => {});
     }
 
-    /* --- FECHAR MODAL AO CLICAR FORA --- */
     const modal = document.getElementById('alumniModal');
     window.onclick = function(event) {
         if (event.target == modal) {
@@ -46,7 +43,26 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 });
 
-/* --- LÓGICA DO MODAL --- */
+/* --- LÓGICA DO SLIDER DE VÍDEOS (HALL OF FAME) --- */
+let currentVideoSlide = 0;
+
+function changeVideoSlide(direction) {
+    const slides = document.querySelectorAll('.video-slide');
+    if (slides.length === 0) return;
+
+    const currentIframe = slides[currentVideoSlide].querySelector('iframe');
+    if (currentIframe) {
+        const src = currentIframe.getAttribute('src');
+        currentIframe.setAttribute('src', ''); // Mata o vídeo
+        currentIframe.setAttribute('src', src); // Recarrega pronto para o próximo clique
+    }
+
+    slides[currentVideoSlide].classList.remove('active');
+    currentVideoSlide = (currentVideoSlide + direction + slides.length) % slides.length;
+    slides[currentVideoSlide].classList.add('active');
+}
+
+/* --- LÓGICA DO MODAL DE GRADUADOS --- */
 function openAlumniModal(id) {
     const modal = document.getElementById('alumniModal');
     const modalBody = document.getElementById('modal-body-v2');
@@ -86,7 +102,7 @@ function closeAlumniModal() {
     }
 }
 
-/* --- LÓGICA UNIVERSAL DE CARROSSEIS --- */
+/* --- LÓGICA UNIVERSAL DE CARROSSEIS (IMAGENS) --- */
 function moveSlide(id, step, imgClass = '.c-img') {
     const container = document.getElementById(id);
     if (!container) return;

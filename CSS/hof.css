@@ -1,4 +1,5 @@
-/* --- HALL OF FAME SECTION --- */
+/* HALL OF FAME SECTION */
+
 .hof-section, .testimonials-section {
     max-width: 1200px;
     margin: 80px auto;
@@ -23,131 +24,107 @@
     color: #ffee00;
 }
 
-/* --- GRELHA DE PROJETOS --- */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 40px;
-    margin-top: 40px;
-}
-
-.project-card {
-    background: #1a1c23;
-    border-radius: 24px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.4s ease, border-color 0.4s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    border-color: #ffee00;
-}
-
-.video-container {
+/* --- SLIDER DE VÍDEOS --- */
+.video-slider-container {
     position: relative;
     width: 100%;
-    aspect-ratio: 1 / 1; 
-    background: #000;    
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #1a1c23;
+    border-radius: 32px;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-.video-player {
+.video-slide {
+    display: none; 
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.video-slide.active {
+    display: block;
+}
+
+.iframe-wrapper {
+    position: relative;
     width: 100%;
-    height: 100%;
-    object-fit: contain; 
+    padding-bottom: 56.25%; 
+    height: 0;
     background: #000;
 }
 
-.carousel {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.carousel-img {
+.iframe-wrapper iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
 }
 
-.carousel-img.active {
-    opacity: 1;
-}
-
-/* --- BOTÕES CARROSSEL --- */
-.prev, .next {
+.slider-prev, .slider-next {
     position: absolute;
-    top: 50%;
+    top: 40%; 
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.4); 
-    backdrop-filter: blur(8px);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 238, 0, 0.9);
+    color: #000;
+    border: none;
     width: 50px;
-    height: 80px;
+    height: 50px;
+    border-radius: 50%;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 20px;
+    font-weight: bold;
     z-index: 10;
-    transition: 0.3s ease;
+    transition: 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
 }
 
-.project-card:hover .prev, 
-.project-card:hover .next {
-    opacity: 1;
+.slider-prev:hover, .slider-next:hover {
+    background: #fff;
+    transform: translateY(-50%) scale(1.1);
 }
 
-.prev { left: 0; border-radius: 0 15px 15px 0; }
-.next { right: 0; border-radius: 15px 0 0 15px; }
+.slider-prev { left: 20px; }
+.slider-next { right: 20px; }
 
-.prev:hover, .next:hover {
-    background: #ffee00; 
-    color: #000;
+/* --- INFO NO SLIDER --- */
+.video-slide .project-info {
+    padding: 35px 20px;
+    background: #1a1c23;
+    text-align: center; 
 }
 
-/* --- INFO PROJETOS --- */
-.project-info {
-    padding: 30px;
-}
-
-.category {
-    color: #ffee00;
-    font-size: 11px;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 2px;
-    display: block;
-    margin-bottom: 12px;
-}
-
-.project-info h3 {
-    font-size: 22px;
-    margin-bottom: 12px;
-    color: #fff;
+.video-slide .project-info h3 {
+    font-size: 28px;
+    color: #ffee00; 
+    margin-bottom: 8px;
+    letter-spacing: 1px;
     text-transform: uppercase;
 }
 
-.project-info p {
+.video-slide .project-info .author {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.video-slide .project-info .description {
     color: #a0a0a0;
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 14px;
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/* --- TESTEMUNHOS --- */
+.video-slide .category {
+    display: none;
+}
+
+/* --- TESTEMUNHOS (GRADUADOS) --- */
 .testimonials-section {
     max-width: 1800px; 
     margin: 80px auto;
@@ -183,32 +160,21 @@
     box-shadow: 0 15px 30px rgba(0,0,0,0.4);
 }
 
-.alumni-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
 .alumni-photo {
     width: 120px; 
     height: 120px;
-    margin-bottom: 15px; 
+    margin: 0 auto 15px auto; 
     border-radius: 50%; 
     overflow: hidden; 
     border: 3px solid #ffee00;
+    display: block; 
 }
 
 .alumni-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.alumni-info h3 {
-    font-size: 22px;
-    color: #fff;
-    margin-bottom: 5px;
+    display: block;
 }
 
 .cargo {
@@ -239,7 +205,7 @@
 
 .hidden-text { display: none; }
 
-/* --- ESTILO DO MODAL  --- */
+/* --- ESTILO DO MODAL --- */
 .modal-v2 {
     display: none;
     position: fixed;
@@ -275,7 +241,6 @@
     font-size: 40px;
     font-weight: 300;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 .close-modal:hover { color: #ffee00; }
@@ -288,28 +253,23 @@
     font-size: 17px;
 }
 
+/* --- ANIMAÇÕES --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
 /* --- RESPONSIVIDADE --- */
-@media (min-width: 1600px) {
-    .testimonials-container {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media (max-width: 1200px) {
-    .testimonials-container {
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    }
-}
-
 @media (max-width: 900px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
+    .slider-prev, .slider-next {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
     }
-
-    .modal-content-v2 { padding: 40px 20px; }
+    
+    .video-slide .project-info { padding: 25px; }
 }
 
 @media (max-width: 480px) {
     .testimonial-card { padding: 30px 20px; }
-    #modal-body-v2 p { font-size: 15px; }
 }
