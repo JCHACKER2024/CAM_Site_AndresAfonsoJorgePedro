@@ -260,6 +260,8 @@
 }
 
 /* --- RESPONSIVIDADE --- */
+
+/* Tablets e Ecrãs Médios */
 @media (max-width: 900px) {
     .slider-prev, .slider-next {
         width: 40px;
@@ -267,9 +269,36 @@
         font-size: 16px;
     }
     
-    .video-slide .project-info { padding: 25px; }
+    .video-slide .project-info { 
+        padding: 25px; 
+    }
+
+    .testimonials-section {
+        padding: 0 20px; 
+    }
+
+    .testimonials-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
 }
 
+/* Telemóveis / Ecrãs Pequenos */
 @media (max-width: 480px) {
-    .testimonial-card { padding: 30px 20px; }
+    .testimonials-section {
+        padding: 0 15px; 
+    }
+
+    .testimonials-container {
+        grid-template-columns: 1fr; 
+        gap: 25px;
+        justify-content: center;
+        justify-items: center; 
+    }
+
+    .testimonial-card { 
+        padding: 30px 20px; 
+        width: 100%; 
+        max-width: 380px;
+    }
 }
