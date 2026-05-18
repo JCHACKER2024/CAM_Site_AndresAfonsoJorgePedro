@@ -472,7 +472,7 @@ nav a.active, nav a:hover {
     background: #fff; 
 }
 
-/* ANIMAÇÕES (KEYFRAMES) */
+/* ANIMAÇÕES */
 @keyframes revealIcon { to { opacity: 1; transform: scale(1); } }
 @keyframes revealText { to { opacity: 1; transform: translateX(0); } }
 @keyframes moveLogoUp {
@@ -487,14 +487,17 @@ nav a.active, nav a:hover {
 @keyframes revealVideo { to { opacity: 1; transform: scale(1); } }
 @keyframes fadeInGeneral { to { opacity: 1; } }
 
-/* MEDIA QUERIES (RESPONSIVIDADE) */
+/* RESPONSIVIDADE */
+
+/* /Tablets e ecrãs médios/ */
 @media (max-width: 1024px) {
     .extenso { font-size: 10px; }
     nav a { font-size: 11px; margin-left: 12px; }
 }
 
+/* /Tablets verticais/ */
 @media (max-width: 768px) {
-    body { padding-top: 110px; } 
+    body { padding-top: 95px; }
     
     #header { 
         padding: 10px 15px; 
@@ -507,19 +510,20 @@ nav a.active, nav a:hover {
     }
 
     .logo-header {
-        gap: 6px;
+        gap: 8px;
     }
 
     .header-logo-img { 
-        height: 25px; 
+        height: 22px; 
     }
     
     .extenso { 
         display: inline-block;
         font-size: 8px;
-        max-width: 160px;
-        line-height: 1.2;
-        letter-spacing: 0px;
+        max-width: none;       
+        white-space: nowrap;   
+        line-height: 1;
+        letter-spacing: 0.5px;
     } 
 
     nav { 
@@ -585,18 +589,19 @@ nav a.active, nav a:hover {
     }
 }
 
+/* /Telemóveis e ecrãs pequenos/ */
 @media (max-width: 480px) {
-    body { padding-top: 105px; }
+    body { padding-top: 90px; }
     #header { padding: 8px 10px; }
     
     .extenso {
-        font-size: 7.5px;
-        max-width: 120px;
+        font-size: 7px;
+        letter-spacing: -0.2px; 
     }
 
     nav a { 
-        margin: 0 5px; 
-        font-size: 9px; 
+        margin: 0 4px; 
+        font-size: 8.5px; 
         letter-spacing: 0px;
     }
 
