@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* --- ANIMAÇÕES DE REVEAL (SCROLL) --- */
     const observerOptions = {
         threshold: 0.15
     };
@@ -20,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
+    /* --- SAÍDAS PROFISSIONAIS (SOBRE) --- */
     const saidaRows = document.querySelectorAll('.saida-row');
     saidaRows.forEach(row => {
         row.addEventListener('click', () => {
@@ -30,20 +30,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    /* --- AUTO-PLAY DO HERO VIDEO --- */
     const heroVideo = document.getElementById('hero-video');
     if (heroVideo) {
-        heroVideo.play().catch(() => {});
+        heroVideo.play().catch(() => {
+        });
     }
 
+    /* --- FECHAR MODAL CLICANDO FORA --- */
     const modal = document.getElementById('alumniModal');
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            closeAlumniModal();
-        }
-    };
+    if (modal) {
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeAlumniModal();
+            }
+        });
+    }
 });
 
-/* --- LÓGICA DO SLIDER DE VÍDEOS (HALL OF FAME) --- */
+/* LÓGICA DO SLIDER DE VÍDEOS (HALL OF FAME) */
 let currentVideoSlide = 0;
 
 function changeVideoSlide(direction) {
@@ -53,8 +58,8 @@ function changeVideoSlide(direction) {
     const currentIframe = slides[currentVideoSlide].querySelector('iframe');
     if (currentIframe) {
         const src = currentIframe.getAttribute('src');
-        currentIframe.setAttribute('src', ''); // Mata o vídeo
-        currentIframe.setAttribute('src', src); // Recarrega pronto para o próximo clique
+        currentIframe.setAttribute('src', ''); // Faz reset ao vídeo interrompendo o som
+        currentIframe.setAttribute('src', src); // Recarrega o iframe
     }
 
     slides[currentVideoSlide].classList.remove('active');
@@ -62,10 +67,11 @@ function changeVideoSlide(direction) {
     slides[currentVideoSlide].classList.add('active');
 }
 
-/* --- LÓGICA DO MODAL DE GRADUADOS --- */
+/* LÓGICA DO MODAL DE GRADUADOS (ALUMNI/HALL OF FAME) */
 function openAlumniModal(id) {
     const modal = document.getElementById('alumniModal');
     const modalBody = document.getElementById('modal-body-v2');
+    if (!modal || !modalBody) return;
     
     const card = document.querySelector(`[onclick="openAlumniModal('${id}')"]`);
     if (!card) return;
@@ -73,7 +79,10 @@ function openAlumniModal(id) {
     const nome = card.querySelector('h3').innerText;
     const cargo = card.querySelector('.cargo').innerText;
     const fotoHTML = card.querySelector('.alumni-photo').innerHTML;
-    const textoCompleto = document.getElementById(`text-${id}`).innerHTML;
+    
+    const hiddenTextEl = document.getElementById(`text-${id}`);
+    if (!hiddenTextEl) return;
+    const textoCompleto = hiddenTextEl.innerHTML;
 
     modalBody.innerHTML = `
         <div class="modal-header-alumni" style="text-align: center; margin-bottom: 25px;">
@@ -86,7 +95,7 @@ function openAlumniModal(id) {
             </span>
         </div>
         <div class="modal-text-alumni">
-            <p>${textoCompleto}</p>
+            ${textoCompleto}
         </div>
     `;
 
@@ -102,7 +111,7 @@ function closeAlumniModal() {
     }
 }
 
-/* --- LÓGICA UNIVERSAL DE CARROSSEIS (IMAGENS) --- */
+/* LÓGICA UNIVERSAL DE CARROSSEIS (GALERIAS DE IMAGENS) */
 function moveSlide(id, step, imgClass = '.c-img') {
     const container = document.getElementById(id);
     if (!container) return;
@@ -115,7 +124,6 @@ function moveSlide(id, step, imgClass = '.c-img') {
     if (slides.length === 0) return;
 
     let activeIndex = Array.from(slides).findIndex(s => s.classList.contains('active'));
-    
     if (activeIndex === -1) activeIndex = 0;
 
     slides[activeIndex].classList.remove('active');

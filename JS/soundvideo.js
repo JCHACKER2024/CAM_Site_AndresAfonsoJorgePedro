@@ -1,10 +1,16 @@
-// APENAS CONTROLO DE SOM (VÍDEO FIXO NO HTML)
+// CONTROLO DE SOM E ESTADO DO VÍDEO PRINCIPAL
 document.addEventListener('DOMContentLoaded', () => {
     const videoElement = document.getElementById('myVideo');
     const muteBtn = document.getElementById('muteBtn');
     const statusSom = document.getElementById('statusSom');
 
-    if (muteBtn && videoElement) {
+    if (videoElement && muteBtn && statusSom) {
+        
+        statusSom.innerText = videoElement.muted ? "OFF" : "ON";
+        if (!videoElement.muted) {
+            muteBtn.classList.add('active');
+        }
+
         muteBtn.addEventListener('click', () => {
             if (videoElement.muted) {
                 videoElement.muted = false;

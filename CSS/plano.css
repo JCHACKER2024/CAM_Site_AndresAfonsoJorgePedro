@@ -1,4 +1,4 @@
-/* --- ESTRUTURA --- */
+/* ESTRUTURA GERAL (PLANO DE ESTUDOS) */
 main {
     background-color: #0f1014;
     min-height: 100vh;
@@ -11,7 +11,7 @@ main {
     padding: 0 20px;
 }
 
-/* --- ATOS --- */
+/* ATOS CRONOLÓGICOS / BLOCOS PEDAGÓGICOS */
 .ato-wrapper {
     margin-bottom: 80px;
 }
@@ -27,31 +27,41 @@ main {
     font-size: 32px;
     font-weight: 900;
     text-transform: uppercase;
-    color: white;
+    color: #ffffff;
 }
 
 .ato-header p {
-    color: #888;
+    color: #888888;
     font-size: 16px;
     margin-top: 5px;
 }
 
-/* --- SEMESTRES --- */
+/* ELEMENTOS DE SEMESTRES */
 .semestre-box {
     background: #15161c;
     margin-bottom: 15px;
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: 0.3s ease;
+    transition: border-color 0.3s ease;
+}
+
+.semestre-box summary,
+.uc-item summary {
+    list-style: none;
+    outline: none;
+}
+
+.semestre-box summary::-webkit-details-marker,
+.uc-item summary::-webkit-details-marker {
+    display: none;
 }
 
 .semestre-box summary {
     padding: 25px 30px;
     font-weight: 800;
-    color: #fff;
+    color: #ffffff;
     cursor: pointer;
-    list-style: none;
     text-transform: uppercase;
     letter-spacing: 1px;
     display: flex;
@@ -62,7 +72,8 @@ main {
 .semestre-box summary::after {
     content: '→';
     color: #ffee00;
-    transition: 0.3s;
+    font-size: 18px;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .semestre-box[open] {
@@ -78,7 +89,7 @@ main {
     transform: rotate(90deg);
 }
 
-/* --- DISCIPLINAS --- */
+/* UNIDADES CURRICULARES (UCs MÓDULOS) */
 .uc-list {
     padding: 20px 30px;
 }
@@ -87,28 +98,32 @@ main {
     border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
-.uc-item:last-child { border: none; }
+.uc-item:last-child { 
+    border: none; 
+}
 
 .uc-item summary {
     padding: 15px 0;
     font-size: 15px;
     font-weight: 600;
-    color: #ccc;
+    color: #cccccc;
     cursor: pointer;
-    list-style: none;
+    transition: color 0.2s ease;
 }
 
-.uc-item summary:hover { color: #fff; }
+.uc-item summary:hover { 
+    color: #ffffff; 
+}
 
 .uc-item p {
     padding: 0 0 20px 0;
     font-size: 14px;
-    color: #888;
+    color: #888888;
     line-height: 1.6;
     text-align: justify;
 }
 
-/* --- DOCENTES --- */
+/* CORPO DOCENTE */
 .docentes-section {
     padding: 120px 20px;
     background: #0a0b0e;
@@ -134,7 +149,7 @@ main {
     justify-content: center;
     gap: 12px;
     flex-wrap: wrap;
-    color: #fff;
+    color: #ffffff;
     margin: 0 auto;
 }
 
@@ -158,7 +173,7 @@ main {
     border-radius: 24px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.4s ease;
+    transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
 .docente-row:hover {
@@ -181,7 +196,7 @@ main {
     height: 100%;
     object-fit: cover;
     filter: grayscale(100%);
-    transition: 0.5s ease;
+    transition: filter 0.5s ease;
 }
 
 .docente-row:hover .docente-img img {
@@ -196,7 +211,7 @@ main {
 .docente-info h3 {
     font-size: clamp(22px, 3vw, 28px);
     margin-bottom: 5px;
-    color: #fff;
+    color: #ffffff;
     text-transform: uppercase;
 }
 
@@ -211,12 +226,12 @@ main {
 }
 
 .docente-info p {
-    color: #aaa;
+    color: #aaaaaaaa;
     font-size: 15px;
     line-height: 1.6;
 }
 
-/* --- PRÉMIOS --- */
+/* Sub-bloco de Prémios e Histórico do Docente */
 .premios-container {
     margin-top: 20px;
     padding-top: 20px;
@@ -226,7 +241,7 @@ main {
 .premios-titulo {
     font-size: 12px;
     text-transform: uppercase;
-    color: #fff;
+    color: #ffffff;
     letter-spacing: 1px;
     margin-bottom: 15px;
     font-weight: 800;
@@ -234,11 +249,12 @@ main {
 
 .premios-lista {
     list-style: none; 
+    padding: 0;
 }
 
 .premios-lista li {
     font-size: 14px;
-    color: #999;
+    color: #999999;
     line-height: 1.6; 
     margin-bottom: 10px; 
     position: relative;
@@ -253,7 +269,7 @@ main {
     font-weight: bold;
 }
 
-/* --- ANIMAÇÕES --- */
+/* ANIMAÇÕES */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
@@ -263,7 +279,9 @@ main {
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
-/* --- RESPONSIVIDADE --- */
+/* RESPONSIVIDADE */
+
+/* Tablets e Desktops Pequenos */
 @media (max-width: 1024px) {
     .docente-row, 
     .docente-row.reverse {
@@ -274,8 +292,7 @@ main {
     .docente-img {
         max-width: 100%;
         width: 100%;
-        height: 300px; 
-        object-fit: cover;
+        height: 320px; 
     }
 
     .docente-info {
@@ -286,46 +303,48 @@ main {
 
     .premios-lista li {
         text-align: left; 
-        font-size: 14px;
     }
 }
 
+/* Tablets Verticais */
 @media (max-width: 768px) {
+    .ato-header {
+        padding-left: 15px;
+    }
+
     .ato-header h2 { 
-        font-size: clamp(20px, 6vw, 24px); 
-        text-align: center;
+        font-size: clamp(22px, 6vw, 26px); 
     }
 
     .semestre-box summary { 
-        padding: 15px 20px; 
-        font-size: 13px; 
+        padding: 18px 20px; 
+        font-size: 14px; 
     }
 
     .uc-list { 
-        padding: 10px 15px; 
+        padding: 10px 20px; 
     }
 
-    .uc-item {
-        font-size: 14px;
-        padding: 8px 0;
-    }
-    
     .docentes-section .titulo-medio {
-        font-size: 22px;
+        font-size: 24px;
         flex-direction: column;
         align-items: center;
         gap: 5px;
-        text-align: center;
     }
 }
 
+/* Telemóveis e Ecrãs Mobile */
 @media (max-width: 480px) {
+    .plano-container {
+        margin: 40px auto 80px;
+    }
+
     .docente-img {
         height: 250px; 
     }
 
     .docente-info h3 {
-        font-size: 18px;
+        font-size: 19px;
     }
 
     .docente-info p {
@@ -334,11 +353,17 @@ main {
     }
 
     .semestre-box summary {
-        font-size: 12px;
+        font-size: 13px;
         letter-spacing: 0px;
+        padding: 15px;
     }
 
-    .uc-list li {
+    .uc-item summary {
+        font-size: 14px;
+    }
+
+    .uc-item p {
         font-size: 13px;
+        line-height: 1.5;
     }
 }

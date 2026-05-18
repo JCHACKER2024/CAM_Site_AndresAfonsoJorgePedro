@@ -1,11 +1,25 @@
-/* --- SCROLLBAR --- */
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #333742; }
-::-webkit-scrollbar-thumb { background: #4a4e5a; border-radius: 10px; border: 2px solid #333742; }
-::-webkit-scrollbar-thumb:hover { background: #ffee00; }
+/* SCROLLBAR PERSONALIZADA */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #333742;
+}
+::-webkit-scrollbar-thumb {
+    background: #4a4e5a;
+    border-radius: 10px;
+    border: 2px solid #333742;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ffee00;
+}
 
-/* --- BASE E HEADER --- */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* REGRAS BASE DO DOCUMENTO */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body { 
     background-color: #333742; 
@@ -33,32 +47,35 @@ main {
     z-index: 1; 
 }
 
-/* --- RATO PERSONALIZADO --- */
-*, *::before, *::after {
-    cursor: none !important;
+/* RATO PERSONALIZADO (APENAS PARA DESKTOP) */
+@media (pointer: fine) {
+    *, *::before, *::after {
+        cursor: none !important;
+    }
+
+    video::-webkit-media-controls,
+    video::-webkit-media-controls-enclosure,
+    video::-webkit-media-controls-panel,
+    video::-webkit-media-controls-play-button {
+        cursor: none !important;
+    }
+
+    #custom-cursor {
+        width: 15px;
+        height: 15px;
+        border: 2px solid #ffee00;
+        border-radius: 50%;
+        position: fixed;
+        top: -50px; 
+        left: -50px;
+        pointer-events: none; 
+        z-index: 99999; 
+        transition: transform 0.1s ease-out;
+        background: rgba(255, 238, 0, 0.1);
+    }
 }
 
-video::-webkit-media-controls,
-video::-webkit-media-controls-enclosure,
-video::-webkit-media-controls-panel,
-video::-webkit-media-controls-play-button {
-    cursor: none !important;
-}
-
-#custom-cursor {
-    width: 15px;
-    height: 15px;
-    border: 2px solid #ffee00;
-    border-radius: 50%;
-    position: fixed;
-    top: -50px; 
-    left: -50px;
-    pointer-events: none; 
-    z-index: 99999; 
-    transition: transform 0.1s ease-out;
-    background: rgba(255, 238, 0, 0.1);
-}
-
+/* CABEÇALHO / HUD SUPERIOR */
 #header { 
     position: fixed; 
     top: 0; 
@@ -77,8 +94,16 @@ video::-webkit-media-controls-play-button {
     margin: 0 auto; 
 }
 
-.logo-link { text-decoration: none; transition: 0.3s; }
-.logo-header { display: flex; align-items: center; gap: 10px; }
+.logo-link { 
+    text-decoration: none; 
+    transition: 0.3s; 
+}
+
+.logo-header { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
 
 .header-logo-img {
     height: 40px;
@@ -87,17 +112,22 @@ video::-webkit-media-controls-play-button {
     transition: transform 0.3s ease;
 }
 
-.logo-link:hover .header-logo-img { transform: scale(1.1); }
+.logo-link:hover .header-logo-img { 
+    transform: scale(1.1); 
+}
 
 .extenso { 
     color: #ffee00; 
-    font-size: 11px; 
+    font-size: clamp(9px, 1.2vw, 12px); 
     letter-spacing: 1px;
     font-weight: bold;
     text-transform: uppercase;
 }
 
-nav { display: flex; }
+nav { 
+    display: flex; 
+}
+
 nav a { 
     color: white; 
     text-decoration: none; 
@@ -108,9 +138,11 @@ nav a {
     transition: 0.3s; 
 }
 
-nav a.active, nav a:hover { color: #ffee00; }
+nav a.active, nav a:hover { 
+    color: #ffee00; 
+}
 
-/* --- LANGUAGE SELECTOR --- */
+/* SELETOR DE IDIOMA */
 .language-selector {
     display: flex;
     align-items: center;
@@ -139,7 +171,7 @@ nav a.active, nav a:hover { color: #ffee00; }
     font-size: 12px;
 }
 
-/* --- HERO SECTION --- */
+/* HERO SECTION E ANIMAÇÕES DO LOGOTIPO */
 #hero-wrap {
     position: relative;
     height: 90vh; 
@@ -161,7 +193,9 @@ nav a.active, nav a:hover { color: #ffee00; }
     animation: moveLogoUp 1.2s cubic-bezier(0.85, 0, 0.15, 1) 2.5s forwards;
 }
 
-.is-home .logo-animation-container { display: flex; }
+.is-home .logo-animation-container { 
+    display: flex; 
+}
 
 .logo-img-icon {
     height: 500px; 
@@ -222,7 +256,7 @@ nav a.active, nav a:hover { color: #ffee00; }
     object-fit: cover; 
 }
 
-/* --- CONTEÚDO PRINCIPAL --- */
+/* BLOCOS DE CONTEÚDO CORRIDO */
 .titulo-seccao { 
     text-align: center; 
     padding: 100px 20px 50px; 
@@ -238,7 +272,9 @@ nav a.active, nav a:hover { color: #ffee00; }
     line-height: 1.1;
 }
 
-.shadow-text .highlight { color: #ffee00; }
+.shadow-text .highlight { 
+    color: #ffee00; 
+}
 
 .content-wrapper { 
     max-width: 1100px; 
@@ -276,9 +312,12 @@ nav a.active, nav a:hover { color: #ffee00; }
     text-transform: uppercase;
 }
 
-.btn-candidata:hover { transform: scale(1.1); background: white; }
+.btn-candidata:hover { 
+    transform: scale(1.1); 
+    background: white; 
+}
 
-/* --- FOOTER FINAL --- */
+/* COMPONENTE FOOTER */
 #main-footer { 
     background-color: #1a1c23; 
     border-top: 5px solid #ffee00; 
@@ -296,29 +335,119 @@ nav a.active, nav a:hover { color: #ffee00; }
     gap: 40px; 
 }
 
-.footer-brand { display: flex; flex-direction: column; align-items: center; text-align: center; min-width: 250px; }
-.footer-university { color: white; font-weight: 900; font-size: 17px; text-transform: uppercase; letter-spacing: 1px; }
-.lusofona-logo { width: 200px; margin: 15px 0; filter: brightness(0) invert(1); }
-.footer-address { font-size: 13px; color: #b0b0b0; line-height: 1.6; }
+.footer-brand { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    min-width: 250px; 
+}
 
-.footer-info { display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 300px; }
-.footer-info h4 { color: white; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; font-weight: 900; }
+.footer-university { 
+    color: white; 
+    font-weight: 900; 
+    font-size: 17px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
 
-.info-items-group { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
-.info-item { margin-bottom: 12px; font-size: 15px; color: #ffffff; }
-.info-item strong { color: #ffee00; margin-right: 8px; text-transform: uppercase; font-size: 12px; }
+.lusofona-logo { 
+    width: 200px; 
+    margin: 15px 0; 
+    filter: brightness(0) invert(1); 
+}
 
-.footer-link-simple { color: white; text-decoration: none; font-weight: bold; transition: 0.3s ease; }
-.footer-link-simple:hover { color: #ffee00; text-decoration: underline; }
+.footer-address { 
+    font-size: 13px; 
+    color: #b0b0b0; 
+    line-height: 1.6; 
+}
 
-.footer-socials { display: flex; flex-direction: column; align-items: flex-start; min-width: 150px; }
-.footer-socials h4 { color: white; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; font-weight: 900; }
-.footer-socials a { color: #b0b0b0; text-decoration: none; font-size: 14px; margin-bottom: 12px; transition: 0.3s; }
-.footer-socials a:hover { color: #ffee00; }
+.footer-info { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    flex: 1; 
+    min-width: 300px; 
+}
 
-.footer-bottom { margin-top: 60px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; color: #555; font-size: 11px; }
+.footer-info h4 { 
+    color: white; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    margin-bottom: 25px; 
+    font-weight: 900; 
+}
 
-/* --- BOTÃO DE SOM --- */
+.info-items-group { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    text-align: left; 
+}
+
+.info-item { 
+    margin-bottom: 12px; 
+    font-size: 15px; 
+    color: #ffffff; 
+}
+
+.info-item strong { 
+    color: #ffee00; 
+    margin-right: 8px; 
+    text-transform: uppercase; 
+    font-size: 12px; 
+}
+
+.footer-link-simple { 
+    color: white; 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: 0.3s ease; 
+}
+
+.footer-link-simple:hover { 
+    color: #ffee00; 
+    text-decoration: underline; 
+}
+
+.footer-socials { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    min-width: 150px; 
+}
+
+.footer-socials h4 { 
+    color: white; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    margin-bottom: 25px; 
+    font-weight: 900; 
+}
+
+.footer-socials a { 
+    color: #b0b0b0; 
+    text-decoration: none; 
+    font-size: 14px; 
+    margin-bottom: 12px; 
+    transition: 0.3s; 
+}
+
+.footer-socials a:hover { 
+    color: #ffee00; 
+}
+
+.footer-bottom { 
+    margin-top: 60px; 
+    padding-top: 25px; 
+    border-top: 1px solid rgba(255,255,255,0.05); 
+    text-align: center; 
+    color: #555; 
+    font-size: 11px; 
+}
+
+/* INTERRUPTOR DE MUTE DO VÍDEO */
 .mute-toggle {
     position: absolute;
     bottom: 30px;
@@ -338,9 +467,12 @@ nav a.active, nav a:hover { color: #ffee00; }
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-.mute-toggle:hover { transform: scale(1.05); background: #fff; }
+.mute-toggle:hover { 
+    transform: scale(1.05); 
+    background: #fff; 
+}
 
-/* --- KEYFRAMES --- */
+/* ANIMAÇÕES (KEYFRAMES) */
 @keyframes revealIcon { to { opacity: 1; transform: scale(1); } }
 @keyframes revealText { to { opacity: 1; transform: translateX(0); } }
 @keyframes moveLogoUp {
@@ -355,14 +487,14 @@ nav a.active, nav a:hover { color: #ffee00; }
 @keyframes revealVideo { to { opacity: 1; transform: scale(1); } }
 @keyframes fadeInGeneral { to { opacity: 1; } }
 
-/* --- RESPONSIVIDADE --- */
+/* MEDIA QUERIES (RESPONSIVIDADE) */
 @media (max-width: 1024px) {
     .extenso { font-size: 10px; }
     nav a { font-size: 11px; margin-left: 12px; }
 }
 
 @media (max-width: 768px) {
-    body { padding-top: 80px; } 
+    body { padding-top: 110px; } 
     
     #header { 
         padding: 10px 15px; 
@@ -371,11 +503,24 @@ nav a.active, nav a:hover { color: #ffee00; }
     .header-container {
         flex-wrap: wrap; 
         justify-content: space-between;
+        gap: 5px;
     }
 
-    .header-logo-img { height: 28px; }
+    .logo-header {
+        gap: 6px;
+    }
+
+    .header-logo-img { 
+        height: 25px; 
+    }
     
-    .extenso { display: none; } 
+    .extenso { 
+        display: inline-block;
+        font-size: 8px;
+        max-width: 160px;
+        line-height: 1.2;
+        letter-spacing: 0px;
+    } 
 
     nav { 
         order: 3; 
@@ -393,6 +538,7 @@ nav a.active, nav a:hover { color: #ffee00; }
 
     .language-selector {
         font-size: 10px;
+        margin-left: auto;
     }
 
     #hero-wrap { height: 65vh; }
@@ -432,12 +578,22 @@ nav a.active, nav a:hover { color: #ffee00; }
         align-items: center; 
         gap: 25px; 
     }
-    .footer-info, .footer-socials { align-items: center; text-align: center; }
+    
+    .footer-info, .footer-socials { 
+        align-items: center; 
+        text-align: center; 
+    }
 }
 
 @media (max-width: 480px) {
+    body { padding-top: 105px; }
     #header { padding: 8px 10px; }
     
+    .extenso {
+        font-size: 7.5px;
+        max-width: 120px;
+    }
+
     nav a { 
         margin: 0 5px; 
         font-size: 9px; 
@@ -445,11 +601,8 @@ nav a.active, nav a:hover { color: #ffee00; }
     }
 
     #hero-wrap { height: 60vh; }
-    
     .logo-img-icon, .logo-img-text { height: 200px; }
-
     .shadow-text { font-size: 18px; } 
-
     .footer-university { font-size: 14px; }
     .footer-address { font-size: 11px; }
 }

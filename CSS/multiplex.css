@@ -1,4 +1,4 @@
-/* --- SECÇÃO DE EDIÇÕES --- */
+/* ESTRUTURA DA SECÇÃO (EDIÇÕES MULTIPLEX) */
 .edicoes-section {
     padding: 80px 20px 120px;
     max-width: 1300px;
@@ -6,24 +6,23 @@
 }
 
 .edicoes-section .titulo-medio {
+    display: block; 
     text-align: center;
     font-size: clamp(32px, 6vw, 45px);
     font-weight: 900;
     text-transform: uppercase;
     margin-bottom: 60px;
     letter-spacing: 2px;
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    color: #fff;
+    color: #ffffff;
 }
 
 .edicoes-section .highlight {
     color: #ffee00;
+    display: inline-block; 
+    margin-left: 12px;     
 }
 
-/* --- GRELHA DE CARDS --- */
+/* GRELHA DE CARDS RESPONSIVA */
 .edicoes-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -35,17 +34,17 @@
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 24px;
     overflow: hidden;
-    transition: all 0.4s ease;
+    transition: border-color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
     display: flex;
     flex-direction: column;
 }
 
 .edicao-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     border-color: #ffee00;
 }
 
-/* --- MEDIA E IMAGEM --- */
+/* CONTENTORES DE MEDIA E IMAGEM */
 .multiplex-img-container {
     width: 100%;
     aspect-ratio: 4 / 3; 
@@ -57,14 +56,14 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s ease;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .edicao-card:hover .multiplex-img-container img {
-    transform: scale(1.08);
+    transform: scale(1.06);
 }
 
-/* --- CONTEÚDO DO CARD --- */
+/* BLOCO INFORMATIVO INTERNO DO CARD */
 .edicao-info {
     padding: 25px;
     flex-grow: 1;
@@ -82,65 +81,77 @@
     width: fit-content;
     margin-bottom: 15px;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .edicao-card h3 {
     font-size: 20px;
     color: white;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
 }
 
 .edicao-card p {
-    color: #888;
+    color: #a0a0a0;
     font-size: 14px;
-    margin-bottom: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
-/* --- LINKS E BOTÕES --- */
+/* BOTÕES E COMPONENTES DE LIGAÇÃO */
 .links-edicao {
     margin-top: auto;
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 10px;      
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 10px;
+    width: 100%;
 }
 
 .links-edicao a {
     display: inline-flex; 
     align-items: center;
     justify-content: center;
-    flex: 1;             
-    min-width: 80px;     
     text-align: center;
     color: #ffee00;
     text-decoration: none;
     border: 2px solid #ffee00;
-    padding: 10px 5px;   
-    font-size: 10px;     
+    padding: 10px 8px; 
+    font-size: 11px;    
     font-weight: 900;
     text-transform: uppercase;
     border-radius: 8px;
-    transition: all 0.3s ease;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .links-edicao a:hover {
     background: #ffee00;
     color: #000;
-    transform: translateY(-3px); 
+    transform: translateY(-2px); 
 }
 
-/* --- ESTADOS ESPECIAIS --- */
+/* ESTADOS ESPECIAIS (EDIÇÕES FUTURAS) */
 .edicao-card.future {
     border: 1px dashed rgba(255, 238, 0, 0.4);
     background: rgba(26, 28, 35, 0.5);
 }
 
 .edicao-card.future .multiplex-img-container {
-    opacity: 0.3;
+    opacity: 0.25;
     filter: grayscale(100%);
 }
 
-/* --- RESPONSIVIDADE --- */
+.edicao-card.future p {
+    color: #555;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+}
+
+/* RESPONSIVIDADE */
+
+/* Tablets e Ecrãs Médios */
 @media (max-width: 1100px) {
     .edicoes-grid { 
         grid-template-columns: repeat(2, 1fr); 
@@ -148,24 +159,30 @@
     }
 }
 
+/* Smartphones em Modo Vertical e Horizontal */
 @media (max-width: 768px) {
     .edicoes-section .titulo-medio {
-        font-size: clamp(22px, 7vw, 28px);
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 5px;
+        font-size: clamp(24px, 5vw, 32px);
+        letter-spacing: 1px;
+        margin-bottom: 40px;
+    }
+
+    .edicoes-section .highlight {
+        display: block;  
+        margin-left: 0;
+        margin-top: 5px;
     }
 
     .edicoes-grid { 
         grid-template-columns: 1fr; 
         padding: 0 10px;
-        gap: 30px;
+        gap: 25px;
     }
 
     .edicao-card {
-        max-width: 400px; 
+        max-width: 420px; 
         margin: 0 auto;
+        width: 100%;
     }
 
     .edicao-info h3 {
@@ -173,13 +190,14 @@
     }
 }
 
+/* Telemóveis de Pequeno Porte */
 @media (max-width: 480px) {
     .edicoes-section { 
-        padding: 30px 15px 60px; 
+        padding: 40px 10px 60px; 
     }
 
     .edicao-info { 
-        padding: 15px; 
+        padding: 20px 15px; 
     }
 
     .edicao-info h3 {
@@ -188,15 +206,7 @@
 
     .edicao-info p {
         font-size: 13px;
-        line-height: 1.4;
-    }
-
-    .edicao-link {
-        font-size: 12px;
-        padding: 8px 12px;
-    }
-
-    .titulo-medio {
-        font-size: 20px;
+        line-height: 1.5;
+        margin-bottom: 15px;
     }
 }
