@@ -67,16 +67,16 @@
 .slider-prev, 
 .slider-next {
     position: absolute;
-    top: 50%; 
-    transform: translateY(-50%);
-    background: rgba(255, 238, 0, 0.9);
-    color: #000;
+    top: auto;             
+    bottom: 45px;          
+    background: rgba(255, 238, 0, 0.9); 
+    color: #000000;                     
     border: none;
-    width: 50px;
-    height: 50px;
+    width: 65px;           
+    height: 65px;          
     border-radius: 50%;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 28px;       
     font-weight: bold;
     z-index: 10;
     transition: transform 0.3s ease, background-color 0.3s ease;
@@ -87,18 +87,23 @@
 
 .slider-prev:hover, 
 .slider-next:hover {
-    background: #fff;
-    transform: translateY(-50%) scale(1.1);
+    background: #ffffff;        
+    color: #000000;
+    transform: scale(1.05); 
 }
 
-.slider-prev { left: 20px; }
-.slider-next { right: 20px; }
+.slider-prev { left: 30px; }  
+.slider-next { right: 30px; }
 
 /* Bloco Informativo Inferior do Slide */
 .video-slide .project-info {
-    padding: 35px 20px;
+    padding: 45px 20px 40px; 
     background: #1a1c23;
     text-align: center; 
+    min-height: 200px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .video-slide .project-info h3 {
