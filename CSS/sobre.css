@@ -102,6 +102,7 @@
     object-fit: cover;
 }
 
+.multiplex-video-fix .card-video,
 .equipamento-video-fix .card-video {
     object-fit: contain;
 }
