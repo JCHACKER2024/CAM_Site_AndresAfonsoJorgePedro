@@ -285,16 +285,18 @@
 /* Tablets e Ecrãs Médios */
 @media (max-width: 900px) {
     .slider-prev, .slider-next {
-        width: 42px;
-        height: 42px;
-        font-size: 16px;
+        width: 50px;           
+        height: 50px;
+        font-size: 20px;      
+        bottom: 50px;          
     }
     
-    .slider-prev { left: 10px; }
-    .slider-next { right: 10px; }
+    .slider-prev { left: 15px; }  
+    .slider-next { right: 15px; }
     
     .video-slide .project-info { 
-        padding: 25px; 
+        padding: 35px 75px 30px; 
+        min-height: auto;        
     }
 
     .testimonials-section {
@@ -314,7 +316,18 @@
     }
 
     .slider-prev, .slider-next {
-        top: 30%; 
+        top: auto;           
+        bottom: 20px;          
+        width: 42px;           
+        height: 42px;
+        font-size: 16px;
+    }
+
+    .slider-prev { left: 15px; }
+    .slider-next { right: 15px; }
+
+    .video-slide .project-info {
+        padding: 30px 15px 75px; 
     }
 
     .video-slide .project-info h3 {
