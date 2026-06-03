@@ -90,7 +90,7 @@ function openAlumniModal(id) {
                 ${fotoHTML}
             </div>
             <h3 style="color: #fff; font-size: 26px; margin-bottom: 5px;">${nome}</h3>
-            <span class="cargo" style="color: #ffee00; font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">
+            <span class="cargo" style="color: #FF00FF; font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">
                 ${cargo}
             </span>
         </div>

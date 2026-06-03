@@ -28,7 +28,7 @@ if (!isTouchDevice) {
     window.addEventListener('mouseover', (e) => {
         if (e.target.closest(targetSelectors)) {
             cursor.style.transform = 'translate(-50%, -50%) scale(2.5)';
-            cursor.style.backgroundColor = 'rgba(255, 238, 0, 0.5)';
+            cursor.style.backgroundColor = 'rgba(255, 0, 255, 0.5)'; 
             cursor.style.borderColor = '#ffffff';
         }
     });
@@ -36,8 +36,8 @@ if (!isTouchDevice) {
     window.addEventListener('mouseout', (e) => {
         if (e.target.closest(targetSelectors)) {
             cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-            cursor.style.backgroundColor = 'rgba(255, 238, 0, 0.1)';
-            cursor.style.borderColor = '#ffee00';
+            cursor.style.backgroundColor = 'rgba(255, 0, 255, 0.1)'; 
+            cursor.style.borderColor = '#FF00FF'; 
         }
     });
 
@@ -59,14 +59,14 @@ if (typeof particlesJS !== 'undefined' && document.getElementById('particles-js'
                 "value": 80, 
                 "density": { "enable": true, "value_area": 800 } 
             },
-            "color": { "value": "#ffee00" },
+            "color": { "value": "#FF00FF" }, 
             "shape": { "type": "circle" },
             "opacity": { "value": 0.5 },
             "size": { "value": 2 },
             "line_linked": {
                 "enable": true,
                 "distance": 150,
-                "color": "#ffffff",
+                "color": "#ffffff", 
                 "opacity": 0.2,
                 "width": 1
             },

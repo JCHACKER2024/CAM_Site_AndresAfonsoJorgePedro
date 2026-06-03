@@ -1,17 +1,20 @@
+/* IMPORTAÇÃO DA FONTE */
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@500,600&display=swap');
+
 /* SCROLLBAR PERSONALIZADA */
 ::-webkit-scrollbar {
     width: 10px;
 }
 ::-webkit-scrollbar-track {
-    background: #333742;
+    background: #000000;
 }
 ::-webkit-scrollbar-thumb {
-    background: #4a4e5a;
+    background: #FF00FF;
     border-radius: 10px;
-    border: 2px solid #333742;
+    border: 2px solid #000000;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #ffee00;
+    background: #FF00FF;
 }
 
 /* REGRAS BASE DO DOCUMENTO */
@@ -22,13 +25,13 @@
 }
 
 body { 
-    background-color: #333742; 
+    background-color: #000000; 
     color: white; 
-    font-family: Arial, sans-serif; 
+    font-family: 'Clash Display', Arial, sans-serif; 
     overflow-x: hidden; 
     padding-top: 80px;
     scrollbar-width: thin;
-    scrollbar-color: #4a4e5a #333742; 
+    scrollbar-color: #FF00FF #000000; 
 }
 
 #particles-js {
@@ -38,7 +41,7 @@ body {
     top: 0;
     left: 0;
     z-index: -1; 
-    background-color: #0f1014;
+    background-color: #000000;
 }
 
 main {
@@ -63,7 +66,7 @@ main {
     #custom-cursor {
         width: 15px;
         height: 15px;
-        border: 2px solid #ffee00;
+        border: 2px solid #FF00FF;
         border-radius: 50%;
         position: fixed;
         top: -50px; 
@@ -71,7 +74,7 @@ main {
         pointer-events: none; 
         z-index: 99999; 
         transition: transform 0.1s ease-out;
-        background: rgba(255, 238, 0, 0.1);
+        background: rgba(255, 0, 255, 0.1);
     }
 }
 
@@ -81,9 +84,9 @@ main {
     top: 0; 
     width: 100%; 
     z-index: 100; 
-    background: #333742; 
+    background: #ffffff; 
     padding: 15px 20px; 
-    border-bottom: 2px solid #ffee00; 
+    border-bottom: 2px solid #FF00FF; 
 }
 
 .header-container { 
@@ -108,7 +111,7 @@ main {
 .header-logo-img {
     height: 40px;
     width: auto;
-    filter: invert(88%) sepia(61%) saturate(2200%) hue-rotate(355%) brightness(102%) contrast(105%);
+    filter: none; /* Logo a cores originais ou preto */
     transition: transform 0.3s ease;
 }
 
@@ -117,11 +120,11 @@ main {
 }
 
 .extenso { 
-    color: #ffee00; 
+    color: #000000; 
     font-size: clamp(9px, 1.2vw, 12px); 
     letter-spacing: 1px;
-    font-weight: bold;
-    text-transform: uppercase;
+    font-weight: 600;
+    text-transform: none; /* Ajustado para permitir minúsculas */
 }
 
 nav { 
@@ -129,17 +132,17 @@ nav {
 }
 
 nav a { 
-    color: white; 
+    color: #000000; 
     text-decoration: none; 
     margin-left: 18px; 
     font-size: 13px; 
-    text-transform: uppercase; 
-    font-weight: 500; 
+    text-transform: none; /* Ajustado para permitir minúsculas */
+    font-weight: 600; 
     transition: 0.3s; 
 }
 
 nav a.active, nav a:hover { 
-    color: #ffee00; 
+    color: #FF00FF; 
 }
 
 /* SELETOR DE IDIOMA */
@@ -159,11 +162,11 @@ nav a.active, nav a:hover {
 }
 
 .lang-btn.active {
-    color: #ffee00;
+    color: #FF00FF;
 }
 
 .lang-btn:hover {
-    color: #fff;
+    color: #000;
 }
 
 .divider {
@@ -266,14 +269,14 @@ nav a.active, nav a:hover {
 
 .shadow-text { 
     font-size: clamp(32px, 5vw, 70px); 
-    font-weight: 900; 
-    letter-spacing: 4px; 
-    text-transform: uppercase; 
+    font-weight: 600; 
+    letter-spacing: -0.5px; /* Kerning reduzido */
+    text-transform: none; 
     line-height: 1.1;
 }
 
 .shadow-text .highlight { 
-    color: #ffee00; 
+    color: #FF00FF; 
 }
 
 .content-wrapper { 
@@ -286,7 +289,7 @@ nav a.active, nav a:hover {
 
 .texto-corrido { 
     padding-left: 30px; 
-    border-left: 5px solid #ffee00; 
+    border-left: 5px solid #FF00FF; 
     font-size: clamp(16px, 2vw, 20px); 
     line-height: 1.8; 
     color: #ccc; 
@@ -302,14 +305,14 @@ nav a.active, nav a:hover {
 
 .btn-candidata {
     display: inline-block;
-    background: #ffee00;
+    background: #FF00FF;
     color: #000;
     padding: 15px 40px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 50px;
     transition: 0.3s;
-    text-transform: uppercase;
+    text-transform: none;
 }
 
 .btn-candidata:hover { 
@@ -319,8 +322,8 @@ nav a.active, nav a:hover {
 
 /* COMPONENTE FOOTER */
 #main-footer { 
-    background-color: #1a1c23; 
-    border-top: 5px solid #ffee00; 
+    background-color: #0f1014; 
+    border-top: 5px solid #FF00FF; 
     padding: 80px 20px 40px; 
     margin-top: 50px; 
 }
@@ -345,9 +348,9 @@ nav a.active, nav a:hover {
 
 .footer-university { 
     color: white; 
-    font-weight: 900; 
+    font-weight: 600; 
     font-size: 17px; 
-    text-transform: uppercase; 
+    text-transform: none; 
     letter-spacing: 1px; 
 }
 
@@ -373,10 +376,10 @@ nav a.active, nav a:hover {
 
 .footer-info h4 { 
     color: white; 
-    text-transform: uppercase; 
-    letter-spacing: 2px; 
+    text-transform: none; 
+    letter-spacing: 1px; 
     margin-bottom: 25px; 
-    font-weight: 900; 
+    font-weight: 600; 
 }
 
 .info-items-group { 
@@ -393,9 +396,9 @@ nav a.active, nav a:hover {
 }
 
 .info-item strong { 
-    color: #ffee00; 
+    color: #FF00FF; 
     margin-right: 8px; 
-    text-transform: uppercase; 
+    text-transform: none; 
     font-size: 12px; 
 }
 
@@ -407,7 +410,7 @@ nav a.active, nav a:hover {
 }
 
 .footer-link-simple:hover { 
-    color: #ffee00; 
+    color: #FF00FF; 
     text-decoration: underline; 
 }
 
@@ -420,10 +423,10 @@ nav a.active, nav a:hover {
 
 .footer-socials h4 { 
     color: white; 
-    text-transform: uppercase; 
-    letter-spacing: 2px; 
+    text-transform: none; 
+    letter-spacing: 1px; 
     margin-bottom: 25px; 
-    font-weight: 900; 
+    font-weight: 600; 
 }
 
 .footer-socials a { 
@@ -435,7 +438,7 @@ nav a.active, nav a:hover {
 }
 
 .footer-socials a:hover { 
-    color: #ffee00; 
+    color: #FF00FF; 
 }
 
 .footer-bottom { 
@@ -453,12 +456,12 @@ nav a.active, nav a:hover {
     bottom: 30px;
     right: 30px;
     z-index: 9999;
-    background: #ffee00;
+    background: #FF00FF;
     color: #000;
     border: none;
     padding: 10px 20px;
-    font-family: Arial, sans-serif;
-    font-weight: 900;
+    font-family: inherit;
+    font-weight: 600;
     font-size: 12px;
     letter-spacing: 1px;
     border-radius: 5px;
@@ -487,124 +490,36 @@ nav a.active, nav a:hover {
 @keyframes revealVideo { to { opacity: 1; transform: scale(1); } }
 @keyframes fadeInGeneral { to { opacity: 1; } }
 
-/* RESPONSIVIDADE */
-
-/* /Tablets e ecrãs médios/ */
+/* RESPONSIVIDADE MANTIDA */
 @media (max-width: 1024px) {
     .extenso { font-size: 10px; }
     nav a { font-size: 11px; margin-left: 12px; }
 }
-
-/* /Tablets verticais/ */
 @media (max-width: 768px) {
     body { padding-top: 95px; }
-    
-    #header { 
-        padding: 10px 15px; 
-    }
-
-    .header-container {
-        flex-wrap: wrap; 
-        justify-content: space-between;
-        gap: 5px;
-    }
-
-    .logo-header {
-        gap: 8px;
-    }
-
-    .header-logo-img { 
-        height: 22px; 
-    }
-    
-    .extenso { 
-        display: inline-block;
-        font-size: 8px;
-        max-width: none;       
-        white-space: nowrap;   
-        line-height: 1;
-        letter-spacing: 0.5px;
-    } 
-
-    nav { 
-        order: 3; 
-        width: 100%; 
-        justify-content: center; 
-        margin-top: 10px; 
-        border-top: 1px solid rgba(255,255,255,0.1);
-        padding-top: 8px;
-    }
-
-    nav a { 
-        margin: 0 8px; 
-        font-size: 10px; 
-    }
-
-    .language-selector {
-        font-size: 10px;
-        margin-left: auto;
-    }
-
+    #header { padding: 10px 15px; }
+    .header-container { flex-wrap: wrap; justify-content: space-between; gap: 5px; }
+    .logo-header { gap: 8px; }
+    .header-logo-img { height: 22px; }
+    .extenso { display: inline-block; font-size: 8px; white-space: nowrap; line-height: 1; letter-spacing: 0.5px; } 
+    nav { order: 3; width: 100%; justify-content: center; margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 8px; }
+    nav a { margin: 0 8px; font-size: 10px; }
+    .language-selector { font-size: 10px; margin-left: auto; }
     #hero-wrap { height: 65vh; }
-    
     .logo-img-icon, .logo-img-text { height: clamp(120px, 25vw, 200px); }
-
-    @keyframes moveLogoUp {
-        0% { top: 50%; transform: translate(-50%, -50%) scale(1); }
-        100% { top: -15px; transform: translate(-50%, 0) scale(0.3); }
-    }
-
     .shadow-text { font-size: clamp(22px, 6vw, 30px); } 
     .shadow-text.reveal-video-text { margin-top: -30px; }
-    
-    #indexvideo { 
-        width: 92%; 
-        height: 60%; 
-        margin-top: 15px; 
-    }
-
-    .mute-toggle {
-        bottom: 15px;
-        right: 15px;
-        padding: 6px 12px;
-        font-size: 9px;
-    }
-
-    .texto-corrido { 
-        font-size: 15px; 
-        padding: 0 20px; 
-        text-align: justify; 
-    }
-
-    .footer-container { 
-        flex-direction: column; 
-        text-align: center; 
-        align-items: center; 
-        gap: 25px; 
-    }
-    
-    .footer-info, .footer-socials { 
-        align-items: center; 
-        text-align: center; 
-    }
+    #indexvideo { width: 92%; height: 60%; margin-top: 15px; }
+    .mute-toggle { bottom: 15px; right: 15px; padding: 6px 12px; font-size: 9px; }
+    .texto-corrido { font-size: 15px; padding: 0 20px; text-align: justify; }
+    .footer-container { flex-direction: column; text-align: center; align-items: center; gap: 25px; }
+    .footer-info, .footer-socials { align-items: center; text-align: center; }
 }
-
-/* /Telemóveis e ecrãs pequenos/ */
 @media (max-width: 480px) {
     body { padding-top: 90px; }
     #header { padding: 8px 10px; }
-    
-    .extenso {
-        font-size: 7px;
-        letter-spacing: -0.2px; 
-    }
-
-    nav a { 
-        margin: 0 4px; 
-        font-size: 8.5px; 
-        letter-spacing: 0px;
-    }
-
+    .extenso { font-size: 7px; letter-spacing: -0.2px; }
+    nav a { margin: 0 4px; font-size: 8.5px; letter-spacing: 0px; }
     #hero-wrap { height: 60vh; }
     .logo-img-icon, .logo-img-text { height: 200px; }
     .shadow-text { font-size: 18px; } 
