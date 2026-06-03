@@ -17,7 +17,7 @@
 }
 
 .edicoes-section .highlight {
-    color: #ffee00;
+    color: #FF00FF; /* Cor rosa aplicada ao destaque */
     display: inline-block; 
     margin-left: 12px;     
 }
@@ -30,18 +30,17 @@
 }
 
 .edicao-card {
-    background: #1a1c23;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #FF00FF; /* Fundo rosa */
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 24px;
     overflow: hidden;
-    transition: border-color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
 }
 
 .edicao-card:hover {
     transform: translateY(-8px);
-    border-color: #ffee00;
 }
 
 /* CONTENTORES DE MEDIA E IMAGEM */
@@ -74,8 +73,8 @@
 .ano-tag {
     font-size: 11px;
     font-weight: 900;
-    background: #ffee00;
-    color: #000;
+    background: #000000; /* Fundo preto para contraste */
+    color: #FFFFFF;     /* Texto branco */
     padding: 4px 12px;
     border-radius: 6px;
     width: fit-content;
@@ -86,17 +85,18 @@
 
 .edicao-card h3 {
     font-size: 20px;
-    color: white;
+    color: #FFFFFF; /* Título em branco */
     text-transform: uppercase;
     margin-bottom: 12px;
     letter-spacing: 0.5px;
 }
 
 .edicao-card p {
-    color: #a0a0a0;
+    color: #000000; /* Texto em preto */
     font-size: 14px;
     line-height: 1.6;
     margin-bottom: 20px;
+    font-weight: 500;
 }
 
 /* BOTÕES E COMPONENTES DE LIGAÇÃO */
@@ -113,100 +113,55 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #ffee00;
+    color: #000000; /* Texto do botão em preto */
     text-decoration: none;
-    border: 2px solid #ffee00;
+    border: 2px solid #000000; /* Borda preta */
     padding: 10px 8px; 
     font-size: 11px;    
     font-weight: 900;
     text-transform: uppercase;
     border-radius: 8px;
-    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .links-edicao a:hover {
-    background: #ffee00;
-    color: #000;
+    background: #000000;
+    color: #FFFFFF; /* Inversão ao passar o rato */
     transform: translateY(-2px); 
 }
 
 /* ESTADOS ESPECIAIS (EDIÇÕES FUTURAS) */
 .edicao-card.future {
-    border: 1px dashed rgba(255, 238, 0, 0.4);
-    background: rgba(26, 28, 35, 0.5);
+    border: 1px solid #FF00FF;
+    background: rgba(255, 0, 255, 0.3);
 }
 
 .edicao-card.future .multiplex-img-container {
-    opacity: 0.25;
+    opacity: 0.5;
     filter: grayscale(100%);
 }
 
 .edicao-card.future p {
-    color: #555;
+    color: #333;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 12px;
 }
 
-/* RESPONSIVIDADE */
-
-/* Tablets e Ecrãs Médios */
+/* RESPONSIVIDADE (Mantida) */
 @media (max-width: 1100px) {
-    .edicoes-grid { 
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 20px;
-    }
+    .edicoes-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
 }
 
-/* Smartphones em Modo Vertical e Horizontal */
 @media (max-width: 768px) {
-    .edicoes-section .titulo-medio {
-        font-size: clamp(24px, 5vw, 32px);
-        letter-spacing: 1px;
-        margin-bottom: 40px;
-    }
-
-    .edicoes-section .highlight {
-        display: block;  
-        margin-left: 0;
-        margin-top: 5px;
-    }
-
-    .edicoes-grid { 
-        grid-template-columns: 1fr; 
-        padding: 0 10px;
-        gap: 25px;
-    }
-
-    .edicao-card {
-        max-width: 420px; 
-        margin: 0 auto;
-        width: 100%;
-    }
-
-    .edicao-info h3 {
-        font-size: 18px;
-    }
+    .edicoes-section .titulo-medio { font-size: clamp(24px, 5vw, 32px); margin-bottom: 40px; }
+    .edicoes-section .highlight { display: block; margin-left: 0; margin-top: 5px; }
+    .edicoes-grid { grid-template-columns: 1fr; padding: 0 10px; gap: 25px; }
+    .edicao-card { max-width: 420px; margin: 0 auto; width: 100%; }
 }
 
-/* Telemóveis de Pequeno Porte */
 @media (max-width: 480px) {
-    .edicoes-section { 
-        padding: 40px 10px 60px; 
-    }
-
-    .edicao-info { 
-        padding: 20px 15px; 
-    }
-
-    .edicao-info h3 {
-        font-size: 17px;
-    }
-
-    .edicao-info p {
-        font-size: 13px;
-        line-height: 1.5;
-        margin-bottom: 15px;
-    }
+    .edicoes-section { padding: 40px 10px 60px; }
+    .edicao-info { padding: 20px 15px; }
 }

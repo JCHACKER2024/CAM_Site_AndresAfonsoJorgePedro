@@ -21,7 +21,7 @@
 }
 
 .highlight {
-    color: #ffee00;
+    color: #FF00FF;
 }
 
 /* SLIDER DE VÍDEOS RESPONSIVO */
@@ -30,7 +30,7 @@
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-    background: #1a1c23;
+    background: #FF00FF;
     border-radius: 32px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -69,8 +69,8 @@
     position: absolute;
     top: auto;             
     bottom: 45px;          
-    background: rgba(255, 238, 0, 0.9); 
-    color: #000000;                     
+    background: #000000; 
+    color: #FF00FF;                     
     border: none;
     width: 65px;           
     height: 65px;          
@@ -98,7 +98,7 @@
 /* Bloco Informativo Inferior do Slide */
 .video-slide .project-info {
     padding: 45px 20px 40px; 
-    background: #1a1c23;
+    background: #FF00FF;
     text-align: center; 
     min-height: 200px; 
     display: flex;
@@ -108,21 +108,21 @@
 
 .video-slide .project-info h3 {
     font-size: 28px;
-    color: #ffee00; 
+    color: #ffffff; 
     margin-bottom: 8px;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 
 .video-slide .project-info .author {
-    color: #ffffff;
+    color: #000000;
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 5px;
 }
 
 .video-slide .project-info .description {
-    color: #a0a0a0;
+    color: #1a1a1a;
     font-size: 14px;
     font-style: italic;
     max-width: 600px;
@@ -149,7 +149,7 @@
 }
 
 .testimonial-card {
-    background: #1a1c23;
+    background: #FF00FF;
     padding: 40px 30px;
     border-radius: 28px;
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -163,9 +163,9 @@
 }
 
 .testimonial-card:hover {
-    border-color: #ffee00;
+    border-color: #ffffff;
     transform: translateY(-8px);
-    background: #22252e;
+    background: #e600e6;
     box-shadow: 0 15px 30px rgba(0,0,0,0.4);
 }
 
@@ -175,7 +175,7 @@
     margin: 0 auto 15px auto; 
     border-radius: 50%; 
     overflow: hidden; 
-    border: 3px solid #ffee00;
+    border: 3px solid #000000;
     display: block; 
 }
 
@@ -187,7 +187,7 @@
 }
 
 .cargo {
-    color: #ffee00;
+    color: #000000;
     font-size: 11px;
     text-transform: uppercase;
     font-weight: 700;
@@ -195,7 +195,7 @@
 }
 
 .depoimento-preview {
-    color: #888;
+    color: #222222;
     font-style: italic;
     font-size: 14px;
     margin: 15px 0;
@@ -204,7 +204,7 @@
 
 .ler-mais {
     font-size: 11px;
-    color: #ffee00;
+    color: #000000;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -233,13 +233,13 @@
 }
 
 .modal-content-v2 {
-    background: #1a1c23;
+    background: #FF00FF;
     padding: 50px 40px;
     border-radius: 32px;
     max-width: 800px;
     width: 100%;
     position: relative;
-    border: 1px solid rgba(255, 238, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     max-height: 90vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch; 
@@ -249,7 +249,7 @@
     position: absolute;
     right: 25px;
     top: 15px;
-    color: #fff;
+    color: #000000;
     font-size: 40px;
     font-weight: 300;
     cursor: pointer;
@@ -258,11 +258,11 @@
 }
 
 .close-modal:hover { 
-    color: #ffee00; 
+    color: #ffffff; 
 }
 
 #modal-body-v2 p {
-    color: #d1d1d1;
+    color: #000000;
     font-style: italic;
     line-height: 1.8;
     text-align: justify;

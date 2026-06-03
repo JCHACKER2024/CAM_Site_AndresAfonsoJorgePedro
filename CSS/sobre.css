@@ -70,7 +70,8 @@
 }
 
 .card {
-    background: #1a1c23;
+    /* Fundo Rosa aplicado aqui */
+    background: #FF00FF; 
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 24px;
     overflow: hidden;
@@ -80,7 +81,7 @@
 }
 
 .card:hover {
-    border-color: #FF00FF;
+    border-color: #ffffff; /* Borda branca no hover para destacar no fundo rosa */
     transform: translateY(-8px);
 }
 
@@ -112,8 +113,9 @@
     flex-grow: 1;
 }
 
+/* Tag rosa em preto para contrastar no fundo rosa */
 .tag-amarela {
-    color: #FF00FF;
+    color: #000000;
     font-size: 11px;
     text-transform: uppercase;
     font-weight: 800;
@@ -122,15 +124,17 @@
     margin-bottom: 12px;
 }
 
+/* Títulos mantêm branco para contraste */
 .card-info h3 {
     font-size: 22px;
     margin-bottom: 15px;
-    color: #ffffff;
+    color: #000000;
     text-transform: uppercase;
 }
 
+/* Texto em preto para leitura no fundo rosa */
 .card-info p {
-    color: #a0a0a0;
+    color: #000000;
     font-size: 15px;
     line-height: 1.6;
     text-align: justify;
