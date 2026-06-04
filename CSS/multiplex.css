@@ -10,14 +10,13 @@
     text-align: center;
     font-size: clamp(32px, 6vw, 45px);
     font-weight: 900;
-    text-transform: uppercase;
     margin-bottom: 60px;
     letter-spacing: 2px;
     color: #ffffff;
 }
 
 .edicoes-section .highlight {
-    color: #FF00FF; /* Cor rosa aplicada ao destaque */
+    color: #FF00FF; 
     display: inline-block; 
     margin-left: 12px;     
 }
@@ -30,7 +29,7 @@
 }
 
 .edicao-card {
-    background: #FF00FF; /* Fundo rosa */
+    background: #FF00FF; 
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 24px;
     overflow: hidden;
@@ -73,26 +72,24 @@
 .ano-tag {
     font-size: 11px;
     font-weight: 900;
-    background: #000000; /* Fundo preto para contraste */
-    color: #FFFFFF;     /* Texto branco */
+    background: #000000; 
+    color: #FFFFFF;     
     padding: 4px 12px;
     border-radius: 6px;
     width: fit-content;
     margin-bottom: 15px;
-    text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .edicao-card h3 {
     font-size: 20px;
-    color: #FFFFFF; /* Título em branco */
-    text-transform: uppercase;
+    color: #FFFFFF; 
     margin-bottom: 12px;
     letter-spacing: 0.5px;
 }
 
 .edicao-card p {
-    color: #000000; /* Texto em preto */
+    color: #000000; 
     font-size: 14px;
     line-height: 1.6;
     margin-bottom: 20px;
@@ -113,20 +110,19 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #000000; /* Texto do botão em preto */
+    color: #000000; 
     text-decoration: none;
-    border: 2px solid #000000; /* Borda preta */
+    border: 2px solid #000000; 
     padding: 10px 8px; 
     font-size: 11px;    
     font-weight: 900;
-    text-transform: uppercase;
     border-radius: 8px;
     transition: all 0.2s ease;
 }
 
 .links-edicao a:hover {
     background: #000000;
-    color: #FFFFFF; /* Inversão ao passar o rato */
+    color: #FFFFFF; 
     transform: translateY(-2px); 
 }
 
@@ -144,7 +140,6 @@
 .edicao-card.future p {
     color: #333;
     font-weight: bold;
-    text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 12px;
 }

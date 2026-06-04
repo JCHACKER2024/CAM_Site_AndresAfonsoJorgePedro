@@ -10,7 +10,6 @@
     text-align: center;
     font-size: clamp(28px, 5vw, 40px);
     font-weight: 800;
-    text-transform: uppercase;
     margin-bottom: 60px;
     letter-spacing: 2px;
     display: flex;
@@ -111,7 +110,6 @@
     color: #ffffff; 
     margin-bottom: 8px;
     letter-spacing: 1px;
-    text-transform: uppercase;
 }
 
 .video-slide .project-info .author {
@@ -189,7 +187,6 @@
 .cargo {
     color: #000000;
     font-size: 11px;
-    text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -206,7 +203,6 @@
     font-size: 11px;
     color: #000000;
     font-weight: 800;
-    text-transform: uppercase;
     letter-spacing: 1px;
     margin-top: auto;
     padding-top: 10px;

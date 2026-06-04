@@ -111,7 +111,7 @@ main {
 .header-logo-img {
     height: 40px;
     width: auto;
-    filter: none; /* Logo a cores originais ou preto */
+    filter: none; 
     transition: transform 0.3s ease;
 }
 
@@ -124,7 +124,7 @@ main {
     font-size: clamp(9px, 1.2vw, 12px); 
     letter-spacing: 1px;
     font-weight: 600;
-    text-transform: none; /* Ajustado para permitir minúsculas */
+    text-transform: none; 
 }
 
 nav { 
@@ -136,7 +136,7 @@ nav a {
     text-decoration: none; 
     margin-left: 18px; 
     font-size: 13px; 
-    text-transform: none; /* Ajustado para permitir minúsculas */
+    text-transform: none; 
     font-weight: 600; 
     transition: 0.3s; 
 }
@@ -270,13 +270,9 @@ nav a.active, nav a:hover {
 .shadow-text { 
     font-size: clamp(32px, 5vw, 70px); 
     font-weight: 600; 
-    letter-spacing: -0.5px; /* Kerning reduzido */
+    letter-spacing: -0.5px; 
     text-transform: none; 
     line-height: 1.1;
-}
-
-.shadow-text .highlight { 
-    color: #FF00FF; 
 }
 
 .content-wrapper { 
@@ -490,7 +486,7 @@ nav a.active, nav a:hover {
 @keyframes revealVideo { to { opacity: 1; transform: scale(1); } }
 @keyframes fadeInGeneral { to { opacity: 1; } }
 
-/* RESPONSIVIDADE MANTIDA */
+/* RESPONSIVIDADE */
 @media (max-width: 1024px) {
     .extenso { font-size: 10px; }
     nav a { font-size: 11px; margin-left: 12px; }
