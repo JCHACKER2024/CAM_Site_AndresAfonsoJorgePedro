@@ -50,34 +50,6 @@ main {
     z-index: 1; 
 }
 
-/* RATO PERSONALIZADO (APENAS PARA DESKTOP) */
-@media (pointer: fine) {
-    *, *::before, *::after {
-        cursor: none !important;
-    }
-
-    video::-webkit-media-controls,
-    video::-webkit-media-controls-enclosure,
-    video::-webkit-media-controls-panel,
-    video::-webkit-media-controls-play-button {
-        cursor: none !important;
-    }
-
-    #custom-cursor {
-        width: 15px;
-        height: 15px;
-        border: 2px solid #FF00FF;
-        border-radius: 50%;
-        position: fixed;
-        top: -50px; 
-        left: -50px;
-        pointer-events: none; 
-        z-index: 99999; 
-        transition: transform 0.1s ease-out;
-        background: rgba(255, 0, 255, 0.1);
-    }
-}
-
 /* CABEÇALHO / HUD SUPERIOR */
 #header { 
     position: fixed; 
@@ -522,4 +494,32 @@ nav a.active, nav a:hover {
     .shadow-text { font-size: 18px; } 
     .footer-university { font-size: 14px; }
     .footer-address { font-size: 11px; }
+}
+
+/* RATO PERSONALIZADO (APENAS PARA DESKTOP) */
+@media (pointer: fine) {
+    *, *::before, *::after {
+        cursor: none !important;
+    }
+
+    video::-webkit-media-controls,
+    video::-webkit-media-controls-enclosure,
+    video::-webkit-media-controls-panel,
+    video::-webkit-media-controls-play-button {
+        cursor: none !important;
+    }
+
+    #custom-cursor {
+        width: 15px;
+        height: 15px;
+        border: 2px solid #FF00FF;
+        border-radius: 50%;
+        position: fixed;
+        top: -50px; 
+        left: -50px;
+        pointer-events: none; 
+        z-index: 99999; 
+        transition: transform 0.1s ease-out;
+        background: rgba(255, 0, 255, 0.1);
+    }
 }

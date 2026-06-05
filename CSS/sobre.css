@@ -37,7 +37,7 @@
     font-weight: 900;
     color: #FF00FF;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     letter-spacing: 3px;
     display: flex;
     justify-content: center;
@@ -45,14 +45,14 @@
 }
 
 .content-wrapper {
-    padding: 100px 20px 60px;
+    padding: 60px 20px 40px;
     max-width: 1000px;
     margin: 0 auto;
 }
 
 /* GRELHA DE DESTAQUES E CARDS */
 .destaques-section {
-    padding: 60px 20px 100px;
+    padding: 40px 20px 60px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -186,7 +186,6 @@
 
 /* TABELA DE SAÍDAS PROFISSIONAIS */
 .saidas-section {
-    padding: 120px 20px;
     background: #0a0b0e;
 }
 
@@ -207,7 +206,7 @@
 }
 
 .saida-header {
-    padding: 30px 20px;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -249,14 +248,13 @@
 
 /* SECÇÃO DE PARCEIROS */
 .parceiros-section {
-    padding: 100px 20px;
     text-align: center;
     background: #0f1014;
 }
 
 .parceiros-intro {
     max-width: 1000px; 
-    margin: 0 auto 50px;
+    margin: 0 auto 30px;
     text-align: left;
     border-left: 5px solid #FF00FF; 
     padding-left: 30px;
@@ -274,7 +272,7 @@
     grid-template-columns: repeat(3, 1fr); 
     gap: 60px; 
     max-width: 1100px; 
-    margin: 50px auto 80px;
+    margin: 30px auto 40px;
     align-items: center;
     justify-items: center; 
 }
@@ -304,7 +302,7 @@
 
 /* CALL TO ACTION (CTA) */
 .cta-section {
-    padding: 40px 20px 150px; 
+    padding: 40px 20px 60px; 
     display: flex;
     gap: 25px;
     justify-content: center;

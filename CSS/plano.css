@@ -133,7 +133,7 @@ main {
 
 /* CORPO DOCENTE */
 .docentes-section {
-    padding: 120px 20px;
+    padding: 20px 20px;
     background: #0a0b0e;
     display: flex;
     flex-direction: column;
