@@ -491,9 +491,30 @@ nav a.active, nav a:hover {
 
 /* Ajustes para Tablets e Dispositivos Médios */
 @media (max-width: 1024px) {
-    .header-container { flex-direction: column; gap: 15px; }
-    nav { margin-top: 10px; }
-    
+    .header-container {
+        flex-wrap: wrap;
+        gap: 0;
+        padding: 10px 20px;
+    }
+
+    .logo-link {
+        flex: 1;
+    }
+
+    .language-selector {
+        margin-left: 0;
+        order: 2;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+        padding-top: 8px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
     .footer-container { justify-content: center; text-align: center; }
     .footer-brand, .footer-info, .footer-socials { align-items: center; }
     .info-items-group { align-items: center; }
@@ -501,19 +522,51 @@ nav a.active, nav a:hover {
 
 /* Ajustes para Telemóveis (Mobile) */
 @media (max-width: 768px) {
-    body { padding-top: 100px; }
-    
-    #hero-wrap { height: 60vh; }
-    #indexvideo { width: 95%; height: 50%; border-radius: 20px; }
-    .logo-img-icon { height: 350px; }
-    .logo-img-text { height: 200px; }
-    .shadow-text { font-size: clamp(24px, 8vw, 40px); }
-    .texto-corrido { padding-left: 15px; border-left: 3px solid #FF00FF; }
-    #main-footer { padding: 40px 20px; }
-    .lusofona-logo { width: 250px; }
-}
+    body { padding-top: 85px; }
 
-@media (pointer: coarse) {
-    * { cursor: auto !important; }
-    #custom-cursor { display: none !important; }
+    #header { padding: 10px 15px; }
+
+    .header-container {
+        flex-wrap: wrap;
+        gap: 0;
+        align-items: center;
+    }
+
+    .logo-link {
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    .header-logo-img { height: 22px; }
+
+    .extenso {
+        display: inline-block;
+        font-size: 8px;
+        white-space: nowrap;
+        line-height: 1;
+    }
+
+    .language-selector {
+        margin-left: 0;
+        order: 2;
+        font-size: 10px;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 8px;
+        padding-top: 8px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    nav a { margin: 0 8px; font-size: 10px; }
+
+    #hero-wrap { height: 60vh; }
+    .shadow-text { font-size: clamp(22px, 6vw, 30px); }
+    #indexvideo { width: 92%; height: 50%; margin-top: 15px; }
+
+    .footer-container { flex-direction: column; text-align: center; align-items: center; gap: 25px; }
 }
