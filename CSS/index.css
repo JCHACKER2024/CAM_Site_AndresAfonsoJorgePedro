@@ -459,43 +459,6 @@ nav a.active, nav a:hover {
 @keyframes revealVideo { to { opacity: 1; transform: scale(1); } }
 @keyframes fadeInGeneral { to { opacity: 1; } }
 
-/* RESPONSIVIDADE */
-@media (max-width: 1024px) {
-    .extenso { font-size: 10px; }
-    nav a { font-size: 11px; margin-left: 12px; }
-}
-@media (max-width: 768px) {
-    body { padding-top: 95px; }
-    #header { padding: 10px 15px; }
-    .header-container { flex-wrap: wrap; justify-content: space-between; gap: 5px; }
-    .logo-header { gap: 8px; }
-    .header-logo-img { height: 22px; }
-    .extenso { display: inline-block; font-size: 8px; white-space: nowrap; line-height: 1; letter-spacing: 0.5px; } 
-    nav { order: 3; width: 100%; justify-content: center; margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 8px; }
-    nav a { margin: 0 8px; font-size: 10px; }
-    .language-selector { font-size: 10px; margin-left: auto; }
-    #hero-wrap { height: 65vh; }
-    .logo-img-icon, .logo-img-text { height: clamp(120px, 25vw, 200px); }
-    .shadow-text { font-size: clamp(22px, 6vw, 30px); } 
-    .shadow-text.reveal-video-text { margin-top: -30px; }
-    #indexvideo { width: 92%; height: 60%; margin-top: 15px; }
-    .mute-toggle { bottom: 15px; right: 15px; padding: 6px 12px; font-size: 9px; }
-    .texto-corrido { font-size: 15px; padding: 0 20px; text-align: justify; }
-    .footer-container { flex-direction: column; text-align: center; align-items: center; gap: 25px; }
-    .footer-info, .footer-socials { align-items: center; text-align: center; }
-}
-@media (max-width: 480px) {
-    body { padding-top: 90px; }
-    #header { padding: 8px 10px; }
-    .extenso { font-size: 7px; letter-spacing: -0.2px; }
-    nav a { margin: 0 4px; font-size: 8.5px; letter-spacing: 0px; }
-    #hero-wrap { height: 60vh; }
-    .logo-img-icon, .logo-img-text { height: 200px; }
-    .shadow-text { font-size: 18px; } 
-    .footer-university { font-size: 14px; }
-    .footer-address { font-size: 11px; }
-}
-
 /* RATO PERSONALIZADO (APENAS PARA DESKTOP) */
 @media (pointer: fine) {
     *, *::before, *::after {
@@ -522,4 +485,35 @@ nav a.active, nav a:hover {
         transition: transform 0.1s ease-out;
         background: rgba(255, 0, 255, 0.1);
     }
+}
+
+/* --- RESPONSIVIDADE --- */
+
+/* Ajustes para Tablets e Dispositivos Médios */
+@media (max-width: 1024px) {
+    .header-container { flex-direction: column; gap: 15px; }
+    nav { margin-top: 10px; }
+    
+    .footer-container { justify-content: center; text-align: center; }
+    .footer-brand, .footer-info, .footer-socials { align-items: center; }
+    .info-items-group { align-items: center; }
+}
+
+/* Ajustes para Telemóveis (Mobile) */
+@media (max-width: 768px) {
+    body { padding-top: 100px; }
+    
+    #hero-wrap { height: 60vh; }
+    #indexvideo { width: 95%; height: 50%; border-radius: 20px; }
+    .logo-img-icon { height: 350px; }
+    .logo-img-text { height: 200px; }
+    .shadow-text { font-size: clamp(24px, 8vw, 40px); }
+    .texto-corrido { padding-left: 15px; border-left: 3px solid #FF00FF; }
+    #main-footer { padding: 40px 20px; }
+    .lusofona-logo { width: 250px; }
+}
+
+@media (pointer: coarse) {
+    * { cursor: auto !important; }
+    #custom-cursor { display: none !important; }
 }
