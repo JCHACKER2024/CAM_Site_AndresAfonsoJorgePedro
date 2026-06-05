@@ -12,7 +12,7 @@
     font-weight: 900;
     margin-bottom: 60px;
     letter-spacing: 2px;
-    color: #ffffff;
+    color: #FF00FF;
 }
 
 .edicoes-section .highlight {
@@ -83,7 +83,7 @@
 
 .edicao-card h3 {
     font-size: 20px;
-    color: #FFFFFF; 
+    color: #000000; 
     margin-bottom: 12px;
     letter-spacing: 0.5px;
 }
