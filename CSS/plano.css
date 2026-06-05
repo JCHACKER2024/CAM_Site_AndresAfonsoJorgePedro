@@ -30,7 +30,7 @@ main {
 }
 
 .ato-header p {
-    color: #888888;
+    color: #ffffff;
     font-size: 16px;
     margin-top: 5px;
 }
@@ -113,7 +113,7 @@ main {
     padding: 15px 0;
     font-size: 15px;
     font-weight: 600;
-    color: #cccccc;
+    color: #ffffff;
     cursor: pointer;
     transition: color 0.2s ease;
 }
@@ -125,7 +125,7 @@ main {
 .uc-item p {
     padding: 0 0 20px 0;
     font-size: 14px;
-    color: #888888;
+    color: #ffffff;
     line-height: 1.6;
     text-align: justify;
 }
@@ -223,11 +223,12 @@ main {
 
 .cargo {
     display: block;
-    color: #000000;
+    color: #ffffff;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 1px;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .docente-info p {
