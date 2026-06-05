@@ -43,6 +43,7 @@ main {
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: border-color 0.3s ease;
+    border: 1px solid #FF00FF;
 }
 
 .semestre-box summary, .uc-item summary {
@@ -54,7 +55,7 @@ main {
     align-items: center;
     padding: 25px 30px;
     font-weight: 800;
-    color: #ffffff;
+    color: #FF00FF;
     letter-spacing: 1px;
 }
 
