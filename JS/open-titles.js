@@ -94,7 +94,7 @@ function openAlumniModal(id) {
                 ${cargo}
             </span>
         </div>
-        <div class="modal-text-alumni">
+        <div class="modal-text-alumni" style="text-align: justify;">
             ${textoCompleto}
         </div>
     `;
