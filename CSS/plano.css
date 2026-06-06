@@ -1,4 +1,4 @@
-/* ESTRUTURA GERAL (PLANO DE ESTUDOS) */
+/* ESTRUTURA GERAL */
 main {
     background-color: #0f1014;
     min-height: 100vh;
@@ -7,17 +7,17 @@ main {
 
 .plano-container {
     max-width: 1000px;
-    margin: 60px auto 120px;
+    margin: 40px auto 80px; 
     padding: 0 20px;
 }
 
-/* ATOS CRONOLÓGICOS / BLOCOS PEDAGÓGICOS */
+/* BLOCOS PEDAGÓGICOS */
 .ato-wrapper {
-    margin-bottom: 80px;
+    margin-bottom: 50px; 
 }
 
 .ato-header {
-    margin-bottom: 35px;
+    margin-bottom: 25px; 
     border-left: 4px solid #FF00FF;
     padding-left: 25px;
     text-align: left;
@@ -35,15 +35,14 @@ main {
     margin-top: 5px;
 }
 
-/* ELEMENTOS DE SEMESTRES E UCs */
+/* SEMESTRES E UCs */
 .semestre-box, .uc-item {
     background: #15161c;
     margin-bottom: 15px;
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid #FF00FF; 
     transition: border-color 0.3s ease;
-    border: 1px solid #FF00FF;
 }
 
 .semestre-box summary, .uc-item summary {
@@ -66,15 +65,14 @@ main {
 
 .semestre-box summary::after, 
 .uc-item summary::after {
-    content: ''; 
-    width: 0; 
-    height: 0; 
+    content: '';
+    width: 0; height: 0;
     border-top: 6px solid transparent;
     border-bottom: 6px solid transparent;
-    border-left: 8px solid #FF00FF; 
+    border-left: 8px solid #FF00FF;
     transition: transform 0.3s ease;
     margin-left: 15px;
-    flex-shrink: 0; 
+    flex-shrink: 0;
 }
 
 .semestre-box[open] > summary::after,
@@ -97,18 +95,11 @@ main {
     font-weight: 600;
 }
 
-/* UNIDADES CURRICULARES (UCs MÓDULOS) */
-.uc-list {
-    padding: 20px 30px;
-}
+/* UCs */
+.uc-list { padding: 20px 30px; }
 
-.uc-item {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-}
-
-.uc-item:last-child { 
-    border: none; 
-}
+.uc-item { border-bottom: 1px solid rgba(255, 255, 255, 0.03); }
+.uc-item:last-child { border: none; }
 
 .uc-item summary {
     padding: 15px 0;
@@ -119,9 +110,7 @@ main {
     transition: color 0.2s ease;
 }
 
-.uc-item summary:hover { 
-    color: #ffffff; 
-}
+.uc-item summary:hover { color: #ffffff; }
 
 .uc-item p {
     padding: 0 0 20px 0;
@@ -133,7 +122,7 @@ main {
 
 /* CORPO DOCENTE */
 .docentes-section {
-    padding: 20px 20px;
+    padding: 60px 20px; 
     background: #0a0b0e;
     display: flex;
     flex-direction: column;
@@ -144,7 +133,7 @@ main {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px; 
 }
 
 .docentes-section .titulo-medio {
@@ -160,9 +149,7 @@ main {
     margin: 0 auto;
 }
 
-.highlight {
-    color: #FF00FF;
-}
+.highlight { color: #FF00FF; }
 
 .docentes-lista-v2 {
     width: 100%;
@@ -176,22 +163,15 @@ main {
 .docente-row {
     display: flex;
     align-items: center;
-    /* Fundo Rosa pedido */
-    background: #FF00FF; 
+    background: #FF00FF;
     border-radius: 24px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
-.docente-row:hover {
-    border-color: #ffffff;
-    transform: translateY(-5px);
-}
-
-.docente-row.reverse {
-    flex-direction: row-reverse;
-}
+.docente-row:hover { border-color: #ffffff; transform: translateY(-5px); }
+.docente-row.reverse { flex-direction: row-reverse; }
 
 .docente-img {
     flex: 1;
@@ -207,9 +187,7 @@ main {
     transition: filter 0.5s ease;
 }
 
-.docente-row:hover .docente-img img {
-    filter: grayscale(0%);
-}
+.docente-row:hover .docente-img img { filter: grayscale(0%); }
 
 .docente-info {
     flex: 2;
@@ -219,7 +197,7 @@ main {
 .docente-info h3 {
     font-size: clamp(22px, 3vw, 28px);
     margin-bottom: 5px;
-    color: #ffffff; 
+    color: #ffffff;
 }
 
 .cargo {
@@ -241,7 +219,7 @@ main {
 .premios-container {
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px solid rgba(0, 0, 0, 0.2); 
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .premios-titulo {
@@ -252,16 +230,13 @@ main {
     font-weight: 800;
 }
 
-.premios-lista {
-    list-style: none; 
-    padding: 0;
-}
+.premios-lista { list-style: none; padding: 0; }
 
 .premios-lista li {
     font-size: 14px;
     color: #000000;
-    line-height: 1.6; 
-    margin-bottom: 10px; 
+    line-height: 1.6;
+    margin-bottom: 10px;
     position: relative;
     padding-left: 20px;
 }
@@ -280,95 +255,31 @@ main {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.reveal.active {
-    animation: fadeInUp 0.8s ease-out forwards;
-}
+.reveal.active { animation: fadeInUp 0.8s ease-out forwards; }
 
 /* RESPONSIVIDADE */
-
-/* Tablets e Desktops Pequenos */
 @media (max-width: 1024px) {
-    .docente-row, 
-    .docente-row.reverse {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .docente-img {
-        max-width: 100%;
-        width: 100%;
-        height: 320px; 
-    }
-
-    .docente-info {
-        padding: 30px;
-        text-align: center;
-        width: 100%;
-    }
-
-    .premios-lista li {
-        text-align: left; 
-    }
+    .docente-row,
+    .docente-row.reverse { flex-direction: column; align-items: center; }
+    .docente-img { max-width: 100%; width: 100%; height: 320px; }
+    .docente-info { padding: 30px; text-align: center; width: 100%; }
+    .premios-lista li { text-align: left; }
 }
 
-/* Tablets Verticais */
 @media (max-width: 768px) {
-    .ato-header {
-        padding-left: 15px;
-    }
-
-    .ato-header h2 { 
-        font-size: clamp(22px, 6vw, 26px); 
-    }
-
-    .semestre-box summary { 
-        padding: 18px 20px; 
-        font-size: 14px; 
-    }
-
-    .uc-list { 
-        padding: 10px 20px; 
-    }
-
-    .docentes-section .titulo-medio {
-        font-size: 24px;
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
-    }
+    .ato-header { padding-left: 15px; }
+    .ato-header h2 { font-size: clamp(22px, 6vw, 26px); }
+    .semestre-box summary { padding: 18px 20px; font-size: 14px; }
+    .uc-list { padding: 10px 20px; }
+    .docentes-section .titulo-medio { font-size: 24px; flex-direction: column; align-items: center; gap: 5px; }
 }
 
-/* Telemóveis e Ecrãs Mobile */
 @media (max-width: 480px) {
-    .plano-container {
-        margin: 40px auto 80px;
-    }
-
-    .docente-img {
-        height: 250px; 
-    }
-
-    .docente-info h3 {
-        font-size: 19px;
-    }
-
-    .docente-info p {
-        font-size: 14px;
-        line-height: 1.5;
-    }
-
-    .semestre-box summary {
-        font-size: 13px;
-        letter-spacing: 0px;
-        padding: 15px;
-    }
-
-    .uc-item summary {
-        font-size: 14px;
-    }
-
-    .uc-item p {
-        font-size: 13px;
-        line-height: 1.5;
-    }
+    .plano-container { margin: 40px auto 80px; }
+    .docente-img { height: 250px; }
+    .docente-info h3 { font-size: 19px; }
+    .docente-info p { font-size: 14px; line-height: 1.5; }
+    .semestre-box summary { font-size: 13px; letter-spacing: 0px; padding: 15px; }
+    .uc-item summary { font-size: 14px; }
+    .uc-item p { font-size: 13px; line-height: 1.5; }
 }
