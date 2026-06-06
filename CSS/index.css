@@ -114,7 +114,7 @@ nav a.active, nav a:hover { color: #FF00FF; }
 /* TÍTULOS E CONTEÚDO */
 .titulo-seccao { 
     text-align: center;
-    padding: 60px 20px 30px; /* REDUZIDO de 100px/50px */
+    padding: 60px 20px 30px; 
     opacity: 0;
     animation: fadeInGeneral 1s forwards 1.2s;
 }
@@ -133,7 +133,7 @@ nav a.active, nav a:hover { color: #FF00FF; }
 
 .content-wrapper { 
     max-width: 1100px; margin: 0 auto;
-    padding: 0 20px 50px; /* REDUZIDO de 80px */
+    padding: 0 20px 50px; 
     opacity: 0; animation: fadeInGeneral 1s forwards 1.4s;
 }
 
@@ -185,7 +185,7 @@ nav a.active, nav a:hover { color: #FF00FF; }
 .footer-socials a:hover { color: #FF00FF; }
 
 .footer-bottom { 
-    margin-top: 40px; /* REDUZIDO de 60px */
+    margin-top: 40px; 
     padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.05);
     text-align: center; color: #555; font-size: 11px;
 }
@@ -252,6 +252,12 @@ nav a.active, nav a:hover { color: #FF00FF; }
     .shadow-text { font-size: 1.5rem; padding: 0 15px; text-align: center; }
     .texto-corrido { font-size: 1rem; line-height: 1.6; padding: 0 20px; text-align: justify; }
     .mute-toggle { font-size: 10px; padding: 5px; bottom: 10px; right: 10px; }
+    nav a { margin: 0 4px; font-size: 8px; }
+    .lusofona-logo { width: 100%; max-width: 200px; }
+    .footer-container { flex-direction: column; align-items: center; text-align: center; gap: 15px; }
+    .footer-info, .footer-socials, .footer-brand { align-items: center; width: 100%; }
+    .info-item { font-size: 13px; }
+    .footer-bottom { font-size: 10px; }
 }
 
 @media (pointer: coarse) {
