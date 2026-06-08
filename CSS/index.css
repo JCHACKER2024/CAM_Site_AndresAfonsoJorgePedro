@@ -1,13 +1,25 @@
-/* IMPORTAÇÃO DA FONTE */
+/* ============================================================
+   IMPORTAÇÃO DA FONTE
+   Clash Display usada em títulos e elementos de destaque
+   Não remover esta linha ou o texto fica em Arial
+   ============================================================ */
 @import url('https://api.fontshare.com/v2/css?f[]=clash-display@500,600&display=swap');
 
-/* SCROLLBAR PERSONALIZADA */
+/* ============================================================
+   SCROLLBAR PERSONALIZADA
+   Cor de destaque: #FF00FF (rosa/magenta)
+   ============================================================ */
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: #000000; }
 ::-webkit-scrollbar-thumb { background: #FF00FF; border-radius: 10px; border: 2px solid #000000; }
 ::-webkit-scrollbar-thumb:hover { background: #FF00FF; }
 
-/* REGRAS BASE DO DOCUMENTO */
+/* ============================================================
+   RESET E BASE
+   Remove margens/paddings padrão do browser
+   overflow-x: hidden previne scroll horizontal indesejado
+   padding-top: 80px compensa a altura do header fixo
+   ============================================================ */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body { 
@@ -20,74 +32,110 @@ body {
     scrollbar-color: #FF00FF #000000;
 }
 
+/* ============================================================
+   PARTÍCULAS DE FUNDO (particles.js)
+   Contentor fixo atrás de todo o conteúdo (z-index: -1)
+   As partículas são geradas pela biblioteca particles.js
+   carregada via CDN no HTML — cdn.jsdelivr.net/particles.js
+   Para alterar cor/número de partículas: edita effects.js
+   ============================================================ */
 #particles-js {
     position: fixed; width: 100%; height: 100%;
     top: 0; left: 0; z-index: -1;
     background-color: #000000;
 }
 
+/* O main fica transparente para as partículas serem visíveis */
 main { background-color: transparent !important; position: relative; z-index: 1; }
 
-/* CABEÇALHO */
+/* ============================================================
+   CABEÇALHO (HEADER)
+   Fixo no topo — afeta TODAS as páginas via index.css
+   Fundo: #ffffff (branco) | Borda inferior: #FF00FF (rosa)
+   Em mobile: logo e PT|EN ficam na linha 1, nav na linha 2
+   ============================================================ */
 #header { 
     position: fixed; top: 0; width: 100%; z-index: 100;
     background: #ffffff; padding: 15px 20px; border-bottom: 2px solid #FF00FF;
 }
 
+/* Contentor interno com largura máxima centrada */
 .header-container { 
     display: flex; justify-content: space-between; align-items: center;
     max-width: 1400px; margin: 0 auto;
 }
 
+/* Logo — link que engloba imagem + texto extenso */
 .logo-link { text-decoration: none; transition: 0.3s; }
 .logo-header { display: flex; align-items: center; gap: 10px; }
 .header-logo-img { height: 40px; width: auto; filter: none; transition: transform 0.3s ease; }
 .logo-link:hover .header-logo-img { transform: scale(1.1); }
 
+/* Texto extenso ao lado do logo: "Comunicação Audiovisual e Multimédia" */
 .extenso { 
     color: #000000; font-size: clamp(9px, 1.2vw, 12px);
     letter-spacing: 1px; font-weight: 600; text-transform: none;
 }
 
+/* Menu de navegação principal */
 nav { display: flex; }
 nav a { 
     color: #000000; text-decoration: none; margin-left: 18px;
     font-size: 13px; text-transform: none; font-weight: 600; transition: 0.3s;
 }
+/* Link ativo (página atual) e hover ficam rosa */
 nav a.active, nav a:hover { color: #FF00FF; }
 
+/* Seletor PT | EN */
 .language-selector { display: flex; align-items: center; gap: 8px; margin-left: 20px; }
 .lang-btn { text-decoration: none; color: #888; font-size: 13px; font-weight: 800; transition: 0.3s; }
 .lang-btn.active { color: #FF00FF; }
 .lang-btn:hover { color: #000; }
 .divider { color: #444; font-size: 12px; }
 
-/* HERO */
+/* ============================================================
+   SECÇÃO HERO (VÍDEO PRINCIPAL)
+   Ocupa 90% da altura do ecrã
+   Contém: animação do logo (só home) + vídeo + botão som
+   ============================================================ */
 #hero-wrap { 
     position: relative; height: 90vh; min-height: 500px;
     display: flex; align-items: center; justify-content: center;
 }
 
+/* ============================================================
+   ANIMAÇÃO DO LOGO (SÓ NA HOME)
+   Só aparece quando body tem class="is-home"
+   Duas imagens: logo_img-icon + logo_img-text
+   Sequência: revealIcon → revealText → moveLogoUp (sobe e sai)
+   Para trocar o logo: substitui as imagens em IMGS/
+   ============================================================ */
 .logo-animation-container {
     display: none; align-items: center; justify-content: center;
     z-index: 50; position: absolute; top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     animation: moveLogoUp 1.2s cubic-bezier(0.85, 0, 0.15, 1) 2.5s forwards;
 }
-
 .is-home .logo-animation-container { display: flex; }
 
+/* Ícone do logo — aparece primeiro com scale */
 .logo-img-icon {
     height: 500px; width: auto; opacity: 0; transform: scale(0.5);
     animation: revealIcon 0.8s ease-out 0.5s forwards;
 }
 
+/* Texto do logo — desliza da esquerda */
 .logo-img-text {
     height: 400px; width: auto; opacity: 0; transform: translateX(-50px);
     animation: revealText 0.8s ease-out 1.2s forwards;
 }
 
-/* VÍDEO */
+/* ============================================================
+   VÍDEO PRINCIPAL
+   Reproduz automaticamente, sem som, em loop
+   border-radius: 40px arredonda os cantos
+   Para trocar o vídeo: altera src="VIDS/videoX.mp4" no HTML
+   ============================================================ */
 #indexvideo {
     margin-top: 50px; width: 92%; height: 80%; max-width: 1350px;
     border-radius: 40px; overflow: visible; opacity: 0; transform: scale(0.92);
@@ -95,12 +143,18 @@ nav a.active, nav a:hover { color: #FF00FF; }
     position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.4); z-index: 10;
 }
 
+/* Overlay por cima do vídeo — transparente no index
+   Nas páginas internas contém o título animado (.reveal-video-text)
+   Para escurecer o vídeo: adiciona background: rgba(0,0,0,X) onde X é 0-1 */
 .video-overlay { 
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 55; pointer-events: none;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 55; pointer-events: none;
 }
 
 #myVideo { width: 100%; height: 100%; object-fit: cover; }
 
+/* Botão de som no canto inferior direito do vídeo
+   Controlado por JS/soundvideo.js */
 .mute-toggle {
     position: absolute; bottom: 30px; right: 30px; z-index: 9999;
     background: #FF00FF; color: #000; border: none; padding: 10px 20px;
@@ -110,19 +164,29 @@ nav a.active, nav a:hover { color: #FF00FF; }
 }
 .mute-toggle:hover { transform: scale(1.05); background: #fff; }
 
-/* TÍTULOS E CONTEÚDO */
+/* ============================================================
+   TÍTULOS E CONTEÚDO
+   .titulo-seccao — secção com o título grande
+   .shadow-text — estilo do título rosa (usado em todas as páginas)
+   .reveal-video-text — variante animada sobre o vídeo nas páginas internas
+   .content-wrapper — contentor do texto corrido
+   .texto-corrido — parágrafo com borda esquerda rosa
+   ============================================================ */
 .titulo-seccao { 
     text-align: center;
-    padding: 60px 20px 30px; 
+    padding: 60px 20px 30px;
     opacity: 0;
     animation: fadeInGeneral 1s forwards 1.2s;
 }
 
+/* Título principal rosa — tamanho responsivo entre 32px e 70px */
 .shadow-text { 
     font-size: clamp(32px, 5vw, 70px); font-weight: 600;
     letter-spacing: -0.5px; text-transform: none; line-height: 1.1; color: #FF00FF;
 }
 
+/* Variante do título que anima sobre o vídeo nas páginas internas
+   Controlado por JS/open-titles.js */
 .shadow-text.reveal-video-text {
     text-shadow: 0 4px 20px rgba(0,0,0,0.9);
     position: absolute; left: 50%; transform: translateX(-50%);
@@ -130,17 +194,24 @@ nav a.active, nav a:hover { color: #FF00FF; }
     margin-top: -100px; z-index: 999; white-space: nowrap;
 }
 
+/* Contentor do texto corrido — largura máxima centrada */
 .content-wrapper { 
     max-width: 1100px; margin: 0 auto;
-    padding: 0 20px 50px; 
+    padding: 0 20px 50px;
     opacity: 0; animation: fadeInGeneral 1s forwards 1.4s;
 }
 
+/* Parágrafo com borda esquerda rosa */
 .texto-corrido { 
     padding-left: 30px; border-left: 5px solid #FF00FF;
     font-size: clamp(16px, 2vw, 20px); line-height: 1.8; color: #ccc; text-align: justify;
 }
 
+/* ============================================================
+   BOTÃO CANDIDATA-TE
+   Fica entre o vídeo e o título na home
+   Para alterar o link: muda o href no index.html
+   ============================================================ */
 .cta-home-wrapper { display: flex; justify-content: center; width: 100%; margin-top: 40px; }
 
 .btn-candidata {
@@ -150,7 +221,12 @@ nav a.active, nav a:hover { color: #FF00FF; }
 }
 .btn-candidata:hover { transform: scale(1.1); background: white; }
 
-/* FOOTER */
+/* ============================================================
+   FOOTER
+   Três colunas: logo/morada | contactos | redes sociais
+   Para alterar contactos e redes: edita o HTML de cada página
+   Para alterar cor de destaque: substitui #FF00FF
+   ============================================================ */
 #main-footer { 
     background-color: #0f1014; border-top: 5px solid #FF00FF;
     padding: 50px 20px 30px;
@@ -162,14 +238,17 @@ nav a.active, nav a:hover { color: #FF00FF; }
     justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px;
 }
 
+/* Coluna 1: Logo Lusófona + morada */
 .footer-brand { 
     display: flex; flex-direction: column; align-items: center;
     text-align: center; min-width: 250px;
 }
 
+/* Logo Lusófona — filter inverte para branco sobre fundo escuro */
 .lusofona-logo { width: 400px; margin: 15px 0; filter: brightness(0) invert(1); }
 .footer-address { font-size: 13px; color: #ffffff; line-height: 1.6; }
 
+/* Coluna 2: Contactos */
 .footer-info { display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 300px; }
 .footer-info h4 { color: #FF00FF; text-transform: none; letter-spacing: 1px; margin-bottom: 25px; font-weight: 600; }
 .info-items-group { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
@@ -178,18 +257,26 @@ nav a.active, nav a:hover { color: #FF00FF; }
 .footer-link-simple { color: white; text-decoration: none; font-weight: bold; transition: 0.3s ease; }
 .footer-link-simple:hover { color: #FF00FF; text-decoration: underline; }
 
+/* Coluna 3: Redes sociais */
 .footer-socials { display: flex; flex-direction: column; align-items: flex-start; min-width: 150px; }
 .footer-socials h4 { color: #FF00FF; text-transform: none; letter-spacing: 1px; margin-bottom: 25px; font-weight: 600; }
 .footer-socials a { color: #ffffff; text-decoration: none; font-size: 14px; margin-bottom: 12px; transition: 0.3s; }
 .footer-socials a:hover { color: #FF00FF; }
 
+/* Linha de copyright no fundo */
 .footer-bottom { 
-    margin-top: 40px; 
+    margin-top: 40px;
     padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.05);
     text-align: center; color: #555; font-size: 11px;
 }
 
-/* CURSOR PERSONALIZADO */
+/* ============================================================
+   CURSOR PERSONALIZADO (só em dispositivos com rato)
+   Círculo rosa que segue o cursor
+   Cresce e muda de cor em elementos interativos (via effects.js)
+   Em dispositivos touch é desativado via @media (pointer: coarse)
+   Para alterar: edita #custom-cursor abaixo ou effects.js
+   ============================================================ */
 @media (pointer: fine) {
     *, *::before, *::after { cursor: none !important; }
     video::-webkit-media-controls, video::-webkit-media-controls-enclosure,
@@ -201,7 +288,15 @@ nav a.active, nav a:hover { color: #FF00FF; }
     }
 }
 
-/* KEYFRAMES */
+/* ============================================================
+   KEYFRAMES — ANIMAÇÕES
+   revealIcon: ícone do logo aparece com scale
+   revealText: texto do logo desliza da esquerda
+   moveLogoUp: logo sobe e sai do ecrã após animação
+   moveTitleUp: título sobe sobre o vídeo nas páginas internas
+   revealVideo: vídeo aparece com fade + scale
+   fadeInGeneral: fade simples para títulos e texto
+   ============================================================ */
 @keyframes revealIcon { to { opacity: 1; transform: scale(1); } }
 @keyframes revealText { to { opacity: 1; transform: translateX(0); } }
 @keyframes moveLogoUp {
@@ -216,8 +311,16 @@ nav a.active, nav a:hover { color: #FF00FF; }
 @keyframes revealVideo { to { opacity: 1; transform: scale(1); } }
 @keyframes fadeInGeneral { to { opacity: 1; } }
 
-/* RESPONSIVIDADE */
+/* ============================================================
+   RESPONSIVIDADE
+   1024px — tablets grandes / desktop pequeno
+   768px  — tablets verticais
+   480px  — telemóveis
+   ============================================================ */
+
+/* Tablets e desktops pequenos */
 @media (max-width: 1024px) {
+    /* Header passa a duas linhas: logo+PT|EN em cima, nav em baixo */
     .header-container { flex-wrap: wrap; gap: 0; }
     .logo-link { flex: 1; }
     .language-selector { margin-left: 0; order: 2; }
@@ -227,11 +330,13 @@ nav a.active, nav a:hover { color: #FF00FF; }
     #indexvideo { width: 85%; height: 50%; }
 }
 
+/* Tablets verticais */
 @media (max-width: 768px) {
     body { padding-top: 85px; }
     #header { padding: 10px 15px; }
     .header-container { flex-wrap: wrap; align-items: center; gap: 0; }
     .logo-link { flex: 1; display: flex; align-items: center; }
+    /* Logo menor em mobile */
     .header-logo-img { height: 22px; }
     .extenso { display: inline-block; font-size: 8px; white-space: nowrap; line-height: 1; }
     .language-selector { margin-left: 0; order: 2; font-size: 10px; }
@@ -242,23 +347,29 @@ nav a.active, nav a:hover { color: #FF00FF; }
     #indexvideo { width: 92%; height: 50%; margin-top: 15px; }
     .mute-toggle { bottom: 15px; right: 15px; padding: 6px 12px; font-size: 9px; }
     .texto-corrido { font-size: 15px; padding: 0 20px; text-align: justify; }
+    /* Footer passa a coluna única centrada */
     .footer-container { flex-direction: column; text-align: center; align-items: center; gap: 25px; }
 }
 
+/* Telemóveis */
 @media (max-width: 480px) {
     #hero-wrap { height: auto; min-height: 60vh; display: flex; align-items: center; justify-content: center; }
     #indexvideo { width: 100%; height: auto; max-height: 300px; }
     .shadow-text { font-size: 1.5rem; padding: 0 15px; text-align: center; }
     .texto-corrido { font-size: 1rem; line-height: 1.6; padding: 0 20px; text-align: justify; }
     .mute-toggle { font-size: 10px; padding: 5px; bottom: 10px; right: 10px; }
+    /* Nav mais compacto */
     nav a { margin: 0 4px; font-size: 8px; }
+    /* Logo Lusófona limitado para não ultrapassar o ecrã */
     .lusofona-logo { width: 100%; max-width: 200px; }
+    /* Footer em coluna única com min-width anulado */
     .footer-container { flex-direction: column; align-items: center; text-align: center; gap: 15px; }
     .footer-info, .footer-socials, .footer-brand { align-items: center; width: 100%; }
     .info-item { font-size: 13px; }
     .footer-bottom { font-size: 10px; }
 }
 
+/* Desativa cursor personalizado em dispositivos touch */
 @media (pointer: coarse) {
     * { cursor: auto !important; }
     #custom-cursor { display: none !important; }
