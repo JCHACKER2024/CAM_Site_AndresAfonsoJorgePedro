@@ -1,4 +1,8 @@
-/* HERO SECTION (VÍDEO EM BACKGROUND) */
+/* ============================================================
+   HERO COM VÍDEO EM BACKGROUND
+   Usado em páginas com vídeo a ocupar o ecrã inteiro como fundo
+   Diferente do #indexvideo da home que é um elemento flutuante
+   ============================================================ */
 .hero-video-container {
     position: relative;
     width: 100%;
@@ -10,6 +14,7 @@
     text-align: center;
 }
 
+/* Vídeo posicionado atrás do conteúdo (z-index: -1) */
 #hero-video {
     position: absolute;
     top: 50%;
@@ -22,6 +27,7 @@
     will-change: transform;
 }
 
+/* Título por cima do vídeo de fundo */
 .hero-video-container h1 {
     font-size: clamp(45px, 10vw, 90px);
     font-weight: 900;
@@ -30,29 +36,41 @@
     margin-bottom: 20px;
 }
 
-/* TIPOGRAFIA E ESTRUTURA GLOBAL */
+/* ============================================================
+   TIPOGRAFIA GLOBAL
+   .titulo-seccao — título de secção grande
+   .titulo-medio — título de secção médio
+   Ambos partilham o mesmo estilo base em rosa (#FF00FF)
+   ============================================================ */
 .titulo-seccao, 
 .titulo-medio {
     font-size: clamp(32px, 5vw, 48px);
     font-weight: 900;
     color: #FF00FF;
     text-align: center;
-    margin-bottom: 40px; 
+    margin-bottom: 40px;
     letter-spacing: 3px;
     display: flex;
     justify-content: center;
     gap: 15px;
 }
 
+/* Contentor de texto corrido — largura máxima centrada */
 .content-wrapper {
     padding: 30px 20px 30px;
     max-width: 1000px;
     margin: 0 auto;
 }
 
-/* GRELHA DE DESTAQUES E CARDS */
+/* ============================================================
+   GRELHA DE CARDS (SECÇÃO DESTAQUES)
+   Usada na página Sobre para mostrar eventos, espaços, etc.
+   2 colunas em desktop, 1 coluna em tablet/mobile
+   Fundo dos cards: #FF00FF (rosa)
+   Para adicionar card: copia um bloco .card no sobre.html
+   ============================================================ */
 .destaques-section {
-    padding: 20px 20px 40px; 
+    padding: 20px 20px 40px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -63,6 +81,7 @@
     gap: 40px;
 }
 
+/* Card individual — fundo rosa, borda branca no hover */
 .card {
     background: #FF00FF;
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -78,6 +97,8 @@
     transform: translateY(-8px);
 }
 
+/* Contentor do media (imagem ou vídeo) dentro do card
+   aspect-ratio: 1/1 mantém proporção quadrada */
 .media-container {
     position: relative;
     width: 100%;
@@ -89,6 +110,7 @@
     justify-content: center;
 }
 
+/* Imagem ou vídeo dentro do media-container */
 .card-video, 
 .c-img {
     width: 100%;
@@ -96,16 +118,20 @@
     object-fit: cover;
 }
 
+/* Vídeos do Multiplex e Equipamentos ficam com object-fit: contain
+   para não cortar o conteúdo — classes aplicadas no sobre.html */
 .multiplex-video-fix .card-video,
 .equipamento-video-fix .card-video {
     object-fit: contain;
 }
 
+/* Área de texto dentro do card — texto preto sobre fundo rosa */
 .card-info {
-    padding: 25px; 
+    padding: 25px;
     flex-grow: 1;
 }
 
+/* Tag de categoria no topo do card (ex: "EVENTOS", "PARCERIA") */
 .tag-amarela {
     color: #000000;
     font-size: 11px;
@@ -128,13 +154,20 @@
     text-align: justify;
 }
 
-/* CARROSSEL */
+/* ============================================================
+   CARROSSEL DE IMAGENS (dentro dos cards)
+   Controlado por JS/open-titles.js — função moveSobreSlide()
+   .c-img.active é a imagem visível
+   .c-prev e .c-next são os botões de navegação
+   Aparecem só no hover do card
+   ============================================================ */
 .carousel-sobre {
     position: relative;
     width: 100%;
     height: 100%;
 }
 
+/* Todas as imagens sobrepostas — só a .active é visível */
 .c-img {
     position: absolute;
     top: 0; left: 0;
@@ -144,6 +177,7 @@
 
 .c-img.active { opacity: 1; }
 
+/* Botões prev/next — invisíveis por defeito, aparecem no hover do card */
 .c-prev, 
 .c-next {
     position: absolute;
@@ -171,9 +205,15 @@
 
 .c-prev { left: 0; border-radius: 0 15px 15px 0; }
 .c-next { right: 0; border-radius: 15px 0 0 15px; }
+/* Hover dos botões: fundo rosa, texto preto */
 .c-prev:hover, .c-next:hover { background: #FF00FF; color: #000000; }
 
-/* SAÍDAS PROFISSIONAIS */
+/* ============================================================
+   SAÍDAS PROFISSIONAIS
+   Tabela expansível — cada linha abre/fecha ao clicar
+   Controlado por JS/open-titles.js
+   Para adicionar saída: copia um bloco .saida-row no sobre.html
+   ============================================================ */
 .saidas-section {
     background: #0a0b0e;
 }
@@ -184,6 +224,7 @@
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Linha clicável da tabela */
 .saida-row {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     cursor: pointer;
@@ -192,6 +233,7 @@
 
 .saida-row:hover { background: rgba(255, 255, 255, 0.02); }
 
+/* Cabeçalho da linha — sempre visível */
 .saida-header {
     padding: 20px;
     display: flex;
@@ -206,8 +248,10 @@
     letter-spacing: 1px;
 }
 
+/* Título fica rosa quando a linha está aberta */
 .saida-row.active .saida-header h4 { color: #FF00FF; }
 
+/* Conteúdo expansível — fechado por defeito (max-height: 0) */
 .saida-info {
     max-height: 0;
     opacity: 0;
@@ -216,10 +260,11 @@
     padding: 0 20px;
 }
 
+/* Quando ativa, expande suavemente */
 .saida-row.active .saida-info {
     max-height: 600px;
     opacity: 1;
-    padding-bottom: 30px; 
+    padding-bottom: 30px;
     transition: max-height 0.5s cubic-bezier(0.99, 0.01, 0.45, 1), opacity 0.4s ease;
 }
 
@@ -231,13 +276,19 @@
     margin: 0;
 }
 
-/* PARCEIROS */
+/* ============================================================
+   PARCEIROS
+   Grelha de logos — 3 colunas em desktop
+   Logos em escala de cinza por defeito, coloridos no hover
+   Para adicionar parceiro: copia um .parceiro-link no sobre.html
+   ============================================================ */
 .parceiros-section {
-    padding: 60px 20px; 
+    padding: 60px 20px;
     text-align: center;
     background: #0f1014;
 }
 
+/* Texto introdutório com borda esquerda rosa */
 .parceiros-intro {
     max-width: 1000px;
     margin: 0 auto 30px;
@@ -253,10 +304,11 @@
     margin: 0;
 }
 
+/* Grelha de 3 colunas para os logos */
 .parceiros-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px; 
+    gap: 40px;
     max-width: 1100px;
     margin: 30px auto 40px;
     align-items: center;
@@ -270,6 +322,7 @@
     width: 100%;
 }
 
+/* Logos em cinza com 50% opacidade por defeito */
 .parceiro-link img {
     width: 100%;
     max-width: 220px;
@@ -280,13 +333,19 @@
     transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
 }
 
+/* Hover: logo a cores e ligeiramente maior */
 .parceiro-link:hover img {
     opacity: 1;
     filter: grayscale(0) brightness(1);
     transform: scale(1.05);
 }
 
-/* CTA */
+/* ============================================================
+   CALL TO ACTION (CTA)
+   Botões no fundo da página Sobre
+   .btn-cta — botão outline rosa
+   .btn-cta.highlight-btn — botão preenchido a rosa
+   ============================================================ */
 .cta-section {
     padding: 20px 20px 40px;
     display: flex;
@@ -295,6 +354,7 @@
     background: #0f1014;
 }
 
+/* Botão outline */
 .btn-cta {
     padding: 18px 38px;
     border: 1px solid rgba(255, 0, 255, 0.4);
@@ -306,19 +366,26 @@
     transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
+/* Botão preenchido a rosa */
 .btn-cta.highlight-btn {
     background: #FF00FF;
     color: #000000;
     border-color: #FF00FF;
 }
 
+/* Hover: ambos ficam brancos */
 .btn-cta:hover {
     background: #ffffff;
     color: #000000;
     border-color: #ffffff;
 }
 
-/* ANIMAÇÕES */
+/* ============================================================
+   ANIMAÇÃO REVEAL ON SCROLL
+   Elementos com class="reveal" animam ao entrar no ecrã
+   Controlado por JS/open-titles.js (IntersectionObserver)
+   Para aplicar a um elemento: adiciona class="reveal" no HTML
+   ============================================================ */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -326,17 +393,26 @@
 
 .reveal.active { animation: fadeInUp 0.6s ease-out forwards; }
 
-/* RESPONSIVIDADE */
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+
+/* Tablets e desktops pequenos */
 @media (max-width: 1024px) {
+    /* Cards em coluna única */
     .destaques-grid { grid-template-columns: 1fr; gap: 30px; }
+    /* Parceiros em 2 colunas */
     .parceiros-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
     .parceiro-link img { height: 70px; max-width: 160px; }
     .card { height: auto; }
     .card-info { padding: 25px; }
+    /* Botões do carrossel sempre visíveis em tablet */
     .c-prev, .c-next { opacity: 1; visibility: visible; width: 40px; height: 60px; font-size: 20px; }
 }
 
+/* Tablets verticais */
 @media (max-width: 768px) {
+    /* Títulos menores e em coluna */
     .titulo-seccao, 
     .titulo-medio {
         font-size: clamp(22px, 7vw, 30px);
@@ -349,6 +425,7 @@
         gap: 5px;
     }
 
+    /* Parceiros em coluna única */
     .parceiros-grid { grid-template-columns: 1fr; gap: 40px; margin: 20px auto 50px; }
     .parceiro-link img { height: auto; max-width: 180px; }
     .saida-header h4 { font-size: 15px; line-height: 1.4; }
@@ -356,24 +433,16 @@
     .content-wrapper { padding: 40px 20px; }
 }
 
+/* Telemóveis */
 @media (max-width: 480px) {
     .titulo-seccao, 
     .titulo-medio { font-size: 20px; letter-spacing: 0px; }
 
-    .cta-section {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        padding: 30px 20px 50px;
-    }
+    /* CTA em coluna única */
+    .cta-section { flex-direction: column; align-items: center; gap: 15px; padding: 30px 20px 50px; }
 
-    .btn-cta {
-        width: 100%;
-        max-width: 280px;
-        text-align: center;
-        padding: 14px 18px;
-        font-size: 13px;
-    }
+    /* Botões CTA a largura total */
+    .btn-cta { width: 100%; max-width: 280px; text-align: center; padding: 14px 18px; font-size: 13px; }
 
     .saida-header h4 { font-size: 13px; }
 
