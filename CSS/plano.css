@@ -1,23 +1,32 @@
-/* ESTRUTURA GERAL */
+/* ============================================================
+   ESTRUTURA GERAL DA PÁGINA PLANO
+   Fundo escuro (#0f1014) diferente do fundo principal (#000000)
+   ============================================================ */
 main {
     background-color: #0f1014;
     min-height: 100vh;
     overflow-x: hidden;
 }
 
+/* Contentor principal do plano de estudos — largura máxima centrada */
 .plano-container {
     max-width: 1000px;
-    margin: 40px auto 80px; 
+    margin: 40px auto 80px;
     padding: 0 20px;
 }
 
-/* BLOCOS PEDAGÓGICOS */
+/* ============================================================
+   ATOS / BLOCOS PEDAGÓGICOS
+   Cada ato (Configuração, Confronto, Resolução) é um .ato-wrapper
+   Para adicionar ato: copia um bloco .ato-wrapper no plano.html
+   ============================================================ */
 .ato-wrapper {
-    margin-bottom: 50px; 
+    margin-bottom: 50px;
 }
 
+/* Cabeçalho do ato — borda esquerda rosa, texto à esquerda */
 .ato-header {
-    margin-bottom: 25px; 
+    margin-bottom: 25px;
     border-left: 4px solid #FF00FF;
     padding-left: 25px;
     text-align: left;
@@ -29,22 +38,32 @@ main {
     color: #ffffff;
 }
 
+/* Subtítulo descritivo do ato */
 .ato-header p {
     color: #ffffff;
     font-size: 16px;
     margin-top: 5px;
 }
 
-/* SEMESTRES E UCs */
+/* ============================================================
+   SEMESTRES E UCs (CAIXAS EXPANSÍVEIS)
+   Usam o elemento HTML <details> + <summary>
+   Clica no summary para abrir/fechar — comportamento nativo do browser
+   A seta triangular roda 90° quando aberto (via CSS)
+   Borda rosa (#FF00FF) — muda para rosa transparente quando aberto
+   Para adicionar semestre: copia um bloco .semestre-box no plano.html
+   Para adicionar UC: copia um bloco .uc-item dentro do .uc-list
+   ============================================================ */
 .semestre-box, .uc-item {
     background: #15161c;
     margin-bottom: 15px;
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid #FF00FF; 
+    border: 1px solid #FF00FF;
     transition: border-color 0.3s ease;
 }
 
+/* Remove estilos padrão do browser no summary */
 .semestre-box summary, .uc-item summary {
     list-style: none;
     outline: none;
@@ -63,6 +82,7 @@ main {
     display: none;
 }
 
+/* Seta triangular gerada por CSS — roda quando aberto */
 .semestre-box summary::after, 
 .uc-item summary::after {
     content: '';
@@ -75,27 +95,38 @@ main {
     flex-shrink: 0;
 }
 
+/* Seta roda 90° quando aberto */
 .semestre-box[open] > summary::after,
 .uc-item[open] > summary::after {
     transform: rotate(90deg);
 }
 
+/* Estado aberto: borda rosa transparente */
 .semestre-box[open], .uc-item[open] {
     border-color: rgba(255, 0, 255, 0.3);
 }
 
+/* Linha separadora no fundo do summary quando aberto */
 .semestre-box[open] summary, .uc-item[open] summary {
     color: #FF00FF;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* UCs */
+/* ============================================================
+   UNIDADES CURRICULARES (UCs)
+   Dentro de cada semestre, cada UC é também um <details>
+   Texto branco sobre fundo escuro
+   ============================================================ */
+
+/* Contentor da lista de UCs dentro do semestre */
 .uc-list { padding: 20px 30px; }
 
+/* Linha separadora entre UCs */
 .uc-item { border-bottom: 1px solid rgba(255, 255, 255, 0.03); }
 
+/* Nome da UC — sempre visível, com padding afastado das bordas */
 .uc-item summary {
-    padding: 15px 10px; 
+    padding: 15px 10px;
     font-size: 15px;
     font-weight: 600;
     color: #ffffff;
@@ -105,6 +136,7 @@ main {
 
 .uc-item summary:hover { color: #ffffff; }
 
+/* Descrição da UC — visível quando aberta, com padding lateral */
 .uc-item p {
     padding: 0 10px 20px 10px;
     font-size: 14px;
@@ -113,20 +145,28 @@ main {
     text-align: justify;
 }
 
-/* CORPO DOCENTE */
+/* ============================================================
+   CORPO DOCENTE
+   Lista de cards de docentes em alternância esquerda/direita
+   .docente-row — imagem à esquerda, fundo rosa
+   .docente-row.reverse — imagem à direita
+   Foto em escala de cinza por defeito, colorida no hover
+   Para adicionar docente: copia um bloco .docente-row no plano.html
+   ============================================================ */
 .docentes-section {
-    padding: 60px 20px; 
+    padding: 60px 20px;
     background: #0a0b0e;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Contentor do título da secção */
 .titulo-wrapper {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 50px; 
+    margin-bottom: 50px;
 }
 
 .docentes-section .titulo-medio {
@@ -144,6 +184,7 @@ main {
 
 .highlight { color: #FF00FF; }
 
+/* Lista vertical de cards de docentes */
 .docentes-lista-v2 {
     width: 100%;
     max-width: 1100px;
@@ -153,6 +194,7 @@ main {
     gap: 40px;
 }
 
+/* Card individual do docente — fundo rosa */
 .docente-row {
     display: flex;
     align-items: center;
@@ -163,15 +205,19 @@ main {
     transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
+/* Hover: borda branca + sobe ligeiramente */
 .docente-row:hover { border-color: #ffffff; transform: translateY(-5px); }
+/* Variante com imagem à direita */
 .docente-row.reverse { flex-direction: row-reverse; }
 
+/* Área da fotografia do docente */
 .docente-img {
     flex: 1;
     max-width: 400px;
     height: 450px;
 }
 
+/* Foto em escala de cinza — colorida no hover do card */
 .docente-img img {
     width: 100%;
     height: 100%;
@@ -182,17 +228,20 @@ main {
 
 .docente-row:hover .docente-img img { filter: grayscale(0%); }
 
+/* Área de texto do docente — texto branco e preto sobre fundo rosa */
 .docente-info {
     flex: 2;
     padding: 40px;
 }
 
+/* Nome do docente em branco */
 .docente-info h3 {
     font-size: clamp(22px, 3vw, 28px);
     margin-bottom: 5px;
     color: #ffffff;
 }
 
+/* Cargo/especialidade em branco */
 .cargo {
     display: block;
     color: #ffffff;
@@ -203,18 +252,21 @@ main {
     text-transform: uppercase;
 }
 
+/* Descrição em preto sobre fundo rosa */
 .docente-info p {
     color: #000000;
     font-size: 15px;
     line-height: 1.6;
 }
 
+/* Bloco de criações/prémios do docente */
 .premios-container {
     margin-top: 20px;
     padding-top: 20px;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+/* Título "Criações em Destaque:" em branco */
 .premios-titulo {
     font-size: 12px;
     color: #ffffff;
@@ -225,6 +277,7 @@ main {
 
 .premios-lista { list-style: none; padding: 0; }
 
+/* Cada item da lista com bullet preto gerado por CSS */
 .premios-lista li {
     font-size: 14px;
     color: #000000;
@@ -242,7 +295,11 @@ main {
     font-weight: bold;
 }
 
-/* ANIMAÇÕES */
+/* ============================================================
+   ANIMAÇÃO REVEAL ON SCROLL
+   Elementos com class="reveal" animam ao entrar no ecrã
+   Controlado por JS/open-titles.js (IntersectionObserver)
+   ============================================================ */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
@@ -250,15 +307,23 @@ main {
 
 .reveal.active { animation: fadeInUp 0.8s ease-out forwards; }
 
-/* RESPONSIVIDADE */
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+
+/* Tablets e desktops pequenos */
 @media (max-width: 1024px) {
+    /* Cards de docentes em coluna única */
     .docente-row,
     .docente-row.reverse { flex-direction: column; align-items: center; }
     .docente-img { max-width: 100%; width: 100%; height: 320px; }
+    /* Texto centrado em tablet */
     .docente-info { padding: 30px; text-align: center; width: 100%; }
+    /* Lista de prémios alinhada à esquerda mesmo com texto centrado */
     .premios-lista li { text-align: left; }
 }
 
+/* Tablets verticais */
 @media (max-width: 768px) {
     .ato-header { padding-left: 15px; }
     .ato-header h2 { font-size: clamp(22px, 6vw, 26px); }
@@ -267,6 +332,7 @@ main {
     .docentes-section .titulo-medio { font-size: 24px; flex-direction: column; align-items: center; gap: 5px; }
 }
 
+/* Telemóveis */
 @media (max-width: 480px) {
     .plano-container { margin: 40px auto 80px; }
     .docente-img { height: 250px; }

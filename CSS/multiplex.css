@@ -1,32 +1,44 @@
-/* ESTRUTURA DA SECÇÃO */
+/* ============================================================
+   ESTRUTURA DA SECÇÃO MULTIPLEX
+   Lista todas as edições do evento Multiplex
+   Cards com imagem, ano, nome do convidado e links
+   ============================================================ */
 .edicoes-section {
     max-width: 1300px;
     margin: 0 auto;
 }
 
+/* Título da secção em rosa
+   display: block porque esta variante não usa flex como o .titulo-medio global */
 .edicoes-section .titulo-medio {
     display: block;
     text-align: center;
     font-size: clamp(32px, 6vw, 45px);
     font-weight: 900;
-    margin-bottom: 40px; 
+    margin-bottom: 40px;
     letter-spacing: 2px;
     color: #FF00FF;
 }
 
+/* Palavra de destaque inline dentro do título */
 .edicoes-section .highlight {
     color: #FF00FF;
     display: inline-block;
     margin-left: 12px;
 }
 
-/* GRELHA */
+/* ============================================================
+   GRELHA DE CARDS
+   3 colunas em desktop, 2 em tablet, 1 em mobile
+   Para adicionar edição: copia um bloco .edicao-card no multiplex.html
+   ============================================================ */
 .edicoes-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
+/* Card individual — fundo rosa, sobe no hover */
 .edicao-card {
     background: #FF00FF;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -39,7 +51,13 @@
 
 .edicao-card:hover { transform: translateY(-8px); }
 
-/* MEDIA */
+/* ============================================================
+   IMAGEM DO CARD
+   Proporção 4:3 mantida por aspect-ratio
+   Imagem faz zoom suave no hover
+   Para trocar imagem: altera src no multiplex.html
+   Ficheiros em IMGS/multiplex/
+   ============================================================ */
 .multiplex-img-container {
     width: 100%;
     aspect-ratio: 4 / 3;
@@ -54,16 +72,22 @@
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+/* Zoom suave na imagem ao hover do card */
 .edicao-card:hover .multiplex-img-container img { transform: scale(1.06); }
 
-/* INFO */
+/* ============================================================
+   INFORMAÇÃO DO CARD
+   Área de texto com ano, nome do convidado e links
+   flex-grow: 1 garante que todos os cards têm a mesma altura
+   ============================================================ */
 .edicao-info {
-    padding: 20px; 
+    padding: 20px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
+/* Tag do ano — fundo preto com texto rosa */
 .ano-tag {
     font-size: 11px;
     font-weight: 900;
@@ -76,6 +100,7 @@
     letter-spacing: 0.5px;
 }
 
+/* Nome do convidado/tema da edição em preto */
 .edicao-card h3 {
     font-size: 20px;
     color: #000000;
@@ -91,15 +116,21 @@
     font-weight: 500;
 }
 
-/* BOTÕES */
+/* ============================================================
+   BOTÕES DE LINK
+   Grelha automática que se adapta ao número de links
+   Borda preta, fundo preto no hover
+   Para adicionar link: copia um <a> dentro de .links-edicao no multiplex.html
+   ============================================================ */
 .links-edicao {
-    margin-top: auto;
+    margin-top: auto; /* Empurra os botões para o fundo do card */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
     gap: 10px;
     width: 100%;
 }
 
+/* Botão outline preto */
 .links-edicao a {
     display: inline-flex;
     align-items: center;
@@ -116,13 +147,18 @@
     text-transform: uppercase;
 }
 
+/* Hover: fundo preto, texto branco, sobe ligeiramente */
 .links-edicao a:hover {
     background: #000000;
     color: #FFFFFF;
     transform: translateY(-2px);
 }
 
-/* ANIMAÇÕES */
+/* ============================================================
+   ANIMAÇÃO REVEAL ON SCROLL
+   Elementos com class="reveal" animam ao entrar no ecrã
+   Controlado por JS/open-titles.js (IntersectionObserver)
+   ============================================================ */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -130,19 +166,28 @@
 
 .reveal.active { animation: fadeInUp 0.6s ease-out forwards; }
 
-/* RESPONSIVIDADE */
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+
+/* Tablets e desktops pequenos — 2 colunas */
 @media (max-width: 1100px) {
     .edicoes-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
 }
 
+/* Tablets verticais */
 @media (max-width: 768px) {
     .edicoes-section .titulo-medio { font-size: clamp(24px, 5vw, 32px); margin-bottom: 30px; }
+    /* Highlight passa a bloco em mobile para quebrar linha */
     .edicoes-section .highlight { display: block; margin-left: 0; margin-top: 5px; }
+    /* 1 coluna centrada */
     .edicoes-grid { grid-template-columns: 1fr; padding: 0 10px; gap: 25px; }
+    /* Card com largura máxima centrado */
     .edicao-card { max-width: 420px; margin: 0 auto; width: 100%; }
 }
 
+/* Telemóveis */
 @media (max-width: 480px) {
     .edicoes-section { padding: 40px 10px 60px; }
-    .edicao-info { padding: 15px; } /* REDUZIDO de 20px */
+    .edicao-info { padding: 15px; }
 }

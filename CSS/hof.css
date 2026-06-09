@@ -1,16 +1,22 @@
-/* ESTRUTURA */
+/* ============================================================
+   ESTRUTURA DAS SECÇÕES PRINCIPAIS
+   .hof-section — secção dos projetos em destaque (slider)
+   .testimonials-section — secção dos graduados (cards)
+   Largura máxima centrada com padding lateral
+   ============================================================ */
 .hof-section, 
 .testimonials-section {
     max-width: 1200px;
-    margin: 50px auto; 
+    margin: 50px auto;
     padding: 0 20px;
 }
 
+/* Título de secção em rosa */
 .titulo-medio {
     text-align: center;
     font-size: clamp(28px, 5vw, 40px);
     font-weight: 800;
-    margin-bottom: 40px; 
+    margin-bottom: 40px;
     letter-spacing: 2px;
     display: flex;
     justify-content: center;
@@ -21,7 +27,13 @@
 
 .highlight { color: #FF00FF; }
 
-/* SLIDER */
+/* ============================================================
+   SLIDER DE VÍDEOS (PROJETOS EM DESTAQUE)
+   Navegação controlada por JS/open-titles.js — changeVideoSlide()
+   Cada slide é um .video-slide — só o .active é visível
+   Fundo rosa (#FF00FF)
+   Para adicionar vídeo: copia um bloco .video-slide no hof.html
+   ============================================================ */
 .video-slider-container {
     position: relative;
     width: 100%;
@@ -34,9 +46,11 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
+/* Slide individual — escondido por defeito */
 .video-slide { display: none; animation: fadeIn 0.5s ease-in-out forwards; }
 .video-slide.active { display: block; }
 
+/* Wrapper do iframe com proporção 16:9 (padding-bottom: 56.25%) */
 .iframe-wrapper {
     position: relative;
     width: 100%;
@@ -45,6 +59,7 @@
     background: #000;
 }
 
+/* iframe do YouTube ocupa todo o wrapper */
 .iframe-wrapper iframe {
     position: absolute;
     top: 0; left: 0;
@@ -52,6 +67,7 @@
     border: none;
 }
 
+/* Botões prev/next do slider — circulares, pretos com ícone rosa */
 .slider-prev, 
 .slider-next {
     position: absolute;
@@ -76,16 +92,18 @@
 .slider-prev { left: 30px; }
 .slider-next { right: 30px; }
 
+/* Área de informação por baixo do vídeo — fundo rosa */
 .video-slide .project-info {
     padding: 30px 20px 25px;
     background: #FF00FF;
     text-align: center;
-    min-height: 150px; 
+    min-height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
+/* Título do projeto em branco */
 .video-slide .project-info h3 {
     font-size: 28px;
     color: #ffffff;
@@ -93,6 +111,7 @@
     letter-spacing: 1px;
 }
 
+/* Autor em preto */
 .video-slide .project-info .author {
     color: #000000;
     font-size: 16px;
@@ -100,6 +119,7 @@
     margin-bottom: 5px;
 }
 
+/* Descrição em cinza escuro itálico */
 .video-slide .project-info .description {
     color: #1a1a1a;
     font-size: 14px;
@@ -108,13 +128,21 @@
     margin: 0 auto;
 }
 
-/* TESTEMUNHOS */
+/* ============================================================
+   CARDS DE TESTEMUNHOS (GRADUADOS)
+   Grelha automática — mínimo 350px por card
+   Fundo rosa, texto preto
+   Clicável — abre modal com depoimento completo
+   Controlado por JS/open-titles.js — openAlumniModal()
+   Para adicionar graduado: copia um .testimonial-card no hof.html
+   ============================================================ */
 .testimonials-section {
     max-width: 1800px;
-    margin: 50px auto; 
+    margin: 50px auto;
     padding: 0 40px;
 }
 
+/* Grelha responsiva automática */
 .testimonials-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -123,9 +151,10 @@
     align-items: stretch;
 }
 
+/* Card individual do graduado — fundo rosa */
 .testimonial-card {
     background: #FF00FF;
-    padding: 25px 20px; 
+    padding: 25px 20px;
     border-radius: 28px;
     border: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
@@ -137,6 +166,7 @@
     height: 100%;
 }
 
+/* Hover: borda branca, sobe, fundo rosa mais escuro */
 .testimonial-card:hover {
     border-color: #ffffff;
     transform: translateY(-8px);
@@ -144,6 +174,7 @@
     box-shadow: 0 15px 30px rgba(0,0,0,0.4);
 }
 
+/* Foto circular com borda preta */
 .alumni-photo {
     width: 120px;
     height: 120px;
@@ -156,14 +187,23 @@
 
 .alumni-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
+/* Cargo/função profissional em preto */
 .cargo { color: #000000; font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+/* Pré-visualização do depoimento em itálico escuro */
 .depoimento-preview { color: #222222; font-style: italic; font-size: 14px; margin: 15px 0; line-height: 1.5; }
+/* "VER DEPOIMENTO" — empurrado para o fundo do card via margin-top: auto */
 .ler-mais { font-size: 11px; color: #000000; font-weight: 800; letter-spacing: 1px; margin-top: auto; padding-top: 10px; }
+/* Texto completo escondido — lido pelo JS para preencher o modal */
 .hidden-text { display: none; }
 
-/* MODAL */
+/* ============================================================
+   MODAL DO DEPOIMENTO COMPLETO
+   Abre ao clicar num card de graduado
+   Fundo rosa, texto preto
+   Controlado por JS/open-titles.js — openAlumniModal() / closeAlumniModal()
+   ============================================================ */
 .modal-v2 {
-    display: none;
+    display: none; /* Visível via JS: modal.style.display = "flex" */
     position: fixed;
     z-index: 10005;
     left: 0; top: 0;
@@ -175,6 +215,7 @@
     padding: 20px;
 }
 
+/* Conteúdo do modal — fundo rosa, scrollável se o texto for longo */
 .modal-content-v2 {
     background: #FF00FF;
     padding: 50px 40px;
@@ -188,36 +229,50 @@
     -webkit-overflow-scrolling: touch;
 }
 
+/* Botão × para fechar o modal */
 .close-modal { position: absolute; right: 25px; top: 15px; color: #000000; font-size: 40px; font-weight: 300; cursor: pointer; line-height: 1; transition: color 0.2s ease; }
 .close-modal:hover { color: #ffffff; }
 
+/* Texto do depoimento em preto itálico */
 #modal-body-v2 p { color: #000000; font-style: italic; line-height: 1.8; text-align: justify; font-size: 16px; margin-bottom: 15px; }
 #modal-body-v2 p:last-child { margin-bottom: 0; }
 
-/* ANIMAÇÕES */
+/* ============================================================
+   ANIMAÇÕES
+   fadeIn — usado na transição entre slides do slider
+   ============================================================ */
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.98); }
     to { opacity: 1; transform: scale(1); }
 }
 
-/* RESPONSIVIDADE */
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+
+/* Tablets */
 @media (max-width: 900px) {
+    /* Botões do slider mais pequenos */
     .slider-prev, .slider-next { width: 50px; height: 50px; font-size: 20px; bottom: 50px; }
     .slider-prev { left: 15px; }
     .slider-next { right: 15px; }
     .video-slide .project-info { padding: 25px 75px; min-height: auto; }
     .testimonials-section { padding: 0 20px; }
+    /* Cards de testemunhos com mínimo menor */
     .testimonials-container { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
 }
 
+/* Telemóveis */
 @media (max-width: 480px) {
     .video-slider-container { border-radius: 16px; }
+    /* Botões do slider mais pequenos e reposicionados */
     .slider-prev, .slider-next { bottom: 20px; width: 42px; height: 42px; font-size: 16px; }
     .slider-prev { left: 15px; }
     .slider-next { right: 15px; }
     .video-slide .project-info { padding: 30px 15px 75px; }
     .video-slide .project-info h3 { font-size: 22px; }
     .testimonials-section { padding: 0 15px; }
+    /* Testemunhos em coluna única centrada */
     .testimonials-container { grid-template-columns: 1fr; gap: 25px; justify-content: center; justify-items: center; }
     .testimonial-card { padding: 30px 20px; width: 100%; max-width: 380px; }
     .modal-content-v2 { padding: 40px 20px 30px 20px; border-radius: 20px; }
