@@ -1,0 +1,245 @@
+/* ============================================================
+   ESTRUTURA GERAL DA PÁGINA DOCENTES
+   Fundo escuro (#0f1014) para o main
+   ============================================================ */
+main {
+    background-color: #0f1014;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ============================================================
+   SECÇÃO CORPO DOCENTE
+   Lista de cards em alternância esquerda/direita
+   .docente-row — imagem à esquerda, fundo rosa
+   .docente-row.reverse — imagem à direita
+   Foto em escala de cinza por defeito, colorida no hover
+   Para adicionar docente: copia um bloco .docente-row no docentes.html
+   ============================================================ */
+.docentes-section {
+    padding: 60px 20px;
+    background: #0a0b0e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Contentor do título da secção */
+.titulo-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+/* Título principal da secção */
+.docentes-section .titulo-medio {
+    text-align: center;
+    font-size: clamp(30px, 5vw, 45px);
+    font-weight: 900;
+    letter-spacing: 3px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    color: #FF00FF;
+    margin: 0 auto;
+}
+
+.highlight { color: #FF00FF; }
+
+/* ============================================================
+   LISTA DE DOCENTES
+   Flex em coluna com gap entre cards
+   max-width centrado para manter legibilidade em ecrãs largos
+   ============================================================ */
+.docentes-lista-v2 {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* ============================================================
+   CARD INDIVIDUAL DO DOCENTE
+   Fundo rosa (#FF00FF), bordas arredondadas
+   Hover: borda branca + sobe ligeiramente (translateY)
+   .reverse inverte a ordem — imagem à direita
+   ============================================================ */
+.docente-row {
+    display: flex;
+    align-items: center;
+    background: #FF00FF;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.docente-row:hover {
+    border-color: #ffffff;
+    transform: translateY(-5px);
+}
+
+/* Variante com imagem à direita */
+.docente-row.reverse { flex-direction: row-reverse; }
+
+/* ============================================================
+   FOTOGRAFIA DO DOCENTE
+   Escala de cinza por defeito, colorida no hover do card
+   object-fit: cover para preencher sem distorcer
+   ============================================================ */
+.docente-img {
+    flex: 1;
+    max-width: 400px;
+    height: 450px;
+}
+
+.docente-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+
+.docente-row:hover .docente-img img { filter: grayscale(0%); }
+
+/* ============================================================
+   ÁREA DE TEXTO DO DOCENTE
+   Fundo rosa herdado do card pai
+   Nome em branco, cargo em branco uppercase, descrição em preto
+   ============================================================ */
+.docente-info {
+    flex: 2;
+    padding: 40px;
+}
+
+/* Nome do docente */
+.docente-info h3 {
+    font-size: clamp(22px, 3vw, 28px);
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+/* Cargo / especialidade */
+.cargo {
+    display: block;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.docente-info p {
+    color: #000000;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ============================================================
+   BLOCO DE CRIAÇÕES EM DESTAQUE
+   Separado do texto principal por uma borda subtil
+   Título em branco, lista de items em preto com bullet CSS
+   Para adicionar item: copia um <li> dentro de .premios-lista
+   ============================================================ */
+.premios-container {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Título "Criações em Destaque:" */
+.premios-titulo {
+    font-size: 12px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.premios-lista {
+    list-style: none;
+    padding: 0;
+}
+
+/* Item com bullet preto gerado por CSS (::before) */
+.premios-lista li {
+    font-size: 14px;
+    color: #000000;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.premios-lista li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #000000;
+    font-weight: bold;
+}
+
+/* ============================================================
+   ANIMAÇÃO REVEAL ON SCROLL
+   Elementos com class="reveal" animam ao entrar no ecrã
+   Controlado por JS/open-titles.js (IntersectionObserver)
+   Para aplicar: adiciona class="reveal" ao elemento no HTML
+   ============================================================ */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal.active { animation: fadeInUp 0.8s ease-out forwards; }
+
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+
+/* Tablets e desktops pequenos — cards em coluna única */
+@media (max-width: 1024px) {
+    .docente-row,
+    .docente-row.reverse {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .docente-img {
+        max-width: 100%;
+        width: 100%;
+        height: 320px;
+    }
+
+    /* Texto centrado em tablet */
+    .docente-info {
+        padding: 30px;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Lista alinhada à esquerda mesmo com texto centrado */
+    .premios-lista li { text-align: left; }
+}
+
+/* Tablets verticais */
+@media (max-width: 768px) {
+    .docentes-section .titulo-medio {
+        font-size: 24px;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+}
+
+/* Telemóveis */
+@media (max-width: 480px) {
+    .docente-img { height: 250px; }
+    .docente-info h3 { font-size: 19px; }
+    .docente-info p { font-size: 14px; line-height: 1.5; }
+}
