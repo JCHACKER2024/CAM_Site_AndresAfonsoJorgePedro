@@ -164,6 +164,47 @@ nav a.active, nav a:hover { color: #FF00FF; }
 }
 .mute-toggle:hover { transform: scale(1.05); background: #fff; }
 
+
+/* ============================================================
+   BOTÃO CANDIDATA-TE (CÍRCULO - APENAS NA HOME)
+   ============================================================ */
+#indexvideo {
+    position: relative;
+}
+
+.btn-candidata-circulo {
+    position: absolute;
+    top: -5px;                
+    right: -5px;             
+    z-index: 60;           
+    width: 200px;
+    height: 200px;
+    background-color: #FF00FF; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;         
+    text-decoration: none;
+    font-family: 'Clash Display', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.2;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn-candidata-circulo span {
+    transform: rotate(15deg);
+    display: inline-block;
+}
+
+.btn-candidata-circulo:hover {
+    transform: scale(1.08);    
+    background-color: #ffffff;
+}
+
 /* ============================================================
    TÍTULOS E CONTEÚDO
    .titulo-seccao — secção com o título grande
@@ -328,6 +369,7 @@ nav a.active, nav a:hover { color: #FF00FF; }
     #hero-wrap { height: 50vh; }
     .shadow-text { font-size: 2.5rem; }
     #indexvideo { width: 85%; height: 50%; }
+    .btn-candidata-circulo { display: none !important; }
 }
 
 /* Tablets verticais */
