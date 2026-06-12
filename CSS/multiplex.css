@@ -168,19 +168,23 @@
 
 /* ============================================================
    RESPONSIVIDADE
+   1100px — tablets grandes / desktop pequeno
+   768px  — tablets verticais
+   480px  — telemóveis
    ============================================================ */
 
-/* Tablets e desktops pequenos — 2 colunas */
+/* Tablets e desktops pequenos — grelha de 2 colunas */
 @media (max-width: 1100px) {
     .edicoes-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
 }
 
-/* Tablets verticais */
+/* Tablets verticais — coluna única */
 @media (max-width: 768px) {
+    /* Título mais compacto */
     .edicoes-section .titulo-medio { font-size: clamp(24px, 5vw, 32px); margin-bottom: 30px; }
-    /* Highlight passa a bloco em mobile para quebrar linha */
+    /* Highlight passa a bloco para quebrar linha */
     .edicoes-section .highlight { display: block; margin-left: 0; margin-top: 5px; }
-    /* 1 coluna centrada */
+    /* Grelha em coluna única centrada */
     .edicoes-grid { grid-template-columns: 1fr; padding: 0 10px; gap: 25px; }
     /* Card com largura máxima centrado */
     .edicao-card { max-width: 420px; margin: 0 auto; width: 100%; }
@@ -188,25 +192,12 @@
 
 /* Telemóveis */
 @media (max-width: 480px) {
-    /* SUBIR AS EDIÇÕES MULTIPLEX: Reduz drasticamente o padding de cima e de baixo */
-    .edicoes-section { 
-        padding: 10px 10px 20px !important; 
-        margin-top: -10px !important; /* Ajuda a forçar a subida da secção inteira */
-    }
-    
-    /* Aproxima o título principal das edições que vêm abaixo */
-    .edicoes-section .titulo-medio {
-        margin-top: 10px !important;
-        margin-bottom: 15px !important;
-        font-size: 1.4rem !important;
-    }
-
-    /* Reduz ligeiramente o espaço vertical entre cada card de edição */
-    .edicoes-grid {
-        gap: 15px !important;
-    }
-    
-    .edicao-info { 
-        padding: 15px; 
-    }
+    /* Secção colada ao conteúdo acima */
+    .edicoes-section { padding: 10px 10px 20px !important; margin-top: -10px !important; }
+    /* Título compacto e aproximado das edições */
+    .edicoes-section .titulo-medio { margin-top: 10px !important; margin-bottom: 15px !important; font-size: 1.4rem !important; }
+    /* Espaço reduzido entre cards */
+    .edicoes-grid { gap: 15px !important; }
+    /* Padding interno do card mais compacto */
+    .edicao-info { padding: 15px; }
 }

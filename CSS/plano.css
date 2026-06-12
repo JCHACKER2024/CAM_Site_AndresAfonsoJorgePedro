@@ -159,42 +159,32 @@ main {
 
 /* ============================================================
    RESPONSIVIDADE
+   768px  — tablets verticais
+   480px  — telemóveis
    ============================================================ */
 
 /* Tablets verticais */
 @media (max-width: 768px) {
+    /* Cabeçalho do ato mais compacto */
     .ato-header { padding-left: 15px; }
     .ato-header h2 { font-size: clamp(22px, 6vw, 26px); }
+    /* Semestres e UCs com menos padding */
     .semestre-box summary { padding: 18px 20px; font-size: 14px; }
     .uc-list { padding: 10px 20px; }
 }
 
 /* Telemóveis */
 @media (max-width: 480px) {
+    /* Contentor principal sem margens excessivas */
     .plano-container { margin: 10px auto 20px !important; padding-top: 0 !important; padding-bottom: 0 !important; }
-    .ato-container:first-of-type,
-    .ato-header:first-of-type { margin-top: 0 !important; padding-top: 0 !important; }
+    /* Cabeçalho dos atos compacto */
     .ato-header { margin-top: 15px !important; margin-bottom: 10px !important; padding-left: 10px !important; }
     .ato-header h2 { font-size: 1.4rem !important; margin: 0 !important; }
-    
-    /* Caixas dos Semestres e UC's */
-    .semestre-box {
-        margin-bottom: 10px !important; /* Aproxima os blocos uns dos cores */
-    }
-
-    .semestre-box summary { 
-        font-size: 13px; 
-        letter-spacing: 0px; 
-        padding: 12px 15px; /* Ligeiramente mais compacto */
-    }
-    
-    .uc-item summary { 
-        font-size: 13px; 
-        padding: 8px 10px !important;
-    }
-    
-    .uc-item p { 
-        font-size: 12px; 
-        line-height: 1.4; 
-    }
+    /* Semestres colados uns aos outros */
+    .semestre-box { margin-bottom: 10px !important; }
+    .semestre-box summary { font-size: 13px; letter-spacing: 0px; padding: 12px 15px; }
+    /* UCs compactas */
+    .uc-list { padding: 8px 15px; }
+    .uc-item summary { font-size: 13px; padding: 8px 10px !important; }
+    .uc-item p { font-size: 12px; line-height: 1.4; }
 }

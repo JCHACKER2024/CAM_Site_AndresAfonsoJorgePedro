@@ -200,46 +200,45 @@ main {
 
 /* ============================================================
    RESPONSIVIDADE
+   1024px — tablets grandes / desktop pequeno
+   768px  — tablets verticais
+   480px  — telemóveis
    ============================================================ */
 
 /* Tablets e desktops pequenos — cards em coluna única */
 @media (max-width: 1024px) {
+    /* Cards empilham verticalmente — .reverse fica igual a .normal */
     .docente-row,
-    .docente-row.reverse {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .docente-img {
-        max-width: 100%;
-        width: 100%;
-        height: 320px;
-    }
-
+    .docente-row.reverse { flex-direction: column; align-items: center; }
+    /* Foto ocupa largura total com altura fixa */
+    .docente-img { max-width: 100%; width: 100%; height: 320px; }
     /* Texto centrado em tablet */
-    .docente-info {
-        padding: 30px;
-        text-align: center;
-        width: 100%;
-    }
-
+    .docente-info { padding: 30px; text-align: center; width: 100%; }
     /* Lista alinhada à esquerda mesmo com texto centrado */
     .premios-lista li { text-align: left; }
 }
 
 /* Tablets verticais */
 @media (max-width: 768px) {
-    .docentes-section .titulo-medio {
-        font-size: 24px;
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
-    }
+    /* Título da secção em coluna, mais compacto */
+    .docentes-section .titulo-medio { font-size: 24px; flex-direction: column; align-items: center; gap: 5px; }
+    /* Foto ligeiramente mais baixa */
+    .docente-img { height: 280px; }
+    /* Menos padding no bloco de texto */
+    .docente-info { padding: 20px; }
 }
 
 /* Telemóveis */
 @media (max-width: 480px) {
-    .docente-img { height: 250px; }
-    .docente-info h3 { font-size: 19px; }
-    .docente-info p { font-size: 14px; line-height: 1.5; }
+    /* Foto mais compacta */
+    .docente-img { height: 220px; }
+    /* Texto mais pequeno */
+    .docente-info h3 { font-size: 17px; }
+    .docente-info p { font-size: 13px; line-height: 1.5; }
+    /* Cargo mais compacto */
+    .cargo { font-size: 11px; margin-bottom: 12px; }
+    /* Items da lista mais compactos */
+    .premios-lista li { font-size: 13px; margin-bottom: 7px; }
+    /* Menos espaço no bloco de destaques */
+    .premios-container { margin-top: 12px; padding-top: 12px; }
 }

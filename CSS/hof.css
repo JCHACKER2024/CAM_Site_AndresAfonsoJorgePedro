@@ -248,67 +248,46 @@
 
 /* ============================================================
    RESPONSIVIDADE
+   900px — tablets
+   480px — telemóveis
    ============================================================ */
 
 /* Tablets */
 @media (max-width: 900px) {
-    /* Botões do slider mais pequenos */
+    /* Botões do slider mais pequenos e reposicionados */
     .slider-prev, .slider-next { width: 50px; height: 50px; font-size: 20px; bottom: 50px; }
     .slider-prev { left: 15px; }
     .slider-next { right: 15px; }
+    /* Info do slide com menos padding e altura automática */
     .video-slide .project-info { padding: 25px 75px; min-height: auto; }
+    /* Testemunhos com padding lateral e cards mais pequenos */
     .testimonials-section { padding: 0 20px; }
-    /* Cards de testemunhos com mínimo menor */
     .testimonials-container { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
 }
 
 /* Telemóveis */
 @media (max-width: 480px) {
-    /* PUXA OS PROJETOS EM DESTAQUE PARA CIMA */
-    .hof-section, 
-    .video-slider-container { 
-        margin-top: -10px !important; 
-        padding-top: 0 !important;
-    }
-
+    /* Secção de projetos colada ao conteúdo acima */
+    .hof-section,
+    .video-slider-container { margin-top: -10px !important; padding-top: 0 !important; }
+    /* Slider com cantos menos arredondados */
     .video-slider-container { border-radius: 16px; }
-    
-    /* Botões do slider mais pequenos e reposicionados */
+    /* Botões do slider compactos */
     .slider-prev, .slider-next { bottom: 20px; width: 42px; height: 42px; font-size: 16px; }
     .slider-prev { left: 15px; }
     .slider-next { right: 15px; }
-    
-    .video-slide .project-info { padding: 20px 15px 65px; } /* Encolheu ligeiramente o padding interno */
+    /* Info do slide compacta — padding extra em baixo para não tapar os botões */
+    .video-slide .project-info { padding: 20px 15px 65px; }
     .video-slide .project-info h3 { font-size: 18px; margin-bottom: 5px !important; }
-    
-    /* COMPACTA OS "NOSSOS GRADUADOS" (TESTEMUNHOS) */
-    .testimonials-section { 
-        padding: 0 15px; 
-        margin-top: 15px !important; /* Cola a secção dos graduados mais ao slider de cima */
-        padding-top: 5px !important;
-    }
-    
-    /* Diminui o título da secção dos graduados e aproxima-o dos cards */
-    .testimonials-section h2, 
-    .testimonials-section .titulo-medio {
-        margin-top: -20px !important;
-        font-size: 1.3rem !important;
-    }
-    
-    /* Testemunhos em coluna única com menor espaçamento entre eles */
-    .testimonials-container { 
-        grid-template-columns: 1fr; 
-        gap: 12px; /* Reduzido de 25px para 12px para colar os cards */
-        justify-content: center; 
-        justify-items: center; 
-    }
-    
-    .testimonial-card { 
-        padding: 20px 15px; /* Mais compacto internamente */
-        width: 100%; 
-        max-width: 380px; 
-        margin-bottom: 0 !important;
-    }
-    
+    /* Secção de graduados colada ao slider */
+    .testimonials-section { padding: 0 15px; margin-top: 15px !important; padding-top: 5px !important; }
+    /* Título dos graduados mais compacto e aproximado dos cards */
+    .testimonials-section h2,
+    .testimonials-section .titulo-medio { margin-top: -20px !important; font-size: 1.3rem !important; }
+    /* Cards em coluna única com espaçamento reduzido */
+    .testimonials-container { grid-template-columns: 1fr; gap: 12px; justify-content: center; justify-items: center; }
+    /* Card individual compacto */
+    .testimonial-card { padding: 20px 15px; width: 100%; max-width: 380px; margin-bottom: 0 !important; }
+    /* Modal com menos padding e cantos arredondados */
     .modal-content-v2 { padding: 40px 20px 30px 20px; border-radius: 20px; }
 }
