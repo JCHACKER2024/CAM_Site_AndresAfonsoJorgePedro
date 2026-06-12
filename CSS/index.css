@@ -361,7 +361,6 @@ nav a.active, nav a:hover { color: #FF00FF; }
 
 /* Tablets e desktops pequenos */
 @media (max-width: 1024px) {
-    /* Header passa a duas linhas: logo+PT|EN em cima, nav em baixo */
     .header-container { flex-wrap: wrap; gap: 0; }
     .logo-link { flex: 1; }
     .language-selector { margin-left: 0; order: 2; }
@@ -378,37 +377,118 @@ nav a.active, nav a:hover { color: #FF00FF; }
     #header { padding: 10px 15px; }
     .header-container { flex-wrap: wrap; align-items: center; gap: 0; }
     .logo-link { flex: 1; display: flex; align-items: center; }
-    /* Logo menor em mobile */
     .header-logo-img { height: 22px; }
     .extenso { display: inline-block; font-size: 8px; white-space: nowrap; line-height: 1; }
     .language-selector { margin-left: 0; order: 2; font-size: 10px; }
     nav { order: 3; width: 100%; justify-content: center; margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(0,0,0,0.1); }
     nav a { margin: 0 8px; font-size: 10px; }
-    #hero-wrap { height: 60vh; }
-    .shadow-text { font-size: clamp(22px, 6vw, 30px); }
-    #indexvideo { width: 92%; height: 50%; margin-top: 15px; }
-    .mute-toggle { bottom: 15px; right: 15px; padding: 6px 12px; font-size: 9px; }
-    .texto-corrido { font-size: 15px; padding: 0 20px; text-align: justify; }
-    /* Footer passa a coluna única centrada */
+    
+    /* Ajustes de espaço intermédios */
+    #hero-wrap { height: auto; padding: 20px 0; }
+    .shadow-text { font-size: clamp(20px, 5vw, 26px); margin-bottom: 10px; }
+    #indexvideo { width: 92%; height: auto; margin-top: 10px; }
+    
+    .texto-corrido { font-size: 14px; padding: 0 20px; text-align: justify; margin-top: 15px; margin-bottom: 15px; }
+    
+    /* Reduzir o espaçamento dos títulos das secções */
+    .titulo-medio, h2 { margin-top: 25px !important; margin-bottom: 15px !important; font-size: 1.5rem !important; }
+    section { padding: 20px 0 !important; }
+
     .footer-container { flex-direction: column; text-align: center; align-items: center; gap: 25px; }
 }
 
 /* Telemóveis */
 @media (max-width: 480px) {
-    #hero-wrap { height: auto; min-height: 60vh; display: flex; align-items: center; justify-content: center; }
-    #indexvideo { width: 100%; height: auto; max-height: 300px; }
-    .shadow-text { font-size: 1.5rem; padding: 0 15px; text-align: center; }
-    .texto-corrido { font-size: 1rem; line-height: 1.6; padding: 0 20px; text-align: justify; }
-    .mute-toggle { font-size: 10px; padding: 5px; bottom: 10px; right: 10px; }
-    /* Nav mais compacto */
+    /* Altera os Keyframes do Logo APENAS no Mobile para ele não desaparecer nem subir demais */
+    .logo-animation-container {
+        animation: none !important; /* Desativa a animação global que o jogava para fora */
+        margin-top: -110px !important;  /* Controla a altura geral do Logo aqui */
+        margin-bottom: 10px !important; /* Controla o espaço entre o logo e o vídeo */
+    }
+
+    /* Reduz o tamanho das imagens do logo no mobile */
+    .logo-img-icon {
+        height: 50px !important; /* Diminui o ícone do logo */
+        width: auto !important;
+    }
+    .logo-img-text {
+        height: 50px !important; /* Diminui o texto "CAM" do logo */
+        width: auto !important;
+    }
+
+    /* Remove a altura forçada que causava o fundo preto vazio */
+    #hero-wrap { 
+        height: auto !important; 
+        min-height: auto !important; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center; 
+        padding: 15px 0 10px 0 !important; 
+    }
+    
+    /* Remove margens brutas do vídeo que empurravam o conteúdo */
+    #indexvideo { 
+        width: 100%; 
+        height: auto; 
+        max-height: 260px; 
+        margin-top: 5px !important; 
+        margin-bottom: 5px !important; 
+    }
+    
+    /* PÁGINAS INTERNAS: Sobe o título para fora do vídeo */
+    .shadow-text { 
+        font-size: 1.4rem; 
+        padding: 0 15px; 
+        text-align: center; 
+        /* Altera aqui para controlar a subida do título nas outras páginas */
+        margin-top: -25px !important; 
+        margin-bottom: 15px !important;
+    }
+    
+    /* Trata o espaço do texto logo abaixo do vídeo */
+    .content-wrapper {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+
+    .btn-candidata {
+        margin-top: -15px;   /* Puxa o botão para cima, aproximando-o do vídeo */
+        margin-bottom: 30px;  /* Diminui o espaço entre o botão e o texto abaixo */
+        display: inline-block; /* Garante que respeita as margens corretamente */
+    }
+    
+    .texto-corrido { 
+        font-size: 0.95rem; 
+        line-height: 1.5; 
+        padding: 0 20px; 
+        text-align: justify; 
+        margin-top: 0 !important; 
+        margin-bottom: 15px !important;
+    }
+    
+    /* Encolhe drasticamente a distância de TODOS os títulos do site */
+    .titulo-medio, h2, h3 { 
+        margin-top: 20px !important; 
+        margin-bottom: 10px !important; 
+        padding-top: 0 !important;
+        font-size: 1.3rem !important;
+    }
+    
+    /* Compacta o espaçamento geral entre as secções das páginas */
+    section, .edicoes-section, .testimonials-section, .hof-section { 
+        padding: 15px 0 !important; 
+    }
+    
+    .mute-toggle { font-size: 9px; padding: 4px 8px; bottom: 8px; right: 8px; }
     nav a { margin: 0 4px; font-size: 8px; }
-    /* Logo Lusófona limitado para não ultrapassar o ecrã */
-    .lusofona-logo { width: 100%; max-width: 200px; }
-    /* Footer em coluna única com min-width anulado */
-    .footer-container { flex-direction: column; align-items: center; text-align: center; gap: 15px; }
+    
+    /* Rodapé */
+    .lusofona-logo { width: 100%; max-width: 180px; }
+    .footer-container { flex-direction: column; align-items: center; text-align: center; gap: 12px; }
     .footer-info, .footer-socials, .footer-brand { align-items: center; width: 100%; }
-    .info-item { font-size: 13px; }
-    .footer-bottom { font-size: 10px; }
+    .info-item { font-size: 12px; }
+    .footer-bottom { font-size: 9px; }
 }
 
 /* Desativa cursor personalizado em dispositivos touch */
