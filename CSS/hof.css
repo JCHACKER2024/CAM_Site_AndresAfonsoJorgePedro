@@ -264,16 +264,51 @@
 
 /* Telemóveis */
 @media (max-width: 480px) {
+    /* PUXA OS PROJETOS EM DESTAQUE PARA CIMA */
+    .hof-section, 
+    .video-slider-container { 
+        margin-top: -10px !important; 
+        padding-top: 0 !important;
+    }
+
     .video-slider-container { border-radius: 16px; }
+    
     /* Botões do slider mais pequenos e reposicionados */
     .slider-prev, .slider-next { bottom: 20px; width: 42px; height: 42px; font-size: 16px; }
     .slider-prev { left: 15px; }
     .slider-next { right: 15px; }
-    .video-slide .project-info { padding: 30px 15px 75px; }
-    .video-slide .project-info h3 { font-size: 22px; }
-    .testimonials-section { padding: 0 15px; }
-    /* Testemunhos em coluna única centrada */
-    .testimonials-container { grid-template-columns: 1fr; gap: 25px; justify-content: center; justify-items: center; }
-    .testimonial-card { padding: 30px 20px; width: 100%; max-width: 380px; }
+    
+    .video-slide .project-info { padding: 20px 15px 65px; } /* Encolheu ligeiramente o padding interno */
+    .video-slide .project-info h3 { font-size: 18px; margin-bottom: 5px !important; }
+    
+    /* COMPACTA OS "NOSSOS GRADUADOS" (TESTEMUNHOS) */
+    .testimonials-section { 
+        padding: 0 15px; 
+        margin-top: 15px !important; /* Cola a secção dos graduados mais ao slider de cima */
+        padding-top: 5px !important;
+    }
+    
+    /* Diminui o título da secção dos graduados e aproxima-o dos cards */
+    .testimonials-section h2, 
+    .testimonials-section .titulo-medio {
+        margin-top: -20px !important;
+        font-size: 1.3rem !important;
+    }
+    
+    /* Testemunhos em coluna única com menor espaçamento entre eles */
+    .testimonials-container { 
+        grid-template-columns: 1fr; 
+        gap: 12px; /* Reduzido de 25px para 12px para colar os cards */
+        justify-content: center; 
+        justify-items: center; 
+    }
+    
+    .testimonial-card { 
+        padding: 20px 15px; /* Mais compacto internamente */
+        width: 100%; 
+        max-width: 380px; 
+        margin-bottom: 0 !important;
+    }
+    
     .modal-content-v2 { padding: 40px 20px 30px 20px; border-radius: 20px; }
 }

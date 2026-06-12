@@ -188,6 +188,25 @@
 
 /* Telemóveis */
 @media (max-width: 480px) {
-    .edicoes-section { padding: 40px 10px 60px; }
-    .edicao-info { padding: 15px; }
+    /* SUBIR AS EDIÇÕES MULTIPLEX: Reduz drasticamente o padding de cima e de baixo */
+    .edicoes-section { 
+        padding: 10px 10px 20px !important; 
+        margin-top: -10px !important; /* Ajuda a forçar a subida da secção inteira */
+    }
+    
+    /* Aproxima o título principal das edições que vêm abaixo */
+    .edicoes-section .titulo-medio {
+        margin-top: 10px !important;
+        margin-bottom: 15px !important;
+        font-size: 1.4rem !important;
+    }
+
+    /* Reduz ligeiramente o espaço vertical entre cada card de edição */
+    .edicoes-grid {
+        gap: 15px !important;
+    }
+    
+    .edicao-info { 
+        padding: 15px; 
+    }
 }

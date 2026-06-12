@@ -171,8 +171,30 @@ main {
 
 /* Telemóveis */
 @media (max-width: 480px) {
-    .plano-container { margin: 40px auto 80px; }
-    .semestre-box summary { font-size: 13px; letter-spacing: 0px; padding: 15px; }
-    .uc-item summary { font-size: 14px; }
-    .uc-item p { font-size: 13px; line-height: 1.5; }
+    .plano-container { margin: 10px auto 20px !important; padding-top: 0 !important; padding-bottom: 0 !important; }
+    .ato-container:first-of-type,
+    .ato-header:first-of-type { margin-top: 0 !important; padding-top: 0 !important; }
+    .ato-header { margin-top: 15px !important; margin-bottom: 10px !important; padding-left: 10px !important; }
+    .ato-header h2 { font-size: 1.4rem !important; margin: 0 !important; }
+    
+    /* Caixas dos Semestres e UC's */
+    .semestre-box {
+        margin-bottom: 10px !important; /* Aproxima os blocos uns dos cores */
+    }
+
+    .semestre-box summary { 
+        font-size: 13px; 
+        letter-spacing: 0px; 
+        padding: 12px 15px; /* Ligeiramente mais compacto */
+    }
+    
+    .uc-item summary { 
+        font-size: 13px; 
+        padding: 8px 10px !important;
+    }
+    
+    .uc-item p { 
+        font-size: 12px; 
+        line-height: 1.4; 
+    }
 }
