@@ -60,14 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// ============================================================
-// FUNÇÕES GLOBAIS (chamadas diretamente no HTML via onclick)
-// ============================================================
-
 // --------------------------------------------------------
-// 3. SLIDER DE VÍDEOS (HALL OF FAME)
-// Chamado no HTML: onclick="changeVideoSlide(-1 ou 1)"
-// Reset do iframe ao mudar de slide para parar o áudio
+// 3. SLIDER DE VÍDEOS (HALL OF FAME) - CAM
+// Controla a paginação e reconverte iframes ativos em fachadas estáticas
 // --------------------------------------------------------
 let currentVideoSlide = 0;
 
@@ -75,17 +70,84 @@ function changeVideoSlide(direction) {
     const slides = document.querySelectorAll('.video-slide');
     if (slides.length === 0) return;
 
-    // Reset do iframe para parar o vídeo/som anterior
-    const currentIframe = slides[currentVideoSlide].querySelector('iframe');
-    if (currentIframe) {
-        const src = currentIframe.getAttribute('src');
-        currentIframe.setAttribute('src', '');
-        currentIframe.setAttribute('src', src);
+    const currentWrapper = slides[currentVideoSlide].querySelector('.iframe-wrapper');
+    if (currentWrapper && currentWrapper.querySelector('iframe')) {
+        const facadeTemplate = slides[currentVideoSlide].querySelector('[data-videoid]');
+        if (facadeTemplate) {
+            const videoId = facadeTemplate.getAttribute('data-videoid');
+            
+            const newFacade = document.createElement('div');
+            newFacade.classList.add('yt-facade');
+            newFacade.setAttribute('data-videoid', videoId);
+            
+            newFacade.innerHTML = `
+                <img src="https://img.youtube.com/vi/${videoId}/maxresdefault.jpg" alt="Video Thumbnail">
+                <button class="yt-play-btn" aria-label="Play">▶</button>
+            `;
+
+            const newImg = newFacade.querySelector('img');
+            newImg.addEventListener('load', function() {
+                if (this.naturalWidth === 120) {
+                    this.src = this.src.replace('maxresdefault', 'hqdefault');
+                }
+            });
+
+            currentWrapper.innerHTML = "";
+            currentWrapper.appendChild(newFacade);
+            
+            newFacade.addEventListener('click', function() {
+                injectCamIframe(this, currentWrapper);
+            });
+        }
     }
 
     slides[currentVideoSlide].classList.remove('active');
     currentVideoSlide = (currentVideoSlide + direction + slides.length) % slides.length;
     slides[currentVideoSlide].classList.add('active');
+}
+
+// --------------------------------------------------------
+// SISTEMA DE FACHADAS DO YOUTUBE (YT-FACADE)
+// --------------------------------------------------------
+document.addEventListener("DOMContentLoaded", () => {
+    const camFacades = document.querySelectorAll('.yt-facade');
+    
+    camFacades.forEach(facade => {
+        // Validador anti-erro cinzento para o carregamento inicial da página
+        const img = facade.querySelector('img');
+        if (img) {
+            img.addEventListener('load', function() {
+                if (this.naturalWidth === 120) {
+                    this.src = this.src.replace('maxresdefault', 'hqdefault');
+                }
+            });
+            // Caso o browser já tenha a imagem em cache e o evento 'load' não dispare retroativamente
+            if (img.complete && img.naturalWidth === 120) {
+                img.src = img.src.replace('maxresdefault', 'hqdefault');
+            }
+        }
+
+        facade.addEventListener('click', function() {
+            const wrapper = this.parentElement;
+            injectCamIframe(this, wrapper);
+        });
+    });
+});
+
+// Função auxiliar para injetar o iframe de forma limpa (Evita repetição de código)
+function injectCamIframe(facadeElement, wrapperElement) {
+    const videoId = facadeElement.getAttribute('data-videoid');
+    if (videoId) {
+        const iframe = document.createElement('iframe');
+        iframe.setAttribute('src', `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`);
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+        iframe.setAttribute('allowfullscreen', 'true');
+        iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+
+        wrapperElement.innerHTML = "";
+        wrapperElement.appendChild(iframe);
+    }
 }
 
 // --------------------------------------------------------
