@@ -129,6 +129,53 @@
 }
 
 /* ============================================================
+   YOUTUBE FACADE (PROJETOS EM DESTAQUE)
+   Substitui o iframe por uma thumbnail de alta resolução
+   O iframe só carrega ao clicar no botão de play
+   Controlado por JS/open-titles.js — listener de clique no .yt-facade
+   Para usar: substitui o <iframe> por um .yt-facade no HTML
+   ============================================================ */
+.yt-facade {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    cursor: pointer;
+}
+
+/* Thumbnail em alta resolução (maxresdefault) com fallback para hqdefault */
+.yt-facade img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Botão de play centralizado sobre a thumbnail */
+.yt-play-btn {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 255, 102, 0.9);
+    color: #000;
+    border: none;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    font-size: 26px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.yt-play-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: #ffffff;
+}
+
+/* ============================================================
    CARDS DE TESTEMUNHOS (GRADUADOS)
    Grelha automática — mínimo 350px por card
    Fundo rosa, texto preto
@@ -263,6 +310,7 @@
     /* Testemunhos com padding lateral e cards mais pequenos */
     .testimonials-section { padding: 0 20px; }
     .testimonials-container { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .yt-play-btn { width: 60px; height: 60px; font-size: 22px; }
 }
 
 /* Telemóveis */
@@ -290,4 +338,5 @@
     .testimonial-card { padding: 20px 15px; width: 100%; max-width: 380px; margin-bottom: 0 !important; }
     /* Modal com menos padding e cantos arredondados */
     .modal-content-v2 { padding: 40px 20px 30px 20px; border-radius: 20px; }
+    .yt-play-btn { width: 48px; height: 48px; font-size: 18px; }
 }
